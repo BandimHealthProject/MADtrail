@@ -1,0 +1,16 @@
+build/
+*.~lock.*
+app/output/props/*
+app/config/assets/csv/*
+tempZipDir
+.idea/*
+app/config/assets/csv/CRIANCA.bio19.csv
+app/config/assets/csv/MIF.bio19.csv
+app/config/tables/CRIANCA/forms/CRIANCA/~$CRIANCA.xlsx
+app/config/tables/MIF/forms/MIF/~$MIF.xlsx
+app/config/tables/CRIANCA_HOSP/forms/CRIANCA_HOSP/~$CRIANCA_HOSP.xlsx
+app/config/tables/GRAVIDA_VISIT/forms/GRAVIDA_VISIT/~$GRAVIDA_VISIT.xlsx
+app/config/tables/TEST/forms/TEST/~$TEST.xlsx
+app/config/assets/framework/forms/framework/~$framework.xlsx
+app/config/tables/GRAVIDA/forms/GRAVIDA/~$GRAVIDA.xlsx
+app/config/tables/SES/forms/SES/~$SES.xlsx
