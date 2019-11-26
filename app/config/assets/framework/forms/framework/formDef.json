@@ -66,12 +66,12 @@
     "choices": [
       {
         "choice_list_name": "forms",
-        "data_value": "MADTRAIL",
+        "data_value": "MADTRIAL",
         "display": {
           "title": {
             "text": {
-              "english": "MADtrail",
-              "default": "MADtrail"
+              "english": "MADtrial",
+              "default": "MADtrial"
             }
           }
         },
@@ -129,11 +129,11 @@
         "_row_num": 7
       },
       {
-        "branch_label": "MADTRAIL",
+        "branch_label": "MADTRIAL",
         "_row_num": 8
       },
       {
-        "url": "'?' + odkSurvey.getHashString('MADTRAIL')",
+        "url": "'?' + odkSurvey.getHashString('MADTRIAL')",
         "type": "external_link",
         "display": {
           "prompt": {
@@ -740,12 +740,12 @@
       "forms": [
         {
           "choice_list_name": "forms",
-          "data_value": "MADTRAIL",
+          "data_value": "MADTRIAL",
           "display": {
             "title": {
               "text": {
-                "english": "MADtrail",
-                "default": "MADtrail"
+                "english": "MADtrial",
+                "default": "MADtrial"
               }
             }
           },
@@ -1401,7 +1401,7 @@
             "promptIdx": 1
           },
           {
-            "url": "'?' + odkSurvey.getHashString('MADTRAIL')",
+            "url": "'?' + odkSurvey.getHashString('MADTRIAL')",
             "type": "external_link",
             "display": {
               "prompt": {
@@ -1539,7 +1539,7 @@
           "_else4": 4,
           "_screen5": 4,
           "_endif6": 5,
-          "MADTRAIL": 6,
+          "MADTRIAL": 6,
           "_screen9": 6,
           "TESTE": 8,
           "_screen12": 8,

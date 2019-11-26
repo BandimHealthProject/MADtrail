@@ -3,7 +3,7 @@
     "settings": [
       {
         "setting_name": "form_id",
-        "value": "MADTRAIL",
+        "value": "MADTRIAL",
         "_row_num": 2
       },
       {
@@ -13,7 +13,7 @@
       },
       {
         "setting_name": "table_id",
-        "value": "MADTRAIL",
+        "value": "MADTRIAL",
         "_row_num": 4
       },
       {
@@ -21,8 +21,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrail",
-              "default": "MADtrail"
+              "english": "MADtrial",
+              "default": "MADtrial"
             }
           }
         },
@@ -197,7 +197,7 @@
       },
       {
         "type": "integer",
-        "name": "IDADEANO1",
+        "name": "IDADEANO",
         "display": {
           "prompt": {
             "text": "Idade(ano)"
@@ -207,7 +207,7 @@
       },
       {
         "type": "integer",
-        "name": "IDADEMES2",
+        "name": "IDADEMES",
         "display": {
           "prompt": {
             "text": "Idade(mes)"
@@ -756,7 +756,7 @@
     "settings": {
       "form_id": {
         "setting_name": "form_id",
-        "value": "MADTRAIL",
+        "value": "MADTRIAL",
         "_row_num": 2
       },
       "form_version": {
@@ -766,7 +766,7 @@
       },
       "table_id": {
         "setting_name": "table_id",
-        "value": "MADTRAIL",
+        "value": "MADTRIAL",
         "_row_num": 4
       },
       "survey": {
@@ -774,8 +774,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrail",
-              "default": "MADtrail"
+              "english": "MADtrial",
+              "default": "MADtrial"
             }
           }
         },
@@ -850,8 +850,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrail",
-              "default": "MADtrail"
+              "english": "MADtrial",
+              "default": "MADtrial"
             }
           }
         },
@@ -1038,7 +1038,7 @@
         "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
         "elementKey": "DOB"
       },
-      "IDADEANO1": {
+      "IDADEANO": {
         "_defn": [
           {
             "_row_num": 21,
@@ -1046,9 +1046,9 @@
           }
         ],
         "type": "integer",
-        "elementKey": "IDADEANO1"
+        "elementKey": "IDADEANO"
       },
-      "IDADEMES2": {
+      "IDADEMES": {
         "_defn": [
           {
             "_row_num": 22,
@@ -1056,7 +1056,7 @@
           }
         ],
         "type": "integer",
-        "elementKey": "IDADEMES2"
+        "elementKey": "IDADEMES"
       },
       "CARTVIS": {
         "_defn": [
@@ -1515,7 +1515,7 @@
           },
           {
             "type": "integer",
-            "name": "IDADEANO1",
+            "name": "IDADEANO",
             "display": {
               "prompt": {
                 "text": "Idade(ano)"
@@ -1530,7 +1530,7 @@
           },
           {
             "type": "integer",
-            "name": "IDADEMES2",
+            "name": "IDADEMES",
             "display": {
               "prompt": {
                 "text": "Idade(mes)"
@@ -2301,8 +2301,8 @@
             "display": {
               "title": {
                 "text": {
-                  "english": "MADtrail",
-                  "default": "MADtrail"
+                  "english": "MADtrial",
+                  "default": "MADtrial"
                 }
               }
             },
@@ -2589,7 +2589,7 @@
         "elementSet": "data",
         "elementPath": "DOB"
       },
-      "IDADEANO1": {
+      "IDADEANO": {
         "_defn": [
           {
             "_row_num": 21,
@@ -2597,12 +2597,12 @@
           }
         ],
         "type": "integer",
-        "elementKey": "IDADEANO1",
-        "elementName": "IDADEANO1",
+        "elementKey": "IDADEANO",
+        "elementName": "IDADEANO",
         "elementSet": "data",
-        "elementPath": "IDADEANO1"
+        "elementPath": "IDADEANO"
       },
-      "IDADEMES2": {
+      "IDADEMES": {
         "_defn": [
           {
             "_row_num": 22,
@@ -2610,10 +2610,10 @@
           }
         ],
         "type": "integer",
-        "elementKey": "IDADEMES2",
-        "elementName": "IDADEMES2",
+        "elementKey": "IDADEMES",
+        "elementName": "IDADEMES",
         "elementSet": "data",
-        "elementPath": "IDADEMES2"
+        "elementPath": "IDADEMES"
       },
       "CARTVIS": {
         "_defn": [
@@ -3214,7 +3214,7 @@
         "_aspect": "default",
         "_key": "SurveyUtil.formId",
         "_type": "string",
-        "_value": "MADTRAIL"
+        "_value": "MADTRIAL"
       },
       {
         "_partition": "Table",
@@ -3228,7 +3228,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":{\"english\":\"MADtrail\",\"default\":\"MADtrail\"}}"
+        "_value": "{\"text\":{\"english\":\"MADtrial\",\"default\":\"MADtrial\"}}"
       }
     ]
   }

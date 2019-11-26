@@ -14,6 +14,6 @@ Column,VACTRANS,displayChoicesList,object,"[{""choice_list_name"":""sim/não"","
 Column,VENAOVAS,displayChoicesList,object,"[{""choice_list_name"":""sim/não"",""data_value"":""1"",""display"":{""title"":{""text"":""Sim""}},""_row_num"":4},{""choice_list_name"":""sim/não"",""data_value"":""2"",""display"":{""title"":{""text"":""Não""}},""_row_num"":5}]"
 Column,VOMITO,displayChoicesList,object,"[{""choice_list_name"":""sim/não"",""data_value"":""1"",""display"":{""title"":{""text"":""Sim""}},""_row_num"":4},{""choice_list_name"":""sim/não"",""data_value"":""2"",""display"":{""title"":{""text"":""Não""}},""_row_num"":5}]"
 FormType,default,FormType.formType,string,SURVEY
-SurveyUtil,default,SurveyUtil.formId,string,MADTRAIL
+SurveyUtil,default,SurveyUtil.formId,string,MADTRIAL
 Table,default,defaultViewType,string,SPREADSHEET
-Table,default,displayName,object,"{""text"":{""english"":""MADtrail"",""default"":""MADtrail""}}"
+Table,default,displayName,object,"{""text"":{""english"":""MADtrial"",""default"":""MADtrial""}}"
