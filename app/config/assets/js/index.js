@@ -7,8 +7,6 @@
 function display() {    
     doSanityCheck();
     initButtons();
-    // Set the background to be a picture.
-    $('body').first().css('background', 'url(img/form_logo.png) fixed');
 }
 
 function doSanityCheck() {
@@ -17,31 +15,19 @@ function doSanityCheck() {
 }
 
 function initButtons() {
-    btnCrianca = $('#btnCrianca');
+    var btnCrianca = $('#btnCrianca');
     btnCrianca.on("click", function() {
         odkTables.addRowWithSurvey(
             null,
             'MADTRIAL',
             'MADTRIAL',
             null,
-            defaults);
-    })
-
-    btnControl = $('#btnControl');
-    btnControl.on("click", function() {
-        var date = "D:" + selDay.val() + ",M:" + selMon.val() + ",Y:" + selYea.val();  
-        var assistant = selAss.val();
-        if (!assistant || assistant < 0) {
-            selAss.css('background-color','pink');
-            return false;
-        }
-        var region = selReg.val();
-        var tabanca = selTab.val();  
-        var visitType = "control";
-        var queryParams = util.setQuerystringParams(region, tabanca, assistant, visitType, date);
-        if (util.DEBUG) top.location = 'listClusters.html' + queryParams;
-        odkTables.launchHTML(null,  'config/assets/listClusters.html' + queryParams);
+            null);
     });
-    btnRoutine.attr("disabled","disabled");
-    btnControl.attr("disabled","disabled");
+
+    var btnSync = $('#btnSync');
+    btnSync.on("click", function() {
+        odkCommon.doAction(null, "org.opendatakit.services.sync.actions.activities.SyncActivity", {"componentPackage": "org.opendatakit.services", "componentActivity": "org.opendatakit.services.sync.actions.activities.SyncActivity"});   
+    });
+   // btnSync.attr("disabled","disabled");
 }

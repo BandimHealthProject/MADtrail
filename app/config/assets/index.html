@@ -18,19 +18,30 @@
         .form-group {
             margin:30px 0;
         }
+        body {
+            background-image: url(./img/form_logo.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .btn {
+            background-color: darkseagreen;
+            color: white;
+            font-size: 25px;
+        }
         </style>
     </head>
 
     <body onload="display();">
+
         <div id="main" class="container" style="height: 100vh;">
             <h1>MADTrial</h1>
             <hr/>
             <div id="wrapper">
                 <div class="form-group">
-                    <button id="btnRoutine" class="btn">Rutina</button> 
+                    <button id="btnCrianca" class="btn">Nova Criança</button> 
                 </div>
                 <div class="form-group">
-                    <button id="btnControl" class="btn">Controlo</button>
+                    <button id="btnSync" class="btn">Sincronizar</button>
                 </div>
             </div>
         </div>
