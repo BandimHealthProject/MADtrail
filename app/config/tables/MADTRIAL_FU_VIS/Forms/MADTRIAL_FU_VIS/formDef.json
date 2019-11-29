@@ -68,36 +68,34 @@
         "name": "DATSEGUI",
         "display": {
           "prompt": {
-            "text": "Date of visit"
+            "text": {
+              "english": "Date of visit",
+              "default": "Date of visit"
+            }
           }
         },
         "_row_num": 3
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 4
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 5
       },
       {
         "type": "text",
         "name": "ASSISTENTE",
         "display": {
           "prompt": {
-            "text": "Assistant"
+            "text": {
+              "english": "Assistant",
+              "default": "Assistant"
+            }
           }
         },
-        "_row_num": 6
+        "_row_num": 4
       },
       {
         "clause": "end screen",
-        "_row_num": 7
+        "_row_num": 5
       },
       {
         "clause": "begin screen",
-        "_row_num": 8
+        "_row_num": 6
       },
       {
         "type": "select_one",
@@ -105,18 +103,13 @@
         "name": "ESTADOCRI",
         "display": {
           "prompt": {
-            "text": "Is the child present"
+            "text": {
+              "english": "Is the child present",
+              "default": "Is the child present"
+            }
           }
         },
-        "_row_num": 9
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 10
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 11
+        "_row_num": 7
       },
       {
         "type": "select_one",
@@ -124,13 +117,43 @@
         "name": "INFORMADOR",
         "display": {
           "prompt": {
-            "text": "Informant"
+            "text": {
+              "english": "Informant",
+              "default": "Informant"
+            }
           }
         },
-        "_row_num": 12
+        "_row_num": 8
       },
       {
         "clause": "end screen",
+        "_row_num": 9
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 10
+      },
+      {
+        "type": "select_one",
+        "values_list": "cart",
+        "name": "VACCARD",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Vaccination card",
+              "default": "Vaccination card"
+            }
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 12
+      },
+      {
+        "clause": "if",
+        "condition": "data('INFORMADOR') != '4'",
         "_row_num": 13
       },
       {
@@ -138,60 +161,31 @@
         "_row_num": 14
       },
       {
-        "type": "select_one_dropdown",
-        "values_list": "cart",
-        "name": "VACCARD",
-        "display": {
-          "prompt": {
-            "text": "Vaccination card"
-          }
-        },
-        "_row_num": 15
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 16
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 17
-      },
-      {
         "type": "select_one",
         "values_list": "sim/nao/naosabe",
         "name": "DIARREIA",
         "display": {
           "prompt": {
-            "text": "Has the chil had diarrhoea?"
+            "text": {
+              "english": "Has the chil had diarrhoea?",
+              "default": "Has the child had diarrhoea?"
+            }
           }
         },
-        "_row_num": 18
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 19
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 20
+        "_row_num": 15
       },
       {
         "type": "integer",
         "name": "DIARREIANO",
         "display": {
           "prompt": {
-            "text": "How many defecations within 24 hours?"
+            "text": {
+              "english": "How many defecations within 24 hours?",
+              "default": "How many defecations within 24 hours?"
+            }
           }
         },
-        "_row_num": 21
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 22
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 23
+        "_row_num": 17
       },
       {
         "type": "select_multiple",
@@ -199,18 +193,21 @@
         "name": "DIARREIDIA",
         "display": {
           "prompt": {
-            "text": "On which day?"
+            "text": {
+              "english": "On which day?",
+              "default": "On which day?"
+            }
           }
         },
-        "_row_num": 24
+        "_row_num": 18
       },
       {
         "clause": "end screen",
-        "_row_num": 25
+        "_row_num": 20
       },
       {
         "clause": "begin screen",
-        "_row_num": 26
+        "_row_num": 21
       },
       {
         "type": "select_one",
@@ -218,18 +215,13 @@
         "name": "VOMITO",
         "display": {
           "prompt": {
-            "text": "Has the child been vomiting?"
+            "text": {
+              "english": "Has the child been vomiting?",
+              "default": "Has the child been vomiting?"
+            }
           }
         },
-        "_row_num": 27
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 28
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 29
+        "_row_num": 22
       },
       {
         "type": "select_multiple",
@@ -237,18 +229,21 @@
         "name": "VOMITODIA",
         "display": {
           "prompt": {
-            "text": "On which day?"
+            "text": {
+              "english": "On which day?",
+              "default": "On which day?"
+            }
           }
         },
-        "_row_num": 30
+        "_row_num": 24
       },
       {
         "clause": "end screen",
-        "_row_num": 31
+        "_row_num": 26
       },
       {
         "clause": "begin screen",
-        "_row_num": 32
+        "_row_num": 27
       },
       {
         "type": "select_one",
@@ -256,18 +251,13 @@
         "name": "TOSSE",
         "display": {
           "prompt": {
-            "text": "Hass the child been coughing?"
+            "text": {
+              "english": "Has the child been coughing?",
+              "default": "Has the child been coughing?"
+            }
           }
         },
-        "_row_num": 33
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 34
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 35
+        "_row_num": 28
       },
       {
         "type": "select_multiple",
@@ -275,18 +265,21 @@
         "name": "TOSSEDIA",
         "display": {
           "prompt": {
-            "text": "On whinch day?"
+            "text": {
+              "english": "On whinch day?",
+              "default": "On which day?"
+            }
           }
         },
-        "_row_num": 36
+        "_row_num": 30
       },
       {
         "clause": "end screen",
-        "_row_num": 37
+        "_row_num": 32
       },
       {
         "clause": "begin screen",
-        "_row_num": 38
+        "_row_num": 33
       },
       {
         "type": "select_multiple",
@@ -294,18 +287,13 @@
         "name": "PERAPPL",
         "display": {
           "prompt": {
-            "text": "Has the child lost ist appetite?"
+            "text": {
+              "english": "Has the child lost ist appetite?",
+              "default": "Has the child lost its appetite?"
+            }
           }
         },
-        "_row_num": 39
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 40
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 41
+        "_row_num": 34
       },
       {
         "type": "select_multiple",
@@ -313,18 +301,21 @@
         "name": "PERAPPEDIA",
         "display": {
           "prompt": {
-            "text": "HasOn which day?"
+            "text": {
+              "english": "Has On which day?",
+              "default": "On which day?"
+            }
           }
         },
-        "_row_num": 42
+        "_row_num": 36
       },
       {
         "clause": "end screen",
-        "_row_num": 43
+        "_row_num": 38
       },
       {
         "clause": "begin screen",
-        "_row_num": 44
+        "_row_num": 39
       },
       {
         "type": "select_one",
@@ -332,18 +323,13 @@
         "name": "CHOROU",
         "display": {
           "prompt": {
-            "text": "Has the child cried more than habitual?"
+            "text": {
+              "english": "Has the child cried more than habitual?",
+              "default": "Has the child cried more than habitual?"
+            }
           }
         },
-        "_row_num": 45
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 46
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 47
+        "_row_num": 40
       },
       {
         "type": "select_multiple",
@@ -351,18 +337,21 @@
         "name": "CHOROUDIA",
         "display": {
           "prompt": {
-            "text": "On which day?"
+            "text": {
+              "english": "On which day?",
+              "default": "On which day?"
+            }
           }
         },
-        "_row_num": 48
+        "_row_num": 42
       },
       {
         "clause": "end screen",
-        "_row_num": 49
+        "_row_num": 44
       },
       {
         "clause": "begin screen",
-        "_row_num": 50
+        "_row_num": 45
       },
       {
         "type": "select_one",
@@ -370,18 +359,13 @@
         "name": "FEBRE",
         "display": {
           "prompt": {
-            "text": "Has the child had fever"
+            "text": {
+              "english": "Has the child had fever",
+              "default": "Has the child had fever"
+            }
           }
         },
-        "_row_num": 51
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 52
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 53
+        "_row_num": 46
       },
       {
         "type": "select_multiple",
@@ -389,14 +373,354 @@
         "name": "FEBREDIA",
         "display": {
           "prompt": {
-            "text": "On which day?"
+            "text": {
+              "english": "On which day?",
+              "default": "On which day?"
+            }
+          }
+        },
+        "_row_num": 48
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 50
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 51
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao/naosabe",
+        "name": "CONVULSAO",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Has the child had convulsions",
+              "default": "Has the child had convulsions"
+            }
+          }
+        },
+        "_row_num": 52
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "quantos",
+        "name": "CONVULSAODIA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "On whicg day?",
+              "default": "On which day?"
+            }
           }
         },
         "_row_num": 54
       },
       {
         "clause": "end screen",
-        "_row_num": 55
+        "_row_num": 56
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 57
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao/naosabe",
+        "name": "OUTROSIMP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Has the child had other symptoms?",
+              "default": "Has the child had other symptoms?"
+            }
+          }
+        },
+        "_row_num": 58
+      },
+      {
+        "type": "text",
+        "name": "SIMPQUAL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which symptoms",
+              "default": "Which symptoms"
+            }
+          }
+        },
+        "_row_num": 60
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "quantos",
+        "name": "OUTROSIMPDIA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "On which day?",
+              "default": "On which day?"
+            }
+          }
+        },
+        "_row_num": 61
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 63
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 64
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao/naosabe",
+        "name": "CONSULTA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Has the child been brought for consultation?",
+              "default": "Has the child been brought for consultation?"
+            }
+          }
+        },
+        "_row_num": 65
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "quantos",
+        "name": "CONSULTADIA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "On which day?",
+              "default": "On which day?"
+            }
+          }
+        },
+        "_row_num": 67
+      },
+      {
+        "type": "text",
+        "name": "CONSCAUSA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What was the cause of consultation?",
+              "default": "What was the cause of consultation?"
+            }
+          }
+        },
+        "_row_num": 68
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 70
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 71
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao/naosabe",
+        "name": "MEDICIN",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Has the child received medicine?",
+              "default": "Has the child received medicine?"
+            }
+          }
+        },
+        "_row_num": 72
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "quantos",
+        "name": "MEDICINDIA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "On which day?",
+              "default": "On which day?"
+            }
+          }
+        },
+        "_row_num": 74
+      },
+      {
+        "type": "text",
+        "name": "MEDQUAL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which medicine",
+              "default": "Which medicine"
+            }
+          }
+        },
+        "_row_num": 75
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 77
+      },
+      {
+        "clause": "end if",
+        "_row_num": 78
+      },
+      {
+        "clause": "if",
+        "condition": "data('ESTADOCRI') == '1'",
+        "_row_num": 79
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 80
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao",
+        "name": "REACAOVAC",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Does the child has a reaction at the injection site?(costa)",
+              "default": "Does the child has a reaction at the injection site?(costa)"
+            }
+          }
+        },
+        "_row_num": 81
+      },
+      {
+        "type": "integer",
+        "name": "REACAOALAR",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Width of reaction",
+              "default": "Width of reaction"
+            }
+          }
+        },
+        "_row_num": 83
+      },
+      {
+        "type": "integer",
+        "name": "REACAOALT",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Height of reaction",
+              "default": "Height of reaction"
+            }
+          }
+        },
+        "_row_num": 84
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 86
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 87
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao",
+        "name": "PELE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Does the child have a skin reaction?",
+              "default": "Does the child have a skin reaction?"
+            }
+          }
+        },
+        "_row_num": 88
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao",
+        "name": "CONJUNT",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Does the child have conjunctivitis?",
+              "default": "Does the child have conjunctivitis?"
+            }
+          }
+        },
+        "_row_num": 89
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 90
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 91
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao",
+        "name": "CONSTIP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Does the child have a cold?",
+              "default": "Does the child have a cold?"
+            }
+          }
+        },
+        "_row_num": 92
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/nao",
+        "name": "DIFFRESP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Does the child have difficulty breathing?",
+              "default": "Does the child have difficulty breathing?"
+            }
+          }
+        },
+        "_row_num": 93
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 94
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 95
+      },
+      {
+        "type": "decimal",
+        "name": "TEMPERATURA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Temperature",
+              "default": "Temperature"
+            }
+          }
+        },
+        "_row_num": 96
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 97
+      },
+      {
+        "clause": "end if",
+        "_row_num": 98
       }
     ],
     "choices": [
@@ -405,7 +729,10 @@
         "data_value": "1",
         "display": {
           "title": {
-            "text": "present"
+            "text": {
+              "english": "Present",
+              "default": "Presente"
+            }
           }
         },
         "_row_num": 2
@@ -415,7 +742,10 @@
         "data_value": "2",
         "display": {
           "title": {
-            "text": "absent"
+            "text": {
+              "english": "Absent",
+              "default": "Ausente"
+            }
           }
         },
         "_row_num": 3
@@ -425,7 +755,10 @@
         "data_value": "3",
         "display": {
           "title": {
-            "text": "travelling"
+            "text": {
+              "english": "Travelling",
+              "default": "Viagem"
+            }
           }
         },
         "_row_num": 4
@@ -435,7 +768,10 @@
         "data_value": "4",
         "display": {
           "title": {
-            "text": "moved"
+            "text": {
+              "english": "Moved",
+              "default": "Mudou"
+            }
           }
         },
         "_row_num": 5
@@ -445,7 +781,10 @@
         "data_value": "5",
         "display": {
           "title": {
-            "text": "died"
+            "text": {
+              "english": "Died",
+              "default": "Faleceu"
+            }
           }
         },
         "_row_num": 6
@@ -455,7 +794,10 @@
         "data_value": "1",
         "display": {
           "title": {
-            "text": "Mother"
+            "text": {
+              "english": "Mother",
+              "default": "Mãe"
+            }
           }
         },
         "_row_num": 7
@@ -465,7 +807,10 @@
         "data_value": "2",
         "display": {
           "title": {
-            "text": "Other caretaker"
+            "text": {
+              "english": "Other caretaker",
+              "default": "Tutor"
+            }
           }
         },
         "_row_num": 8
@@ -475,7 +820,10 @@
         "data_value": "3",
         "display": {
           "title": {
-            "text": "Other"
+            "text": {
+              "english": "Other",
+              "default": "Outro(a)"
+            }
           }
         },
         "_row_num": 9
@@ -485,7 +833,10 @@
         "data_value": "4",
         "display": {
           "title": {
-            "text": "No one to provide informati on"
+            "text": {
+              "english": "No one to provide information",
+              "default": "No one to provide information"
+            }
           }
         },
         "_row_num": 10
@@ -495,7 +846,10 @@
         "data_value": "1",
         "display": {
           "title": {
-            "text": "seen vaccination card"
+            "text": {
+              "english": "Seen vaccination card",
+              "default": "Cartão visto"
+            }
           }
         },
         "_row_num": 11
@@ -505,7 +859,10 @@
         "data_value": "2",
         "display": {
           "title": {
-            "text": "Not seen vaccination card"
+            "text": {
+              "english": "Not seen vaccination card",
+              "default": "Cartão não visto"
+            }
           }
         },
         "_row_num": 12
@@ -515,7 +872,10 @@
         "data_value": "3",
         "display": {
           "title": {
-            "text": "Do not have a vaccinton card"
+            "text": {
+              "english": "Do not have a vaccinton card",
+              "default": "Não tem cartão"
+            }
           }
         },
         "_row_num": 13
@@ -525,7 +885,10 @@
         "data_value": "1",
         "display": {
           "title": {
-            "text": "Yes"
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
           }
         },
         "_row_num": 14
@@ -535,7 +898,10 @@
         "data_value": "2",
         "display": {
           "title": {
-            "text": "No"
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
           }
         },
         "_row_num": 15
@@ -545,7 +911,10 @@
         "data_value": "3",
         "display": {
           "title": {
-            "text": "Don't know"
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
           }
         },
         "_row_num": 16
@@ -555,7 +924,10 @@
         "data_value": "1",
         "display": {
           "title": {
-            "text": "Day 1"
+            "text": {
+              "english": "Day 1",
+              "default": "Dia 1"
+            }
           }
         },
         "_row_num": 17
@@ -565,10 +937,39 @@
         "data_value": "2",
         "display": {
           "title": {
-            "text": "Day 2"
+            "text": {
+              "english": "Day 2",
+              "default": "Dia 2"
+            }
           }
         },
         "_row_num": 18
+      },
+      {
+        "choice_list_name": "sim/nao",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 19
+      },
+      {
+        "choice_list_name": "sim/nao",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 20
       }
     ],
     "prompt_types": [
@@ -709,7 +1110,10 @@
           "data_value": "1",
           "display": {
             "title": {
-              "text": "present"
+              "text": {
+                "english": "Present",
+                "default": "Presente"
+              }
             }
           },
           "_row_num": 2
@@ -719,7 +1123,10 @@
           "data_value": "2",
           "display": {
             "title": {
-              "text": "absent"
+              "text": {
+                "english": "Absent",
+                "default": "Ausente"
+              }
             }
           },
           "_row_num": 3
@@ -729,7 +1136,10 @@
           "data_value": "3",
           "display": {
             "title": {
-              "text": "travelling"
+              "text": {
+                "english": "Travelling",
+                "default": "Viagem"
+              }
             }
           },
           "_row_num": 4
@@ -739,7 +1149,10 @@
           "data_value": "4",
           "display": {
             "title": {
-              "text": "moved"
+              "text": {
+                "english": "Moved",
+                "default": "Mudou"
+              }
             }
           },
           "_row_num": 5
@@ -749,7 +1162,10 @@
           "data_value": "5",
           "display": {
             "title": {
-              "text": "died"
+              "text": {
+                "english": "Died",
+                "default": "Faleceu"
+              }
             }
           },
           "_row_num": 6
@@ -761,7 +1177,10 @@
           "data_value": "1",
           "display": {
             "title": {
-              "text": "Mother"
+              "text": {
+                "english": "Mother",
+                "default": "Mãe"
+              }
             }
           },
           "_row_num": 7
@@ -771,7 +1190,10 @@
           "data_value": "2",
           "display": {
             "title": {
-              "text": "Other caretaker"
+              "text": {
+                "english": "Other caretaker",
+                "default": "Tutor"
+              }
             }
           },
           "_row_num": 8
@@ -781,7 +1203,10 @@
           "data_value": "3",
           "display": {
             "title": {
-              "text": "Other"
+              "text": {
+                "english": "Other",
+                "default": "Outro(a)"
+              }
             }
           },
           "_row_num": 9
@@ -791,7 +1216,10 @@
           "data_value": "4",
           "display": {
             "title": {
-              "text": "No one to provide informati on"
+              "text": {
+                "english": "No one to provide information",
+                "default": "No one to provide information"
+              }
             }
           },
           "_row_num": 10
@@ -803,7 +1231,10 @@
           "data_value": "1",
           "display": {
             "title": {
-              "text": "seen vaccination card"
+              "text": {
+                "english": "Seen vaccination card",
+                "default": "Cartão visto"
+              }
             }
           },
           "_row_num": 11
@@ -813,7 +1244,10 @@
           "data_value": "2",
           "display": {
             "title": {
-              "text": "Not seen vaccination card"
+              "text": {
+                "english": "Not seen vaccination card",
+                "default": "Cartão não visto"
+              }
             }
           },
           "_row_num": 12
@@ -823,7 +1257,10 @@
           "data_value": "3",
           "display": {
             "title": {
-              "text": "Do not have a vaccinton card"
+              "text": {
+                "english": "Do not have a vaccinton card",
+                "default": "Não tem cartão"
+              }
             }
           },
           "_row_num": 13
@@ -835,7 +1272,10 @@
           "data_value": "1",
           "display": {
             "title": {
-              "text": "Yes"
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
             }
           },
           "_row_num": 14
@@ -845,7 +1285,10 @@
           "data_value": "2",
           "display": {
             "title": {
-              "text": "No"
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
             }
           },
           "_row_num": 15
@@ -855,7 +1298,10 @@
           "data_value": "3",
           "display": {
             "title": {
-              "text": "Don't know"
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
             }
           },
           "_row_num": 16
@@ -867,7 +1313,10 @@
           "data_value": "1",
           "display": {
             "title": {
-              "text": "Day 1"
+              "text": {
+                "english": "Day 1",
+                "default": "Dia 1"
+              }
             }
           },
           "_row_num": 17
@@ -877,10 +1326,41 @@
           "data_value": "2",
           "display": {
             "title": {
-              "text": "Day 2"
+              "text": {
+                "english": "Day 2",
+                "default": "Dia 2"
+              }
             }
           },
           "_row_num": 18
+        }
+      ],
+      "sim/nao": [
+        {
+          "choice_list_name": "sim/nao",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
+            }
+          },
+          "_row_num": 19
+        },
+        {
+          "choice_list_name": "sim/nao",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
+            }
+          },
+          "_row_num": 20
         }
       ]
     },
@@ -906,7 +1386,7 @@
       "ASSISTENTE": {
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 4,
             "section_name": "survey"
           }
         ],
@@ -916,7 +1396,7 @@
       "ESTADOCRI": {
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 7,
             "section_name": "survey"
           }
         ],
@@ -927,7 +1407,7 @@
       "INFORMADOR": {
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 8,
             "section_name": "survey"
           }
         ],
@@ -938,7 +1418,7 @@
       "VACCARD": {
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 11,
             "section_name": "survey"
           }
         ],
@@ -949,7 +1429,7 @@
       "DIARREIA": {
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 15,
             "section_name": "survey"
           }
         ],
@@ -960,7 +1440,7 @@
       "DIARREIANO": {
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 17,
             "section_name": "survey"
           }
         ],
@@ -970,7 +1450,7 @@
       "DIARREIDIA": {
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 18,
             "section_name": "survey"
           }
         ],
@@ -985,7 +1465,7 @@
       "VOMITO": {
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 22,
             "section_name": "survey"
           }
         ],
@@ -996,7 +1476,7 @@
       "VOMITODIA": {
         "_defn": [
           {
-            "_row_num": 30,
+            "_row_num": 24,
             "section_name": "survey"
           }
         ],
@@ -1011,7 +1491,7 @@
       "TOSSE": {
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 28,
             "section_name": "survey"
           }
         ],
@@ -1022,7 +1502,7 @@
       "TOSSEDIA": {
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 30,
             "section_name": "survey"
           }
         ],
@@ -1037,7 +1517,7 @@
       "PERAPPL": {
         "_defn": [
           {
-            "_row_num": 39,
+            "_row_num": 34,
             "section_name": "survey"
           }
         ],
@@ -1052,7 +1532,7 @@
       "PERAPPEDIA": {
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 36,
             "section_name": "survey"
           }
         ],
@@ -1067,7 +1547,7 @@
       "CHOROU": {
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 40,
             "section_name": "survey"
           }
         ],
@@ -1078,7 +1558,7 @@
       "CHOROUDIA": {
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 42,
             "section_name": "survey"
           }
         ],
@@ -1093,7 +1573,7 @@
       "FEBRE": {
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 46,
             "section_name": "survey"
           }
         ],
@@ -1104,7 +1584,7 @@
       "FEBREDIA": {
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 48,
             "section_name": "survey"
           }
         ],
@@ -1115,6 +1595,225 @@
         },
         "valuesList": "quantos",
         "elementKey": "FEBREDIA"
+      },
+      "CONVULSAO": {
+        "_defn": [
+          {
+            "_row_num": 52,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao/naosabe",
+        "elementKey": "CONVULSAO"
+      },
+      "CONVULSAODIA": {
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "CONVULSAODIA_items"
+        },
+        "valuesList": "quantos",
+        "elementKey": "CONVULSAODIA"
+      },
+      "OUTROSIMP": {
+        "_defn": [
+          {
+            "_row_num": 58,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao/naosabe",
+        "elementKey": "OUTROSIMP"
+      },
+      "SIMPQUAL": {
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "SIMPQUAL"
+      },
+      "OUTROSIMPDIA": {
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OUTROSIMPDIA_items"
+        },
+        "valuesList": "quantos",
+        "elementKey": "OUTROSIMPDIA"
+      },
+      "CONSULTA": {
+        "_defn": [
+          {
+            "_row_num": 65,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao/naosabe",
+        "elementKey": "CONSULTA"
+      },
+      "CONSULTADIA": {
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "CONSULTADIA_items"
+        },
+        "valuesList": "quantos",
+        "elementKey": "CONSULTADIA"
+      },
+      "CONSCAUSA": {
+        "_defn": [
+          {
+            "_row_num": 68,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "CONSCAUSA"
+      },
+      "MEDICIN": {
+        "_defn": [
+          {
+            "_row_num": 72,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao/naosabe",
+        "elementKey": "MEDICIN"
+      },
+      "MEDICINDIA": {
+        "_defn": [
+          {
+            "_row_num": 74,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "MEDICINDIA_items"
+        },
+        "valuesList": "quantos",
+        "elementKey": "MEDICINDIA"
+      },
+      "MEDQUAL": {
+        "_defn": [
+          {
+            "_row_num": 75,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "MEDQUAL"
+      },
+      "REACAOVAC": {
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "REACAOVAC"
+      },
+      "REACAOALAR": {
+        "_defn": [
+          {
+            "_row_num": 83,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "REACAOALAR"
+      },
+      "REACAOALT": {
+        "_defn": [
+          {
+            "_row_num": 84,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "REACAOALT"
+      },
+      "PELE": {
+        "_defn": [
+          {
+            "_row_num": 88,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "PELE"
+      },
+      "CONJUNT": {
+        "_defn": [
+          {
+            "_row_num": 89,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "CONJUNT"
+      },
+      "CONSTIP": {
+        "_defn": [
+          {
+            "_row_num": 92,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "CONSTIP"
+      },
+      "DIFFRESP": {
+        "_defn": [
+          {
+            "_row_num": 93,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "DIFFRESP"
+      },
+      "TEMPERATURA": {
+        "_defn": [
+          {
+            "_row_num": 96,
+            "section_name": "survey"
+          }
+        ],
+        "type": "number",
+        "elementKey": "TEMPERATURA"
       }
     },
     "section_names": [
@@ -1132,7 +1831,10 @@
             "name": "DATSEGUI",
             "display": {
               "prompt": {
-                "text": "Date of visit"
+                "text": {
+                  "english": "Date of visit",
+                  "default": "Date of visit"
+                }
               }
             },
             "_row_num": 3,
@@ -1147,14 +1849,17 @@
             "name": "ASSISTENTE",
             "display": {
               "prompt": {
-                "text": "Assistant"
+                "text": {
+                  "english": "Assistant",
+                  "default": "Assistant"
+                }
               }
             },
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 4,
+            "__rowNum__": 3,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen5",
+            "_branch_label_enclosing_screen": "survey/_screen2",
             "promptIdx": 1
           },
           {
@@ -1163,14 +1868,17 @@
             "name": "ESTADOCRI",
             "display": {
               "prompt": {
-                "text": "Is the child present"
+                "text": {
+                  "english": "Is the child present",
+                  "default": "Is the child present"
+                }
               }
             },
-            "_row_num": 9,
-            "__rowNum__": 8,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen8",
+            "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 2
           },
           {
@@ -1179,30 +1887,36 @@
             "name": "INFORMADOR",
             "display": {
               "prompt": {
-                "text": "Informant"
+                "text": {
+                  "english": "Informant",
+                  "default": "Informant"
+                }
               }
             },
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "_row_num": 8,
+            "__rowNum__": 7,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen11",
+            "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 3
           },
           {
-            "type": "select_one_dropdown",
+            "type": "select_one",
             "values_list": "cart",
             "name": "VACCARD",
             "display": {
               "prompt": {
-                "text": "Vaccination card"
+                "text": {
+                  "english": "Vaccination card",
+                  "default": "Vaccination card"
+                }
               }
             },
-            "_row_num": 15,
-            "__rowNum__": 14,
+            "_row_num": 11,
+            "__rowNum__": 10,
             "_token_type": "prompt",
-            "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "survey/_screen14",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen10",
             "promptIdx": 4
           },
           {
@@ -1211,14 +1925,17 @@
             "name": "DIARREIA",
             "display": {
               "prompt": {
-                "text": "Has the chil had diarrhoea?"
+                "text": {
+                  "english": "Has the chil had diarrhoea?",
+                  "default": "Has the child had diarrhoea?"
+                }
               }
             },
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen17",
+            "_branch_label_enclosing_screen": "survey/_screen14",
             "promptIdx": 5
           },
           {
@@ -1226,14 +1943,17 @@
             "name": "DIARREIANO",
             "display": {
               "prompt": {
-                "text": "How many defecations within 24 hours?"
+                "text": {
+                  "english": "How many defecations within 24 hours?",
+                  "default": "How many defecations within 24 hours?"
+                }
               }
             },
-            "_row_num": 21,
-            "__rowNum__": 20,
+            "_row_num": 17,
+            "__rowNum__": 16,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen20",
+            "_branch_label_enclosing_screen": "survey/_screen14",
             "promptIdx": 6
           },
           {
@@ -1242,14 +1962,17 @@
             "name": "DIARREIDIA",
             "display": {
               "prompt": {
-                "text": "On which day?"
+                "text": {
+                  "english": "On which day?",
+                  "default": "On which day?"
+                }
               }
             },
-            "_row_num": 24,
-            "__rowNum__": 23,
+            "_row_num": 18,
+            "__rowNum__": 17,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen23",
+            "_branch_label_enclosing_screen": "survey/_screen14",
             "promptIdx": 7
           },
           {
@@ -1258,14 +1981,17 @@
             "name": "VOMITO",
             "display": {
               "prompt": {
-                "text": "Has the child been vomiting?"
+                "text": {
+                  "english": "Has the child been vomiting?",
+                  "default": "Has the child been vomiting?"
+                }
               }
             },
-            "_row_num": 27,
-            "__rowNum__": 26,
+            "_row_num": 22,
+            "__rowNum__": 21,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen26",
+            "_branch_label_enclosing_screen": "survey/_screen21",
             "promptIdx": 8
           },
           {
@@ -1274,14 +2000,17 @@
             "name": "VOMITODIA",
             "display": {
               "prompt": {
-                "text": "On which day?"
+                "text": {
+                  "english": "On which day?",
+                  "default": "On which day?"
+                }
               }
             },
-            "_row_num": 30,
-            "__rowNum__": 29,
+            "_row_num": 24,
+            "__rowNum__": 23,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen29",
+            "_branch_label_enclosing_screen": "survey/_screen21",
             "promptIdx": 9
           },
           {
@@ -1290,14 +2019,17 @@
             "name": "TOSSE",
             "display": {
               "prompt": {
-                "text": "Hass the child been coughing?"
+                "text": {
+                  "english": "Has the child been coughing?",
+                  "default": "Has the child been coughing?"
+                }
               }
             },
-            "_row_num": 33,
-            "__rowNum__": 32,
+            "_row_num": 28,
+            "__rowNum__": 27,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen32",
+            "_branch_label_enclosing_screen": "survey/_screen27",
             "promptIdx": 10
           },
           {
@@ -1306,14 +2038,17 @@
             "name": "TOSSEDIA",
             "display": {
               "prompt": {
-                "text": "On whinch day?"
+                "text": {
+                  "english": "On whinch day?",
+                  "default": "On which day?"
+                }
               }
             },
-            "_row_num": 36,
-            "__rowNum__": 35,
+            "_row_num": 30,
+            "__rowNum__": 29,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen35",
+            "_branch_label_enclosing_screen": "survey/_screen27",
             "promptIdx": 11
           },
           {
@@ -1322,14 +2057,17 @@
             "name": "PERAPPL",
             "display": {
               "prompt": {
-                "text": "Has the child lost ist appetite?"
+                "text": {
+                  "english": "Has the child lost ist appetite?",
+                  "default": "Has the child lost its appetite?"
+                }
               }
             },
-            "_row_num": 39,
-            "__rowNum__": 38,
+            "_row_num": 34,
+            "__rowNum__": 33,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen38",
+            "_branch_label_enclosing_screen": "survey/_screen33",
             "promptIdx": 12
           },
           {
@@ -1338,14 +2076,17 @@
             "name": "PERAPPEDIA",
             "display": {
               "prompt": {
-                "text": "HasOn which day?"
+                "text": {
+                  "english": "Has On which day?",
+                  "default": "On which day?"
+                }
               }
             },
-            "_row_num": 42,
-            "__rowNum__": 41,
+            "_row_num": 36,
+            "__rowNum__": 35,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen41",
+            "_branch_label_enclosing_screen": "survey/_screen33",
             "promptIdx": 13
           },
           {
@@ -1354,14 +2095,17 @@
             "name": "CHOROU",
             "display": {
               "prompt": {
-                "text": "Has the child cried more than habitual?"
+                "text": {
+                  "english": "Has the child cried more than habitual?",
+                  "default": "Has the child cried more than habitual?"
+                }
               }
             },
-            "_row_num": 45,
-            "__rowNum__": 44,
+            "_row_num": 40,
+            "__rowNum__": 39,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen44",
+            "_branch_label_enclosing_screen": "survey/_screen39",
             "promptIdx": 14
           },
           {
@@ -1370,14 +2114,17 @@
             "name": "CHOROUDIA",
             "display": {
               "prompt": {
-                "text": "On which day?"
+                "text": {
+                  "english": "On which day?",
+                  "default": "On which day?"
+                }
               }
             },
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 42,
+            "__rowNum__": 41,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen47",
+            "_branch_label_enclosing_screen": "survey/_screen39",
             "promptIdx": 15
           },
           {
@@ -1386,14 +2133,17 @@
             "name": "FEBRE",
             "display": {
               "prompt": {
-                "text": "Has the child had fever"
+                "text": {
+                  "english": "Has the child had fever",
+                  "default": "Has the child had fever"
+                }
               }
             },
-            "_row_num": 51,
-            "__rowNum__": 50,
+            "_row_num": 46,
+            "__rowNum__": 45,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen50",
+            "_branch_label_enclosing_screen": "survey/_screen45",
             "promptIdx": 16
           },
           {
@@ -1402,23 +2152,381 @@
             "name": "FEBREDIA",
             "display": {
               "prompt": {
-                "text": "On which day?"
+                "text": {
+                  "english": "On which day?",
+                  "default": "On which day?"
+                }
+              }
+            },
+            "_row_num": 48,
+            "__rowNum__": 47,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen45",
+            "promptIdx": 17
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao/naosabe",
+            "name": "CONVULSAO",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Has the child had convulsions",
+                  "default": "Has the child had convulsions"
+                }
+              }
+            },
+            "_row_num": 52,
+            "__rowNum__": 51,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen51",
+            "promptIdx": 18
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "quantos",
+            "name": "CONVULSAODIA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "On whicg day?",
+                  "default": "On which day?"
+                }
               }
             },
             "_row_num": 54,
             "__rowNum__": 53,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 17
+            "_branch_label_enclosing_screen": "survey/_screen51",
+            "promptIdx": 19
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao/naosabe",
+            "name": "OUTROSIMP",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Has the child had other symptoms?",
+                  "default": "Has the child had other symptoms?"
+                }
+              }
+            },
+            "_row_num": 58,
+            "__rowNum__": 57,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 20
+          },
+          {
+            "type": "text",
+            "name": "SIMPQUAL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which symptoms",
+                  "default": "Which symptoms"
+                }
+              }
+            },
+            "_row_num": 60,
+            "__rowNum__": 59,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 21
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "quantos",
+            "name": "OUTROSIMPDIA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "On which day?",
+                  "default": "On which day?"
+                }
+              }
+            },
+            "_row_num": 61,
+            "__rowNum__": 60,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 22
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao/naosabe",
+            "name": "CONSULTA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Has the child been brought for consultation?",
+                  "default": "Has the child been brought for consultation?"
+                }
+              }
+            },
+            "_row_num": 65,
+            "__rowNum__": 64,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen64",
+            "promptIdx": 23
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "quantos",
+            "name": "CONSULTADIA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "On which day?",
+                  "default": "On which day?"
+                }
+              }
+            },
+            "_row_num": 67,
+            "__rowNum__": 66,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen64",
+            "promptIdx": 24
+          },
+          {
+            "type": "text",
+            "name": "CONSCAUSA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What was the cause of consultation?",
+                  "default": "What was the cause of consultation?"
+                }
+              }
+            },
+            "_row_num": 68,
+            "__rowNum__": 67,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen64",
+            "promptIdx": 25
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao/naosabe",
+            "name": "MEDICIN",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Has the child received medicine?",
+                  "default": "Has the child received medicine?"
+                }
+              }
+            },
+            "_row_num": 72,
+            "__rowNum__": 71,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 26
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "quantos",
+            "name": "MEDICINDIA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "On which day?",
+                  "default": "On which day?"
+                }
+              }
+            },
+            "_row_num": 74,
+            "__rowNum__": 73,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 27
+          },
+          {
+            "type": "text",
+            "name": "MEDQUAL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which medicine",
+                  "default": "Which medicine"
+                }
+              }
+            },
+            "_row_num": 75,
+            "__rowNum__": 74,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 28
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao",
+            "name": "REACAOVAC",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Does the child has a reaction at the injection site?(costa)",
+                  "default": "Does the child has a reaction at the injection site?(costa)"
+                }
+              }
+            },
+            "_row_num": 81,
+            "__rowNum__": 80,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 29
+          },
+          {
+            "type": "integer",
+            "name": "REACAOALAR",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Width of reaction",
+                  "default": "Width of reaction"
+                }
+              }
+            },
+            "_row_num": 83,
+            "__rowNum__": 82,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 30
+          },
+          {
+            "type": "integer",
+            "name": "REACAOALT",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Height of reaction",
+                  "default": "Height of reaction"
+                }
+              }
+            },
+            "_row_num": 84,
+            "__rowNum__": 83,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 31
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao",
+            "name": "PELE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Does the child have a skin reaction?",
+                  "default": "Does the child have a skin reaction?"
+                }
+              }
+            },
+            "_row_num": 88,
+            "__rowNum__": 87,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 32
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao",
+            "name": "CONJUNT",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Does the child have conjunctivitis?",
+                  "default": "Does the child have conjunctivitis?"
+                }
+              }
+            },
+            "_row_num": 89,
+            "__rowNum__": 88,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 33
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao",
+            "name": "CONSTIP",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Does the child have a cold?",
+                  "default": "Does the child have a cold?"
+                }
+              }
+            },
+            "_row_num": 92,
+            "__rowNum__": 91,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 34
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/nao",
+            "name": "DIFFRESP",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Does the child have difficulty breathing?",
+                  "default": "Does the child have difficulty breathing?"
+                }
+              }
+            },
+            "_row_num": 93,
+            "__rowNum__": 92,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 35
+          },
+          {
+            "type": "decimal",
+            "name": "TEMPERATURA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Temperature",
+                  "default": "Temperature"
+                }
+              }
+            },
+            "_row_num": 96,
+            "__rowNum__": 95,
+            "_token_type": "prompt",
+            "_type": "decimal",
+            "_branch_label_enclosing_screen": "survey/_screen95",
+            "promptIdx": 36
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 56,
-            "_branch_label_enclosing_screen": "survey/_screen56",
-            "promptIdx": 18
+            "_row_num": 99,
+            "_branch_label_enclosing_screen": "survey/_screen99",
+            "promptIdx": 37
           }
         ],
         "validation_tag_map": {
@@ -1432,54 +2540,56 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 4,
-              "__rowNum__": 3,
+              "_row_num": 5,
+              "__rowNum__": 4,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
             "clause": "begin screen",
-            "_row_num": 5,
-            "__rowNum__": 4,
+            "_row_num": 6,
+            "__rowNum__": 5,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 7,
-              "__rowNum__": 6,
+              "_row_num": 9,
+              "__rowNum__": 8,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
             "clause": "begin screen",
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 10,
+            "__rowNum__": 9,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 10,
-              "__rowNum__": 9,
+              "_row_num": 12,
+              "__rowNum__": 11,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 2
           },
           {
-            "clause": "begin screen",
-            "_row_num": 11,
-            "__rowNum__": 10,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 13,
-              "__rowNum__": 12,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "if",
+            "condition": "data('INFORMADOR') != '4'",
+            "_row_num": 13,
+            "__rowNum__": 12,
+            "_token_type": "goto_label",
+            "_branch_label": "_then13",
             "operationIdx": 3
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else78",
+            "_row_num": 78,
+            "operationIdx": 4
           },
           {
             "clause": "begin screen",
@@ -1488,238 +2598,273 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 16,
-              "__rowNum__": 15,
+              "_row_num": 20,
+              "__rowNum__": 19,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 4
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 17,
-            "__rowNum__": 16,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 19,
-              "__rowNum__": 18,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
           },
           {
             "clause": "begin screen",
-            "_row_num": 20,
-            "__rowNum__": 19,
+            "_row_num": 21,
+            "__rowNum__": 20,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 22,
-              "__rowNum__": 21,
+              "_row_num": 26,
+              "__rowNum__": 25,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 6
           },
           {
             "clause": "begin screen",
-            "_row_num": 23,
-            "__rowNum__": 22,
+            "_row_num": 27,
+            "__rowNum__": 26,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 25,
-              "__rowNum__": 24,
+              "_row_num": 32,
+              "__rowNum__": 31,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
             "clause": "begin screen",
-            "_row_num": 26,
-            "__rowNum__": 25,
+            "_row_num": 33,
+            "__rowNum__": 32,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 28,
-              "__rowNum__": 27,
+              "_row_num": 38,
+              "__rowNum__": 37,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 8
           },
           {
             "clause": "begin screen",
-            "_row_num": 29,
-            "__rowNum__": 28,
+            "_row_num": 39,
+            "__rowNum__": 38,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 31,
-              "__rowNum__": 30,
+              "_row_num": 44,
+              "__rowNum__": 43,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 9
           },
           {
             "clause": "begin screen",
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "_row_num": 45,
+            "__rowNum__": 44,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 34,
-              "__rowNum__": 33,
+              "_row_num": 50,
+              "__rowNum__": 49,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 10
           },
           {
             "clause": "begin screen",
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 51,
+            "__rowNum__": 50,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 37,
-              "__rowNum__": 36,
+              "_row_num": 56,
+              "__rowNum__": 55,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 11
           },
           {
             "clause": "begin screen",
-            "_row_num": 38,
-            "__rowNum__": 37,
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 40,
-              "__rowNum__": 39,
+              "_row_num": 63,
+              "__rowNum__": 62,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 12
           },
           {
             "clause": "begin screen",
-            "_row_num": 41,
-            "__rowNum__": 40,
+            "_row_num": 64,
+            "__rowNum__": 63,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 43,
-              "__rowNum__": 42,
+              "_row_num": 70,
+              "__rowNum__": 69,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 13
           },
           {
             "clause": "begin screen",
-            "_row_num": 44,
-            "__rowNum__": 43,
+            "_row_num": 71,
+            "__rowNum__": 70,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 46,
-              "__rowNum__": 45,
+              "_row_num": 77,
+              "__rowNum__": 76,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
-            "clause": "begin screen",
-            "_row_num": 47,
-            "__rowNum__": 46,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 49,
-              "__rowNum__": 48,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif78",
+            "_row_num": 78,
             "operationIdx": 15
           },
           {
-            "clause": "begin screen",
-            "_row_num": 50,
-            "__rowNum__": 49,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 52,
-              "__rowNum__": 51,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "if",
+            "condition": "data('ESTADOCRI') == '1'",
+            "_row_num": 79,
+            "__rowNum__": 78,
+            "_token_type": "goto_label",
+            "_branch_label": "_then79",
             "operationIdx": 16
           },
           {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else98",
+            "_row_num": 98,
+            "operationIdx": 17
+          },
+          {
             "clause": "begin screen",
-            "_row_num": 53,
-            "__rowNum__": 52,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 55,
-              "__rowNum__": 54,
+              "_row_num": 86,
+              "__rowNum__": 85,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(17);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 17
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 18
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 87,
+            "__rowNum__": 86,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 90,
+              "__rowNum__": 89,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 91,
+            "__rowNum__": 90,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 94,
+              "__rowNum__": 93,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 20
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 95,
+            "__rowNum__": 94,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 97,
+              "__rowNum__": 96,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 21
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif98",
+            "_row_num": 98,
+            "operationIdx": 22
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 56,
-            "operationIdx": 18
+            "_row_num": 99,
+            "operationIdx": 23
           },
           {
-            "_row_num": 56,
+            "_row_num": 99,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 19
+            "operationIdx": 24
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 56,
-            "operationIdx": 20
+            "_row_num": 99,
+            "operationIdx": 25
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_screen5": 1,
-          "_screen8": 2,
-          "_screen11": 3,
-          "_screen14": 4,
-          "_screen17": 5,
-          "_screen20": 6,
-          "_screen23": 7,
-          "_screen26": 8,
-          "_screen29": 9,
-          "_screen32": 10,
-          "_screen35": 11,
-          "_screen38": 12,
-          "_screen41": 13,
-          "_screen44": 14,
-          "_screen47": 15,
-          "_screen50": 16,
-          "_screen53": 17,
-          "_contents": 19,
-          "_screen56": 19
+          "_screen6": 1,
+          "_screen10": 2,
+          "_then13": 5,
+          "_screen14": 5,
+          "_screen21": 6,
+          "_screen27": 7,
+          "_screen33": 8,
+          "_screen39": 9,
+          "_screen45": 10,
+          "_screen51": 11,
+          "_screen57": 12,
+          "_screen64": 13,
+          "_screen71": 14,
+          "_else78": 16,
+          "_endif78": 16,
+          "_then79": 18,
+          "_screen80": 18,
+          "_screen87": 19,
+          "_screen91": 20,
+          "_screen95": 21,
+          "_else98": 23,
+          "_endif98": 23,
+          "_contents": 24,
+          "_screen99": 24
         }
       },
       "initial": {
@@ -1923,7 +3068,7 @@
       "ASSISTENTE": {
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 4,
             "section_name": "survey"
           }
         ],
@@ -1936,7 +3081,7 @@
       "ESTADOCRI": {
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 7,
             "section_name": "survey"
           }
         ],
@@ -1950,7 +3095,7 @@
       "INFORMADOR": {
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 8,
             "section_name": "survey"
           }
         ],
@@ -1964,7 +3109,7 @@
       "VACCARD": {
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 11,
             "section_name": "survey"
           }
         ],
@@ -1978,7 +3123,7 @@
       "DIARREIA": {
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 15,
             "section_name": "survey"
           }
         ],
@@ -1992,7 +3137,7 @@
       "DIARREIANO": {
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 17,
             "section_name": "survey"
           }
         ],
@@ -2005,7 +3150,7 @@
       "DIARREIDIA": {
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 18,
             "section_name": "survey"
           }
         ],
@@ -2030,7 +3175,7 @@
       "VOMITO": {
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 22,
             "section_name": "survey"
           }
         ],
@@ -2044,7 +3189,7 @@
       "VOMITODIA": {
         "_defn": [
           {
-            "_row_num": 30,
+            "_row_num": 24,
             "section_name": "survey"
           }
         ],
@@ -2069,7 +3214,7 @@
       "TOSSE": {
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 28,
             "section_name": "survey"
           }
         ],
@@ -2083,7 +3228,7 @@
       "TOSSEDIA": {
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 30,
             "section_name": "survey"
           }
         ],
@@ -2108,7 +3253,7 @@
       "PERAPPL": {
         "_defn": [
           {
-            "_row_num": 39,
+            "_row_num": 34,
             "section_name": "survey"
           }
         ],
@@ -2133,7 +3278,7 @@
       "PERAPPEDIA": {
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 36,
             "section_name": "survey"
           }
         ],
@@ -2158,7 +3303,7 @@
       "CHOROU": {
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 40,
             "section_name": "survey"
           }
         ],
@@ -2172,7 +3317,7 @@
       "CHOROUDIA": {
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 42,
             "section_name": "survey"
           }
         ],
@@ -2197,7 +3342,7 @@
       "FEBRE": {
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 46,
             "section_name": "survey"
           }
         ],
@@ -2211,7 +3356,7 @@
       "FEBREDIA": {
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 48,
             "section_name": "survey"
           }
         ],
@@ -2232,6 +3377,310 @@
         "listChildElementKeys": [
           "FEBREDIA_items"
         ]
+      },
+      "CONVULSAO": {
+        "_defn": [
+          {
+            "_row_num": 52,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao/naosabe",
+        "elementKey": "CONVULSAO",
+        "elementName": "CONVULSAO",
+        "elementSet": "data",
+        "elementPath": "CONVULSAO"
+      },
+      "CONVULSAODIA": {
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "CONVULSAODIA_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "CONVULSAODIA.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "quantos",
+        "elementKey": "CONVULSAODIA",
+        "elementName": "CONVULSAODIA",
+        "elementSet": "data",
+        "elementPath": "CONVULSAODIA",
+        "listChildElementKeys": [
+          "CONVULSAODIA_items"
+        ]
+      },
+      "OUTROSIMP": {
+        "_defn": [
+          {
+            "_row_num": 58,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao/naosabe",
+        "elementKey": "OUTROSIMP",
+        "elementName": "OUTROSIMP",
+        "elementSet": "data",
+        "elementPath": "OUTROSIMP"
+      },
+      "SIMPQUAL": {
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "SIMPQUAL",
+        "elementName": "SIMPQUAL",
+        "elementSet": "data",
+        "elementPath": "SIMPQUAL"
+      },
+      "OUTROSIMPDIA": {
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OUTROSIMPDIA_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "OUTROSIMPDIA.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "quantos",
+        "elementKey": "OUTROSIMPDIA",
+        "elementName": "OUTROSIMPDIA",
+        "elementSet": "data",
+        "elementPath": "OUTROSIMPDIA",
+        "listChildElementKeys": [
+          "OUTROSIMPDIA_items"
+        ]
+      },
+      "CONSULTA": {
+        "_defn": [
+          {
+            "_row_num": 65,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao/naosabe",
+        "elementKey": "CONSULTA",
+        "elementName": "CONSULTA",
+        "elementSet": "data",
+        "elementPath": "CONSULTA"
+      },
+      "CONSULTADIA": {
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "CONSULTADIA_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "CONSULTADIA.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "quantos",
+        "elementKey": "CONSULTADIA",
+        "elementName": "CONSULTADIA",
+        "elementSet": "data",
+        "elementPath": "CONSULTADIA",
+        "listChildElementKeys": [
+          "CONSULTADIA_items"
+        ]
+      },
+      "CONSCAUSA": {
+        "_defn": [
+          {
+            "_row_num": 68,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "CONSCAUSA",
+        "elementName": "CONSCAUSA",
+        "elementSet": "data",
+        "elementPath": "CONSCAUSA"
+      },
+      "MEDICIN": {
+        "_defn": [
+          {
+            "_row_num": 72,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao/naosabe",
+        "elementKey": "MEDICIN",
+        "elementName": "MEDICIN",
+        "elementSet": "data",
+        "elementPath": "MEDICIN"
+      },
+      "MEDICINDIA": {
+        "_defn": [
+          {
+            "_row_num": 74,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "MEDICINDIA_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "MEDICINDIA.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "quantos",
+        "elementKey": "MEDICINDIA",
+        "elementName": "MEDICINDIA",
+        "elementSet": "data",
+        "elementPath": "MEDICINDIA",
+        "listChildElementKeys": [
+          "MEDICINDIA_items"
+        ]
+      },
+      "MEDQUAL": {
+        "_defn": [
+          {
+            "_row_num": 75,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "MEDQUAL",
+        "elementName": "MEDQUAL",
+        "elementSet": "data",
+        "elementPath": "MEDQUAL"
+      },
+      "REACAOVAC": {
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "REACAOVAC",
+        "elementName": "REACAOVAC",
+        "elementSet": "data",
+        "elementPath": "REACAOVAC"
+      },
+      "REACAOALAR": {
+        "_defn": [
+          {
+            "_row_num": 83,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "REACAOALAR",
+        "elementName": "REACAOALAR",
+        "elementSet": "data",
+        "elementPath": "REACAOALAR"
+      },
+      "REACAOALT": {
+        "_defn": [
+          {
+            "_row_num": 84,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "REACAOALT",
+        "elementName": "REACAOALT",
+        "elementSet": "data",
+        "elementPath": "REACAOALT"
+      },
+      "PELE": {
+        "_defn": [
+          {
+            "_row_num": 88,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "PELE",
+        "elementName": "PELE",
+        "elementSet": "data",
+        "elementPath": "PELE"
+      },
+      "CONJUNT": {
+        "_defn": [
+          {
+            "_row_num": 89,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "CONJUNT",
+        "elementName": "CONJUNT",
+        "elementSet": "data",
+        "elementPath": "CONJUNT"
+      },
+      "CONSTIP": {
+        "_defn": [
+          {
+            "_row_num": 92,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "CONSTIP",
+        "elementName": "CONSTIP",
+        "elementSet": "data",
+        "elementPath": "CONSTIP"
+      },
+      "DIFFRESP": {
+        "_defn": [
+          {
+            "_row_num": 93,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/nao",
+        "elementKey": "DIFFRESP",
+        "elementName": "DIFFRESP",
+        "elementSet": "data",
+        "elementPath": "DIFFRESP"
+      },
+      "TEMPERATURA": {
+        "_defn": [
+          {
+            "_row_num": 96,
+            "section_name": "survey"
+          }
+        ],
+        "type": "number",
+        "elementKey": "TEMPERATURA",
+        "elementName": "TEMPERATURA",
+        "elementSet": "data",
+        "elementPath": "TEMPERATURA"
       },
       "DIARREIDIA_items": {
         "type": "string",
@@ -2287,6 +3736,38 @@
         "elementName": "items",
         "elementSet": "data",
         "elementPath": "FEBREDIA.items",
+        "notUnitOfRetention": true
+      },
+      "CONVULSAODIA_items": {
+        "type": "string",
+        "elementKey": "CONVULSAODIA_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "CONVULSAODIA.items",
+        "notUnitOfRetention": true
+      },
+      "OUTROSIMPDIA_items": {
+        "type": "string",
+        "elementKey": "OUTROSIMPDIA_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "OUTROSIMPDIA.items",
+        "notUnitOfRetention": true
+      },
+      "CONSULTADIA_items": {
+        "type": "string",
+        "elementKey": "CONSULTADIA_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "CONSULTADIA.items",
+        "notUnitOfRetention": true
+      },
+      "MEDICINDIA_items": {
+        "type": "string",
+        "elementKey": "MEDICINDIA_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "MEDICINDIA.items",
         "notUnitOfRetention": true
       },
       "_id": {
@@ -2408,105 +3889,196 @@
         "_aspect": "CHOROU",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Yes\"}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"No\"}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Don't know\"}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHOROUDIA",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Day 1\"}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Day 2\"}},\"_row_num\":18}]"
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CONJUNT",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":19},{\"choice_list_name\":\"sim/nao\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":20}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CONSTIP",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":19},{\"choice_list_name\":\"sim/nao\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":20}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CONSULTA",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CONSULTADIA",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CONVULSAO",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CONVULSAODIA",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
       },
       {
         "_partition": "Column",
         "_aspect": "DIARREIA",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Yes\"}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"No\"}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Don't know\"}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
       },
       {
         "_partition": "Column",
         "_aspect": "DIARREIDIA",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Day 1\"}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Day 2\"}},\"_row_num\":18}]"
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "DIFFRESP",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":19},{\"choice_list_name\":\"sim/nao\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":20}]"
       },
       {
         "_partition": "Column",
         "_aspect": "ESTADOCRI",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"estado\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"present\"}},\"_row_num\":2},{\"choice_list_name\":\"estado\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"absent\"}},\"_row_num\":3},{\"choice_list_name\":\"estado\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"travelling\"}},\"_row_num\":4},{\"choice_list_name\":\"estado\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":\"moved\"}},\"_row_num\":5},{\"choice_list_name\":\"estado\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":\"died\"}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"estado\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Present\",\"default\":\"Presente\"}}},\"_row_num\":2},{\"choice_list_name\":\"estado\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Absent\",\"default\":\"Ausente\"}}},\"_row_num\":3},{\"choice_list_name\":\"estado\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Travelling\",\"default\":\"Viagem\"}}},\"_row_num\":4},{\"choice_list_name\":\"estado\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Moved\",\"default\":\"Mudou\"}}},\"_row_num\":5},{\"choice_list_name\":\"estado\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Died\",\"default\":\"Faleceu\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "FEBRE",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Yes\"}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"No\"}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Don't know\"}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
       },
       {
         "_partition": "Column",
         "_aspect": "FEBREDIA",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Day 1\"}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Day 2\"}},\"_row_num\":18}]"
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
       },
       {
         "_partition": "Column",
         "_aspect": "INFORMADOR",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"tipo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Mother\"}},\"_row_num\":7},{\"choice_list_name\":\"tipo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Other caretaker\"}},\"_row_num\":8},{\"choice_list_name\":\"tipo\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Other\"}},\"_row_num\":9},{\"choice_list_name\":\"tipo\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":\"No one to provide informati on\"}},\"_row_num\":10}]"
+        "_value": "[{\"choice_list_name\":\"tipo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":7},{\"choice_list_name\":\"tipo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Other caretaker\",\"default\":\"Tutor\"}}},\"_row_num\":8},{\"choice_list_name\":\"tipo\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro(a)\"}}},\"_row_num\":9},{\"choice_list_name\":\"tipo\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"No one to provide information\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "MEDICIN",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "MEDICINDIA",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OUTROSIMP",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OUTROSIMPDIA",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PELE",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":19},{\"choice_list_name\":\"sim/nao\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":20}]"
       },
       {
         "_partition": "Column",
         "_aspect": "PERAPPEDIA",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Day 1\"}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Day 2\"}},\"_row_num\":18}]"
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
       },
       {
         "_partition": "Column",
         "_aspect": "PERAPPL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Yes\"}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"No\"}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Don't know\"}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "REACAOVAC",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/nao\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":19},{\"choice_list_name\":\"sim/nao\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":20}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TOSSE",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Yes\"}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"No\"}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Don't know\"}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TOSSEDIA",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Day 1\"}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Day 2\"}},\"_row_num\":18}]"
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
       },
       {
         "_partition": "Column",
         "_aspect": "VACCARD",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cart\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"seen vaccination card\"}},\"_row_num\":11},{\"choice_list_name\":\"cart\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Not seen vaccination card\"}},\"_row_num\":12},{\"choice_list_name\":\"cart\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Do not have a vaccinton card\"}},\"_row_num\":13}]"
+        "_value": "[{\"choice_list_name\":\"cart\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Seen vaccination card\",\"default\":\"Cartão visto\"}}},\"_row_num\":11},{\"choice_list_name\":\"cart\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Not seen vaccination card\",\"default\":\"Cartão não visto\"}}},\"_row_num\":12},{\"choice_list_name\":\"cart\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Do not have a vaccinton card\",\"default\":\"Não tem cartão\"}}},\"_row_num\":13}]"
       },
       {
         "_partition": "Column",
         "_aspect": "VOMITO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Yes\"}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"No\"}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Don't know\"}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":14},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":15},{\"choice_list_name\":\"sim/nao/naosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":16}]"
       },
       {
         "_partition": "Column",
         "_aspect": "VOMITODIA",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Day 1\"}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Day 2\"}},\"_row_num\":18}]"
+        "_value": "[{\"choice_list_name\":\"quantos\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 1\",\"default\":\"Dia 1\"}}},\"_row_num\":17},{\"choice_list_name\":\"quantos\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Day 2\",\"default\":\"Dia 2\"}}},\"_row_num\":18}]"
       },
       {
         "_partition": "FormType",

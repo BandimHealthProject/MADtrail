@@ -19,8 +19,8 @@ function initButtons() {
     btnCrianca.on("click", function() {
         odkTables.addRowWithSurvey(
             null,
-            'MADTRIAL',
-            'MADTRIAL',
+            'MADTRIAL_INC',
+            'MADTRIAL_INC',
             null,
             null);
     });

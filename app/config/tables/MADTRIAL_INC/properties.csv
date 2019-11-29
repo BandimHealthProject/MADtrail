@@ -19,6 +19,6 @@ Column,VACTRANS,displayChoicesList,object,"[{""choice_list_name"":""sim/não"","
 Column,VENAOVAS,displayChoicesList,object,"[{""choice_list_name"":""sim/não"",""data_value"":""1"",""display"":{""title"":{""text"":{""english"":""Yes"",""default"":""Sim""}}},""_row_num"":4},{""choice_list_name"":""sim/não"",""data_value"":""2"",""display"":{""title"":{""text"":{""english"":""No"",""default"":""Não""}}},""_row_num"":5}]"
 Column,VOMITO,displayChoicesList,object,"[{""choice_list_name"":""sim/não/ns"",""data_value"":""1"",""display"":{""title"":{""text"":{""english"":""Yes"",""default"":""Sim""}}},""_row_num"":9},{""choice_list_name"":""sim/não/ns"",""data_value"":""2"",""display"":{""title"":{""text"":{""english"":""No"",""default"":""Não""}}},""_row_num"":10},{""choice_list_name"":""sim/não/ns"",""data_value"":""3"",""display"":{""title"":{""text"":{""english"":""Dont't know"",""default"":""Não sabe""}}},""_row_num"":11}]"
 FormType,default,FormType.formType,string,SURVEY
-SurveyUtil,default,SurveyUtil.formId,string,MADTRIAL
+SurveyUtil,default,SurveyUtil.formId,string,MADTRIAL_INC
 Table,default,defaultViewType,string,SPREADSHEET
-Table,default,displayName,object,"{""text"":{""english"":""MADtrial"",""default"":""MADtrial""}}"
+Table,default,displayName,object,"{""text"":{""english"":""MADtrial - Inclusion"",""default"":""MADtrial - Inclusão""}}"
