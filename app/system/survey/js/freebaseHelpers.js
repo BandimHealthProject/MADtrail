@@ -6,7 +6,8 @@ return {
         alert(str);
     },
     decimalPlaces: function(num) {
-        //https://stackoverflow.com/questions/10454518/javascript-how-to-retrieve-the-number-of-decimals-of-a-string-number
+        // function for counting decimals
+        // https://stackoverflow.com/questions/10454518/javascript-how-to-retrieve-the-number-of-decimals-of-a-string-number
         var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
         if (!match) { return 0; }
         return Math.max(

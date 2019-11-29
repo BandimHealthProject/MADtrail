@@ -82,6 +82,13 @@ return {
         var yea = today.getFullYear();
         var aDate = 'D:' + day + ',M:' + mon + ',Y:' + yea;
         return aDate;
+    },
+    hoursMinutes: function(date) {
+        var d = new Date(date);
+        var h = ("0" + d.getHours()).slice(-2);
+        var m = ("0" + d.getMinutes()).slice(-2);
+        var hourMin = h + ":" + m;
+        return hourMin;
     }
 }
 });
