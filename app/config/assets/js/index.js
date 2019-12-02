@@ -45,10 +45,9 @@ function initButtons() {
             null,
             null);
     });
-
+    // Sync
     var btnSync = $('#btnSync');
     btnSync.on("click", function() {
         odkCommon.doAction(null, "org.opendatakit.services.sync.actions.activities.SyncActivity", {"componentPackage": "org.opendatakit.services", "componentActivity": "org.opendatakit.services.sync.actions.activities.SyncActivity"});   
     });
-   // btnSync.attr("disabled","disabled");
 }
