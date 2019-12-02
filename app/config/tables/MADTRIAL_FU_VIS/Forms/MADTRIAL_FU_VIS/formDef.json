@@ -469,7 +469,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "On whicg day?",
+              "english": "On which day?",
               "default": "On which day?"
             }
           }
@@ -793,14 +793,6 @@
         "_row_num": 94
       },
       {
-        "clause": "end screen",
-        "_row_num": 95
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 96
-      },
-      {
         "type": "decimal",
         "name": "TEMPERATURA",
         "display": {
@@ -811,15 +803,15 @@
             }
           }
         },
-        "_row_num": 97
+        "_row_num": 95
       },
       {
         "clause": "end screen",
-        "_row_num": 98
+        "_row_num": 96
       },
       {
         "clause": "end if",
-        "_row_num": 99
+        "_row_num": 97
       }
     ],
     "choices": [
@@ -1903,7 +1895,7 @@
       "TEMPERATURA": {
         "_defn": [
           {
-            "_row_num": 97,
+            "_row_num": 95,
             "section_name": "survey"
           }
         ],
@@ -2286,7 +2278,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "On whicg day?",
+                  "english": "On which day?",
                   "default": "On which day?"
                 }
               }
@@ -2608,19 +2600,19 @@
                 }
               }
             },
-            "_row_num": 97,
-            "__rowNum__": 96,
+            "_row_num": 95,
+            "__rowNum__": 94,
             "_token_type": "prompt",
             "_type": "decimal",
-            "_branch_label_enclosing_screen": "survey/_screen96",
+            "_branch_label_enclosing_screen": "survey/_screen92",
             "promptIdx": 36
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 100,
-            "_branch_label_enclosing_screen": "survey/_screen100",
+            "_row_num": 98,
+            "_branch_label_enclosing_screen": "survey/_screen98",
             "promptIdx": 37
           }
         ],
@@ -2845,8 +2837,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else99",
-            "_row_num": 99,
+            "_branch_label": "_else97",
+            "_row_num": 97,
             "operationIdx": 17
           },
           {
@@ -2884,54 +2876,40 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 95,
-              "__rowNum__": 94,
+              "_row_num": 96,
+              "__rowNum__": 95,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 20
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 96,
-            "__rowNum__": 95,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 98,
-              "__rowNum__": 97,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 21
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif99",
-            "_row_num": 99,
-            "operationIdx": 22
+            "_branch_label": "_endif97",
+            "_row_num": 97,
+            "operationIdx": 21
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 100,
-            "operationIdx": 23
+            "_row_num": 98,
+            "operationIdx": 22
           },
           {
-            "_row_num": 100,
+            "_row_num": 98,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 24
+            "operationIdx": 23
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 100,
-            "operationIdx": 25
+            "_row_num": 98,
+            "operationIdx": 24
           }
         ],
         "branch_label_map": {
@@ -2955,11 +2933,10 @@
           "_screen81": 18,
           "_screen88": 19,
           "_screen92": 20,
-          "_screen96": 21,
-          "_else99": 23,
-          "_endif99": 23,
-          "_contents": 24,
-          "_screen100": 24
+          "_else97": 22,
+          "_endif97": 22,
+          "_contents": 23,
+          "_screen98": 23
         }
       },
       "initial": {
@@ -3756,7 +3733,7 @@
       "TEMPERATURA": {
         "_defn": [
           {
-            "_row_num": 97,
+            "_row_num": 95,
             "section_name": "survey"
           }
         ],

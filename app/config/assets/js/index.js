@@ -15,12 +15,33 @@ function doSanityCheck() {
 }
 
 function initButtons() {
+    // New inclusion
     var btnCrianca = $('#btnCrianca');
     btnCrianca.on("click", function() {
         odkTables.addRowWithSurvey(
             null,
             'MADTRIAL_INC',
             'MADTRIAL_INC',
+            null,
+            null);
+    });
+    // Follow-up visit
+    var btnCrianca = $('#btnFUVIS');
+    btnCrianca.on("click", function() {
+        odkTables.addRowWithSurvey(
+            null,
+            'MADTRIAL_FU_VIS',
+            'MADTRIAL_FU_vis',
+            null,
+            null);
+    });
+    // Follow-up phone
+    var btnCrianca = $('#btnFUTEL');
+    btnCrianca.on("click", function() {
+        odkTables.addRowWithSurvey(
+            null,
+            'MADTRIAL_FU_PHONE',
+            'MADTRIAL_FU_PHONE',
             null,
             null);
     });
