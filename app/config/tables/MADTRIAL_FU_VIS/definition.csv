@@ -31,10 +31,9 @@ OUTROSIMP,OUTROSIMP,string,[]
 OUTROSIMPDIA,OUTROSIMPDIA,array,"[""OUTROSIMPDIA_items""]"
 OUTROSIMPDIA_items,items,string,[]
 PELE,PELE,string,[]
+PERAPPE,PERAPPE,string,[]
 PERAPPEDIA,PERAPPEDIA,array,"[""PERAPPEDIA_items""]"
 PERAPPEDIA_items,items,string,[]
-PERAPPL,PERAPPL,array,"[""PERAPPL_items""]"
-PERAPPL_items,items,string,[]
 REACAOALAR,REACAOALAR,integer,[]
 REACAOALT,REACAOALT,integer,[]
 REACAOVAC,REACAOVAC,string,[]
