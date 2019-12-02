@@ -65,8 +65,747 @@
         "_row_num": 2
       },
       {
+        "type": "adate",
+        "name": "DATSEGUI",
+        "display": {
+          "prompt": {
+            "text": "Data da ligação"
+          }
+        },
+        "_row_num": 3
+      },
+      {
         "clause": "end screen",
         "_row_num": 4
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 5
+      },
+      {
+        "type": "text",
+        "name": "ASSISTENTE",
+        "display": {
+          "prompt": {
+            "text": "Assistente"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 7
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 8
+      },
+      {
+        "type": "integer",
+        "name": "TELENUM1",
+        "display": {
+          "prompt": {
+            "text": "Numero de telemovel"
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 10
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 11
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA1",
+        "display": {
+          "prompt": {
+            "text": "1 a Chamada"
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 13
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 14
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": "Se voce não conseguir obter informação na primeira chamada, tente cada numero trez vezes"
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 16
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 17
+      },
+      {
+        "type": "integer",
+        "name": "TELENUM2",
+        "display": {
+          "prompt": {
+            "text": "Numero de telemovel"
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 19
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 20
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA2",
+        "display": {
+          "prompt": {
+            "text": "2 a Chamada"
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 22
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 23
+      },
+      {
+        "type": "integer",
+        "name": "TELENUM3",
+        "display": {
+          "prompt": {
+            "text": "3 a Chamada"
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 25
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 26
+      },
+      {
+        "type": "select_one",
+        "values_list": "int",
+        "name": "INFORMADOR",
+        "display": {
+          "prompt": {
+            "text": "Informador"
+          }
+        },
+        "_row_num": 27
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 28
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 29
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/nãosabe",
+        "name": "VITALCRI",
+        "display": {
+          "prompt": {
+            "text": "A criança ainda esta viva?"
+          }
+        },
+        "_row_num": 30
+      },
+      {
+        "clause": "if",
+        "condition": "data('VITALCRI')==\"2\"",
+        "_row_num": 31
+      },
+      {
+        "type": "adate",
+        "name": "DOD",
+        "display": {
+          "prompt": {
+            "text": "Data do felecimento"
+          }
+        },
+        "_row_num": 32
+      },
+      {
+        "clause": "end if",
+        "_row_num": 33
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 34
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 35
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/nãosabe",
+        "name": "VACHIS",
+        "display": {
+          "prompt": {
+            "text": "A criança recebeu outras vacinas desde que foi vacinada no Simão Mendes?"
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 37
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 38
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "vac",
+        "name": "VACTIPO",
+        "display": {
+          "prompt": {
+            "text": "Qual vacinas?"
+          }
+        },
+        "_row_num": 39
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 40
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 41
+      },
+      {
+        "type": "text",
+        "name": "VACOUTRO",
+        "display": {
+          "prompt": {
+            "text": "Outro Vacina"
+          }
+        },
+        "_row_num": 42
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 43
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 44
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/nãosabe",
+        "name": "HOSPI",
+        "display": {
+          "prompt": {
+            "text": "A criança foi internada no hospital desde que foi vacinada contra sarampo em Simão Mendes?"
+          }
+        },
+        "_row_num": 45
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 46
+      },
+      {
+        "clause": "if",
+        "condition": "data('HOSPI')==\"1\"",
+        "_row_num": 47
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 48
+      },
+      {
+        "type": "adate",
+        "name": "HOSPDATA1",
+        "display": {
+          "prompt": {
+            "text": "Data do Primeiro Internamento"
+          }
+        },
+        "_row_num": 49
+      },
+      {
+        "type": "text",
+        "name": "HOSPCODE1",
+        "display": {
+          "prompt": {
+            "text": "Local do primeiro Internamento"
+          }
+        },
+        "_row_num": 50
+      },
+      {
+        "type": "text",
+        "name": "HOSPCAUSA1",
+        "display": {
+          "prompt": {
+            "text": "Causa do primeiro Internamento"
+          }
+        },
+        "_row_num": 51
+      },
+      {
+        "type": "integer",
+        "name": "HOSPDIAS1",
+        "display": {
+          "prompt": {
+            "text": "Duração do primeiro Internamento  em dias"
+          }
+        },
+        "_row_num": 52
+      },
+      {
+        "type": "text",
+        "name": "HOSPALTA",
+        "display": {
+          "prompt": {
+            "text": "A criança esta ainda internada"
+          }
+        },
+        "_row_num": 53
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 54
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 55
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/nãosabe",
+        "name": "HOSPI2",
+        "display": {
+          "prompt": {
+            "text": "A criança foi enternada no hospital mais de um vez?"
+          }
+        },
+        "_row_num": 56
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 57
+      },
+      {
+        "clause": "if",
+        "condition": "data('HOSPI2')==\"1\"",
+        "_row_num": 58
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 59
+      },
+      {
+        "type": "adate",
+        "name": "HOSPDATA2",
+        "display": {
+          "prompt": {
+            "text": "Data do segundo Internamento"
+          }
+        },
+        "_row_num": 60
+      },
+      {
+        "type": "text",
+        "name": "HOSPCAUSA2",
+        "display": {
+          "prompt": {
+            "text": "Causa de segundo Internamento"
+          }
+        },
+        "_row_num": 61
+      },
+      {
+        "type": "text",
+        "name": "HOSPCODE2",
+        "display": {
+          "prompt": {
+            "text": "Local do segundo Internamento"
+          }
+        },
+        "_row_num": 62
+      },
+      {
+        "type": "integer",
+        "name": "HOSPDIA2",
+        "display": {
+          "prompt": {
+            "text": "Duração do segundo Internamento"
+          }
+        },
+        "_row_num": 63
+      },
+      {
+        "type": "text",
+        "name": "HOSPALTA2",
+        "display": {
+          "prompt": {
+            "text": "A criança esta ainda Internada"
+          }
+        },
+        "_row_num": 64
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 65
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 66
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/nãosabe",
+        "name": "HOSPI3",
+        "display": {
+          "prompt": {
+            "text": "A criança foi Internada no hospital mais de duas vezes?"
+          }
+        },
+        "_row_num": 67
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 68
+      },
+      {
+        "clause": "if",
+        "condition": "data('HOSPI3')==\"1\"",
+        "_row_num": 69
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 70
+      },
+      {
+        "type": "adate",
+        "name": "HOSPDATA3",
+        "display": {
+          "prompt": {
+            "text": "Data do terceiro Internamento"
+          }
+        },
+        "_row_num": 71
+      },
+      {
+        "type": "text",
+        "name": "HOSPCODE3",
+        "display": {
+          "prompt": {
+            "text": "Local do terceiro Internamento"
+          }
+        },
+        "_row_num": 72
+      },
+      {
+        "type": "text",
+        "name": "HOSPCAUSA3",
+        "display": {
+          "prompt": {
+            "text": "Causa do terceiro Internamento"
+          }
+        },
+        "_row_num": 73
+      },
+      {
+        "type": "integer",
+        "name": "HOSPDIAS3",
+        "display": {
+          "prompt": {
+            "text": "Duraçao do terceiro Internamento em dias"
+          }
+        },
+        "_row_num": 74
+      },
+      {
+        "type": "text",
+        "name": "HOSPALTA3",
+        "display": {
+          "prompt": {
+            "text": "a criança esta ainda Internada"
+          }
+        },
+        "_row_num": 75
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 76
+      },
+      {
+        "clause": "end if",
+        "_row_num": 77
+      },
+      {
+        "clause": "end if",
+        "_row_num": 78
+      },
+      {
+        "clause": "end if",
+        "_row_num": 79
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 80
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não",
+        "name": "PODEAUT",
+        "display": {
+          "prompt": {
+            "text": "Podemos visita-lo para fazer mais perguntas sobre a morte de seu filho"
+          }
+        },
+        "_row_num": 81
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 82
+      }
+    ],
+    "choices": [
+      {
+        "choice_list_name": "cham",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": "Seguimento realizado"
+          }
+        },
+        "_row_num": 2
+      },
+      {
+        "choice_list_name": "cham",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": "Sem rede"
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "choice_list_name": "cham",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": "não atende o telemovel"
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "choice_list_name": "cham",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": "Numero Incorreto"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "choice_list_name": "int",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": "Mae"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "choice_list_name": "int",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": "Outro zelador"
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "choice_list_name": "int",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": "Outro"
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "choice_list_name": "int",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": "Ninguem para fornecer informaçeos"
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "choice_list_name": "sim/não/nãosabe",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": "sim"
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "choice_list_name": "sim/não/nãosabe",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": "não"
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "choice_list_name": "sim/não/nãosabe",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": "não sabe"
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": "BCG"
+          }
+        },
+        "_row_num": 13
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": "VPO"
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": "Penta"
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": "PCV"
+          }
+        },
+        "_row_num": 16
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": "Rota"
+          }
+        },
+        "_row_num": 17
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": "Sarampo"
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "7",
+        "display": {
+          "title": {
+            "text": "Febre Amarelo"
+          }
+        },
+        "_row_num": 19
+      },
+      {
+        "choice_list_name": "vac",
+        "data_value": "8",
+        "display": {
+          "title": {
+            "text": "Outro"
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "sim/não",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": "sim"
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "sim/não",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": "não"
+          }
+        },
+        "_row_num": 22
       }
     ],
     "prompt_types": [
@@ -202,13 +941,584 @@
         "_row_num": 5
       }
     },
-    "choices": {},
+    "choices": {
+      "cham": [
+        {
+          "choice_list_name": "cham",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": "Seguimento realizado"
+            }
+          },
+          "_row_num": 2
+        },
+        {
+          "choice_list_name": "cham",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": "Sem rede"
+            }
+          },
+          "_row_num": 3
+        },
+        {
+          "choice_list_name": "cham",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": "não atende o telemovel"
+            }
+          },
+          "_row_num": 4
+        },
+        {
+          "choice_list_name": "cham",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": "Numero Incorreto"
+            }
+          },
+          "_row_num": 5
+        }
+      ],
+      "int": [
+        {
+          "choice_list_name": "int",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": "Mae"
+            }
+          },
+          "_row_num": 6
+        },
+        {
+          "choice_list_name": "int",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": "Outro zelador"
+            }
+          },
+          "_row_num": 7
+        },
+        {
+          "choice_list_name": "int",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": "Outro"
+            }
+          },
+          "_row_num": 8
+        },
+        {
+          "choice_list_name": "int",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": "Ninguem para fornecer informaçeos"
+            }
+          },
+          "_row_num": 9
+        }
+      ],
+      "sim/não/nãosabe": [
+        {
+          "choice_list_name": "sim/não/nãosabe",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": "sim"
+            }
+          },
+          "_row_num": 10
+        },
+        {
+          "choice_list_name": "sim/não/nãosabe",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": "não"
+            }
+          },
+          "_row_num": 11
+        },
+        {
+          "choice_list_name": "sim/não/nãosabe",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": "não sabe"
+            }
+          },
+          "_row_num": 12
+        }
+      ],
+      "vac": [
+        {
+          "choice_list_name": "vac",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": "BCG"
+            }
+          },
+          "_row_num": 13
+        },
+        {
+          "choice_list_name": "vac",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": "VPO"
+            }
+          },
+          "_row_num": 14
+        },
+        {
+          "choice_list_name": "vac",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": "Penta"
+            }
+          },
+          "_row_num": 15
+        },
+        {
+          "choice_list_name": "vac",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": "PCV"
+            }
+          },
+          "_row_num": 16
+        },
+        {
+          "choice_list_name": "vac",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": "Rota"
+            }
+          },
+          "_row_num": 17
+        },
+        {
+          "choice_list_name": "vac",
+          "data_value": "6",
+          "display": {
+            "title": {
+              "text": "Sarampo"
+            }
+          },
+          "_row_num": 18
+        },
+        {
+          "choice_list_name": "vac",
+          "data_value": "7",
+          "display": {
+            "title": {
+              "text": "Febre Amarelo"
+            }
+          },
+          "_row_num": 19
+        },
+        {
+          "choice_list_name": "vac",
+          "data_value": "8",
+          "display": {
+            "title": {
+              "text": "Outro"
+            }
+          },
+          "_row_num": 20
+        }
+      ],
+      "sim/não": [
+        {
+          "choice_list_name": "sim/não",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": "sim"
+            }
+          },
+          "_row_num": 21
+        },
+        {
+          "choice_list_name": "sim/não",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": "não"
+            }
+          },
+          "_row_num": 22
+        }
+      ]
+    },
     "table_specific_definitions": {
       "_tokens": {}
     },
     "queries": {},
     "calculates": {},
-    "model": {},
+    "model": {
+      "DATSEGUI": {
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "DATSEGUI"
+      },
+      "ASSISTENTE": {
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "ASSISTENTE"
+      },
+      "TELENUM1": {
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "TELENUM1"
+      },
+      "CHAMADA1": {
+        "_defn": [
+          {
+            "_row_num": 12,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "cham",
+        "elementKey": "CHAMADA1"
+      },
+      "TELENUM2": {
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "TELENUM2"
+      },
+      "CHAMADA2": {
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "cham",
+        "elementKey": "CHAMADA2"
+      },
+      "TELENUM3": {
+        "_defn": [
+          {
+            "_row_num": 24,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "TELENUM3"
+      },
+      "INFORMADOR": {
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "int",
+        "elementKey": "INFORMADOR"
+      },
+      "VITALCRI": {
+        "_defn": [
+          {
+            "_row_num": 30,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "VITALCRI"
+      },
+      "DOD": {
+        "_defn": [
+          {
+            "_row_num": 32,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "DOD"
+      },
+      "VACHIS": {
+        "_defn": [
+          {
+            "_row_num": 36,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "VACHIS"
+      },
+      "VACTIPO": {
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "VACTIPO_items"
+        },
+        "valuesList": "vac",
+        "elementKey": "VACTIPO"
+      },
+      "VACOUTRO": {
+        "_defn": [
+          {
+            "_row_num": 42,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "VACOUTRO"
+      },
+      "HOSPI": {
+        "_defn": [
+          {
+            "_row_num": 45,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "HOSPI"
+      },
+      "HOSPDATA1": {
+        "_defn": [
+          {
+            "_row_num": 49,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "HOSPDATA1"
+      },
+      "HOSPCODE1": {
+        "_defn": [
+          {
+            "_row_num": 50,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCODE1"
+      },
+      "HOSPCAUSA1": {
+        "_defn": [
+          {
+            "_row_num": 51,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCAUSA1"
+      },
+      "HOSPDIAS1": {
+        "_defn": [
+          {
+            "_row_num": 52,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "HOSPDIAS1"
+      },
+      "HOSPALTA": {
+        "_defn": [
+          {
+            "_row_num": 53,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPALTA"
+      },
+      "HOSPI2": {
+        "_defn": [
+          {
+            "_row_num": 56,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "HOSPI2"
+      },
+      "HOSPDATA2": {
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "HOSPDATA2"
+      },
+      "HOSPCAUSA2": {
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCAUSA2"
+      },
+      "HOSPCODE2": {
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCODE2"
+      },
+      "HOSPDIA2": {
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "HOSPDIA2"
+      },
+      "HOSPALTA2": {
+        "_defn": [
+          {
+            "_row_num": 64,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPALTA2"
+      },
+      "HOSPI3": {
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "HOSPI3"
+      },
+      "HOSPDATA3": {
+        "_defn": [
+          {
+            "_row_num": 71,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "HOSPDATA3"
+      },
+      "HOSPCODE3": {
+        "_defn": [
+          {
+            "_row_num": 72,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCODE3"
+      },
+      "HOSPCAUSA3": {
+        "_defn": [
+          {
+            "_row_num": 73,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCAUSA3"
+      },
+      "HOSPDIAS3": {
+        "_defn": [
+          {
+            "_row_num": 74,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "HOSPDIAS3"
+      },
+      "HOSPALTA3": {
+        "_defn": [
+          {
+            "_row_num": 75,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPALTA3"
+      },
+      "PODEAUT": {
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não",
+        "elementKey": "PODEAUT"
+      }
+    },
     "section_names": [
       "initial",
       "survey"
@@ -220,12 +1530,516 @@
         "reachable_sections": {},
         "prompts": [
           {
+            "type": "adate",
+            "name": "DATSEGUI",
+            "display": {
+              "prompt": {
+                "text": "Data da ligação"
+              }
+            },
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 0
+          },
+          {
+            "type": "text",
+            "name": "ASSISTENTE",
+            "display": {
+              "prompt": {
+                "text": "Assistente"
+              }
+            },
+            "_row_num": 6,
+            "__rowNum__": 5,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen5",
+            "promptIdx": 1
+          },
+          {
+            "type": "integer",
+            "name": "TELENUM1",
+            "display": {
+              "prompt": {
+                "text": "Numero de telemovel"
+              }
+            },
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen8",
+            "promptIdx": 2
+          },
+          {
+            "type": "select_one",
+            "values_list": "cham",
+            "name": "CHAMADA1",
+            "display": {
+              "prompt": {
+                "text": "1 a Chamada"
+              }
+            },
+            "_row_num": 12,
+            "__rowNum__": 11,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen11",
+            "promptIdx": 3
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": "Se voce não conseguir obter informação na primeira chamada, tente cada numero trez vezes"
+              }
+            },
+            "_row_num": 15,
+            "__rowNum__": 14,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen14",
+            "promptIdx": 4
+          },
+          {
+            "type": "integer",
+            "name": "TELENUM2",
+            "display": {
+              "prompt": {
+                "text": "Numero de telemovel"
+              }
+            },
+            "_row_num": 18,
+            "__rowNum__": 17,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 5
+          },
+          {
+            "type": "select_one",
+            "values_list": "cham",
+            "name": "CHAMADA2",
+            "display": {
+              "prompt": {
+                "text": "2 a Chamada"
+              }
+            },
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen20",
+            "promptIdx": 6
+          },
+          {
+            "type": "integer",
+            "name": "TELENUM3",
+            "display": {
+              "prompt": {
+                "text": "3 a Chamada"
+              }
+            },
+            "_row_num": 24,
+            "__rowNum__": 23,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 7
+          },
+          {
+            "type": "select_one",
+            "values_list": "int",
+            "name": "INFORMADOR",
+            "display": {
+              "prompt": {
+                "text": "Informador"
+              }
+            },
+            "_row_num": 27,
+            "__rowNum__": 26,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen26",
+            "promptIdx": 8
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não/nãosabe",
+            "name": "VITALCRI",
+            "display": {
+              "prompt": {
+                "text": "A criança ainda esta viva?"
+              }
+            },
+            "_row_num": 30,
+            "__rowNum__": 29,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen29",
+            "promptIdx": 9
+          },
+          {
+            "type": "adate",
+            "name": "DOD",
+            "display": {
+              "prompt": {
+                "text": "Data do felecimento"
+              }
+            },
+            "_row_num": 32,
+            "__rowNum__": 31,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen29",
+            "promptIdx": 10
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não/nãosabe",
+            "name": "VACHIS",
+            "display": {
+              "prompt": {
+                "text": "A criança recebeu outras vacinas desde que foi vacinada no Simão Mendes?"
+              }
+            },
+            "_row_num": 36,
+            "__rowNum__": 35,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen35",
+            "promptIdx": 11
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "vac",
+            "name": "VACTIPO",
+            "display": {
+              "prompt": {
+                "text": "Qual vacinas?"
+              }
+            },
+            "_row_num": 39,
+            "__rowNum__": 38,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen38",
+            "promptIdx": 12
+          },
+          {
+            "type": "text",
+            "name": "VACOUTRO",
+            "display": {
+              "prompt": {
+                "text": "Outro Vacina"
+              }
+            },
+            "_row_num": 42,
+            "__rowNum__": 41,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen41",
+            "promptIdx": 13
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não/nãosabe",
+            "name": "HOSPI",
+            "display": {
+              "prompt": {
+                "text": "A criança foi internada no hospital desde que foi vacinada contra sarampo em Simão Mendes?"
+              }
+            },
+            "_row_num": 45,
+            "__rowNum__": 44,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 14
+          },
+          {
+            "type": "adate",
+            "name": "HOSPDATA1",
+            "display": {
+              "prompt": {
+                "text": "Data do Primeiro Internamento"
+              }
+            },
+            "_row_num": 49,
+            "__rowNum__": 48,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 15
+          },
+          {
+            "type": "text",
+            "name": "HOSPCODE1",
+            "display": {
+              "prompt": {
+                "text": "Local do primeiro Internamento"
+              }
+            },
+            "_row_num": 50,
+            "__rowNum__": 49,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 16
+          },
+          {
+            "type": "text",
+            "name": "HOSPCAUSA1",
+            "display": {
+              "prompt": {
+                "text": "Causa do primeiro Internamento"
+              }
+            },
+            "_row_num": 51,
+            "__rowNum__": 50,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 17
+          },
+          {
+            "type": "integer",
+            "name": "HOSPDIAS1",
+            "display": {
+              "prompt": {
+                "text": "Duração do primeiro Internamento  em dias"
+              }
+            },
+            "_row_num": 52,
+            "__rowNum__": 51,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 18
+          },
+          {
+            "type": "text",
+            "name": "HOSPALTA",
+            "display": {
+              "prompt": {
+                "text": "A criança esta ainda internada"
+              }
+            },
+            "_row_num": 53,
+            "__rowNum__": 52,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 19
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não/nãosabe",
+            "name": "HOSPI2",
+            "display": {
+              "prompt": {
+                "text": "A criança foi enternada no hospital mais de um vez?"
+              }
+            },
+            "_row_num": 56,
+            "__rowNum__": 55,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 20
+          },
+          {
+            "type": "adate",
+            "name": "HOSPDATA2",
+            "display": {
+              "prompt": {
+                "text": "Data do segundo Internamento"
+              }
+            },
+            "_row_num": 60,
+            "__rowNum__": 59,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 21
+          },
+          {
+            "type": "text",
+            "name": "HOSPCAUSA2",
+            "display": {
+              "prompt": {
+                "text": "Causa de segundo Internamento"
+              }
+            },
+            "_row_num": 61,
+            "__rowNum__": 60,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 22
+          },
+          {
+            "type": "text",
+            "name": "HOSPCODE2",
+            "display": {
+              "prompt": {
+                "text": "Local do segundo Internamento"
+              }
+            },
+            "_row_num": 62,
+            "__rowNum__": 61,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 23
+          },
+          {
+            "type": "integer",
+            "name": "HOSPDIA2",
+            "display": {
+              "prompt": {
+                "text": "Duração do segundo Internamento"
+              }
+            },
+            "_row_num": 63,
+            "__rowNum__": 62,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 24
+          },
+          {
+            "type": "text",
+            "name": "HOSPALTA2",
+            "display": {
+              "prompt": {
+                "text": "A criança esta ainda Internada"
+              }
+            },
+            "_row_num": 64,
+            "__rowNum__": 63,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 25
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não/nãosabe",
+            "name": "HOSPI3",
+            "display": {
+              "prompt": {
+                "text": "A criança foi Internada no hospital mais de duas vezes?"
+              }
+            },
+            "_row_num": 67,
+            "__rowNum__": 66,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen66",
+            "promptIdx": 26
+          },
+          {
+            "type": "adate",
+            "name": "HOSPDATA3",
+            "display": {
+              "prompt": {
+                "text": "Data do terceiro Internamento"
+              }
+            },
+            "_row_num": 71,
+            "__rowNum__": 70,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen70",
+            "promptIdx": 27
+          },
+          {
+            "type": "text",
+            "name": "HOSPCODE3",
+            "display": {
+              "prompt": {
+                "text": "Local do terceiro Internamento"
+              }
+            },
+            "_row_num": 72,
+            "__rowNum__": 71,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen70",
+            "promptIdx": 28
+          },
+          {
+            "type": "text",
+            "name": "HOSPCAUSA3",
+            "display": {
+              "prompt": {
+                "text": "Causa do terceiro Internamento"
+              }
+            },
+            "_row_num": 73,
+            "__rowNum__": 72,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen70",
+            "promptIdx": 29
+          },
+          {
+            "type": "integer",
+            "name": "HOSPDIAS3",
+            "display": {
+              "prompt": {
+                "text": "Duraçao do terceiro Internamento em dias"
+              }
+            },
+            "_row_num": 74,
+            "__rowNum__": 73,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen70",
+            "promptIdx": 30
+          },
+          {
+            "type": "text",
+            "name": "HOSPALTA3",
+            "display": {
+              "prompt": {
+                "text": "a criança esta ainda Internada"
+              }
+            },
+            "_row_num": 75,
+            "__rowNum__": 74,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen70",
+            "promptIdx": 31
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não",
+            "name": "PODEAUT",
+            "display": {
+              "prompt": {
+                "text": "Podemos visita-lo para fazer mais perguntas sobre a morte de seu filho"
+              }
+            },
+            "_row_num": 81,
+            "__rowNum__": 80,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 32
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 5,
-            "_branch_label_enclosing_screen": "survey/_screen5",
-            "promptIdx": 0
+            "_row_num": 83,
+            "_branch_label_enclosing_screen": "survey/_screen83",
+            "promptIdx": 33
           }
         ],
         "validation_tag_map": {
@@ -243,35 +2057,398 @@
               "__rowNum__": 3,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 7,
+              "__rowNum__": 6,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 1
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 8,
+            "__rowNum__": 7,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 10,
+              "__rowNum__": 9,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 11,
+            "__rowNum__": 10,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 13,
+              "__rowNum__": 12,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 3
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 14,
+            "__rowNum__": 13,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 16,
+              "__rowNum__": 15,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 4
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 19,
+              "__rowNum__": 18,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 5
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 20,
+            "__rowNum__": 19,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 22,
+              "__rowNum__": 21,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 6
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 23,
+            "__rowNum__": 22,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 25,
+              "__rowNum__": 24,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 7
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 26,
+            "__rowNum__": 25,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 28,
+              "__rowNum__": 27,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 8
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 29,
+            "__rowNum__": 28,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 34,
+              "__rowNum__": 33,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\nif (data('VITALCRI')==\"2\") {\nactivePromptIndicies.push(10);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 9
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 35,
+            "__rowNum__": 34,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 37,
+              "__rowNum__": 36,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 10
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 38,
+            "__rowNum__": 37,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 40,
+              "__rowNum__": 39,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 11
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 41,
+            "__rowNum__": 40,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 43,
+              "__rowNum__": 42,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 12
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 44,
+            "__rowNum__": 43,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 46,
+              "__rowNum__": 45,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 13
+          },
+          {
+            "clause": "if",
+            "condition": "data('HOSPI')==\"1\"",
+            "_row_num": 47,
+            "__rowNum__": 46,
+            "_token_type": "goto_label",
+            "_branch_label": "_then47",
+            "operationIdx": 14
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else79",
+            "_row_num": 79,
+            "operationIdx": 15
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 48,
+            "__rowNum__": 47,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 54,
+              "__rowNum__": 53,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 16
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 55,
+            "__rowNum__": 54,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 57,
+              "__rowNum__": 56,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 17
+          },
+          {
+            "clause": "if",
+            "condition": "data('HOSPI2')==\"1\"",
+            "_row_num": 58,
+            "__rowNum__": 57,
+            "_token_type": "goto_label",
+            "_branch_label": "_then58",
+            "operationIdx": 18
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else78",
+            "_row_num": 78,
+            "operationIdx": 19
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 59,
+            "__rowNum__": 58,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 65,
+              "__rowNum__": 64,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 20
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 66,
+            "__rowNum__": 65,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 68,
+              "__rowNum__": 67,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(26);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 21
+          },
+          {
+            "clause": "if",
+            "condition": "data('HOSPI3')==\"1\"",
+            "_row_num": 69,
+            "__rowNum__": 68,
+            "_token_type": "goto_label",
+            "_branch_label": "_then69",
+            "operationIdx": 22
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else77",
+            "_row_num": 77,
+            "operationIdx": 23
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 70,
+            "__rowNum__": 69,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 76,
+              "__rowNum__": 75,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 24
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif77",
+            "_row_num": 77,
+            "operationIdx": 25
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif78",
+            "_row_num": 78,
+            "operationIdx": 26
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif79",
+            "_row_num": 79,
+            "operationIdx": 27
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 80,
+            "__rowNum__": 79,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 82,
+              "__rowNum__": 81,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 28
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 5,
-            "operationIdx": 1
+            "_row_num": 83,
+            "operationIdx": 29
           },
           {
-            "_row_num": 5,
+            "_row_num": 83,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 2
+            "operationIdx": 30
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 5,
-            "operationIdx": 3
+            "_row_num": 83,
+            "operationIdx": 31
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_contents": 2,
-          "_screen5": 2
+          "_screen5": 1,
+          "_screen8": 2,
+          "_screen11": 3,
+          "_screen14": 4,
+          "_screen17": 5,
+          "_screen20": 6,
+          "_screen23": 7,
+          "_screen26": 8,
+          "_screen29": 9,
+          "_screen35": 10,
+          "_screen38": 11,
+          "_screen41": 12,
+          "_screen44": 13,
+          "_then47": 16,
+          "_screen48": 16,
+          "_screen55": 17,
+          "_then58": 20,
+          "_screen59": 20,
+          "_screen66": 21,
+          "_then69": 24,
+          "_screen70": 24,
+          "_else77": 26,
+          "_endif77": 26,
+          "_else78": 27,
+          "_endif78": 27,
+          "_else79": 28,
+          "_endif79": 28,
+          "_screen80": 28,
+          "_contents": 30,
+          "_screen83": 30
         }
       },
       "initial": {
@@ -456,6 +2633,466 @@
       }
     },
     "dataTableModel": {
+      "DATSEGUI": {
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "DATSEGUI",
+        "elementName": "DATSEGUI",
+        "elementSet": "data",
+        "elementPath": "DATSEGUI"
+      },
+      "ASSISTENTE": {
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "ASSISTENTE",
+        "elementName": "ASSISTENTE",
+        "elementSet": "data",
+        "elementPath": "ASSISTENTE"
+      },
+      "TELENUM1": {
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "TELENUM1",
+        "elementName": "TELENUM1",
+        "elementSet": "data",
+        "elementPath": "TELENUM1"
+      },
+      "CHAMADA1": {
+        "_defn": [
+          {
+            "_row_num": 12,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "cham",
+        "elementKey": "CHAMADA1",
+        "elementName": "CHAMADA1",
+        "elementSet": "data",
+        "elementPath": "CHAMADA1"
+      },
+      "TELENUM2": {
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "TELENUM2",
+        "elementName": "TELENUM2",
+        "elementSet": "data",
+        "elementPath": "TELENUM2"
+      },
+      "CHAMADA2": {
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "cham",
+        "elementKey": "CHAMADA2",
+        "elementName": "CHAMADA2",
+        "elementSet": "data",
+        "elementPath": "CHAMADA2"
+      },
+      "TELENUM3": {
+        "_defn": [
+          {
+            "_row_num": 24,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "TELENUM3",
+        "elementName": "TELENUM3",
+        "elementSet": "data",
+        "elementPath": "TELENUM3"
+      },
+      "INFORMADOR": {
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "int",
+        "elementKey": "INFORMADOR",
+        "elementName": "INFORMADOR",
+        "elementSet": "data",
+        "elementPath": "INFORMADOR"
+      },
+      "VITALCRI": {
+        "_defn": [
+          {
+            "_row_num": 30,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "VITALCRI",
+        "elementName": "VITALCRI",
+        "elementSet": "data",
+        "elementPath": "VITALCRI"
+      },
+      "DOD": {
+        "_defn": [
+          {
+            "_row_num": 32,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "DOD",
+        "elementName": "DOD",
+        "elementSet": "data",
+        "elementPath": "DOD"
+      },
+      "VACHIS": {
+        "_defn": [
+          {
+            "_row_num": 36,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "VACHIS",
+        "elementName": "VACHIS",
+        "elementSet": "data",
+        "elementPath": "VACHIS"
+      },
+      "VACTIPO": {
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "survey"
+          }
+        ],
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "VACTIPO_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "VACTIPO.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "vac",
+        "elementKey": "VACTIPO",
+        "elementName": "VACTIPO",
+        "elementSet": "data",
+        "elementPath": "VACTIPO",
+        "listChildElementKeys": [
+          "VACTIPO_items"
+        ]
+      },
+      "VACOUTRO": {
+        "_defn": [
+          {
+            "_row_num": 42,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "VACOUTRO",
+        "elementName": "VACOUTRO",
+        "elementSet": "data",
+        "elementPath": "VACOUTRO"
+      },
+      "HOSPI": {
+        "_defn": [
+          {
+            "_row_num": 45,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "HOSPI",
+        "elementName": "HOSPI",
+        "elementSet": "data",
+        "elementPath": "HOSPI"
+      },
+      "HOSPDATA1": {
+        "_defn": [
+          {
+            "_row_num": 49,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "HOSPDATA1",
+        "elementName": "HOSPDATA1",
+        "elementSet": "data",
+        "elementPath": "HOSPDATA1"
+      },
+      "HOSPCODE1": {
+        "_defn": [
+          {
+            "_row_num": 50,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCODE1",
+        "elementName": "HOSPCODE1",
+        "elementSet": "data",
+        "elementPath": "HOSPCODE1"
+      },
+      "HOSPCAUSA1": {
+        "_defn": [
+          {
+            "_row_num": 51,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCAUSA1",
+        "elementName": "HOSPCAUSA1",
+        "elementSet": "data",
+        "elementPath": "HOSPCAUSA1"
+      },
+      "HOSPDIAS1": {
+        "_defn": [
+          {
+            "_row_num": 52,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "HOSPDIAS1",
+        "elementName": "HOSPDIAS1",
+        "elementSet": "data",
+        "elementPath": "HOSPDIAS1"
+      },
+      "HOSPALTA": {
+        "_defn": [
+          {
+            "_row_num": 53,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPALTA",
+        "elementName": "HOSPALTA",
+        "elementSet": "data",
+        "elementPath": "HOSPALTA"
+      },
+      "HOSPI2": {
+        "_defn": [
+          {
+            "_row_num": 56,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "HOSPI2",
+        "elementName": "HOSPI2",
+        "elementSet": "data",
+        "elementPath": "HOSPI2"
+      },
+      "HOSPDATA2": {
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "HOSPDATA2",
+        "elementName": "HOSPDATA2",
+        "elementSet": "data",
+        "elementPath": "HOSPDATA2"
+      },
+      "HOSPCAUSA2": {
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCAUSA2",
+        "elementName": "HOSPCAUSA2",
+        "elementSet": "data",
+        "elementPath": "HOSPCAUSA2"
+      },
+      "HOSPCODE2": {
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCODE2",
+        "elementName": "HOSPCODE2",
+        "elementSet": "data",
+        "elementPath": "HOSPCODE2"
+      },
+      "HOSPDIA2": {
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "HOSPDIA2",
+        "elementName": "HOSPDIA2",
+        "elementSet": "data",
+        "elementPath": "HOSPDIA2"
+      },
+      "HOSPALTA2": {
+        "_defn": [
+          {
+            "_row_num": 64,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPALTA2",
+        "elementName": "HOSPALTA2",
+        "elementSet": "data",
+        "elementPath": "HOSPALTA2"
+      },
+      "HOSPI3": {
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não/nãosabe",
+        "elementKey": "HOSPI3",
+        "elementName": "HOSPI3",
+        "elementSet": "data",
+        "elementPath": "HOSPI3"
+      },
+      "HOSPDATA3": {
+        "_defn": [
+          {
+            "_row_num": 71,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "HOSPDATA3",
+        "elementName": "HOSPDATA3",
+        "elementSet": "data",
+        "elementPath": "HOSPDATA3"
+      },
+      "HOSPCODE3": {
+        "_defn": [
+          {
+            "_row_num": 72,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCODE3",
+        "elementName": "HOSPCODE3",
+        "elementSet": "data",
+        "elementPath": "HOSPCODE3"
+      },
+      "HOSPCAUSA3": {
+        "_defn": [
+          {
+            "_row_num": 73,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPCAUSA3",
+        "elementName": "HOSPCAUSA3",
+        "elementSet": "data",
+        "elementPath": "HOSPCAUSA3"
+      },
+      "HOSPDIAS3": {
+        "_defn": [
+          {
+            "_row_num": 74,
+            "section_name": "survey"
+          }
+        ],
+        "type": "integer",
+        "elementKey": "HOSPDIAS3",
+        "elementName": "HOSPDIAS3",
+        "elementSet": "data",
+        "elementPath": "HOSPDIAS3"
+      },
+      "HOSPALTA3": {
+        "_defn": [
+          {
+            "_row_num": 75,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "HOSPALTA3",
+        "elementName": "HOSPALTA3",
+        "elementSet": "data",
+        "elementPath": "HOSPALTA3"
+      },
+      "PODEAUT": {
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "valuesList": "sim/não",
+        "elementKey": "PODEAUT",
+        "elementName": "PODEAUT",
+        "elementSet": "data",
+        "elementPath": "PODEAUT"
+      },
+      "VACTIPO_items": {
+        "type": "string",
+        "elementKey": "VACTIPO_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "VACTIPO.items",
+        "notUnitOfRetention": true
+      },
       "_id": {
         "type": "string",
         "isNotNullable": true,
@@ -570,6 +3207,76 @@
       }
     },
     "properties": [
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA1",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Seguimento realizado\"}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Sem rede\"}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"não atende o telemovel\"}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":\"Numero Incorreto\"}},\"_row_num\":5}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA2",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Seguimento realizado\"}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Sem rede\"}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"não atende o telemovel\"}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":\"Numero Incorreto\"}},\"_row_num\":5}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "HOSPI",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"sim\"}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"não\"}},\"_row_num\":11},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"não sabe\"}},\"_row_num\":12}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "HOSPI2",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"sim\"}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"não\"}},\"_row_num\":11},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"não sabe\"}},\"_row_num\":12}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "HOSPI3",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"sim\"}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"não\"}},\"_row_num\":11},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"não sabe\"}},\"_row_num\":12}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "INFORMADOR",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"int\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"Mae\"}},\"_row_num\":6},{\"choice_list_name\":\"int\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"Outro zelador\"}},\"_row_num\":7},{\"choice_list_name\":\"int\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Outro\"}},\"_row_num\":8},{\"choice_list_name\":\"int\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":\"Ninguem para fornecer informaçeos\"}},\"_row_num\":9}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PODEAUT",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/não\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"sim\"}},\"_row_num\":21},{\"choice_list_name\":\"sim/não\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"não\"}},\"_row_num\":22}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "VACHIS",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"sim\"}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"não\"}},\"_row_num\":11},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"não sabe\"}},\"_row_num\":12}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "VACTIPO",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"vac\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"BCG\"}},\"_row_num\":13},{\"choice_list_name\":\"vac\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"VPO\"}},\"_row_num\":14},{\"choice_list_name\":\"vac\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"Penta\"}},\"_row_num\":15},{\"choice_list_name\":\"vac\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":\"PCV\"}},\"_row_num\":16},{\"choice_list_name\":\"vac\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":\"Rota\"}},\"_row_num\":17},{\"choice_list_name\":\"vac\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":\"Sarampo\"}},\"_row_num\":18},{\"choice_list_name\":\"vac\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":\"Febre Amarelo\"}},\"_row_num\":19},{\"choice_list_name\":\"vac\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":\"Outro\"}},\"_row_num\":20}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "VITALCRI",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"sim\"}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":\"não\"}},\"_row_num\":11},{\"choice_list_name\":\"sim/não/nãosabe\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":\"não sabe\"}},\"_row_num\":12}]"
+      },
       {
         "_partition": "FormType",
         "_aspect": "default",
