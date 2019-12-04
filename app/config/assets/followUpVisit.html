@@ -13,7 +13,7 @@
         <script type="text/javascript" src="../../system/tables/js/odkTables.js"></script>
         
         <script type="text/javascript" src="js/util.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/followUpVisit.js"></script>
         <style>
         .form-group {
             margin:30px 0;
@@ -23,35 +23,18 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        .btnInc {
-            background-color: darkseagreen;
+        .btnVis {
+            background-color: mediumseagreen;
             color: white;
             font-size: 25px;
             border-radius: 4px;
             display: inline-block;
             border: none;
-            margin: 0;
+            margin: 0 auto 70px;
+            margin-top: 70px;
         }
-        .btnFU {
-            background-color: lightseagreen;
-            color: white;
-            font-size: 25px;
-            border-radius: 4px;
-            display: inline-block;
-            border: none;
-            margin: 0;
-        }
-        .btnEdit {
-            background-color: indianred;
-            color: white;
-            font-size: 25px;
-            border-radius: 4px;
-            display: inline-block;
-            border: none;
-            margin: 0;
-        }
-        .btnSync {
-            background-color: purple;
+        .btnTel {
+            background-color: mediumturquoise;
             color: white;
             font-size: 25px;
             border-radius: 4px;
@@ -62,24 +45,10 @@
         </style>
     </head>
 
-    <body onload="display();">
-
+   
+    <body>
         <div id="main" class="container" style="height: 100vh;">
-            <h1>MADTrial</h1>
-            <div id="wrapper">
-                <div class="form-group">
-                    <button id="btnCrianca" class="btnInc">Nova Criança</button> 
-                </div>
-                <div class="form-group">
-                    <button id="btnFU" class="btnFU">Seguimento</button> 
-                </div>
-                <div class="form-group">
-                    <button id="btnEdit" class="btnEdit">Editar ID ou TABZ</button> 
-                </div>
-                <div class="form-group">
-                    <button id="btnSync" class="btnSync">Sincronizar</button>
-                </div>
-            </div>
+            <h1>Visita</h1>
         </div>
     </body>
 </html>

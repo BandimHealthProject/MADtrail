@@ -7,3 +7,9 @@ tempZipDir
 app/config/tables/MADTRIAL_FU_PHONE/Forms/MADTRIAL_FU_PHONE/~$MADTRIAL_FU_PHONE.xlsx
 app/config/tables/MADTRIAL_FU_VIS/Forms/MADTRIAL_FU_VIS/~$MADTRIAL_FU_VIS.xlsx
 app/config/tables/MADTRIAL_INC/Forms/MADTRIAL_INC/~$MADTRIAL_INC.xlsx
+app/output/csv/csv/MADTRIAL_INC.csv/MADTRIAL_INC.csv
+app/output/csv/csv/MADTRIAL_INC.definition.csv
+app/output/csv/csv/MADTRIAL_INC.properties.csv
+app/output/db/webDb/sqlite.db
+app/output/db/webDb/sqlite.db-shm
+app/output/db/webDb/sqlite.db-wal

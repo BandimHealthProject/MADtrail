@@ -1,0 +1,73 @@
+reg,regname,cscode,csname
+1,Oio,101,CS Ga-Mamadu
+1,Oio,102,CS Nhacra
+1,Oio,103,CS Encheia
+1,Oio,104,CS Binar
+1,Oio,105,Hospital de Bissora
+1,Oio,106,Hospital de Mansoa
+1,Oio,107,CS Fanhe
+1,Oio,108,Missao Catolica de Nhoma
+1,Oio,109,CS Mores
+1,Oio,110,CS Mansaba
+1,Oio,111,CS Candjambari
+1,Oio,112,Centro Nutricional de Mansoa
+1,Oio,113,Hospital de Farim
+1,Oio,114,CS Binta
+2,Biombo,201,CS Ondame
+2,Biombo,202,Clinica Bom Samaritana
+2,Biombo,203,CS Dorse
+2,Biombo,204,CS Quinhamel
+2,Biombo,205,Centro Materno Infantil
+2,Biombo,206,CS Bigimita
+2,Biombo,207,CS Ilonde
+2,Biombo,208,CS SABim
+2,Biombo,209,CS Prabis
+2,Biombo,210,Hospital de Cumura
+2,Biombo,211,Clinica de Bor
+2,Biombo,212,Irma di Safim/Padre di Safim
+3,SAB,301,HNSM Bercario (Luis)
+3,SAB,302,HNSM Pediatria
+3,SAB,303,SMI Centro Materno Infantil
+3,SAB,304,CS Bandim
+3,SAB,305,CS Belem
+3,SAB,306,CS Cuntum. Sobrada
+3,SAB,307,CS Cuntum Madina
+3,SAB,308,CS Plak
+3,SAB,309,CS Quelele
+3,SAB,310,Ceu et Terra
+3,SAB,311,Clinica de Bra. Seminario de Padre
+3,SAB,312,CS Bairro Militar
+3,SAB,313,Hospital Militar. Chines
+3,SAB,314,Casa Emanuel
+3,SAB,315,CS Ajuda
+3,SAB,316,Raul Follerau
+3,SAB,317,Clinica Sissoko. Mindara
+3,SAB,318,Clinica 3 di Augusto
+3,SAB,319,CS Antula
+7,Cacheu,701,Hospital Canchungo (regiao)
+7,Cacheu,702,CS Co
+7,Cacheu,703,CS Pelundo
+7,Cacheu,704,CS Djolmete
+7,Cacheu,705,CS Bula
+7,Cacheu,706,CS Caio + PSB Caio
+7,Cacheu,707,CS Calequisse
+7,Cacheu,708,CS Caniop
+7,Cacheu,709,CS Batucar
+7,Cacheu,710,CS Haidara
+7,Cacheu,711,CS Cacheu
+7,Cacheu,712,CS Sao Vicente
+7,Cacheu,713,CS Caiomet (Barala)
+7,Cacheu,714,Irma di Bula
+7,Cacheu,715,Irma di Co
+7,Cacheu,716,Irma di Caio
+7,Cacheu,717,PSB Caio
+15,Sao Domingos,1501,CS Irma Ingore
+15,Sao Domingos,1502,Ingore estado
+15,Sao Domingos,1503,CS Barro
+15,Sao Domingos,1504,CS Bigene
+15,Sao Domingos,1505,CS Sedengal
+15,Sao Domingos,1506,Hospital de Sao Domingos
+15,Sao Domingos,1507,CS Suzana
+15,Sao Domingos,1508,CS Varela
+15,Sao Domingos,1509,Dispensario Menomita Catel
+15,Sao Domingos,1510,CS Fronteira Sanu

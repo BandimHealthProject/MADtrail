@@ -25,25 +25,15 @@ function initButtons() {
             null,
             null);
     });
-    // Follow-up visit
-    var btnCrianca = $('#btnFUVIS');
-    btnCrianca.on("click", function() {
-        odkTables.addRowWithSurvey(
-            null,
-            'MADTRIAL_FU_VIS',
-            'MADTRIAL_FU_vis',
-            null,
-            null);
+    // Follow-up
+    var btnFU = $('#btnFU');
+    btnFU.on("click", function() {
+        odkTables.launchHTML(null, 'config/assets/followUp.html');
     });
-    // Follow-up phone
-    var btnCrianca = $('#btnFUTEL');
-    btnCrianca.on("click", function() {
-        odkTables.addRowWithSurvey(
-            null,
-            'MADTRIAL_FU_PHONE',
-            'MADTRIAL_FU_PHONE',
-            null,
-            null);
+    // Edit ID or TABZ
+    var btnEdit = $('#btnEdit');
+    btnEdit.on("click", function() {
+        odkTables.launchHTML(null, 'config/assets/IDTabz.html');
     });
     // Sync
     var btnSync = $('#btnSync');
