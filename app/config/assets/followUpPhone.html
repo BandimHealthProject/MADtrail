@@ -15,33 +15,23 @@
         <script type="text/javascript" src="js/util.js"></script>
         <script type="text/javascript" src="js/followUpPhone.js"></script>
         <style>
-        .form-group {
-            margin:30px 0;
+        ul#persons > li {
+            list-style:none;
         }
-        body {
-            background-image: url(./img/form_logo.png);
+        ul#persons > li > button {
+            margin:10px;
+            height:45px;
+            width:100%;
+            background-size: 30px;        
+        }
+        button.child {
+            background-color: lightgoldenrodyellow;
+            text-align:left;
+            text-indent: 40px;
+            background-image: url(./img/baby.png);
             background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .btnVis {
-            background-color: mediumseagreen;
-            color: white;
-            font-size: 25px;
-            border-radius: 4px;
-            display: inline-block;
-            border: none;
-            margin: 0 auto 70px;
-            margin-top: 70px;
-        }
-        .btnTel {
-            background-color: mediumturquoise;
-            color: white;
-            font-size: 25px;
-            border-radius: 4px;
-            display: inline-block;
-            border: none;
-            margin-top: 0;
-        }
+            background-position: 10px;
+        }   
         </style>
     </head>
 
@@ -49,6 +39,13 @@
     <body>
         <div id="main" class="container" style="height: 100vh;">
             <h1>Telemovel</h1>
+            <ul id="persons" style="padding:20px;">            
+            </ul>
         </div>
+        <script>
+        $(function() {
+            display();
+        });
+        </script>
     </body>
 </html>

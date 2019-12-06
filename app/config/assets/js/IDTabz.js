@@ -5,7 +5,6 @@
 /* global odkTables, util, odkCommon, odkData */
 
 var children;
-// note that persons are the MIFs
 function display() {
     console.log("Persons list loading");
     
@@ -40,8 +39,8 @@ function loadChildren() {
         console.log("Found " + result.getCount() + " children");
         for (var row = 0; row < result.getCount(); row++) {
             var rowId = result.getData(row,"_id").slice(5);
-            var NOMECRI = result.getData(row,"NOMECRI"); // Despite obviously bad naming, this is actually the Person ID
-            var DATINC = titleCase(result.getData(row,"DATINC"));
+            var NOMECRI = titleCase(result.getData(row,"NOMECRI"));
+            var DATINC = result.getData(row,"DATINC");
             var ID = result.getData(row,"ID");
             var TABZ = result.getData(row,"TABZ");
 
@@ -79,7 +78,6 @@ function populateView() {
         })
     });
 }
-
 
 function openForm(rowId, child) {
     console.log("Preparing form for ", child);

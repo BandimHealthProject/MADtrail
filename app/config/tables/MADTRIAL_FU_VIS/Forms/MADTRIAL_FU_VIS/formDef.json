@@ -21,8 +21,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial Follow-up Visit",
-              "default": "MADtrail Seguimento Visita"
+              "english": "MADtrial - Follow-up Visit",
+              "default": "MADtrail - Seguimento Visita"
             }
           }
         },
@@ -8290,8 +8290,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial Follow-up Visit",
-              "default": "MADtrail Seguimento Visita"
+              "english": "MADtrial - Follow-up Visit",
+              "default": "MADtrail - Seguimento Visita"
             }
           }
         },
@@ -8366,8 +8366,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial Follow-up Visit",
-              "default": "MADtrail Seguimento Visita"
+              "english": "MADtrial - Follow-up Visit",
+              "default": "MADtrail - Seguimento Visita"
             }
           }
         },
@@ -8377,8 +8377,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial Follow-up Visit",
-              "default": "MADtrail Seguimento Visita"
+              "english": "MADtrial - Follow-up Visit",
+              "default": "MADtrail - Seguimento Visita"
             }
           }
         }
@@ -11921,8 +11921,8 @@
             "display": {
               "title": {
                 "text": {
-                  "english": "MADtrial Follow-up Visit",
-                  "default": "MADtrail Seguimento Visita"
+                  "english": "MADtrial - Follow-up Visit",
+                  "default": "MADtrail - Seguimento Visita"
                 }
               }
             },
@@ -17845,8 +17845,8 @@
             "display": {
               "title": {
                 "text": {
-                  "english": "MADtrial Follow-up Visit",
-                  "default": "MADtrail Seguimento Visita"
+                  "english": "MADtrial - Follow-up Visit",
+                  "default": "MADtrail - Seguimento Visita"
                 }
               }
             },
@@ -21771,7 +21771,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":{\"english\":\"MADtrial Follow-up Visit\",\"default\":\"MADtrail Seguimento Visita\"}}"
+        "_value": "{\"text\":{\"english\":\"MADtrial - Follow-up Visit\",\"default\":\"MADtrail - Seguimento Visita\"}}"
       }
     ]
   }

@@ -22,8 +22,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial Follow-up Phone",
-              "default": "MADtrail Seguimento Telemovel"
+              "english": "MADtrial - Follow-up Phone",
+              "default": "MADtrail - Seguimento Telemovel"
             }
           }
         },
@@ -61,24 +61,30 @@
     ],
     "survey": [
       {
-        "clause": "begin screen",
+        "branch_label": "3rd try",
+        "clause": "if",
+        "condition": "data('CHAMADA12') != null || data('CHAMADA22') != null || data('CHAMADA32') != null",
         "_row_num": 2
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 3
       },
       {
         "type": "assign",
         "name": "START",
         "calculation": "now()",
-        "_row_num": 3
-      },
-      {
-        "type": "assign",
-        "name": "DATSEGUI",
-        "calculation": "adate.today()",
         "_row_num": 4
       },
       {
+        "type": "assign",
+        "name": "DATSEGUI3",
+        "calculation": "adate.today()",
+        "_row_num": 5
+      },
+      {
         "type": "adate",
-        "name": "DATSEGUI",
+        "name": "DATSEGUI3",
         "display": {
           "prompt": {
             "text": {
@@ -87,12 +93,12 @@
             }
           }
         },
-        "_row_num": 5
+        "_row_num": 6
       },
       {
         "type": "select_one_with_other",
         "values_list": "ass",
-        "name": "ASSISTENTE",
+        "name": "ASSISTENTE3",
         "display": {
           "prompt": {
             "text": {
@@ -101,44 +107,31 @@
             }
           }
         },
-        "_row_num": 6
-      },
-      {
-        "clause": "end screen",
         "_row_num": 7
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 8
       },
       {
-        "type": "integer",
-        "name": "TELENUM1",
+        "clause": "begin screen",
+        "_row_num": 9
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA13",
         "display": {
           "prompt": {
             "text": {
-              "english": "Phone number",
-              "default": "Numero de telemovel"
+              "english": "1st call - number: <b>{{data.TELEMOVEL1}}</b>",
+              "default": "1ª chamada - número: <b>{{data.TELEMOVEL1}}</b>"
             }
           },
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
               "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
-            }
-          }
-        },
-        "_row_num": 9
-      },
-      {
-        "type": "select_one",
-        "values_list": "cham",
-        "name": "CHAMADA1",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "1st call",
-              "default": "1ª chamada"
             }
           }
         },
@@ -150,7 +143,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('CHAMADA1') != '1'",
+        "condition": "data('CHAMADA13') != '1'",
         "_row_num": 12
       },
       {
@@ -158,13 +151,14 @@
         "_row_num": 13
       },
       {
-        "type": "integer",
-        "name": "TELENUM2",
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA23",
         "display": {
           "prompt": {
             "text": {
-              "english": "Phone number",
-              "default": "Numero de telemovel"
+              "english": "2nd call - number: <b>{{data.TELEMOVEL2}}</b>",
+              "default": "2ª chamada - número: <b>{{data.TELEMOVEL2}}</b>"
             }
           },
           "hint": {
@@ -177,40 +171,27 @@
         "_row_num": 14
       },
       {
-        "type": "select_one",
-        "values_list": "cham",
-        "name": "CHAMADA2",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "2nd call",
-              "default": "2ª chamada"
-            }
-          }
-        },
+        "clause": "end screen",
         "_row_num": 15
       },
       {
-        "clause": "end screen",
+        "clause": "if",
+        "condition": "data('CHAMADA23') != '1'",
         "_row_num": 16
       },
       {
-        "clause": "if",
-        "condition": "data('CHAMADA2') != '1'",
+        "clause": "begin screen",
         "_row_num": 17
       },
       {
-        "clause": "begin screen",
-        "_row_num": 18
-      },
-      {
-        "type": "integer",
-        "name": "TELENUM3",
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA33",
         "display": {
           "prompt": {
             "text": {
-              "english": "Phone number",
-              "default": "Numero de telemovel"
+              "english": "3rd call - number: <b>{{data.TELEMOVEL3}}</b>",
+              "default": "3ª chamada - número: <b>{{data.TELEMOVEL3}}</b>"
             }
           },
           "hint": {
@@ -220,24 +201,18 @@
             }
           }
         },
-        "_row_num": 19
-      },
-      {
-        "type": "select_one",
-        "values_list": "cham",
-        "name": "CHAMADA3",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "3rd call",
-              "default": "3ª chamada"
-            }
-          }
-        },
-        "_row_num": 20
+        "_row_num": 18
       },
       {
         "clause": "end screen",
+        "_row_num": 19
+      },
+      {
+        "clause": "end if",
+        "_row_num": 20
+      },
+      {
+        "clause": "end if",
         "_row_num": 21
       },
       {
@@ -245,17 +220,341 @@
         "_row_num": 22
       },
       {
-        "clause": "end if",
+        "branch_label": "2nd try",
+        "clause": "if",
+        "condition": "(data('CHAMADA11') != null || data('CHAMADA21') != null || data('CHAMADA31') != null) && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
         "_row_num": 23
       },
       {
-        "clause": "if",
-        "condition": "data('CHAMADA1') == '1' || data('CHAMADA2') == '1' || data('CHAMADA3') == '1'",
+        "clause": "begin screen",
         "_row_num": 24
       },
       {
-        "clause": "begin screen",
+        "type": "assign",
+        "name": "START",
+        "calculation": "now()",
         "_row_num": 25
+      },
+      {
+        "type": "assign",
+        "name": "DATSEGUI2",
+        "calculation": "adate.today()",
+        "_row_num": 26
+      },
+      {
+        "type": "adate",
+        "name": "DATSEGUI2",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of call",
+              "default": "Data da ligação"
+            }
+          }
+        },
+        "_row_num": 27
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "ass",
+        "name": "ASSISTENTE2",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Assistant",
+              "default": "Assistente"
+            }
+          }
+        },
+        "_row_num": 28
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 29
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 30
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA12",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "1st call - number: <b>{{data.TELEMOVEL1}}</b>",
+              "default": "1ª chamada - número: <b>{{data.TELEMOVEL1}}</b>"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If you cannot get information on the first call, call each number three times",
+              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+            }
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 32
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA12') != '1'",
+        "_row_num": 33
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 34
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA22",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "2nd call - number: <b>{{data.TELEMOVEL2}}</b>",
+              "default": "2ª chamada - número: <b>{{data.TELEMOVEL2}}</b>"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If you cannot get information on the first call, call each number three times",
+              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+            }
+          }
+        },
+        "_row_num": 35
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 36
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA22') != '1'",
+        "_row_num": 37
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 38
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA32",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "3rd call - number: <b>{{data.TELEMOVEL3}}</b>",
+              "default": "3ª chamada - número: <b>{{data.TELEMOVEL3}}</b>"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If you cannot get information on the first call, call each number three times",
+              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+            }
+          }
+        },
+        "_row_num": 39
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 40
+      },
+      {
+        "clause": "end if",
+        "_row_num": 41
+      },
+      {
+        "clause": "end if",
+        "_row_num": 42
+      },
+      {
+        "clause": "end if",
+        "_row_num": 43
+      },
+      {
+        "branch_label": "1st try",
+        "clause": "if",
+        "condition": "data('CHAMADA12') == null && data('CHAMADA22') == null && data('CHAMADA32') == null && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
+        "_row_num": 44
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 45
+      },
+      {
+        "type": "assign",
+        "name": "START",
+        "calculation": "now()",
+        "_row_num": 46
+      },
+      {
+        "type": "assign",
+        "name": "DATSEGUI1",
+        "calculation": "adate.today()",
+        "_row_num": 47
+      },
+      {
+        "type": "adate",
+        "name": "DATSEGUI1",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of call",
+              "default": "Data da ligação"
+            }
+          }
+        },
+        "_row_num": 48
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "ass",
+        "name": "ASSISTENTE1",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Assistant",
+              "default": "Assistente"
+            }
+          }
+        },
+        "_row_num": 49
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 50
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 51
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA11",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "1st call - number: <b>{{data.TELEMOVEL1}}</b>",
+              "default": "1ª chamada - número: <b>{{data.TELEMOVEL1}}</b>"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If you cannot get information on the first call, call each number three times",
+              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+            }
+          }
+        },
+        "_row_num": 52
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 53
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA11') != '1'",
+        "_row_num": 54
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 55
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA21",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "2nd call - number: <b>{{data.TELEMOVEL2}}</b>",
+              "default": "2ª chamada - número: <b>{{data.TELEMOVEL2}}</b>"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If you cannot get information on the first call, call each number three times",
+              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+            }
+          }
+        },
+        "_row_num": 56
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 57
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA21') != '1'",
+        "_row_num": 58
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 59
+      },
+      {
+        "type": "select_one",
+        "values_list": "cham",
+        "name": "CHAMADA31",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "3rd call - number: <b>{{data.TELEMOVEL3}}</b>",
+              "default": "3ª chamada - número: <b>{{data.TELEMOVEL3}}</b>"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If you cannot get information on the first call, call each number three times",
+              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+            }
+          }
+        },
+        "_row_num": 60
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 61
+      },
+      {
+        "clause": "end if",
+        "_row_num": 62
+      },
+      {
+        "clause": "end if",
+        "_row_num": 63
+      },
+      {
+        "clause": "end if",
+        "_row_num": 64
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA11') == '1' || data('CHAMADA21') == '1' || data('CHAMADA31') == '1' || data('CHAMADA12') == '1' || data('CHAMADA22') == '1' || data('CHAMADA32') == '1' ||data('CHAMADA13') == '1' || data('CHAMADA23') == '1' || data('CHAMADA33') == '1'",
+        "_row_num": 65
+      },
+      {
+        "clause": "do section FU",
+        "_row_num": 66
+      },
+      {
+        "clause": "end if",
+        "_row_num": 67
+      }
+    ],
+    "FU": [
+      {
+        "clause": "begin screen",
+        "_row_num": 2
       },
       {
         "type": "select_one_with_other",
@@ -269,15 +568,15 @@
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 3
       },
       {
         "clause": "end screen",
-        "_row_num": 27
+        "_row_num": 4
       },
       {
         "clause": "begin screen",
-        "_row_num": 28
+        "_row_num": 5
       },
       {
         "type": "select_one",
@@ -291,12 +590,12 @@
             }
           }
         },
-        "_row_num": 29
+        "_row_num": 6
       },
       {
         "clause": "if",
         "condition": "data('VITALCRI')==\"2\"",
-        "_row_num": 30
+        "_row_num": 7
       },
       {
         "type": "adate",
@@ -316,33 +615,33 @@
           }
         },
         "constraint": "adate.diffInDays(data('DATSEGUI'), data('DOD'))<1 || adate.hasUncertainty(data('DOD'))",
-        "_row_num": 31
+        "_row_num": 8
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "dodns",
-        "_row_num": 32
+        "_row_num": 9
       },
       {
         "clause": "if",
         "condition": "data('dodns') != null",
-        "_row_num": 33
+        "_row_num": 10
       },
       {
         "type": "assign",
         "name": "DOD",
         "calculation": "\"D:NS,M:NS,Y:NS\"",
-        "_row_num": 34
+        "_row_num": 11
       },
       {
         "clause": "end if",
-        "_row_num": 35
+        "_row_num": 12
       },
       {
         "clause": "if",
         "condition": "data('DOD')==\"D:NS,M:NS,Y:NS\"",
-        "_row_num": 36
+        "_row_num": 13
       },
       {
         "type": "integer",
@@ -355,7 +654,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 14
       },
       {
         "type": "integer",
@@ -375,23 +674,23 @@
           }
         },
         "constraint": "data('IDADEMES')<13 || data('DOB')!=\"D:NS,M:NS,Y:NS\"",
-        "_row_num": 38
+        "_row_num": 15
       },
       {
         "clause": "end if",
-        "_row_num": 39
+        "_row_num": 16
       },
       {
         "clause": "end if",
-        "_row_num": 40
+        "_row_num": 17
       },
       {
         "clause": "end screen",
-        "_row_num": 41
+        "_row_num": 18
       },
       {
         "clause": "begin screen",
-        "_row_num": 42
+        "_row_num": 19
       },
       {
         "type": "select_one",
@@ -405,20 +704,20 @@
             }
           }
         },
-        "_row_num": 43
+        "_row_num": 20
       },
       {
         "clause": "end screen",
-        "_row_num": 44
+        "_row_num": 21
       },
       {
         "clause": "if",
         "condition": "data('VACHIS') == '1'",
-        "_row_num": 45
+        "_row_num": 22
       },
       {
         "clause": "begin screen",
-        "_row_num": 46
+        "_row_num": 23
       },
       {
         "type": "select_multiple",
@@ -432,7 +731,7 @@
             }
           }
         },
-        "_row_num": 47
+        "_row_num": 24
       },
       {
         "type": "text",
@@ -445,19 +744,19 @@
             }
           }
         },
-        "_row_num": 48
+        "_row_num": 25
       },
       {
         "clause": "end screen",
-        "_row_num": 49
+        "_row_num": 26
       },
       {
         "clause": "end if",
-        "_row_num": 50
+        "_row_num": 27
       },
       {
         "clause": "begin screen",
-        "_row_num": 51
+        "_row_num": 28
       },
       {
         "type": "select_one",
@@ -471,12 +770,12 @@
             }
           }
         },
-        "_row_num": 52
+        "_row_num": 29
       },
       {
         "clause": "if",
         "condition": "data('HOSPI')==\"1\"",
-        "_row_num": 53
+        "_row_num": 30
       },
       {
         "type": "select_one",
@@ -490,24 +789,24 @@
             }
           }
         },
-        "_row_num": 54
+        "_row_num": 31
       },
       {
         "clause": "end if",
-        "_row_num": 55
+        "_row_num": 32
       },
       {
         "clause": "end screen",
-        "_row_num": 56
+        "_row_num": 33
       },
       {
         "clause": "if",
         "condition": "data('HOSPIVEZ') > 0",
-        "_row_num": 57
+        "_row_num": 34
       },
       {
         "clause": "begin screen",
-        "_row_num": 58
+        "_row_num": 35
       },
       {
         "type": "adate",
@@ -520,7 +819,7 @@
             }
           }
         },
-        "_row_num": 59
+        "_row_num": 36
       },
       {
         "type": "note",
@@ -532,7 +831,7 @@
             }
           }
         },
-        "_row_num": 60
+        "_row_num": 37
       },
       {
         "type": "select_one_dropdown",
@@ -546,7 +845,7 @@
             }
           }
         },
-        "_row_num": 61
+        "_row_num": 38
       },
       {
         "type": "select_one_dropdown",
@@ -561,36 +860,36 @@
           }
         },
         "choice_filter": "choice_item.reg === data('reghosp1')",
-        "_row_num": 62
+        "_row_num": 39
       },
       {
         "type": "select_multiple",
         "values_list": "dontknowhosp",
         "name": "hospcode1ns",
-        "_row_num": 63
+        "_row_num": 40
       },
       {
         "clause": "if",
         "condition": "data('hospcode1ns') != null",
-        "_row_num": 64
+        "_row_num": 41
       },
       {
         "type": "assign",
         "name": "HOSPCODE1",
         "calculation": "data('hospcode1ns')",
-        "_row_num": 65
+        "_row_num": 42
       },
       {
         "clause": "end if",
-        "_row_num": 66
+        "_row_num": 43
       },
       {
         "clause": "end screen",
-        "_row_num": 67
+        "_row_num": 44
       },
       {
         "clause": "begin screen",
-        "_row_num": 68
+        "_row_num": 45
       },
       {
         "type": "text",
@@ -603,7 +902,7 @@
             }
           }
         },
-        "_row_num": 69
+        "_row_num": 46
       },
       {
         "type": "integer",
@@ -616,26 +915,26 @@
             }
           }
         },
-        "_row_num": 70
+        "_row_num": 47
       },
       {
         "type": "select_multiple",
         "values_list": "hospalta",
         "name": "HOSPALTA1",
-        "_row_num": 71
+        "_row_num": 48
       },
       {
         "clause": "end screen",
-        "_row_num": 72
+        "_row_num": 49
       },
       {
         "clause": "if",
         "condition": "data('HOSPIVEZ') == '33'",
-        "_row_num": 73
+        "_row_num": 50
       },
       {
         "clause": "begin screen",
-        "_row_num": 74
+        "_row_num": 51
       },
       {
         "type": "select_one",
@@ -649,24 +948,24 @@
             }
           }
         },
-        "_row_num": 75
+        "_row_num": 52
       },
       {
         "clause": "end screen",
-        "_row_num": 76
+        "_row_num": 53
       },
       {
         "clause": "end if",
-        "_row_num": 77
+        "_row_num": 54
       },
       {
         "clause": "if",
         "condition": "data('HOSPI2')==\"1\" || data('HOSPIVEZ') == '3' || data('HOSPIVEZ') == '2' || data('HOSPIVEZ') == '77'",
-        "_row_num": 78
+        "_row_num": 55
       },
       {
         "clause": "begin screen",
-        "_row_num": 79
+        "_row_num": 56
       },
       {
         "type": "adate",
@@ -679,7 +978,7 @@
             }
           }
         },
-        "_row_num": 80
+        "_row_num": 57
       },
       {
         "type": "note",
@@ -691,7 +990,7 @@
             }
           }
         },
-        "_row_num": 81
+        "_row_num": 58
       },
       {
         "type": "select_one_dropdown",
@@ -705,7 +1004,7 @@
             }
           }
         },
-        "_row_num": 82
+        "_row_num": 59
       },
       {
         "type": "select_one_dropdown",
@@ -720,36 +1019,36 @@
           }
         },
         "choice_filter": "choice_item.reg === data('reghosp2')",
-        "_row_num": 83
+        "_row_num": 60
       },
       {
         "type": "select_multiple",
         "values_list": "dontknowhosp",
         "name": "hospcode2ns",
-        "_row_num": 84
+        "_row_num": 61
       },
       {
         "clause": "if",
         "condition": "data('hospcode2ns') != null",
-        "_row_num": 85
+        "_row_num": 62
       },
       {
         "type": "assign",
         "name": "HOSPCODE2",
         "calculation": "data('hospcode2ns')",
-        "_row_num": 86
+        "_row_num": 63
       },
       {
         "clause": "end if",
-        "_row_num": 87
+        "_row_num": 64
       },
       {
         "clause": "end screen",
-        "_row_num": 88
+        "_row_num": 65
       },
       {
         "clause": "begin screen",
-        "_row_num": 89
+        "_row_num": 66
       },
       {
         "type": "text",
@@ -762,7 +1061,7 @@
             }
           }
         },
-        "_row_num": 90
+        "_row_num": 67
       },
       {
         "type": "integer",
@@ -775,30 +1074,30 @@
             }
           }
         },
-        "_row_num": 91
+        "_row_num": 68
       },
       {
         "type": "select_multiple",
         "values_list": "hospalta",
         "name": "HOSPALTA2",
-        "_row_num": 92
+        "_row_num": 69
       },
       {
         "clause": "end screen",
-        "_row_num": 93
+        "_row_num": 70
       },
       {
         "clause": "end if",
-        "_row_num": 94
+        "_row_num": 71
       },
       {
         "clause": "if",
         "condition": "data('HOSPIVEZ') == '33' && data('HOSPI2')==\"1\"",
-        "_row_num": 95
+        "_row_num": 72
       },
       {
         "clause": "begin screen",
-        "_row_num": 96
+        "_row_num": 73
       },
       {
         "type": "select_one",
@@ -812,24 +1111,24 @@
             }
           }
         },
-        "_row_num": 97
+        "_row_num": 74
       },
       {
         "clause": "end screen",
-        "_row_num": 98
+        "_row_num": 75
       },
       {
         "clause": "end if",
-        "_row_num": 99
+        "_row_num": 76
       },
       {
         "clause": "if",
         "condition": "data('HOSPI3')==\"1\" || data('HOSPIVEZ') == '3' || data('HOSPIVEZ') == '77'",
-        "_row_num": 100
+        "_row_num": 77
       },
       {
         "clause": "begin screen",
-        "_row_num": 101
+        "_row_num": 78
       },
       {
         "type": "adate",
@@ -842,7 +1141,7 @@
             }
           }
         },
-        "_row_num": 102
+        "_row_num": 79
       },
       {
         "type": "note",
@@ -854,7 +1153,7 @@
             }
           }
         },
-        "_row_num": 103
+        "_row_num": 80
       },
       {
         "type": "select_one_dropdown",
@@ -868,7 +1167,7 @@
             }
           }
         },
-        "_row_num": 104
+        "_row_num": 81
       },
       {
         "type": "select_one_dropdown",
@@ -883,36 +1182,36 @@
           }
         },
         "choice_filter": "choice_item.reg === data('reghosp3')",
-        "_row_num": 105
+        "_row_num": 82
       },
       {
         "type": "select_multiple",
         "values_list": "dontknowhosp",
         "name": "hospcode3ns",
-        "_row_num": 106
+        "_row_num": 83
       },
       {
         "clause": "if",
         "condition": "data('hospcode3ns') != null",
-        "_row_num": 107
+        "_row_num": 84
       },
       {
         "type": "assign",
         "name": "HOSPCODE3",
         "calculation": "data('hospcode3ns')",
-        "_row_num": 108
+        "_row_num": 85
       },
       {
         "clause": "end if",
-        "_row_num": 109
+        "_row_num": 86
       },
       {
         "clause": "end screen",
-        "_row_num": 110
+        "_row_num": 87
       },
       {
         "clause": "begin screen",
-        "_row_num": 111
+        "_row_num": 88
       },
       {
         "type": "text",
@@ -925,7 +1224,7 @@
             }
           }
         },
-        "_row_num": 112
+        "_row_num": 89
       },
       {
         "type": "integer",
@@ -938,34 +1237,34 @@
             }
           }
         },
-        "_row_num": 113
+        "_row_num": 90
       },
       {
         "type": "select_multiple",
         "values_list": "hospalta",
         "name": "HOSPALTA3",
-        "_row_num": 114
+        "_row_num": 91
       },
       {
         "clause": "end screen",
-        "_row_num": 115
+        "_row_num": 92
       },
       {
         "clause": "end if",
-        "_row_num": 116
+        "_row_num": 93
       },
       {
         "clause": "end if",
-        "_row_num": 117
+        "_row_num": 94
       },
       {
         "clause": "if",
         "condition": "data('VITALCRI')==\"2\"",
-        "_row_num": 118
+        "_row_num": 95
       },
       {
         "clause": "begin screen",
-        "_row_num": 119
+        "_row_num": 96
       },
       {
         "type": "select_one",
@@ -979,12 +1278,12 @@
             }
           }
         },
-        "_row_num": 120
+        "_row_num": 97
       },
       {
         "clause": "if",
         "condition": "data('PODEAUT') == '1'",
-        "_row_num": 121
+        "_row_num": 98
       },
       {
         "type": "select_one_dropdown",
@@ -998,7 +1297,7 @@
             }
           }
         },
-        "_row_num": 122
+        "_row_num": 99
       },
       {
         "type": "text",
@@ -1011,7 +1310,7 @@
             }
           }
         },
-        "_row_num": 123
+        "_row_num": 100
       },
       {
         "type": "text",
@@ -1024,23 +1323,19 @@
             }
           }
         },
-        "_row_num": 124
+        "_row_num": 101
       },
       {
         "clause": "end if",
-        "_row_num": 125
+        "_row_num": 102
       },
       {
         "clause": "end screen",
-        "_row_num": 126
+        "_row_num": 103
       },
       {
         "clause": "end if",
-        "_row_num": 127
-      },
-      {
-        "clause": "end if",
-        "_row_num": 128
+        "_row_num": 104
       }
     ],
     "queries": [
@@ -1618,286 +1913,397 @@
     ],
     "model": [
       {
-        "name": "ASSISTENTE",
+        "name": "ASSISTENTE1",
         "type": "select_one_with_other",
         "isSessionVariable": false,
+        "comment": "call",
         "_row_num": 2
       },
       {
-        "name": "CHAMADA1",
-        "type": "select_one",
+        "name": "ASSISTENTE2",
+        "type": "select_one_with_other",
         "isSessionVariable": false,
         "_row_num": 3
       },
       {
-        "name": "CHAMADA2",
-        "type": "select_one",
+        "name": "ASSISTENTE3",
+        "type": "select_one_with_other",
         "isSessionVariable": false,
         "_row_num": 4
       },
       {
-        "name": "CHAMADA3",
+        "name": "CHAMADA11",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 5
       },
       {
-        "name": "DATSEGUI",
-        "type": "adate",
+        "name": "CHAMADA12",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 6
       },
       {
-        "name": "DOD",
-        "type": "adate",
+        "name": "CHAMADA13",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 7
       },
       {
-        "name": "DODANO",
-        "type": "integer",
+        "name": "CHAMADA21",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 8
       },
       {
-        "name": "DODMES",
-        "type": "integer",
+        "name": "CHAMADA22",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 9
       },
       {
-        "name": "dodns",
-        "type": "select_multiple",
-        "isSessionVariable": true,
+        "name": "CHAMADA23",
+        "type": "select_one",
+        "isSessionVariable": false,
         "_row_num": 10
       },
       {
-        "name": "HOSPALTA1",
-        "type": "select_multiple",
+        "name": "CHAMADA31",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 11
       },
       {
-        "name": "HOSPALTA2",
-        "type": "select_multiple",
+        "name": "CHAMADA32",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 12
       },
       {
-        "name": "HOSPALTA3",
-        "type": "select_multiple",
+        "name": "CHAMADA33",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 13
       },
       {
-        "name": "HOSPCAUSA1",
-        "type": "text",
+        "name": "DATSEGUI1",
+        "type": "adate",
         "isSessionVariable": false,
         "_row_num": 14
       },
       {
-        "name": "HOSPCAUSA2",
-        "type": "text",
+        "name": "DATSEGUI2",
+        "type": "adate",
         "isSessionVariable": false,
         "_row_num": 15
       },
       {
-        "name": "HOSPCAUSA3",
-        "type": "text",
+        "name": "DATSEGUI3",
+        "type": "adate",
         "isSessionVariable": false,
         "_row_num": 16
-      },
-      {
-        "name": "HOSPCODE1",
-        "type": "select_one_dropdown",
-        "isSessionVariable": false,
-        "_row_num": 17
-      },
-      {
-        "name": "hospcode1ns",
-        "type": "select_multiple",
-        "isSessionVariable": true,
-        "_row_num": 18
-      },
-      {
-        "name": "HOSPCODE2",
-        "type": "select_one_dropdown",
-        "isSessionVariable": false,
-        "_row_num": 19
-      },
-      {
-        "name": "hospcode2ns",
-        "type": "select_multiple",
-        "isSessionVariable": true,
-        "_row_num": 20
-      },
-      {
-        "name": "HOSPCODE3",
-        "type": "select_one_dropdown",
-        "isSessionVariable": false,
-        "_row_num": 21
-      },
-      {
-        "name": "hospcode3ns",
-        "type": "select_multiple",
-        "isSessionVariable": true,
-        "_row_num": 22
-      },
-      {
-        "name": "HOSPDATA1",
-        "type": "adate",
-        "isSessionVariable": false,
-        "_row_num": 23
-      },
-      {
-        "name": "HOSPDATA2",
-        "type": "adate",
-        "isSessionVariable": false,
-        "_row_num": 24
-      },
-      {
-        "name": "HOSPDATA3",
-        "type": "adate",
-        "isSessionVariable": false,
-        "_row_num": 25
-      },
-      {
-        "name": "HOSPDIAS1",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 26
-      },
-      {
-        "name": "HOSPDIAS2",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 27
-      },
-      {
-        "name": "HOSPDIAS3",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 28
-      },
-      {
-        "name": "HOSPI",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 29
-      },
-      {
-        "name": "HOSPI2",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 30
-      },
-      {
-        "name": "HOSPI3",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 31
-      },
-      {
-        "name": "HOSPIVEZ",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 32
-      },
-      {
-        "name": "INFORMADOR",
-        "type": "select_one_with_other",
-        "isSessionVariable": false,
-        "_row_num": 33
-      },
-      {
-        "name": "MORNOME",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 34
-      },
-      {
-        "name": "PODEAUT",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 35
-      },
-      {
-        "name": "REG",
-        "type": "select_one_dropdown",
-        "isSessionVariable": false,
-        "_row_num": 36
-      },
-      {
-        "name": "reghosp1",
-        "type": "select_one_dropdown",
-        "isSessionVariable": true,
-        "_row_num": 37
-      },
-      {
-        "name": "reghosp2",
-        "type": "select_one_dropdown",
-        "isSessionVariable": true,
-        "_row_num": 38
-      },
-      {
-        "name": "reghosp3",
-        "type": "select_one_dropdown",
-        "isSessionVariable": true,
-        "_row_num": 39
       },
       {
         "name": "START",
         "type": "assign",
         "isSessionVariable": false,
+        "_row_num": 17
+      },
+      {
+        "name": "DOD",
+        "type": "adate",
+        "isSessionVariable": false,
+        "comment": "FU",
+        "_row_num": 19
+      },
+      {
+        "name": "DODANO",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 20
+      },
+      {
+        "name": "DODMES",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 21
+      },
+      {
+        "name": "dodns",
+        "type": "select_multiple",
+        "isSessionVariable": true,
+        "_row_num": 22
+      },
+      {
+        "name": "HOSPALTA1",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 23
+      },
+      {
+        "name": "HOSPALTA2",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 24
+      },
+      {
+        "name": "HOSPALTA3",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 25
+      },
+      {
+        "name": "HOSPCAUSA1",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 26
+      },
+      {
+        "name": "HOSPCAUSA2",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 27
+      },
+      {
+        "name": "HOSPCAUSA3",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 28
+      },
+      {
+        "name": "HOSPCODE1",
+        "type": "select_one_dropdown",
+        "isSessionVariable": false,
+        "_row_num": 29
+      },
+      {
+        "name": "hospcode1ns",
+        "type": "select_multiple",
+        "isSessionVariable": true,
+        "_row_num": 30
+      },
+      {
+        "name": "HOSPCODE2",
+        "type": "select_one_dropdown",
+        "isSessionVariable": false,
+        "_row_num": 31
+      },
+      {
+        "name": "hospcode2ns",
+        "type": "select_multiple",
+        "isSessionVariable": true,
+        "_row_num": 32
+      },
+      {
+        "name": "HOSPCODE3",
+        "type": "select_one_dropdown",
+        "isSessionVariable": false,
+        "_row_num": 33
+      },
+      {
+        "name": "hospcode3ns",
+        "type": "select_multiple",
+        "isSessionVariable": true,
+        "_row_num": 34
+      },
+      {
+        "name": "HOSPDATA1",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 35
+      },
+      {
+        "name": "HOSPDATA2",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 36
+      },
+      {
+        "name": "HOSPDATA3",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 37
+      },
+      {
+        "name": "HOSPDIAS1",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 38
+      },
+      {
+        "name": "HOSPDIAS2",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 39
+      },
+      {
+        "name": "HOSPDIAS3",
+        "type": "integer",
+        "isSessionVariable": false,
         "_row_num": 40
       },
       {
-        "name": "TABNOME",
-        "type": "text",
+        "name": "HOSPI",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 41
       },
       {
-        "name": "TELENUM1",
-        "type": "integer",
+        "name": "HOSPI2",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 42
       },
       {
-        "name": "TELENUM2",
-        "type": "integer",
+        "name": "HOSPI3",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 43
       },
       {
-        "name": "TELENUM3",
-        "type": "integer",
+        "name": "HOSPIVEZ",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 44
       },
       {
-        "name": "VACHIS",
-        "type": "select_one",
+        "name": "INFORMADOR",
+        "type": "select_one_with_other",
         "isSessionVariable": false,
         "_row_num": 45
       },
       {
-        "name": "VACOUTRO",
+        "name": "MORNOME",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 46
       },
       {
+        "name": "PODEAUT",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 47
+      },
+      {
+        "name": "REG",
+        "type": "select_one_dropdown",
+        "isSessionVariable": false,
+        "_row_num": 48
+      },
+      {
+        "name": "reghosp1",
+        "type": "select_one_dropdown",
+        "isSessionVariable": true,
+        "_row_num": 49
+      },
+      {
+        "name": "reghosp2",
+        "type": "select_one_dropdown",
+        "isSessionVariable": true,
+        "_row_num": 50
+      },
+      {
+        "name": "reghosp3",
+        "type": "select_one_dropdown",
+        "isSessionVariable": true,
+        "_row_num": 51
+      },
+      {
+        "name": "TABNOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 52
+      },
+      {
+        "name": "VACHIS",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 53
+      },
+      {
+        "name": "VACOUTRO",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 54
+      },
+      {
         "name": "VACTIPO",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 47
+        "_row_num": 55
       },
       {
         "name": "VITALCRI",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 48
+        "_row_num": 56
+      },
+      {
+        "name": "DATINC",
+        "type": "adate",
+        "isSessionVariable": false,
+        "comment": "tableApp",
+        "_row_num": 58
+      },
+      {
+        "name": "DOB",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 59
+      },
+      {
+        "name": "FOLLOWUP",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 60
+      },
+      {
+        "name": "NOMECRI",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 61
+      },
+      {
+        "name": "NOMERESP",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 62
+      },
+      {
+        "name": "NUMEST",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 63
+      },
+      {
+        "name": "SEX",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 64
+      },
+      {
+        "name": "TELEMOVEL1",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 65
+      },
+      {
+        "name": "TELEMOVEL2",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 66
+      },
+      {
+        "name": "TELEMOVEL3",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 67
+      },
+      {
+        "name": "FU",
+        "type": "ingeger",
+        "isSessionVariable": false,
+        "_row_num": 68
       }
     ]
   },
@@ -1939,8 +2345,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial Follow-up Phone",
-              "default": "MADtrail Seguimento Telemovel"
+              "english": "MADtrial - Follow-up Phone",
+              "default": "MADtrail - Seguimento Telemovel"
             }
           }
         },
@@ -2016,12 +2422,22 @@
         "display": {
           "title": {
             "text": {
-              "english": "MADtrial Follow-up Phone",
-              "default": "MADtrail Seguimento Telemovel"
+              "english": "MADtrial - Follow-up Phone",
+              "default": "MADtrail - Seguimento Telemovel"
             }
           }
         },
         "_row_num": 5
+      },
+      "FU": {
+        "display": {
+          "title": {
+            "text": {
+              "english": "MADtrial - Follow-up Phone",
+              "default": "MADtrail - Seguimento Telemovel"
+            }
+          }
+        }
       }
     },
     "choices": {
@@ -2615,12 +3031,12 @@
     },
     "calculates": {},
     "model": {
-      "ASSISTENTE": {
+      "ASSISTENTE1": {
         "type": "string",
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 49,
             "section_name": "survey"
           },
           {
@@ -2629,14 +3045,15 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "ASSISTENTE"
+        "comment": "call",
+        "elementKey": "ASSISTENTE1"
       },
-      "CHAMADA1": {
+      "ASSISTENTE2": {
         "type": "string",
-        "valuesList": "cham",
+        "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 28,
             "section_name": "survey"
           },
           {
@@ -2645,14 +3062,14 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CHAMADA1"
+        "elementKey": "ASSISTENTE2"
       },
-      "CHAMADA2": {
+      "ASSISTENTE3": {
         "type": "string",
-        "valuesList": "cham",
+        "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 7,
             "section_name": "survey"
           },
           {
@@ -2661,14 +3078,14 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CHAMADA2"
+        "elementKey": "ASSISTENTE3"
       },
-      "CHAMADA3": {
+      "CHAMADA11": {
         "type": "string",
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
@@ -2677,18 +3094,14 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CHAMADA3"
+        "elementKey": "CHAMADA11"
       },
-      "DATSEGUI": {
-        "prompt_type_name": "adate",
+      "CHAMADA12": {
         "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
+        "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 31,
             "section_name": "survey"
           },
           {
@@ -2697,9 +3110,121 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "DATSEGUI"
+        "elementKey": "CHAMADA12"
       },
-      "DOD": {
+      "CHAMADA13": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA13"
+      },
+      "CHAMADA21": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 56,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA21"
+      },
+      "CHAMADA22": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 35,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA22"
+      },
+      "CHAMADA23": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA23"
+      },
+      "CHAMADA31": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA31"
+      },
+      "CHAMADA32": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA32"
+      },
+      "CHAMADA33": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA33"
+      },
+      "DATSEGUI1": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -2708,11 +3233,82 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 48,
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATSEGUI1"
+      },
+      "DATSEGUI2": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATSEGUI2"
+      },
+      "DATSEGUI3": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATSEGUI3"
+      },
+      "START": {
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "type": "assign",
+        "isSessionVariable": false,
+        "elementKey": "START"
+      },
+      "DOD": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "FU",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "FU"
+          },
+          {
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -2723,11 +3319,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
-            "section_name": "survey"
+            "_row_num": 14,
+            "section_name": "FU"
           },
           {
-            "_row_num": 8,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -2738,11 +3334,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 38,
-            "section_name": "survey"
+            "_row_num": 15,
+            "section_name": "FU"
           },
           {
-            "_row_num": 9,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -2758,11 +3354,11 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 32,
-            "section_name": "survey"
+            "_row_num": 9,
+            "section_name": "FU"
           },
           {
-            "_row_num": 10,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -2778,11 +3374,11 @@
         "valuesList": "hospalta",
         "_defn": [
           {
-            "_row_num": 71,
-            "section_name": "survey"
+            "_row_num": 48,
+            "section_name": "FU"
           },
           {
-            "_row_num": 11,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -2798,11 +3394,11 @@
         "valuesList": "hospalta",
         "_defn": [
           {
-            "_row_num": 92,
-            "section_name": "survey"
+            "_row_num": 69,
+            "section_name": "FU"
           },
           {
-            "_row_num": 12,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -2818,11 +3414,11 @@
         "valuesList": "hospalta",
         "_defn": [
           {
-            "_row_num": 114,
-            "section_name": "survey"
+            "_row_num": 91,
+            "section_name": "FU"
           },
           {
-            "_row_num": 13,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -2833,11 +3429,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 69,
-            "section_name": "survey"
+            "_row_num": 46,
+            "section_name": "FU"
           },
           {
-            "_row_num": 14,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -2848,11 +3444,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 90,
-            "section_name": "survey"
+            "_row_num": 67,
+            "section_name": "FU"
           },
           {
-            "_row_num": 15,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -2863,11 +3459,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 112,
-            "section_name": "survey"
+            "_row_num": 89,
+            "section_name": "FU"
           },
           {
-            "_row_num": 16,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -2879,11 +3475,11 @@
         "valuesList": "hc_csv",
         "_defn": [
           {
-            "_row_num": 62,
-            "section_name": "survey"
+            "_row_num": 39,
+            "section_name": "FU"
           },
           {
-            "_row_num": 17,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -2899,11 +3495,11 @@
         "valuesList": "dontknowhosp",
         "_defn": [
           {
-            "_row_num": 63,
-            "section_name": "survey"
+            "_row_num": 40,
+            "section_name": "FU"
           },
           {
-            "_row_num": 18,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -2915,11 +3511,11 @@
         "valuesList": "hc_csv",
         "_defn": [
           {
-            "_row_num": 83,
-            "section_name": "survey"
+            "_row_num": 60,
+            "section_name": "FU"
           },
           {
-            "_row_num": 19,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -2935,11 +3531,11 @@
         "valuesList": "dontknowhosp",
         "_defn": [
           {
-            "_row_num": 84,
-            "section_name": "survey"
+            "_row_num": 61,
+            "section_name": "FU"
           },
           {
-            "_row_num": 20,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -2951,11 +3547,11 @@
         "valuesList": "hc_csv",
         "_defn": [
           {
-            "_row_num": 105,
-            "section_name": "survey"
+            "_row_num": 82,
+            "section_name": "FU"
           },
           {
-            "_row_num": 21,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -2971,11 +3567,11 @@
         "valuesList": "dontknowhosp",
         "_defn": [
           {
-            "_row_num": 106,
-            "section_name": "survey"
+            "_row_num": 83,
+            "section_name": "FU"
           },
           {
-            "_row_num": 22,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -2991,11 +3587,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 59,
-            "section_name": "survey"
+            "_row_num": 36,
+            "section_name": "FU"
           },
           {
-            "_row_num": 23,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -3011,11 +3607,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 80,
-            "section_name": "survey"
+            "_row_num": 57,
+            "section_name": "FU"
           },
           {
-            "_row_num": 24,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -3031,11 +3627,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 102,
-            "section_name": "survey"
+            "_row_num": 79,
+            "section_name": "FU"
           },
           {
-            "_row_num": 25,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -3046,11 +3642,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 70,
-            "section_name": "survey"
+            "_row_num": 47,
+            "section_name": "FU"
           },
           {
-            "_row_num": 26,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -3061,11 +3657,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 91,
-            "section_name": "survey"
+            "_row_num": 68,
+            "section_name": "FU"
           },
           {
-            "_row_num": 27,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -3076,11 +3672,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 113,
-            "section_name": "survey"
+            "_row_num": 90,
+            "section_name": "FU"
           },
           {
-            "_row_num": 28,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -3092,11 +3688,11 @@
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 52,
-            "section_name": "survey"
+            "_row_num": 29,
+            "section_name": "FU"
           },
           {
-            "_row_num": 29,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -3108,11 +3704,11 @@
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 75,
-            "section_name": "survey"
+            "_row_num": 52,
+            "section_name": "FU"
           },
           {
-            "_row_num": 30,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -3124,11 +3720,11 @@
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 97,
-            "section_name": "survey"
+            "_row_num": 74,
+            "section_name": "FU"
           },
           {
-            "_row_num": 31,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -3140,11 +3736,11 @@
         "valuesList": "vezes",
         "_defn": [
           {
-            "_row_num": 54,
-            "section_name": "survey"
+            "_row_num": 31,
+            "section_name": "FU"
           },
           {
-            "_row_num": 32,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -3156,11 +3752,11 @@
         "valuesList": "inf",
         "_defn": [
           {
-            "_row_num": 26,
-            "section_name": "survey"
+            "_row_num": 3,
+            "section_name": "FU"
           },
           {
-            "_row_num": 33,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -3171,11 +3767,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 124,
-            "section_name": "survey"
+            "_row_num": 101,
+            "section_name": "FU"
           },
           {
-            "_row_num": 34,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -3187,11 +3783,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 120,
-            "section_name": "survey"
+            "_row_num": 97,
+            "section_name": "FU"
           },
           {
-            "_row_num": 35,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -3203,11 +3799,11 @@
         "valuesList": "reg",
         "_defn": [
           {
-            "_row_num": 122,
-            "section_name": "survey"
+            "_row_num": 99,
+            "section_name": "FU"
           },
           {
-            "_row_num": 36,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -3219,11 +3815,11 @@
         "valuesList": "reg_csv",
         "_defn": [
           {
-            "_row_num": 61,
-            "section_name": "survey"
+            "_row_num": 38,
+            "section_name": "FU"
           },
           {
-            "_row_num": 37,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -3235,11 +3831,11 @@
         "valuesList": "reg_csv",
         "_defn": [
           {
-            "_row_num": 82,
-            "section_name": "survey"
+            "_row_num": 59,
+            "section_name": "FU"
           },
           {
-            "_row_num": 38,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -3251,98 +3847,42 @@
         "valuesList": "reg_csv",
         "_defn": [
           {
-            "_row_num": 104,
-            "section_name": "survey"
+            "_row_num": 81,
+            "section_name": "FU"
           },
           {
-            "_row_num": 39,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
         "isSessionVariable": true,
         "elementKey": "reghosp3"
       },
-      "START": {
-        "_defn": [
-          {
-            "_row_num": 40,
-            "section_name": "model"
-          }
-        ],
-        "type": "assign",
-        "isSessionVariable": false,
-        "elementKey": "START"
-      },
       "TABNOME": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 123,
-            "section_name": "survey"
+            "_row_num": 100,
+            "section_name": "FU"
           },
           {
-            "_row_num": 41,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "TABNOME"
       },
-      "TELENUM1": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 9,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 42,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TELENUM1"
-      },
-      "TELENUM2": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 14,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 43,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TELENUM2"
-      },
-      "TELENUM3": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 19,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 44,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TELENUM3"
-      },
       "VACHIS": {
         "type": "string",
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 43,
-            "section_name": "survey"
+            "_row_num": 20,
+            "section_name": "FU"
           },
           {
-            "_row_num": 45,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -3353,11 +3893,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 48,
-            "section_name": "survey"
+            "_row_num": 25,
+            "section_name": "FU"
           },
           {
-            "_row_num": 46,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -3373,11 +3913,11 @@
         "valuesList": "vac",
         "_defn": [
           {
-            "_row_num": 47,
-            "section_name": "survey"
+            "_row_num": 24,
+            "section_name": "FU"
           },
           {
-            "_row_num": 47,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -3389,31 +3929,167 @@
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 29,
-            "section_name": "survey"
+            "_row_num": 6,
+            "section_name": "FU"
           },
           {
-            "_row_num": 48,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "VITALCRI"
+      },
+      "DATINC": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "tableApp",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 58,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATINC"
+      },
+      "DOB": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 59,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DOB"
+      },
+      "FOLLOWUP": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "FOLLOWUP"
+      },
+      "NOMECRI": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOMECRI"
+      },
+      "NOMERESP": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOMERESP"
+      },
+      "NUMEST": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NUMEST"
+      },
+      "SEX": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 64,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SEX"
+      },
+      "TELEMOVEL1": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 65,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELEMOVEL1"
+      },
+      "TELEMOVEL2": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 66,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELEMOVEL2"
+      },
+      "TELEMOVEL3": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELEMOVEL3"
+      },
+      "FU": {
+        "_defn": [
+          {
+            "_row_num": 68,
+            "section_name": "model"
+          }
+        ],
+        "type": "ingeger",
+        "isSessionVariable": false,
+        "elementKey": "FU"
       }
     },
     "section_names": [
+      "FU",
       "initial",
       "survey"
     ],
     "sections": {
       "survey": {
         "section_name": "survey",
-        "nested_sections": {},
-        "reachable_sections": {},
+        "nested_sections": {
+          "FU": true
+        },
+        "reachable_sections": {
+          "FU": true
+        },
         "prompts": [
           {
             "type": "adate",
-            "name": "DATSEGUI",
+            "name": "DATSEGUI3",
             "display": {
               "prompt": {
                 "text": {
@@ -3422,17 +4098,17 @@
                 }
               }
             },
-            "_row_num": 5,
-            "__rowNum__": 4,
+            "_row_num": 6,
+            "__rowNum__": 5,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen2",
+            "_branch_label_enclosing_screen": "survey/_screen3",
             "promptIdx": 0
           },
           {
             "type": "select_one_with_other",
             "values_list": "ass",
-            "name": "ASSISTENTE",
+            "name": "ASSISTENTE3",
             "display": {
               "prompt": {
                 "text": {
@@ -3441,21 +4117,22 @@
                 }
               }
             },
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "survey/_screen2",
+            "_branch_label_enclosing_screen": "survey/_screen3",
             "promptIdx": 1
           },
           {
-            "type": "integer",
-            "name": "TELENUM1",
+            "type": "select_one",
+            "values_list": "cham",
+            "name": "CHAMADA13",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Phone number",
-                  "default": "Numero de telemovel"
+                  "english": "1st call - number: <b>{{data.TELEMOVEL1}}</b>",
+                  "default": "1ª chamada - número: <b>{{data.TELEMOVEL1}}</b>"
                 }
               },
               "hint": {
@@ -3465,40 +4142,22 @@
                 }
               }
             },
-            "_row_num": 9,
-            "__rowNum__": 8,
+            "_row_num": 10,
+            "__rowNum__": 9,
             "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen8",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen9",
             "promptIdx": 2
           },
           {
             "type": "select_one",
             "values_list": "cham",
-            "name": "CHAMADA1",
+            "name": "CHAMADA23",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "1st call",
-                  "default": "1ª chamada"
-                }
-              }
-            },
-            "_row_num": 10,
-            "__rowNum__": 9,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen8",
-            "promptIdx": 3
-          },
-          {
-            "type": "integer",
-            "name": "TELENUM2",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Phone number",
-                  "default": "Numero de telemovel"
+                  "english": "2nd call - number: <b>{{data.TELEMOVEL2}}</b>",
+                  "default": "2ª chamada - número: <b>{{data.TELEMOVEL2}}</b>"
                 }
               },
               "hint": {
@@ -3511,37 +4170,19 @@
             "_row_num": 14,
             "__rowNum__": 13,
             "_token_type": "prompt",
-            "_type": "integer",
+            "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen13",
-            "promptIdx": 4
+            "promptIdx": 3
           },
           {
             "type": "select_one",
             "values_list": "cham",
-            "name": "CHAMADA2",
+            "name": "CHAMADA33",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "2nd call",
-                  "default": "2ª chamada"
-                }
-              }
-            },
-            "_row_num": 15,
-            "__rowNum__": 14,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen13",
-            "promptIdx": 5
-          },
-          {
-            "type": "integer",
-            "name": "TELENUM3",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Phone number",
-                  "default": "Numero de telemovel"
+                  "english": "3rd call - number: <b>{{data.TELEMOVEL3}}</b>",
+                  "default": "3ª chamada - número: <b>{{data.TELEMOVEL3}}</b>"
                 }
               },
               "hint": {
@@ -3551,32 +4192,751 @@
                 }
               }
             },
-            "_row_num": 19,
-            "__rowNum__": 18,
+            "_row_num": 18,
+            "__rowNum__": 17,
             "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen18",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 4
+          },
+          {
+            "type": "adate",
+            "name": "DATSEGUI2",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of call",
+                  "default": "Data da ligação"
+                }
+              }
+            },
+            "_row_num": 27,
+            "__rowNum__": 26,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen24",
+            "promptIdx": 5
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "ass",
+            "name": "ASSISTENTE2",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Assistant",
+                  "default": "Assistente"
+                }
+              }
+            },
+            "_row_num": 28,
+            "__rowNum__": 27,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen24",
             "promptIdx": 6
           },
           {
             "type": "select_one",
             "values_list": "cham",
-            "name": "CHAMADA3",
+            "name": "CHAMADA12",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "3rd call",
-                  "default": "3ª chamada"
+                  "english": "1st call - number: <b>{{data.TELEMOVEL1}}</b>",
+                  "default": "1ª chamada - número: <b>{{data.TELEMOVEL1}}</b>"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If you cannot get information on the first call, call each number three times",
+                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
                 }
               }
             },
-            "_row_num": 20,
-            "__rowNum__": 19,
+            "_row_num": 31,
+            "__rowNum__": 30,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen18",
+            "_branch_label_enclosing_screen": "survey/_screen30",
             "promptIdx": 7
           },
+          {
+            "type": "select_one",
+            "values_list": "cham",
+            "name": "CHAMADA22",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "2nd call - number: <b>{{data.TELEMOVEL2}}</b>",
+                  "default": "2ª chamada - número: <b>{{data.TELEMOVEL2}}</b>"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If you cannot get information on the first call, call each number three times",
+                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                }
+              }
+            },
+            "_row_num": 35,
+            "__rowNum__": 34,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen34",
+            "promptIdx": 8
+          },
+          {
+            "type": "select_one",
+            "values_list": "cham",
+            "name": "CHAMADA32",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "3rd call - number: <b>{{data.TELEMOVEL3}}</b>",
+                  "default": "3ª chamada - número: <b>{{data.TELEMOVEL3}}</b>"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If you cannot get information on the first call, call each number three times",
+                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                }
+              }
+            },
+            "_row_num": 39,
+            "__rowNum__": 38,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen38",
+            "promptIdx": 9
+          },
+          {
+            "type": "adate",
+            "name": "DATSEGUI1",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of call",
+                  "default": "Data da ligação"
+                }
+              }
+            },
+            "_row_num": 48,
+            "__rowNum__": 47,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen45",
+            "promptIdx": 10
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "ass",
+            "name": "ASSISTENTE1",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Assistant",
+                  "default": "Assistente"
+                }
+              }
+            },
+            "_row_num": 49,
+            "__rowNum__": 48,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen45",
+            "promptIdx": 11
+          },
+          {
+            "type": "select_one",
+            "values_list": "cham",
+            "name": "CHAMADA11",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "1st call - number: <b>{{data.TELEMOVEL1}}</b>",
+                  "default": "1ª chamada - número: <b>{{data.TELEMOVEL1}}</b>"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If you cannot get information on the first call, call each number three times",
+                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                }
+              }
+            },
+            "_row_num": 52,
+            "__rowNum__": 51,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen51",
+            "promptIdx": 12
+          },
+          {
+            "type": "select_one",
+            "values_list": "cham",
+            "name": "CHAMADA21",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "2nd call - number: <b>{{data.TELEMOVEL2}}</b>",
+                  "default": "2ª chamada - número: <b>{{data.TELEMOVEL2}}</b>"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If you cannot get information on the first call, call each number three times",
+                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                }
+              }
+            },
+            "_row_num": 56,
+            "__rowNum__": 55,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 13
+          },
+          {
+            "type": "select_one",
+            "values_list": "cham",
+            "name": "CHAMADA31",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "3rd call - number: <b>{{data.TELEMOVEL3}}</b>",
+                  "default": "3ª chamada - número: <b>{{data.TELEMOVEL3}}</b>"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If you cannot get information on the first call, call each number three times",
+                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                }
+              }
+            },
+            "_row_num": 60,
+            "__rowNum__": 59,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 14
+          },
+          {
+            "clause": "do section FU",
+            "_row_num": 66,
+            "__rowNum__": 65,
+            "_token_type": "prompt",
+            "_do_section_name": "FU",
+            "_type": "_section",
+            "promptIdx": 15,
+            "display": {
+              "title": {
+                "text": {
+                  "english": "MADtrial - Follow-up Phone",
+                  "default": "MADtrail - Seguimento Telemovel"
+                }
+              }
+            },
+            "_branch_label_enclosing_screen": "FU/0"
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 68,
+            "_branch_label_enclosing_screen": "survey/_screen68",
+            "promptIdx": 16
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA12') != null || data('CHAMADA22') != null || data('CHAMADA32') != null",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "goto_label",
+            "_branch_label": "_then2",
+            "operationIdx": 0
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else22",
+            "_row_num": 22,
+            "operationIdx": 1
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 8,
+              "__rowNum__": 7,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATSEGUI3', adate.today());\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 11,
+              "__rowNum__": 10,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 3
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA13') != '1'",
+            "_row_num": 12,
+            "__rowNum__": 11,
+            "_token_type": "goto_label",
+            "_branch_label": "_then12",
+            "operationIdx": 4
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else21",
+            "_row_num": 21,
+            "operationIdx": 5
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 13,
+            "__rowNum__": 12,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 15,
+              "__rowNum__": 14,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 6
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA23') != '1'",
+            "_row_num": 16,
+            "__rowNum__": 15,
+            "_token_type": "goto_label",
+            "_branch_label": "_then16",
+            "operationIdx": 7
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else20",
+            "_row_num": 20,
+            "operationIdx": 8
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 19,
+              "__rowNum__": 18,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 9
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif20",
+            "_row_num": 20,
+            "operationIdx": 10
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif21",
+            "_row_num": 21,
+            "operationIdx": 11
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif22",
+            "_row_num": 22,
+            "operationIdx": 12
+          },
+          {
+            "clause": "if",
+            "condition": "(data('CHAMADA11') != null || data('CHAMADA21') != null || data('CHAMADA31') != null) && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
+            "_row_num": 23,
+            "__rowNum__": 22,
+            "_token_type": "goto_label",
+            "_branch_label": "_then23",
+            "operationIdx": 13
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else43",
+            "_row_num": 43,
+            "operationIdx": 14
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 24,
+            "__rowNum__": 23,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 29,
+              "__rowNum__": 28,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATSEGUI2', adate.today());\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 15
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 30,
+            "__rowNum__": 29,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 32,
+              "__rowNum__": 31,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 16
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA12') != '1'",
+            "_row_num": 33,
+            "__rowNum__": 32,
+            "_token_type": "goto_label",
+            "_branch_label": "_then33",
+            "operationIdx": 17
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else42",
+            "_row_num": 42,
+            "operationIdx": 18
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 34,
+            "__rowNum__": 33,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 36,
+              "__rowNum__": 35,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA22') != '1'",
+            "_row_num": 37,
+            "__rowNum__": 36,
+            "_token_type": "goto_label",
+            "_branch_label": "_then37",
+            "operationIdx": 20
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else41",
+            "_row_num": 41,
+            "operationIdx": 21
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 38,
+            "__rowNum__": 37,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 40,
+              "__rowNum__": 39,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 22
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif41",
+            "_row_num": 41,
+            "operationIdx": 23
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif42",
+            "_row_num": 42,
+            "operationIdx": 24
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif43",
+            "_row_num": 43,
+            "operationIdx": 25
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA12') == null && data('CHAMADA22') == null && data('CHAMADA32') == null && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
+            "_row_num": 44,
+            "__rowNum__": 43,
+            "_token_type": "goto_label",
+            "_branch_label": "_then44",
+            "operationIdx": 26
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else64",
+            "_row_num": 64,
+            "operationIdx": 27
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 45,
+            "__rowNum__": 44,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 50,
+              "__rowNum__": 49,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATSEGUI1', adate.today());\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 28
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 51,
+            "__rowNum__": 50,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 53,
+              "__rowNum__": 52,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 29
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA11') != '1'",
+            "_row_num": 54,
+            "__rowNum__": 53,
+            "_token_type": "goto_label",
+            "_branch_label": "_then54",
+            "operationIdx": 30
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else63",
+            "_row_num": 63,
+            "operationIdx": 31
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 55,
+            "__rowNum__": 54,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 57,
+              "__rowNum__": 56,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 32
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA21') != '1'",
+            "_row_num": 58,
+            "__rowNum__": 57,
+            "_token_type": "goto_label",
+            "_branch_label": "_then58",
+            "operationIdx": 33
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else62",
+            "_row_num": 62,
+            "operationIdx": 34
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 59,
+            "__rowNum__": 58,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 61,
+              "__rowNum__": 60,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 35
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif62",
+            "_row_num": 62,
+            "operationIdx": 36
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif63",
+            "_row_num": 63,
+            "operationIdx": 37
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif64",
+            "_row_num": 64,
+            "operationIdx": 38
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA11') == '1' || data('CHAMADA21') == '1' || data('CHAMADA31') == '1' || data('CHAMADA12') == '1' || data('CHAMADA22') == '1' || data('CHAMADA32') == '1' ||data('CHAMADA13') == '1' || data('CHAMADA23') == '1' || data('CHAMADA33') == '1'",
+            "_row_num": 65,
+            "__rowNum__": 64,
+            "_token_type": "goto_label",
+            "_branch_label": "_then65",
+            "operationIdx": 39
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else67",
+            "_row_num": 67,
+            "operationIdx": 40
+          },
+          {
+            "clause": "do section FU",
+            "_row_num": 66,
+            "__rowNum__": 65,
+            "_token_type": "do_section",
+            "_do_section_name": "FU",
+            "operationIdx": 41
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif67",
+            "_row_num": 67,
+            "operationIdx": 42
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 68,
+            "operationIdx": 43
+          },
+          {
+            "_row_num": 68,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 44
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 68,
+            "operationIdx": 45
+          }
+        ],
+        "branch_label_map": {
+          "3rd try": 0,
+          "_then2": 2,
+          "_screen3": 2,
+          "_screen9": 3,
+          "_then12": 6,
+          "_screen13": 6,
+          "_then16": 9,
+          "_screen17": 9,
+          "_else20": 11,
+          "_endif20": 11,
+          "_else21": 12,
+          "_endif21": 12,
+          "_else22": 13,
+          "_endif22": 13,
+          "2nd try": 13,
+          "_then23": 15,
+          "_screen24": 15,
+          "_screen30": 16,
+          "_then33": 19,
+          "_screen34": 19,
+          "_then37": 22,
+          "_screen38": 22,
+          "_else41": 24,
+          "_endif41": 24,
+          "_else42": 25,
+          "_endif42": 25,
+          "_else43": 26,
+          "_endif43": 26,
+          "1st try": 26,
+          "_then44": 28,
+          "_screen45": 28,
+          "_screen51": 29,
+          "_then54": 32,
+          "_screen55": 32,
+          "_then58": 35,
+          "_screen59": 35,
+          "_else62": 37,
+          "_endif62": 37,
+          "_else63": 38,
+          "_endif63": 38,
+          "_else64": 39,
+          "_endif64": 39,
+          "_then65": 41,
+          "_else67": 43,
+          "_endif67": 43,
+          "_contents": 44,
+          "_screen68": 44
+        }
+      },
+      "FU": {
+        "section_name": "FU",
+        "nested_sections": {},
+        "reachable_sections": {},
+        "prompts": [
           {
             "type": "select_one_with_other",
             "values_list": "inf",
@@ -3589,12 +4949,12 @@
                 }
               }
             },
-            "_row_num": 26,
-            "__rowNum__": 25,
+            "_row_num": 3,
+            "__rowNum__": 2,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "survey/_screen25",
-            "promptIdx": 8
+            "_branch_label_enclosing_screen": "FU/_screen2",
+            "promptIdx": 0
           },
           {
             "type": "select_one",
@@ -3608,12 +4968,12 @@
                 }
               }
             },
-            "_row_num": 29,
-            "__rowNum__": 28,
+            "_row_num": 6,
+            "__rowNum__": 5,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen28",
-            "promptIdx": 9
+            "_branch_label_enclosing_screen": "FU/_screen5",
+            "promptIdx": 1
           },
           {
             "type": "adate",
@@ -3633,23 +4993,23 @@
               }
             },
             "constraint": "adate.diffInDays(data('DATSEGUI'), data('DOD'))<1 || adate.hasUncertainty(data('DOD'))",
-            "_row_num": 31,
-            "__rowNum__": 30,
+            "_row_num": 8,
+            "__rowNum__": 7,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen28",
-            "promptIdx": 10
+            "_branch_label_enclosing_screen": "FU/_screen5",
+            "promptIdx": 2
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "dodns",
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen28",
-            "promptIdx": 11
+            "_branch_label_enclosing_screen": "FU/_screen5",
+            "promptIdx": 3
           },
           {
             "type": "integer",
@@ -3662,12 +5022,12 @@
                 }
               }
             },
-            "_row_num": 37,
-            "__rowNum__": 36,
+            "_row_num": 14,
+            "__rowNum__": 13,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen28",
-            "promptIdx": 12
+            "_branch_label_enclosing_screen": "FU/_screen5",
+            "promptIdx": 4
           },
           {
             "type": "integer",
@@ -3687,12 +5047,12 @@
               }
             },
             "constraint": "data('IDADEMES')<13 || data('DOB')!=\"D:NS,M:NS,Y:NS\"",
-            "_row_num": 38,
-            "__rowNum__": 37,
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen28",
-            "promptIdx": 13
+            "_branch_label_enclosing_screen": "FU/_screen5",
+            "promptIdx": 5
           },
           {
             "type": "select_one",
@@ -3706,12 +5066,12 @@
                 }
               }
             },
-            "_row_num": 43,
-            "__rowNum__": 42,
+            "_row_num": 20,
+            "__rowNum__": 19,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen42",
-            "promptIdx": 14
+            "_branch_label_enclosing_screen": "FU/_screen19",
+            "promptIdx": 6
           },
           {
             "type": "select_multiple",
@@ -3725,12 +5085,12 @@
                 }
               }
             },
-            "_row_num": 47,
-            "__rowNum__": 46,
+            "_row_num": 24,
+            "__rowNum__": 23,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen46",
-            "promptIdx": 15
+            "_branch_label_enclosing_screen": "FU/_screen23",
+            "promptIdx": 7
           },
           {
             "type": "text",
@@ -3743,12 +5103,12 @@
                 }
               }
             },
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 25,
+            "__rowNum__": 24,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen46",
-            "promptIdx": 16
+            "_branch_label_enclosing_screen": "FU/_screen23",
+            "promptIdx": 8
           },
           {
             "type": "select_one",
@@ -3762,12 +5122,12 @@
                 }
               }
             },
-            "_row_num": 52,
-            "__rowNum__": 51,
+            "_row_num": 29,
+            "__rowNum__": 28,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen51",
-            "promptIdx": 17
+            "_branch_label_enclosing_screen": "FU/_screen28",
+            "promptIdx": 9
           },
           {
             "type": "select_one",
@@ -3781,12 +5141,12 @@
                 }
               }
             },
-            "_row_num": 54,
-            "__rowNum__": 53,
+            "_row_num": 31,
+            "__rowNum__": 30,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen51",
-            "promptIdx": 18
+            "_branch_label_enclosing_screen": "FU/_screen28",
+            "promptIdx": 10
           },
           {
             "type": "adate",
@@ -3799,12 +5159,12 @@
                 }
               }
             },
-            "_row_num": 59,
-            "__rowNum__": 58,
+            "_row_num": 36,
+            "__rowNum__": 35,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen58",
-            "promptIdx": 19
+            "_branch_label_enclosing_screen": "FU/_screen35",
+            "promptIdx": 11
           },
           {
             "type": "note",
@@ -3816,12 +5176,12 @@
                 }
               }
             },
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "_row_num": 37,
+            "__rowNum__": 36,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen58",
-            "promptIdx": 20
+            "_branch_label_enclosing_screen": "FU/_screen35",
+            "promptIdx": 12
           },
           {
             "type": "select_one_dropdown",
@@ -3835,12 +5195,12 @@
                 }
               }
             },
-            "_row_num": 61,
-            "__rowNum__": 60,
+            "_row_num": 38,
+            "__rowNum__": 37,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "survey/_screen58",
-            "promptIdx": 21
+            "_branch_label_enclosing_screen": "FU/_screen35",
+            "promptIdx": 13
           },
           {
             "type": "select_one_dropdown",
@@ -3855,23 +5215,23 @@
               }
             },
             "choice_filter": "choice_item.reg === data('reghosp1')",
-            "_row_num": 62,
-            "__rowNum__": 61,
+            "_row_num": 39,
+            "__rowNum__": 38,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "survey/_screen58",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "FU/_screen35",
+            "promptIdx": 14
           },
           {
             "type": "select_multiple",
             "values_list": "dontknowhosp",
             "name": "hospcode1ns",
-            "_row_num": 63,
-            "__rowNum__": 62,
+            "_row_num": 40,
+            "__rowNum__": 39,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen58",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "FU/_screen35",
+            "promptIdx": 15
           },
           {
             "type": "text",
@@ -3884,12 +5244,12 @@
                 }
               }
             },
-            "_row_num": 69,
-            "__rowNum__": 68,
+            "_row_num": 46,
+            "__rowNum__": 45,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen68",
-            "promptIdx": 24
+            "_branch_label_enclosing_screen": "FU/_screen45",
+            "promptIdx": 16
           },
           {
             "type": "integer",
@@ -3902,23 +5262,23 @@
                 }
               }
             },
-            "_row_num": 70,
-            "__rowNum__": 69,
+            "_row_num": 47,
+            "__rowNum__": 46,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen68",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "FU/_screen45",
+            "promptIdx": 17
           },
           {
             "type": "select_multiple",
             "values_list": "hospalta",
             "name": "HOSPALTA1",
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen68",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "FU/_screen45",
+            "promptIdx": 18
           },
           {
             "type": "select_one",
@@ -3932,12 +5292,12 @@
                 }
               }
             },
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "_row_num": 52,
+            "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen74",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "FU/_screen51",
+            "promptIdx": 19
           },
           {
             "type": "adate",
@@ -3950,12 +5310,12 @@
                 }
               }
             },
-            "_row_num": 80,
-            "__rowNum__": 79,
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "FU/_screen56",
+            "promptIdx": 20
           },
           {
             "type": "note",
@@ -3967,12 +5327,12 @@
                 }
               }
             },
-            "_row_num": 81,
-            "__rowNum__": 80,
+            "_row_num": 58,
+            "__rowNum__": 57,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "FU/_screen56",
+            "promptIdx": 21
           },
           {
             "type": "select_one_dropdown",
@@ -3986,12 +5346,12 @@
                 }
               }
             },
-            "_row_num": 82,
-            "__rowNum__": 81,
+            "_row_num": 59,
+            "__rowNum__": 58,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "FU/_screen56",
+            "promptIdx": 22
           },
           {
             "type": "select_one_dropdown",
@@ -4006,23 +5366,23 @@
               }
             },
             "choice_filter": "choice_item.reg === data('reghosp2')",
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 60,
+            "__rowNum__": 59,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 31
+            "_branch_label_enclosing_screen": "FU/_screen56",
+            "promptIdx": 23
           },
           {
             "type": "select_multiple",
             "values_list": "dontknowhosp",
             "name": "hospcode2ns",
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 61,
+            "__rowNum__": 60,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 32
+            "_branch_label_enclosing_screen": "FU/_screen56",
+            "promptIdx": 24
           },
           {
             "type": "text",
@@ -4035,12 +5395,12 @@
                 }
               }
             },
-            "_row_num": 90,
-            "__rowNum__": 89,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen89",
-            "promptIdx": 33
+            "_branch_label_enclosing_screen": "FU/_screen66",
+            "promptIdx": 25
           },
           {
             "type": "integer",
@@ -4053,23 +5413,23 @@
                 }
               }
             },
-            "_row_num": 91,
-            "__rowNum__": 90,
+            "_row_num": 68,
+            "__rowNum__": 67,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen89",
-            "promptIdx": 34
+            "_branch_label_enclosing_screen": "FU/_screen66",
+            "promptIdx": 26
           },
           {
             "type": "select_multiple",
             "values_list": "hospalta",
             "name": "HOSPALTA2",
-            "_row_num": 92,
-            "__rowNum__": 91,
+            "_row_num": 69,
+            "__rowNum__": 68,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen89",
-            "promptIdx": 35
+            "_branch_label_enclosing_screen": "FU/_screen66",
+            "promptIdx": 27
           },
           {
             "type": "select_one",
@@ -4083,12 +5443,12 @@
                 }
               }
             },
-            "_row_num": 97,
-            "__rowNum__": 96,
+            "_row_num": 74,
+            "__rowNum__": 73,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen96",
-            "promptIdx": 36
+            "_branch_label_enclosing_screen": "FU/_screen73",
+            "promptIdx": 28
           },
           {
             "type": "adate",
@@ -4101,12 +5461,12 @@
                 }
               }
             },
-            "_row_num": 102,
-            "__rowNum__": 101,
+            "_row_num": 79,
+            "__rowNum__": 78,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen101",
-            "promptIdx": 37
+            "_branch_label_enclosing_screen": "FU/_screen78",
+            "promptIdx": 29
           },
           {
             "type": "note",
@@ -4118,12 +5478,12 @@
                 }
               }
             },
-            "_row_num": 103,
-            "__rowNum__": 102,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen101",
-            "promptIdx": 38
+            "_branch_label_enclosing_screen": "FU/_screen78",
+            "promptIdx": 30
           },
           {
             "type": "select_one_dropdown",
@@ -4137,12 +5497,12 @@
                 }
               }
             },
-            "_row_num": 104,
-            "__rowNum__": 103,
+            "_row_num": 81,
+            "__rowNum__": 80,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "survey/_screen101",
-            "promptIdx": 39
+            "_branch_label_enclosing_screen": "FU/_screen78",
+            "promptIdx": 31
           },
           {
             "type": "select_one_dropdown",
@@ -4157,23 +5517,23 @@
               }
             },
             "choice_filter": "choice_item.reg === data('reghosp3')",
-            "_row_num": 105,
-            "__rowNum__": 104,
+            "_row_num": 82,
+            "__rowNum__": 81,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "survey/_screen101",
-            "promptIdx": 40
+            "_branch_label_enclosing_screen": "FU/_screen78",
+            "promptIdx": 32
           },
           {
             "type": "select_multiple",
             "values_list": "dontknowhosp",
             "name": "hospcode3ns",
-            "_row_num": 106,
-            "__rowNum__": 105,
+            "_row_num": 83,
+            "__rowNum__": 82,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen101",
-            "promptIdx": 41
+            "_branch_label_enclosing_screen": "FU/_screen78",
+            "promptIdx": 33
           },
           {
             "type": "text",
@@ -4186,12 +5546,12 @@
                 }
               }
             },
-            "_row_num": 112,
-            "__rowNum__": 111,
+            "_row_num": 89,
+            "__rowNum__": 88,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen111",
-            "promptIdx": 42
+            "_branch_label_enclosing_screen": "FU/_screen88",
+            "promptIdx": 34
           },
           {
             "type": "integer",
@@ -4204,23 +5564,23 @@
                 }
               }
             },
-            "_row_num": 113,
-            "__rowNum__": 112,
+            "_row_num": 90,
+            "__rowNum__": 89,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen111",
-            "promptIdx": 43
+            "_branch_label_enclosing_screen": "FU/_screen88",
+            "promptIdx": 35
           },
           {
             "type": "select_multiple",
             "values_list": "hospalta",
             "name": "HOSPALTA3",
-            "_row_num": 114,
-            "__rowNum__": 113,
+            "_row_num": 91,
+            "__rowNum__": 90,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen111",
-            "promptIdx": 44
+            "_branch_label_enclosing_screen": "FU/_screen88",
+            "promptIdx": 36
           },
           {
             "type": "select_one",
@@ -4234,12 +5594,12 @@
                 }
               }
             },
-            "_row_num": 120,
-            "__rowNum__": 119,
+            "_row_num": 97,
+            "__rowNum__": 96,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen119",
-            "promptIdx": 45
+            "_branch_label_enclosing_screen": "FU/_screen96",
+            "promptIdx": 37
           },
           {
             "type": "select_one_dropdown",
@@ -4253,12 +5613,12 @@
                 }
               }
             },
-            "_row_num": 122,
-            "__rowNum__": 121,
+            "_row_num": 99,
+            "__rowNum__": 98,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "survey/_screen119",
-            "promptIdx": 46
+            "_branch_label_enclosing_screen": "FU/_screen96",
+            "promptIdx": 38
           },
           {
             "type": "text",
@@ -4271,12 +5631,12 @@
                 }
               }
             },
-            "_row_num": 123,
-            "__rowNum__": 122,
+            "_row_num": 100,
+            "__rowNum__": 99,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen119",
-            "promptIdx": 47
+            "_branch_label_enclosing_screen": "FU/_screen96",
+            "promptIdx": 39
           },
           {
             "type": "text",
@@ -4289,26 +5649,26 @@
                 }
               }
             },
-            "_row_num": 124,
-            "__rowNum__": 123,
+            "_row_num": 101,
+            "__rowNum__": 100,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen119",
-            "promptIdx": 48
+            "_branch_label_enclosing_screen": "FU/_screen96",
+            "promptIdx": 40
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 129,
-            "_branch_label_enclosing_screen": "survey/_screen129",
-            "promptIdx": 49
+            "_row_num": 105,
+            "_branch_label_enclosing_screen": "FU/_screen105",
+            "promptIdx": 41
           }
         ],
         "validation_tag_map": {
           "finalize": [
-            10,
-            13
+            2,
+            5
           ]
         },
         "operations": [
@@ -4319,77 +5679,31 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 7,
-              "__rowNum__": 6,
+              "_row_num": 4,
+              "__rowNum__": 3,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATSEGUI', adate.today());\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
             "clause": "begin screen",
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 5,
+            "__rowNum__": 4,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 11,
-              "__rowNum__": 10,
+              "_row_num": 18,
+              "__rowNum__": 17,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nif (data('VITALCRI')==\"2\") {\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nif (data('dodns') != null) {\nassign('DOD', \"D:NS,M:NS,Y:NS\");\n}\nif (data('DOD')==\"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
-            "clause": "if",
-            "condition": "data('CHAMADA1') != '1'",
-            "_row_num": 12,
-            "__rowNum__": 11,
-            "_token_type": "goto_label",
-            "_branch_label": "_then12",
-            "operationIdx": 2
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else23",
-            "_row_num": 23,
-            "operationIdx": 3
-          },
-          {
             "clause": "begin screen",
-            "_row_num": 13,
-            "__rowNum__": 12,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 16,
-              "__rowNum__": 15,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 4
-          },
-          {
-            "clause": "if",
-            "condition": "data('CHAMADA2') != '1'",
-            "_row_num": 17,
-            "__rowNum__": 16,
-            "_token_type": "goto_label",
-            "_branch_label": "_then17",
-            "operationIdx": 5
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else22",
-            "_row_num": 22,
-            "operationIdx": 6
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 19,
+            "__rowNum__": 18,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -4397,52 +5711,45 @@
               "__rowNum__": 20,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 7
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif22",
-            "_row_num": 22,
-            "operationIdx": 8
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif23",
-            "_row_num": 23,
-            "operationIdx": 9
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
           },
           {
             "clause": "if",
-            "condition": "data('CHAMADA1') == '1' || data('CHAMADA2') == '1' || data('CHAMADA3') == '1'",
-            "_row_num": 24,
-            "__rowNum__": 23,
+            "condition": "data('VACHIS') == '1'",
+            "_row_num": 22,
+            "__rowNum__": 21,
             "_token_type": "goto_label",
-            "_branch_label": "_then24",
-            "operationIdx": 10
+            "_branch_label": "_then22",
+            "operationIdx": 3
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else128",
-            "_row_num": 128,
-            "operationIdx": 11
+            "_branch_label": "_else27",
+            "_row_num": 27,
+            "operationIdx": 4
           },
           {
             "clause": "begin screen",
-            "_row_num": 25,
-            "__rowNum__": 24,
+            "_row_num": 23,
+            "__rowNum__": 22,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 27,
-              "__rowNum__": 26,
+              "_row_num": 26,
+              "__rowNum__": 25,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 12
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 5
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif27",
+            "_row_num": 27,
+            "operationIdx": 6
           },
           {
             "clause": "begin screen",
@@ -4451,17 +5758,33 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 41,
-              "__rowNum__": 40,
+              "_row_num": 33,
+              "__rowNum__": 32,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\nif (data('VITALCRI')==\"2\") {\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\nif (data('dodns') != null) {\nassign('DOD', \"D:NS,M:NS,Y:NS\");\n}\nif (data('DOD')==\"D:NS,M:NS,Y:NS\") {\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 13
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\nif (data('HOSPI')==\"1\") {\nactivePromptIndicies.push(10);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 7
+          },
+          {
+            "clause": "if",
+            "condition": "data('HOSPIVEZ') > 0",
+            "_row_num": 34,
+            "__rowNum__": 33,
+            "_token_type": "goto_label",
+            "_branch_label": "_then34",
+            "operationIdx": 8
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else94",
+            "_row_num": 94,
+            "operationIdx": 9
           },
           {
             "clause": "begin screen",
-            "_row_num": 42,
-            "__rowNum__": 41,
+            "_row_num": 35,
+            "__rowNum__": 34,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -4469,29 +5792,13 @@
               "__rowNum__": 43,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 14
-          },
-          {
-            "clause": "if",
-            "condition": "data('VACHIS') == '1'",
-            "_row_num": 45,
-            "__rowNum__": 44,
-            "_token_type": "goto_label",
-            "_branch_label": "_then45",
-            "operationIdx": 15
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else50",
-            "_row_num": 50,
-            "operationIdx": 16
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\nif (data('hospcode1ns') != null) {\nassign('HOSPCODE1', data('hospcode1ns'));\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 10
           },
           {
             "clause": "begin screen",
-            "_row_num": 46,
-            "__rowNum__": 45,
+            "_row_num": 45,
+            "__rowNum__": 44,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -4499,15 +5806,24 @@
               "__rowNum__": 48,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 17
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 11
+          },
+          {
+            "clause": "if",
+            "condition": "data('HOSPIVEZ') == '33'",
+            "_row_num": 50,
+            "__rowNum__": 49,
+            "_token_type": "goto_label",
+            "_branch_label": "_then50",
+            "operationIdx": 12
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif50",
-            "_row_num": 50,
-            "operationIdx": 18
+            "_branch_label": "_else54",
+            "_row_num": 54,
+            "operationIdx": 13
           },
           {
             "clause": "begin screen",
@@ -4516,160 +5832,181 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 56,
-              "__rowNum__": 55,
+              "_row_num": 53,
+              "__rowNum__": 52,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(17);\nif (data('HOSPI')==\"1\") {\nactivePromptIndicies.push(18);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 19
-          },
-          {
-            "clause": "if",
-            "condition": "data('HOSPIVEZ') > 0",
-            "_row_num": 57,
-            "__rowNum__": 56,
-            "_token_type": "goto_label",
-            "_branch_label": "_then57",
-            "operationIdx": 20
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 14
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else117",
-            "_row_num": 117,
-            "operationIdx": 21
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 58,
-            "__rowNum__": 57,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 67,
-              "__rowNum__": 66,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nif (data('hospcode1ns') != null) {\nassign('HOSPCODE1', data('hospcode1ns'));\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 22
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 68,
-            "__rowNum__": 67,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 72,
-              "__rowNum__": 71,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 23
-          },
-          {
-            "clause": "if",
-            "condition": "data('HOSPIVEZ') == '33'",
-            "_row_num": 73,
-            "__rowNum__": 72,
-            "_token_type": "goto_label",
-            "_branch_label": "_then73",
-            "operationIdx": 24
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else77",
-            "_row_num": 77,
-            "operationIdx": 25
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 74,
-            "__rowNum__": 73,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 76,
-              "__rowNum__": 75,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 26
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif77",
-            "_row_num": 77,
-            "operationIdx": 27
+            "_branch_label": "_endif54",
+            "_row_num": 54,
+            "operationIdx": 15
           },
           {
             "clause": "if",
             "condition": "data('HOSPI2')==\"1\" || data('HOSPIVEZ') == '3' || data('HOSPIVEZ') == '2' || data('HOSPIVEZ') == '77'",
+            "_row_num": 55,
+            "__rowNum__": 54,
+            "_token_type": "goto_label",
+            "_branch_label": "_then55",
+            "operationIdx": 16
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else71",
+            "_row_num": 71,
+            "operationIdx": 17
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 56,
+            "__rowNum__": 55,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 65,
+              "__rowNum__": 64,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nif (data('hospcode2ns') != null) {\nassign('HOSPCODE2', data('hospcode2ns'));\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 18
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 66,
+            "__rowNum__": 65,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 70,
+              "__rowNum__": 69,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif71",
+            "_row_num": 71,
+            "operationIdx": 20
+          },
+          {
+            "clause": "if",
+            "condition": "data('HOSPIVEZ') == '33' && data('HOSPI2')==\"1\"",
+            "_row_num": 72,
+            "__rowNum__": 71,
+            "_token_type": "goto_label",
+            "_branch_label": "_then72",
+            "operationIdx": 21
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else76",
+            "_row_num": 76,
+            "operationIdx": 22
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 73,
+            "__rowNum__": 72,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 75,
+              "__rowNum__": 74,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 23
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif76",
+            "_row_num": 76,
+            "operationIdx": 24
+          },
+          {
+            "clause": "if",
+            "condition": "data('HOSPI3')==\"1\" || data('HOSPIVEZ') == '3' || data('HOSPIVEZ') == '77'",
+            "_row_num": 77,
+            "__rowNum__": 76,
+            "_token_type": "goto_label",
+            "_branch_label": "_then77",
+            "operationIdx": 25
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else93",
+            "_row_num": 93,
+            "operationIdx": 26
+          },
+          {
+            "clause": "begin screen",
             "_row_num": 78,
             "__rowNum__": 77,
-            "_token_type": "goto_label",
-            "_branch_label": "_then78",
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 87,
+              "__rowNum__": 86,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\nif (data('hospcode3ns') != null) {\nassign('HOSPCODE3', data('hospcode3ns'));\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 27
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 88,
+            "__rowNum__": 87,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 92,
+              "__rowNum__": 91,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 28
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else94",
-            "_row_num": 94,
+            "_branch_label": "_endif93",
+            "_row_num": 93,
             "operationIdx": 29
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 79,
-            "__rowNum__": 78,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 88,
-              "__rowNum__": 87,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nif (data('hospcode2ns') != null) {\nassign('HOSPCODE2', data('hospcode2ns'));\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 30
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 89,
-            "__rowNum__": 88,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 93,
-              "__rowNum__": 92,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 31
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
             "_branch_label": "_endif94",
             "_row_num": 94,
-            "operationIdx": 32
+            "operationIdx": 30
           },
           {
             "clause": "if",
-            "condition": "data('HOSPIVEZ') == '33' && data('HOSPI2')==\"1\"",
+            "condition": "data('VITALCRI')==\"2\"",
             "_row_num": 95,
             "__rowNum__": 94,
             "_token_type": "goto_label",
             "_branch_label": "_then95",
-            "operationIdx": 33
+            "operationIdx": 31
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else99",
-            "_row_num": 99,
-            "operationIdx": 34
+            "_branch_label": "_else104",
+            "_row_num": 104,
+            "operationIdx": 32
           },
           {
             "clause": "begin screen",
@@ -4678,195 +6015,80 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 98,
-              "__rowNum__": 97,
+              "_row_num": 103,
+              "__rowNum__": 102,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 35
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\nif (data('PODEAUT') == '1') {\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 33
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif99",
-            "_row_num": 99,
-            "operationIdx": 36
-          },
-          {
-            "clause": "if",
-            "condition": "data('HOSPI3')==\"1\" || data('HOSPIVEZ') == '3' || data('HOSPIVEZ') == '77'",
-            "_row_num": 100,
-            "__rowNum__": 99,
-            "_token_type": "goto_label",
-            "_branch_label": "_then100",
-            "operationIdx": 37
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else116",
-            "_row_num": 116,
-            "operationIdx": 38
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 101,
-            "__rowNum__": 100,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 110,
-              "__rowNum__": 109,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nif (data('hospcode3ns') != null) {\nassign('HOSPCODE3', data('hospcode3ns'));\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 39
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 111,
-            "__rowNum__": 110,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 115,
-              "__rowNum__": 114,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 40
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif116",
-            "_row_num": 116,
-            "operationIdx": 41
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif117",
-            "_row_num": 117,
-            "operationIdx": 42
-          },
-          {
-            "clause": "if",
-            "condition": "data('VITALCRI')==\"2\"",
-            "_row_num": 118,
-            "__rowNum__": 117,
-            "_token_type": "goto_label",
-            "_branch_label": "_then118",
-            "operationIdx": 43
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else127",
-            "_row_num": 127,
-            "operationIdx": 44
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 119,
-            "__rowNum__": 118,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 126,
-              "__rowNum__": 125,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(45);\nif (data('PODEAUT') == '1') {\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 45
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif127",
-            "_row_num": 127,
-            "operationIdx": 46
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif128",
-            "_row_num": 128,
-            "operationIdx": 47
+            "_branch_label": "_endif104",
+            "_row_num": 104,
+            "operationIdx": 34
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 129,
-            "operationIdx": 48
+            "_row_num": 105,
+            "operationIdx": 35
           },
           {
-            "_row_num": 129,
+            "_row_num": 105,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(49);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 49
+            "operationIdx": 36
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 129,
-            "operationIdx": 50
+            "_row_num": 105,
+            "operationIdx": 37
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_screen8": 1,
-          "_then12": 4,
-          "_screen13": 4,
-          "_then17": 7,
-          "_screen18": 7,
-          "_else22": 9,
-          "_endif22": 9,
-          "_else23": 10,
-          "_endif23": 10,
-          "_then24": 12,
-          "_screen25": 12,
-          "_screen28": 13,
-          "_screen42": 14,
-          "_then45": 17,
-          "_screen46": 17,
-          "_else50": 19,
-          "_endif50": 19,
-          "_screen51": 19,
-          "_then57": 22,
-          "_screen58": 22,
-          "_screen68": 23,
-          "_then73": 26,
-          "_screen74": 26,
-          "_else77": 28,
-          "_endif77": 28,
-          "_then78": 30,
-          "_screen79": 30,
-          "_screen89": 31,
-          "_else94": 33,
-          "_endif94": 33,
-          "_then95": 35,
-          "_screen96": 35,
-          "_else99": 37,
-          "_endif99": 37,
-          "_then100": 39,
-          "_screen101": 39,
-          "_screen111": 40,
-          "_else116": 42,
-          "_endif116": 42,
-          "_else117": 43,
-          "_endif117": 43,
-          "_then118": 45,
-          "_screen119": 45,
-          "_else127": 47,
-          "_endif127": 47,
-          "_else128": 48,
-          "_endif128": 48,
-          "_contents": 49,
-          "_screen129": 49
+          "_screen5": 1,
+          "_screen19": 2,
+          "_then22": 5,
+          "_screen23": 5,
+          "_else27": 7,
+          "_endif27": 7,
+          "_screen28": 7,
+          "_then34": 10,
+          "_screen35": 10,
+          "_screen45": 11,
+          "_then50": 14,
+          "_screen51": 14,
+          "_else54": 16,
+          "_endif54": 16,
+          "_then55": 18,
+          "_screen56": 18,
+          "_screen66": 19,
+          "_else71": 21,
+          "_endif71": 21,
+          "_then72": 23,
+          "_screen73": 23,
+          "_else76": 25,
+          "_endif76": 25,
+          "_then77": 27,
+          "_screen78": 27,
+          "_screen88": 28,
+          "_else93": 30,
+          "_endif93": 30,
+          "_else94": 31,
+          "_endif94": 31,
+          "_then95": 33,
+          "_screen96": 33,
+          "_else104": 35,
+          "_endif104": 35,
+          "_contents": 36,
+          "_screen105": 36
         }
       },
       "initial": {
@@ -4875,7 +6097,8 @@
           "survey": true
         },
         "reachable_sections": {
-          "survey": true
+          "survey": true,
+          "FU": true
         },
         "prompts": [
           {
@@ -4899,8 +6122,8 @@
             "display": {
               "title": {
                 "text": {
-                  "english": "MADtrial Follow-up Phone",
-                  "default": "MADtrail Seguimento Telemovel"
+                  "english": "MADtrial - Follow-up Phone",
+                  "default": "MADtrail - Seguimento Telemovel"
                 }
               }
             },
@@ -5051,12 +6274,12 @@
       }
     },
     "dataTableModel": {
-      "ASSISTENTE": {
+      "ASSISTENTE1": {
         "type": "string",
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 49,
             "section_name": "survey"
           },
           {
@@ -5065,17 +6288,18 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "ASSISTENTE",
-        "elementName": "ASSISTENTE",
+        "comment": "call",
+        "elementKey": "ASSISTENTE1",
+        "elementName": "ASSISTENTE1",
         "elementSet": "data",
-        "elementPath": "ASSISTENTE"
+        "elementPath": "ASSISTENTE1"
       },
-      "CHAMADA1": {
+      "ASSISTENTE2": {
         "type": "string",
-        "valuesList": "cham",
+        "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 28,
             "section_name": "survey"
           },
           {
@@ -5084,17 +6308,17 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CHAMADA1",
-        "elementName": "CHAMADA1",
+        "elementKey": "ASSISTENTE2",
+        "elementName": "ASSISTENTE2",
         "elementSet": "data",
-        "elementPath": "CHAMADA1"
+        "elementPath": "ASSISTENTE2"
       },
-      "CHAMADA2": {
+      "ASSISTENTE3": {
         "type": "string",
-        "valuesList": "cham",
+        "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 7,
             "section_name": "survey"
           },
           {
@@ -5103,17 +6327,17 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CHAMADA2",
-        "elementName": "CHAMADA2",
+        "elementKey": "ASSISTENTE3",
+        "elementName": "ASSISTENTE3",
         "elementSet": "data",
-        "elementPath": "CHAMADA2"
+        "elementPath": "ASSISTENTE3"
       },
-      "CHAMADA3": {
+      "CHAMADA11": {
         "type": "string",
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
@@ -5122,21 +6346,17 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CHAMADA3",
-        "elementName": "CHAMADA3",
+        "elementKey": "CHAMADA11",
+        "elementName": "CHAMADA11",
         "elementSet": "data",
-        "elementPath": "CHAMADA3"
+        "elementPath": "CHAMADA11"
       },
-      "DATSEGUI": {
-        "prompt_type_name": "adate",
+      "CHAMADA12": {
         "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
+        "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 31,
             "section_name": "survey"
           },
           {
@@ -5145,12 +6365,145 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "DATSEGUI",
-        "elementName": "DATSEGUI",
+        "elementKey": "CHAMADA12",
+        "elementName": "CHAMADA12",
         "elementSet": "data",
-        "elementPath": "DATSEGUI"
+        "elementPath": "CHAMADA12"
       },
-      "DOD": {
+      "CHAMADA13": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA13",
+        "elementName": "CHAMADA13",
+        "elementSet": "data",
+        "elementPath": "CHAMADA13"
+      },
+      "CHAMADA21": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 56,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA21",
+        "elementName": "CHAMADA21",
+        "elementSet": "data",
+        "elementPath": "CHAMADA21"
+      },
+      "CHAMADA22": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 35,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA22",
+        "elementName": "CHAMADA22",
+        "elementSet": "data",
+        "elementPath": "CHAMADA22"
+      },
+      "CHAMADA23": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA23",
+        "elementName": "CHAMADA23",
+        "elementSet": "data",
+        "elementPath": "CHAMADA23"
+      },
+      "CHAMADA31": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA31",
+        "elementName": "CHAMADA31",
+        "elementSet": "data",
+        "elementPath": "CHAMADA31"
+      },
+      "CHAMADA32": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA32",
+        "elementName": "CHAMADA32",
+        "elementSet": "data",
+        "elementPath": "CHAMADA32"
+      },
+      "CHAMADA33": {
+        "type": "string",
+        "valuesList": "cham",
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHAMADA33",
+        "elementName": "CHAMADA33",
+        "elementSet": "data",
+        "elementPath": "CHAMADA33"
+      },
+      "DATSEGUI1": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -5159,11 +6512,94 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 48,
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATSEGUI1",
+        "elementName": "DATSEGUI1",
+        "elementSet": "data",
+        "elementPath": "DATSEGUI1"
+      },
+      "DATSEGUI2": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATSEGUI2",
+        "elementName": "DATSEGUI2",
+        "elementSet": "data",
+        "elementPath": "DATSEGUI2"
+      },
+      "DATSEGUI3": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATSEGUI3",
+        "elementName": "DATSEGUI3",
+        "elementSet": "data",
+        "elementPath": "DATSEGUI3"
+      },
+      "START": {
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "type": "assign",
+        "isSessionVariable": false,
+        "elementKey": "START",
+        "elementName": "START",
+        "elementSet": "data",
+        "elementPath": "START"
+      },
+      "DOD": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "FU",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "FU"
+          },
+          {
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -5177,11 +6613,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
-            "section_name": "survey"
+            "_row_num": 14,
+            "section_name": "FU"
           },
           {
-            "_row_num": 8,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -5195,11 +6631,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 38,
-            "section_name": "survey"
+            "_row_num": 15,
+            "section_name": "FU"
           },
           {
-            "_row_num": 9,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -5223,11 +6659,11 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 32,
-            "section_name": "survey"
+            "_row_num": 9,
+            "section_name": "FU"
           },
           {
-            "_row_num": 10,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -5253,11 +6689,11 @@
         "valuesList": "hospalta",
         "_defn": [
           {
-            "_row_num": 71,
-            "section_name": "survey"
+            "_row_num": 48,
+            "section_name": "FU"
           },
           {
-            "_row_num": 11,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -5283,11 +6719,11 @@
         "valuesList": "hospalta",
         "_defn": [
           {
-            "_row_num": 92,
-            "section_name": "survey"
+            "_row_num": 69,
+            "section_name": "FU"
           },
           {
-            "_row_num": 12,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -5313,11 +6749,11 @@
         "valuesList": "hospalta",
         "_defn": [
           {
-            "_row_num": 114,
-            "section_name": "survey"
+            "_row_num": 91,
+            "section_name": "FU"
           },
           {
-            "_row_num": 13,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -5334,11 +6770,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 69,
-            "section_name": "survey"
+            "_row_num": 46,
+            "section_name": "FU"
           },
           {
-            "_row_num": 14,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -5352,11 +6788,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 90,
-            "section_name": "survey"
+            "_row_num": 67,
+            "section_name": "FU"
           },
           {
-            "_row_num": 15,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -5370,11 +6806,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 112,
-            "section_name": "survey"
+            "_row_num": 89,
+            "section_name": "FU"
           },
           {
-            "_row_num": 16,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -5389,11 +6825,11 @@
         "valuesList": "hc_csv",
         "_defn": [
           {
-            "_row_num": 62,
-            "section_name": "survey"
+            "_row_num": 39,
+            "section_name": "FU"
           },
           {
-            "_row_num": 17,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -5417,11 +6853,11 @@
         "valuesList": "dontknowhosp",
         "_defn": [
           {
-            "_row_num": 63,
-            "section_name": "survey"
+            "_row_num": 40,
+            "section_name": "FU"
           },
           {
-            "_row_num": 18,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -5439,11 +6875,11 @@
         "valuesList": "hc_csv",
         "_defn": [
           {
-            "_row_num": 83,
-            "section_name": "survey"
+            "_row_num": 60,
+            "section_name": "FU"
           },
           {
-            "_row_num": 19,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -5467,11 +6903,11 @@
         "valuesList": "dontknowhosp",
         "_defn": [
           {
-            "_row_num": 84,
-            "section_name": "survey"
+            "_row_num": 61,
+            "section_name": "FU"
           },
           {
-            "_row_num": 20,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -5489,11 +6925,11 @@
         "valuesList": "hc_csv",
         "_defn": [
           {
-            "_row_num": 105,
-            "section_name": "survey"
+            "_row_num": 82,
+            "section_name": "FU"
           },
           {
-            "_row_num": 21,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -5517,11 +6953,11 @@
         "valuesList": "dontknowhosp",
         "_defn": [
           {
-            "_row_num": 106,
-            "section_name": "survey"
+            "_row_num": 83,
+            "section_name": "FU"
           },
           {
-            "_row_num": 22,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -5543,11 +6979,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 59,
-            "section_name": "survey"
+            "_row_num": 36,
+            "section_name": "FU"
           },
           {
-            "_row_num": 23,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -5566,11 +7002,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 80,
-            "section_name": "survey"
+            "_row_num": 57,
+            "section_name": "FU"
           },
           {
-            "_row_num": 24,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -5589,11 +7025,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 102,
-            "section_name": "survey"
+            "_row_num": 79,
+            "section_name": "FU"
           },
           {
-            "_row_num": 25,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -5607,11 +7043,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 70,
-            "section_name": "survey"
+            "_row_num": 47,
+            "section_name": "FU"
           },
           {
-            "_row_num": 26,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -5625,11 +7061,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 91,
-            "section_name": "survey"
+            "_row_num": 68,
+            "section_name": "FU"
           },
           {
-            "_row_num": 27,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -5643,11 +7079,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 113,
-            "section_name": "survey"
+            "_row_num": 90,
+            "section_name": "FU"
           },
           {
-            "_row_num": 28,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -5662,11 +7098,11 @@
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 52,
-            "section_name": "survey"
+            "_row_num": 29,
+            "section_name": "FU"
           },
           {
-            "_row_num": 29,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -5681,11 +7117,11 @@
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 75,
-            "section_name": "survey"
+            "_row_num": 52,
+            "section_name": "FU"
           },
           {
-            "_row_num": 30,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -5700,11 +7136,11 @@
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 97,
-            "section_name": "survey"
+            "_row_num": 74,
+            "section_name": "FU"
           },
           {
-            "_row_num": 31,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -5719,11 +7155,11 @@
         "valuesList": "vezes",
         "_defn": [
           {
-            "_row_num": 54,
-            "section_name": "survey"
+            "_row_num": 31,
+            "section_name": "FU"
           },
           {
-            "_row_num": 32,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -5738,11 +7174,11 @@
         "valuesList": "inf",
         "_defn": [
           {
-            "_row_num": 26,
-            "section_name": "survey"
+            "_row_num": 3,
+            "section_name": "FU"
           },
           {
-            "_row_num": 33,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -5756,11 +7192,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 124,
-            "section_name": "survey"
+            "_row_num": 101,
+            "section_name": "FU"
           },
           {
-            "_row_num": 34,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -5775,11 +7211,11 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 120,
-            "section_name": "survey"
+            "_row_num": 97,
+            "section_name": "FU"
           },
           {
-            "_row_num": 35,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -5794,11 +7230,11 @@
         "valuesList": "reg",
         "_defn": [
           {
-            "_row_num": 122,
-            "section_name": "survey"
+            "_row_num": 99,
+            "section_name": "FU"
           },
           {
-            "_row_num": 36,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -5813,11 +7249,11 @@
         "valuesList": "reg_csv",
         "_defn": [
           {
-            "_row_num": 61,
-            "section_name": "survey"
+            "_row_num": 38,
+            "section_name": "FU"
           },
           {
-            "_row_num": 37,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -5832,11 +7268,11 @@
         "valuesList": "reg_csv",
         "_defn": [
           {
-            "_row_num": 82,
-            "section_name": "survey"
+            "_row_num": 59,
+            "section_name": "FU"
           },
           {
-            "_row_num": 38,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -5851,11 +7287,11 @@
         "valuesList": "reg_csv",
         "_defn": [
           {
-            "_row_num": 104,
-            "section_name": "survey"
+            "_row_num": 81,
+            "section_name": "FU"
           },
           {
-            "_row_num": 39,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -5865,29 +7301,15 @@
         "elementSet": "data",
         "elementPath": "reghosp3"
       },
-      "START": {
-        "_defn": [
-          {
-            "_row_num": 40,
-            "section_name": "model"
-          }
-        ],
-        "type": "assign",
-        "isSessionVariable": false,
-        "elementKey": "START",
-        "elementName": "START",
-        "elementSet": "data",
-        "elementPath": "START"
-      },
       "TABNOME": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 123,
-            "section_name": "survey"
+            "_row_num": 100,
+            "section_name": "FU"
           },
           {
-            "_row_num": 41,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -5897,70 +7319,16 @@
         "elementSet": "data",
         "elementPath": "TABNOME"
       },
-      "TELENUM1": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 9,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 42,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TELENUM1",
-        "elementName": "TELENUM1",
-        "elementSet": "data",
-        "elementPath": "TELENUM1"
-      },
-      "TELENUM2": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 14,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 43,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TELENUM2",
-        "elementName": "TELENUM2",
-        "elementSet": "data",
-        "elementPath": "TELENUM2"
-      },
-      "TELENUM3": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 19,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 44,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TELENUM3",
-        "elementName": "TELENUM3",
-        "elementSet": "data",
-        "elementPath": "TELENUM3"
-      },
       "VACHIS": {
         "type": "string",
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 43,
-            "section_name": "survey"
+            "_row_num": 20,
+            "section_name": "FU"
           },
           {
-            "_row_num": 45,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -5974,11 +7342,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 48,
-            "section_name": "survey"
+            "_row_num": 25,
+            "section_name": "FU"
           },
           {
-            "_row_num": 46,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -6001,11 +7369,11 @@
         "valuesList": "vac",
         "_defn": [
           {
-            "_row_num": 47,
-            "section_name": "survey"
+            "_row_num": 24,
+            "section_name": "FU"
           },
           {
-            "_row_num": 47,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -6023,11 +7391,11 @@
         "valuesList": "sim/não/nãosabe",
         "_defn": [
           {
-            "_row_num": 29,
-            "section_name": "survey"
+            "_row_num": 6,
+            "section_name": "FU"
           },
           {
-            "_row_num": 48,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -6036,6 +7404,170 @@
         "elementName": "VITALCRI",
         "elementSet": "data",
         "elementPath": "VITALCRI"
+      },
+      "DATINC": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "tableApp",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 58,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATINC",
+        "elementName": "DATINC",
+        "elementSet": "data",
+        "elementPath": "DATINC"
+      },
+      "DOB": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 59,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DOB",
+        "elementName": "DOB",
+        "elementSet": "data",
+        "elementPath": "DOB"
+      },
+      "FOLLOWUP": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "FOLLOWUP",
+        "elementName": "FOLLOWUP",
+        "elementSet": "data",
+        "elementPath": "FOLLOWUP"
+      },
+      "NOMECRI": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOMECRI",
+        "elementName": "NOMECRI",
+        "elementSet": "data",
+        "elementPath": "NOMECRI"
+      },
+      "NOMERESP": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOMERESP",
+        "elementName": "NOMERESP",
+        "elementSet": "data",
+        "elementPath": "NOMERESP"
+      },
+      "NUMEST": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NUMEST",
+        "elementName": "NUMEST",
+        "elementSet": "data",
+        "elementPath": "NUMEST"
+      },
+      "SEX": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 64,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SEX",
+        "elementName": "SEX",
+        "elementSet": "data",
+        "elementPath": "SEX"
+      },
+      "TELEMOVEL1": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 65,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELEMOVEL1",
+        "elementName": "TELEMOVEL1",
+        "elementSet": "data",
+        "elementPath": "TELEMOVEL1"
+      },
+      "TELEMOVEL2": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 66,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELEMOVEL2",
+        "elementName": "TELEMOVEL2",
+        "elementSet": "data",
+        "elementPath": "TELEMOVEL2"
+      },
+      "TELEMOVEL3": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELEMOVEL3",
+        "elementName": "TELEMOVEL3",
+        "elementSet": "data",
+        "elementPath": "TELEMOVEL3"
+      },
+      "FU": {
+        "_defn": [
+          {
+            "_row_num": 68,
+            "section_name": "model"
+          }
+        ],
+        "type": "ingeger",
+        "isSessionVariable": false,
+        "elementKey": "FU",
+        "elementName": "FU",
+        "elementSet": "data",
+        "elementPath": "FU"
       },
       "dodns_items": {
         "type": "string",
@@ -6221,28 +7753,84 @@
     "properties": [
       {
         "_partition": "Column",
-        "_aspect": "ASSISTENTE",
+        "_aspect": "ASSISTENTE1",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Assistant 1\",\"default\":\"Assistente 1\"}}},\"_row_num\":23}]"
       },
       {
         "_partition": "Column",
-        "_aspect": "CHAMADA1",
+        "_aspect": "ASSISTENTE2",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Assistant 1\",\"default\":\"Assistente 1\"}}},\"_row_num\":23}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ASSISTENTE3",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Assistant 1\",\"default\":\"Assistente 1\"}}},\"_row_num\":23}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA11",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
-        "_aspect": "CHAMADA2",
+        "_aspect": "CHAMADA12",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
-        "_aspect": "CHAMADA3",
+        "_aspect": "CHAMADA13",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA21",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA22",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA23",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA31",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA32",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHAMADA33",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
@@ -6364,7 +7952,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":{\"english\":\"MADtrial Follow-up Phone\",\"default\":\"MADtrail Seguimento Telemovel\"}}"
+        "_value": "{\"text\":{\"english\":\"MADtrial - Follow-up Phone\",\"default\":\"MADtrail - Seguimento Telemovel\"}}"
       }
     ]
   }
