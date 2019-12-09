@@ -15,14 +15,14 @@
         <script type="text/javascript" src="js/util.js"></script>
         <script type="text/javascript" src="js/followUpPhone.js"></script>
         <style>
-        ul#persons > li {
+        ul#fu1 > li {
             list-style:none;
         }
-        ul#persons > li > button {
-            margin:10px;
-            height:45px;
-            width:100%;
-            background-size: 30px;        
+        ul#fu2 > li {
+            list-style:none;
+        }
+        ul#fu3 > li {
+            list-style:none;
         }
         button.child {
             background-color: lightgoldenrodyellow;
@@ -31,6 +31,10 @@
             background-image: url(./img/baby.png);
             background-repeat: no-repeat;
             background-position: 10px;
+            margin:10px;
+            height:45px;
+            width:100%;
+            background-size: 30px;   ;  
         }   
         </style>
     </head>
@@ -39,8 +43,21 @@
     <body>
         <div id="main" class="container" style="height: 100vh;">
             <h1>Telemovel</h1>
-            <ul id="persons" style="padding:20px;">            
-            </ul>
+            <div class="form-group">
+                3 meses
+                <ul id="fu1" style="padding:20px;">            
+                </ul>
+            </div>
+            <div class="form-group">
+                6 meses
+                <ul id="fu2" style="padding:20px;">            
+                </ul>
+            </div>
+            <div class="form-group">
+                12 meses
+                <ul id="fu3" style="padding:20px;">            
+                </ul>
+            </div>
         </div>
         <script>
         $(function() {

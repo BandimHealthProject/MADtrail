@@ -13,6 +13,7 @@
         <script type="text/javascript" src="../../system/tables/js/odkTables.js"></script>
         
         <script type="text/javascript" src="js/util.js"></script>
+        <script type="text/javascript" src="js/followUp.js"></script>
         <style>
         .form-group {
             margin:30px 0;
@@ -44,25 +45,26 @@
         </style>
     </head>
 
-    <script>
-    function initButtons() {
-        var body = $('body').first();
-        body.css('background', 'url(img/form_logo.png) fixed');
-        var btnVis = $('#btnVis');
-        btnVis.on("click", function() {
-            odkTables.launchHTML(null, 'config/assets/followUpVisit.html');
-        });
-        var btnTel = $('#btnTel');
-        btnTel.on("click", function() {
-            odkTables.launchHTML(null, 'config/assets/followUpPhone.html');
-        });
-    }
-    </script>
-   
-    <body onload="initButtons()">
+    <body onload="display()">
         <div id="main" class="container" style="height: 100vh;">
             <h1>Seguimento</h1>
-            <hr/>
+            <div class="row">
+                <div class="form-group col-xs-4">
+                    <label for="selDate">Data de hoje</label>
+                    <select id="selDateDay" placeholder="Day" class="form-control">
+                    </select>
+                </div>
+                <div class="form-group col-xs-4">
+                    <label class="emptyLabel">empty</label>
+                    <select id="selDateMonth" placeholder="Month" class="form-control">
+                    </select>
+                </div>
+                <div class="form-group col-xs-4">
+                    <label class="emptyLabel">empty</label>
+                    <select id="selDateYear" placeholder="Year" class="form-control">
+                    </select>
+                </div>
+            </div>
             <div id="wrapper">
                 <div class="form-group">
                     <button id="btnVis" class="btnVis">Visita</button> 

@@ -2253,57 +2253,69 @@
       },
       {
         "name": "FOLLOWUP",
-        "type": "text",
+        "type": "integer",
         "isSessionVariable": false,
         "_row_num": 60
       },
       {
-        "name": "NOMECRI",
-        "type": "text",
+        "name": "IDADEANO",
+        "type": "integer",
         "isSessionVariable": false,
         "_row_num": 61
       },
       {
-        "name": "NOMERESP",
-        "type": "text",
+        "name": "IDADEMES",
+        "type": "integer",
         "isSessionVariable": false,
         "_row_num": 62
       },
       {
-        "name": "NUMEST",
+        "name": "IDINC",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 63
       },
       {
+        "name": "NOMECRI",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 64
+      },
+      {
+        "name": "NOMERESP",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 65
+      },
+      {
+        "name": "NUMEST",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 66
+      },
+      {
         "name": "SEX",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 64
+        "_row_num": 67
       },
       {
         "name": "TELEMOVEL1",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 65
+        "_row_num": 68
       },
       {
         "name": "TELEMOVEL2",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 66
+        "_row_num": 69
       },
       {
         "name": "TELEMOVEL3",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 67
-      },
-      {
-        "name": "FU",
-        "type": "ingeger",
-        "isSessionVariable": false,
-        "_row_num": 68
+        "_row_num": 70
       }
     ]
   },
@@ -3973,7 +3985,7 @@
         "elementKey": "DOB"
       },
       "FOLLOWUP": {
-        "type": "string",
+        "type": "integer",
         "_defn": [
           {
             "_row_num": 60,
@@ -3983,11 +3995,44 @@
         "isSessionVariable": false,
         "elementKey": "FOLLOWUP"
       },
+      "IDADEANO": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IDADEANO"
+      },
+      "IDADEMES": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IDADEMES"
+      },
+      "IDINC": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IDINC"
+      },
       "NOMECRI": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -3998,7 +4043,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -4009,7 +4054,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -4020,7 +4065,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -4031,7 +4076,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -4042,7 +4087,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -4053,23 +4098,12 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "TELEMOVEL3"
-      },
-      "FU": {
-        "_defn": [
-          {
-            "_row_num": 68,
-            "section_name": "model"
-          }
-        ],
-        "type": "ingeger",
-        "isSessionVariable": false,
-        "elementKey": "FU"
       }
     },
     "section_names": [
@@ -7444,7 +7478,7 @@
         "elementPath": "DOB"
       },
       "FOLLOWUP": {
-        "type": "string",
+        "type": "integer",
         "_defn": [
           {
             "_row_num": 60,
@@ -7457,11 +7491,53 @@
         "elementSet": "data",
         "elementPath": "FOLLOWUP"
       },
+      "IDADEANO": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IDADEANO",
+        "elementName": "IDADEANO",
+        "elementSet": "data",
+        "elementPath": "IDADEANO"
+      },
+      "IDADEMES": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IDADEMES",
+        "elementName": "IDADEMES",
+        "elementSet": "data",
+        "elementPath": "IDADEMES"
+      },
+      "IDINC": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IDINC",
+        "elementName": "IDINC",
+        "elementSet": "data",
+        "elementPath": "IDINC"
+      },
       "NOMECRI": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -7475,7 +7551,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -7489,7 +7565,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -7503,7 +7579,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -7517,7 +7593,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -7531,7 +7607,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -7545,7 +7621,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -7554,20 +7630,6 @@
         "elementName": "TELEMOVEL3",
         "elementSet": "data",
         "elementPath": "TELEMOVEL3"
-      },
-      "FU": {
-        "_defn": [
-          {
-            "_row_num": 68,
-            "section_name": "model"
-          }
-        ],
-        "type": "ingeger",
-        "isSessionVariable": false,
-        "elementKey": "FU",
-        "elementName": "FU",
-        "elementSet": "data",
-        "elementPath": "FU"
       },
       "dodns_items": {
         "type": "string",
