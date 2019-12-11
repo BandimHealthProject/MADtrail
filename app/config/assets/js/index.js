@@ -4,7 +4,11 @@
 'use strict';
 /* global odkTables, util, odkCommon, odkData */
 
-function display() {    
+function display() {
+    
+    // Set the background to be a picture.
+    //var body = $('body').first();
+    //body.css('background', 'url(img/form_logo.png) fixed');
     doSanityCheck();
     initButtons();
 }

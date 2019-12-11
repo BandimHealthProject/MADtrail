@@ -112,25 +112,12 @@
         "_row_num": 5
       },
       {
-        "type": "integer",
-        "name": "REGNO",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Register number (triage survey)",
-              "default": "Número de registo (ficha de triagem)"
-            }
-          }
-        },
+        "clause": "end screen",
         "_row_num": 6
       },
       {
-        "clause": "end screen",
-        "_row_num": 7
-      },
-      {
         "clause": "begin screen",
-        "_row_num": 8
+        "_row_num": 7
       },
       {
         "type": "select_one_dropdown",
@@ -144,24 +131,24 @@
             }
           }
         },
-        "_row_num": 9
+        "_row_num": 8
       },
       {
         "type": "select_multiple",
         "values_list": "oubairro",
         "name": "oubairro",
-        "_row_num": 10
+        "_row_num": 9
       },
       {
         "clause": "if",
         "condition": "data('oubairro') != null",
-        "_row_num": 11
+        "_row_num": 10
       },
       {
         "type": "assign",
         "name": "BAIRRO",
         "calculation": 99,
-        "_row_num": 12
+        "_row_num": 11
       },
       {
         "type": "text",
@@ -174,7 +161,7 @@
             }
           }
         },
-        "_row_num": 13
+        "_row_num": 12
       },
       {
         "type": "integer",
@@ -194,32 +181,32 @@
           }
         },
         "constraint": "data('REGIDC') > 99999999 && data('REGIDC') < 1000000000 || data('oubairro') == null",
-        "_row_num": 14
+        "_row_num": 13
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "regidcns",
-        "_row_num": 15
+        "_row_num": 14
       },
       {
         "clause": "if",
         "condition": "data('regidcns') !=null",
-        "_row_num": 16
+        "_row_num": 15
       },
       {
         "type": "assign",
         "name": "REGIDC",
         "calculation": 999999999,
-        "_row_num": 17
+        "_row_num": 16
       },
       {
         "clause": "end if",
-        "_row_num": 18
+        "_row_num": 17
       },
       {
         "clause": "else",
-        "_row_num": 19
+        "_row_num": 18
       },
       {
         "type": "select_one_dropdown",
@@ -234,7 +221,7 @@
           }
         },
         "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-        "_row_num": 20
+        "_row_num": 19
       },
       {
         "type": "integer",
@@ -247,24 +234,24 @@
             }
           }
         },
-        "_row_num": 21
+        "_row_num": 20
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "camons",
-        "_row_num": 22
+        "_row_num": 21
       },
       {
         "clause": "if",
         "condition": "data('camons') !=null",
-        "_row_num": 23
+        "_row_num": 22
       },
       {
         "type": "assign",
         "name": "CAMO",
         "calculation": 9999,
-        "_row_num": 24
+        "_row_num": 23
       },
       {
         "type": "text",
@@ -277,11 +264,11 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 24
       },
       {
         "clause": "end if",
-        "_row_num": 26
+        "_row_num": 25
       },
       {
         "type": "integer",
@@ -301,23 +288,27 @@
           }
         },
         "constraint": "(data('CNO')>999  && data('CNO')<10000) || data('oubairro') != null",
-        "_row_num": 27
+        "_row_num": 26
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "cnons",
-        "_row_num": 28
+        "_row_num": 27
       },
       {
         "clause": "if",
         "condition": "data('cnons') != null",
-        "_row_num": 29
+        "_row_num": 28
       },
       {
         "type": "assign",
         "name": "CNO",
         "calculation": 9999,
+        "_row_num": 29
+      },
+      {
+        "clause": "end if",
         "_row_num": 30
       },
       {
@@ -325,16 +316,12 @@
         "_row_num": 31
       },
       {
-        "clause": "end if",
+        "clause": "end screen",
         "_row_num": 32
       },
       {
-        "clause": "end screen",
-        "_row_num": 33
-      },
-      {
         "clause": "begin screen",
-        "_row_num": 34
+        "_row_num": 33
       },
       {
         "type": "text",
@@ -347,7 +334,7 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 34
       },
       {
         "type": "select_one",
@@ -358,6 +345,19 @@
             "text": {
               "english": "Sex of the child",
               "default": "Sexo da criança"
+            }
+          }
+        },
+        "_row_num": 35
+      },
+      {
+        "type": "integer",
+        "name": "REGNO",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Register number (triage survey)",
+              "default": "Número de registo (ficha de triagem)"
             }
           }
         },
@@ -581,7 +581,7 @@
       },
       {
         "type": "select_one_with_other",
-        "values_list": "telinf",
+        "values_list": "telinf1",
         "name": "TELEINF1",
         "_row_num": 63
       },
@@ -607,7 +607,7 @@
       },
       {
         "type": "select_one_with_other",
-        "values_list": "telinf",
+        "values_list": "telinf2",
         "name": "TELEINF2",
         "_row_num": 65
       },
@@ -633,17 +633,47 @@
       },
       {
         "type": "select_one_with_other",
-        "values_list": "telinf",
+        "values_list": "telinf2",
         "name": "TELEINF3",
         "_row_num": 67
       },
       {
-        "clause": "end screen",
+        "clause": "if",
+        "condition": "data('TELEINF2') == '3'",
         "_row_num": 68
       },
       {
-        "clause": "begin screen",
+        "type": "assign",
+        "name": "TELEMOVEL2",
+        "calculation": 999999999,
         "_row_num": 69
+      },
+      {
+        "clause": "end if",
+        "_row_num": 70
+      },
+      {
+        "clause": "if",
+        "condition": "data('TELEINF3') == '3'",
+        "_row_num": 71
+      },
+      {
+        "type": "assign",
+        "name": "TELEMOVEL3",
+        "calculation": 999999999,
+        "_row_num": 72
+      },
+      {
+        "clause": "end if",
+        "_row_num": 73
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 74
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 75
       },
       {
         "type": "select_one",
@@ -657,12 +687,12 @@
             }
           }
         },
-        "_row_num": 70
+        "_row_num": 76
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '1'",
-        "_row_num": 71
+        "_row_num": 77
       },
       {
         "type": "select_one",
@@ -676,7 +706,7 @@
             }
           }
         },
-        "_row_num": 72
+        "_row_num": 78
       },
       {
         "type": "select_one",
@@ -690,12 +720,12 @@
             }
           }
         },
-        "_row_num": 73
+        "_row_num": 79
       },
       {
         "clause": "if",
         "condition": "data('VACTRANS') == '2'",
-        "_row_num": 74
+        "_row_num": 80
       },
       {
         "type": "note",
@@ -707,20 +737,20 @@
             }
           }
         },
-        "_row_num": 75
+        "_row_num": 81
       },
       {
         "clause": "end if",
-        "_row_num": 76
+        "_row_num": 82
       },
       {
         "clause": "end if",
-        "_row_num": 77
+        "_row_num": 83
       },
       {
         "clause": "if",
         "condition": "data('CARTVIS') == '2'",
-        "_row_num": 78
+        "_row_num": 84
       },
       {
         "type": "select_one",
@@ -734,19 +764,19 @@
             }
           }
         },
-        "_row_num": 79
+        "_row_num": 85
       },
       {
         "clause": "end if",
-        "_row_num": 80
+        "_row_num": 86
       },
       {
         "clause": "end screen",
-        "_row_num": 81
+        "_row_num": 87
       },
       {
         "clause": "begin screen",
-        "_row_num": 82
+        "_row_num": 88
       },
       {
         "type": "text",
@@ -775,7 +805,7 @@
         "inputAttributes": {
           "type": "number"
         },
-        "_row_num": 83
+        "_row_num": 89
       },
       {
         "type": "integer",
@@ -795,15 +825,15 @@
           }
         },
         "constraint": "(data('BRACOCRI')>49 && data('BRACOCRI')<343 && data('BRACOCRI')%2 == 0) || data('CONSENT') == '2'",
-        "_row_num": 84
+        "_row_num": 90
       },
       {
         "clause": "end screen",
-        "_row_num": 85
+        "_row_num": 91
       },
       {
         "clause": "begin screen",
-        "_row_num": 86
+        "_row_num": 92
       },
       {
         "type": "select_one",
@@ -817,12 +847,12 @@
             }
           }
         },
-        "_row_num": 87
+        "_row_num": 93
       },
       {
         "clause": "if",
         "condition": "data('MOTCONT')=='2'",
-        "_row_num": 88
+        "_row_num": 94
       },
       {
         "type": "adate",
@@ -842,19 +872,19 @@
           }
         },
         "constraint": "adate.diffInDays(data('DATINC'), data('INTINICI'))<1 || adate.hasUncertainty(data('INTINICI')) ||data('CONSENT') == '2'",
-        "_row_num": 89
+        "_row_num": 95
       },
       {
         "clause": "end if",
-        "_row_num": 90
+        "_row_num": 96
       },
       {
         "clause": "end screen",
-        "_row_num": 91
+        "_row_num": 97
       },
       {
         "clause": "begin screen",
-        "_row_num": 92
+        "_row_num": 98
       },
       {
         "type": "select_one",
@@ -868,7 +898,7 @@
             }
           }
         },
-        "_row_num": 93
+        "_row_num": 99
       },
       {
         "type": "select_one",
@@ -882,7 +912,7 @@
             }
           }
         },
-        "_row_num": 94
+        "_row_num": 100
       },
       {
         "type": "select_one",
@@ -896,15 +926,15 @@
             }
           }
         },
-        "_row_num": 95
+        "_row_num": 101
       },
       {
         "clause": "end screen",
-        "_row_num": 96
+        "_row_num": 102
       },
       {
         "clause": "begin screen",
-        "_row_num": 97
+        "_row_num": 103
       },
       {
         "type": "select_one",
@@ -918,7 +948,7 @@
             }
           }
         },
-        "_row_num": 98
+        "_row_num": 104
       },
       {
         "type": "select_one",
@@ -932,7 +962,7 @@
             }
           }
         },
-        "_row_num": 99
+        "_row_num": 105
       },
       {
         "type": "select_one",
@@ -946,15 +976,15 @@
             }
           }
         },
-        "_row_num": 100
+        "_row_num": 106
       },
       {
         "clause": "end screen",
-        "_row_num": 101
+        "_row_num": 107
       },
       {
         "clause": "begin screen",
-        "_row_num": 102
+        "_row_num": 108
       },
       {
         "type": "select_one",
@@ -968,7 +998,7 @@
             }
           }
         },
-        "_row_num": 103
+        "_row_num": 109
       },
       {
         "type": "text",
@@ -981,15 +1011,15 @@
             }
           }
         },
-        "_row_num": 104
+        "_row_num": 110
       },
       {
         "clause": "end screen",
-        "_row_num": 105
+        "_row_num": 111
       },
       {
         "clause": "begin screen",
-        "_row_num": 106
+        "_row_num": 112
       },
       {
         "type": "select_one",
@@ -1003,12 +1033,12 @@
             }
           }
         },
-        "_row_num": 107
+        "_row_num": 113
       },
       {
         "clause": "if",
         "condition": "data('TRATAMENT') =='1'",
-        "_row_num": 108
+        "_row_num": 114
       },
       {
         "type": "select_multiple",
@@ -1022,18 +1052,18 @@
             }
           }
         },
-        "_row_num": 109
+        "_row_num": 115
       },
       {
         "type": "select_multiple",
         "values_list": "ou",
         "name": "tratqualou",
-        "_row_num": 110
+        "_row_num": 116
       },
       {
         "clause": "if",
         "condition": "data('tratqualou') != null",
-        "_row_num": 111
+        "_row_num": 117
       },
       {
         "type": "text",
@@ -1046,23 +1076,23 @@
             }
           }
         },
-        "_row_num": 112
+        "_row_num": 118
       },
       {
         "clause": "end if",
-        "_row_num": 113
+        "_row_num": 119
       },
       {
         "clause": "end if",
-        "_row_num": 114
+        "_row_num": 120
       },
       {
         "clause": "end screen",
-        "_row_num": 115
+        "_row_num": 121
       },
       {
         "clause": "begin screen",
-        "_row_num": 116
+        "_row_num": 122
       },
       {
         "type": "select_one",
@@ -1076,12 +1106,12 @@
             }
           }
         },
-        "_row_num": 117
+        "_row_num": 123
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 118
+        "_row_num": 124
       },
       {
         "type": "text",
@@ -1094,11 +1124,11 @@
             }
           }
         },
-        "_row_num": 119
+        "_row_num": 125
       },
       {
         "clause": "end if",
-        "_row_num": 120
+        "_row_num": 126
       },
       {
         "type": "select_one",
@@ -1112,12 +1142,12 @@
             }
           }
         },
-        "_row_num": 121
+        "_row_num": 127
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 122
+        "_row_num": 128
       },
       {
         "type": "text",
@@ -1130,30 +1160,30 @@
             }
           }
         },
-        "_row_num": 123
+        "_row_num": 129
       },
       {
         "clause": "end if",
-        "_row_num": 124
+        "_row_num": 130
       },
       {
         "clause": "end screen",
-        "_row_num": 125
+        "_row_num": 131
       },
       {
         "clause": "if",
-        "condition": "data('PODEINC')=='2' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
-        "_row_num": 126
+        "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
+        "_row_num": 132
       },
       {
         "clause": "begin screen",
-        "_row_num": 127
+        "_row_num": 133
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 128
+        "_row_num": 134
       },
       {
         "type": "note",
@@ -1165,53 +1195,11 @@
             }
           }
         },
-        "_row_num": 129
-      },
-      {
-        "clause": "if",
-        "condition": "data('PODEINC')=='2'",
-        "_row_num": 130
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "The nurse assessed that the child should not be included",
-              "default": "A enfermeira avaliou que a criança não deveria ser incluída"
-            }
-          }
-        },
-        "_row_num": 131
-      },
-      {
-        "clause": "end if",
-        "_row_num": 132
-      },
-      {
-        "clause": "if",
-        "condition": "data('BRACOCRI') <110",
-        "_row_num": 133
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Upper middle arm circumference is smaller than 110 mm ({{data.BRACOCRI}})",
-              "default": "A braco é menor que 110 mm ({{data.BRACOCRI}})"
-            }
-          }
-        },
-        "_row_num": 134
-      },
-      {
-        "clause": "end if",
         "_row_num": 135
       },
       {
         "clause": "if",
-        "condition": "data('TEMPERATURA')>38",
+        "condition": "data('PODEVAC')=='2'",
         "_row_num": 136
       },
       {
@@ -1219,8 +1207,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "The temperature is greater than 37.9 ({{data.TEMPERATURA}})",
-              "default": "A temperatura é superior a 37,9 ({{data.TEMPERATURA}})"
+              "english": "The nurse assessed that the child should not be vaccinated",
+              "default": "A enfermeira avaliou que a criança não deve ser vacinada"
             }
           }
         },
@@ -1232,7 +1220,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('VENAOVAS') == '2'",
+        "condition": "data('PODEINC')=='2'",
         "_row_num": 139
       },
       {
@@ -1240,8 +1228,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Mother/guardian could not confirm that the child did not receive measles vaccine",
-              "default": "Mãe/tutor não pôde confirmar que a criança não recebeu a vacina do sarampo"
+              "english": "The nurse assessed that the child should not be included",
+              "default": "A enfermeira avaliou que a criança não deveria ser incluída"
             }
           }
         },
@@ -1253,8 +1241,71 @@
       },
       {
         "clause": "if",
-        "condition": "data('SARVAC') == '1'",
+        "condition": "data('BRACOCRI') <110",
         "_row_num": 142
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Upper middle arm circumference is smaller than 110 mm ({{data.BRACOCRI}})",
+              "default": "A braco é menor que 110 mm ({{data.BRACOCRI}})"
+            }
+          }
+        },
+        "_row_num": 143
+      },
+      {
+        "clause": "end if",
+        "_row_num": 144
+      },
+      {
+        "clause": "if",
+        "condition": "data('TEMPERATURA')>38",
+        "_row_num": 145
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "The temperature is greater than 37.9 ({{data.TEMPERATURA}})",
+              "default": "A temperatura é superior a 37,9 ({{data.TEMPERATURA}})"
+            }
+          }
+        },
+        "_row_num": 146
+      },
+      {
+        "clause": "end if",
+        "_row_num": 147
+      },
+      {
+        "clause": "if",
+        "condition": "data('VENAOVAS') == '2'",
+        "_row_num": 148
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Mother/guardian could not confirm that the child did not receive measles vaccine",
+              "default": "Mãe/tutor não pôde confirmar que a criança não recebeu a vacina do sarampo"
+            }
+          }
+        },
+        "_row_num": 149
+      },
+      {
+        "clause": "end if",
+        "_row_num": 150
+      },
+      {
+        "clause": "if",
+        "condition": "data('SARVAC') == '1'",
+        "_row_num": 151
       },
       {
         "type": "note",
@@ -1266,23 +1317,23 @@
             }
           }
         },
-        "_row_num": 143
+        "_row_num": 152
       },
       {
         "clause": "end if",
-        "_row_num": 144
+        "_row_num": 153
       },
       {
         "clause": "end screen",
-        "_row_num": 145
+        "_row_num": 154
       },
       {
         "clause": "else",
-        "_row_num": 146
+        "_row_num": 155
       },
       {
         "clause": "begin screen",
-        "_row_num": 147
+        "_row_num": 156
       },
       {
         "type": "integer",
@@ -1302,7 +1353,7 @@
           }
         },
         "constraint": "data('RANDOM1')>0 || data('INC') == '2'",
-        "_row_num": 148
+        "_row_num": 157
       },
       {
         "type": "integer",
@@ -1322,27 +1373,27 @@
           }
         },
         "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-        "_row_num": 149
+        "_row_num": 158
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 1,
-        "_row_num": 150
+        "_row_num": 159
       },
       {
         "clause": "end screen",
-        "_row_num": 151
+        "_row_num": 160
       },
       {
         "clause": "begin screen",
-        "_row_num": 152
+        "_row_num": 161
       },
       {
         "type": "assign",
         "name": "DATVACVAS",
         "calculation": "data('DATINC')",
-        "_row_num": 153
+        "_row_num": 162
       },
       {
         "type": "adate",
@@ -1355,7 +1406,7 @@
             }
           }
         },
-        "_row_num": 154
+        "_row_num": 163
       },
       {
         "type": "time",
@@ -1368,13 +1419,13 @@
             }
           }
         },
-        "_row_num": 155
+        "_row_num": 164
       },
       {
         "type": "assign",
         "name": "HORVACVAS",
         "calculation": "adate.hoursMinutes(data('horvacvas'))",
-        "_row_num": 156
+        "_row_num": 165
       },
       {
         "type": "integer",
@@ -1394,7 +1445,7 @@
           }
         },
         "constraint": "data('NUMVAC')>0 || data('INC') == '2'",
-        "_row_num": 157
+        "_row_num": 166
       },
       {
         "type": "integer",
@@ -1414,18 +1465,18 @@
           }
         },
         "constraint": "data('num')>0 || data('INC') == '2'",
-        "_row_num": 158
+        "_row_num": 167
       },
       {
         "type": "assign",
         "name": "NUMEST",
         "calculation": "freebase.studyNumber(\"MAD\",5,data('num'))",
-        "_row_num": 159
+        "_row_num": 168
       },
       {
         "clause": "if",
         "condition": "data('num') != null",
-        "_row_num": 160
+        "_row_num": 169
       },
       {
         "type": "note",
@@ -1437,23 +1488,23 @@
             }
           }
         },
-        "_row_num": 161
+        "_row_num": 170
       },
       {
         "clause": "end if",
-        "_row_num": 162
+        "_row_num": 171
       },
       {
         "clause": "end screen",
-        "_row_num": 163
+        "_row_num": 172
       },
       {
         "clause": "end if",
-        "_row_num": 164
+        "_row_num": 173
       },
       {
         "clause": "begin screen",
-        "_row_num": 165
+        "_row_num": 174
       },
       {
         "type": "select_one_with_other",
@@ -1467,12 +1518,12 @@
             }
           }
         },
-        "_row_num": 166
+        "_row_num": 175
       },
       {
         "clause": "if",
         "condition": "data('INC') == '1'",
-        "_row_num": 167
+        "_row_num": 176
       },
       {
         "type": "select_one_with_other",
@@ -1486,23 +1537,23 @@
             }
           }
         },
-        "_row_num": 168
+        "_row_num": 177
       },
       {
         "clause": "end if",
-        "_row_num": 169
+        "_row_num": 178
       },
       {
         "clause": "end screen",
-        "_row_num": 170
+        "_row_num": 179
       },
       {
         "clause": "else",
-        "_row_num": 171
+        "_row_num": 180
       },
       {
         "clause": "begin screen",
-        "_row_num": 172
+        "_row_num": 181
       },
       {
         "type": "note",
@@ -1514,21 +1565,21 @@
             }
           }
         },
-        "_row_num": 173
+        "_row_num": 182
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 174
+        "_row_num": 183
       },
       {
         "clause": "end screen",
-        "_row_num": 175
+        "_row_num": 184
       },
       {
         "clause": "end if",
-        "_row_num": 176
+        "_row_num": 185
       }
     ],
     "edit": [
@@ -1985,7 +2036,7 @@
         "_row_num": 20
       },
       {
-        "choice_list_name": "telinf",
+        "choice_list_name": "telinf1",
         "data_value": "1",
         "display": {
           "title": {
@@ -1998,7 +2049,7 @@
         "_row_num": 21
       },
       {
-        "choice_list_name": "telinf",
+        "choice_list_name": "telinf1",
         "data_value": "2",
         "display": {
           "title": {
@@ -2011,6 +2062,45 @@
         "_row_num": 22
       },
       {
+        "choice_list_name": "telinf2",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Mother",
+              "default": "Mãe"
+            }
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "choice_list_name": "telinf2",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Father",
+              "default": "Pai"
+            }
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "choice_list_name": "telinf2",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't have another phone number",
+              "default": "Não tem outro número de telefone"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
         "choice_list_name": "nsID",
         "data_value": "99",
         "display": {
@@ -2021,7 +2111,7 @@
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 26
       }
     ],
     "queries": [
@@ -2853,9 +2943,9 @@
           "_row_num": 20
         }
       ],
-      "telinf": [
+      "telinf1": [
         {
-          "choice_list_name": "telinf",
+          "choice_list_name": "telinf1",
           "data_value": "1",
           "display": {
             "title": {
@@ -2868,7 +2958,7 @@
           "_row_num": 21
         },
         {
-          "choice_list_name": "telinf",
+          "choice_list_name": "telinf1",
           "data_value": "2",
           "display": {
             "title": {
@@ -2879,6 +2969,47 @@
             }
           },
           "_row_num": 22
+        }
+      ],
+      "telinf2": [
+        {
+          "choice_list_name": "telinf2",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Mother",
+                "default": "Mãe"
+              }
+            }
+          },
+          "_row_num": 23
+        },
+        {
+          "choice_list_name": "telinf2",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Father",
+                "default": "Pai"
+              }
+            }
+          },
+          "_row_num": 24
+        },
+        {
+          "choice_list_name": "telinf2",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't have another phone number",
+                "default": "Não tem outro número de telefone"
+              }
+            }
+          },
+          "_row_num": 25
         }
       ],
       "nsID": [
@@ -2893,7 +3024,7 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 26
         }
       ]
     },
@@ -2923,7 +3054,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 168,
+            "_row_num": 177,
             "section_name": "inc"
           },
           {
@@ -2939,7 +3070,7 @@
         "valuesList": "bairro_csv",
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 8,
             "section_name": "inc"
           },
           {
@@ -2958,7 +3089,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 84,
+            "_row_num": 90,
             "section_name": "inc"
           },
           {
@@ -2973,7 +3104,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 20,
             "section_name": "inc"
           },
           {
@@ -2997,7 +3128,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 21,
             "section_name": "inc"
           },
           {
@@ -3016,7 +3147,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 25,
+            "_row_num": 24,
             "section_name": "inc"
           },
           {
@@ -3036,7 +3167,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 76,
             "section_name": "inc"
           },
           {
@@ -3051,7 +3182,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 26,
             "section_name": "inc"
           },
           {
@@ -3075,7 +3206,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 27,
             "section_name": "inc"
           },
           {
@@ -3111,7 +3242,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 103,
+            "_row_num": 109,
             "section_name": "inc"
           },
           {
@@ -3151,7 +3282,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 154,
+            "_row_num": 163,
             "section_name": "inc"
           },
           {
@@ -3167,7 +3298,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 100,
             "section_name": "inc"
           },
           {
@@ -3183,7 +3314,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 100,
+            "_row_num": 106,
             "section_name": "inc"
           },
           {
@@ -3239,7 +3370,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 166,
+            "_row_num": 175,
             "section_name": "inc"
           },
           {
@@ -3255,7 +3386,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 99,
             "section_name": "inc"
           },
           {
@@ -3271,7 +3402,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 155,
+            "_row_num": 164,
             "section_name": "inc"
           },
           {
@@ -3382,7 +3513,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 89,
+            "_row_num": 95,
             "section_name": "inc"
           },
           {
@@ -3398,7 +3529,7 @@
         "valuesList": "Motivo",
         "_defn": [
           {
-            "_row_num": 87,
+            "_row_num": 93,
             "section_name": "inc"
           },
           {
@@ -3413,7 +3544,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 123,
+            "_row_num": 129,
             "section_name": "inc"
           },
           {
@@ -3428,7 +3559,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 34,
             "section_name": "inc"
           },
           {
@@ -3458,7 +3589,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 167,
             "section_name": "inc"
           },
           {
@@ -3484,7 +3615,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 157,
+            "_row_num": 166,
             "section_name": "inc"
           },
           {
@@ -3499,7 +3630,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 119,
+            "_row_num": 125,
             "section_name": "inc"
           },
           {
@@ -3514,7 +3645,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 12,
             "section_name": "inc"
           },
           {
@@ -3533,7 +3664,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 104,
+            "_row_num": 110,
             "section_name": "inc"
           },
           {
@@ -3553,7 +3684,7 @@
         "valuesList": "oubairro",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 9,
             "section_name": "inc"
           },
           {
@@ -3573,7 +3704,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 121,
+            "_row_num": 127,
             "section_name": "inc"
           },
           {
@@ -3589,7 +3720,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 117,
+            "_row_num": 123,
             "section_name": "inc"
           },
           {
@@ -3604,7 +3735,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 148,
+            "_row_num": 157,
             "section_name": "inc"
           },
           {
@@ -3619,7 +3750,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 149,
+            "_row_num": 158,
             "section_name": "inc"
           },
           {
@@ -3634,7 +3765,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 13,
             "section_name": "inc"
           },
           {
@@ -3658,7 +3789,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 14,
             "section_name": "inc"
           },
           {
@@ -3673,7 +3804,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 36,
             "section_name": "inc"
           },
           {
@@ -3689,7 +3820,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 98,
+            "_row_num": 104,
             "section_name": "inc"
           },
           {
@@ -3705,7 +3836,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 78,
             "section_name": "inc"
           },
           {
@@ -3721,7 +3852,7 @@
         "valuesList": "sexo",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 35,
             "section_name": "inc"
           },
           {
@@ -3748,7 +3879,7 @@
         "valuesList": "tabz_csv",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 19,
             "section_name": "inc"
           },
           {
@@ -3765,7 +3896,7 @@
       },
       "TELEINF1": {
         "type": "string",
-        "valuesList": "telinf",
+        "valuesList": "telinf1",
         "_defn": [
           {
             "_row_num": 63,
@@ -3781,7 +3912,7 @@
       },
       "TELEINF2": {
         "type": "string",
-        "valuesList": "telinf",
+        "valuesList": "telinf2",
         "_defn": [
           {
             "_row_num": 65,
@@ -3797,7 +3928,7 @@
       },
       "TELEINF3": {
         "type": "string",
-        "valuesList": "telinf",
+        "valuesList": "telinf2",
         "_defn": [
           {
             "_row_num": 67,
@@ -3860,7 +3991,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 89,
             "section_name": "inc"
           },
           {
@@ -3876,7 +4007,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 99,
+            "_row_num": 105,
             "section_name": "inc"
           },
           {
@@ -3892,7 +4023,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 113,
             "section_name": "inc"
           },
           {
@@ -3912,7 +4043,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 115,
             "section_name": "inc"
           },
           {
@@ -3932,7 +4063,7 @@
         "valuesList": "ou",
         "_defn": [
           {
-            "_row_num": 110,
+            "_row_num": 116,
             "section_name": "inc"
           },
           {
@@ -3947,7 +4078,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 112,
+            "_row_num": 118,
             "section_name": "inc"
           },
           {
@@ -3963,7 +4094,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 79,
             "section_name": "inc"
           },
           {
@@ -3979,7 +4110,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 79,
+            "_row_num": 85,
             "section_name": "inc"
           },
           {
@@ -3995,7 +4126,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 101,
             "section_name": "inc"
           },
           {
@@ -4167,24 +4298,6 @@
             "promptIdx": 0
           },
           {
-            "type": "integer",
-            "name": "REGNO",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Register number (triage survey)",
-                  "default": "Número de registo (ficha de triagem)"
-                }
-              }
-            },
-            "_row_num": 6,
-            "__rowNum__": 5,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen2",
-            "promptIdx": 1
-          },
-          {
             "type": "select_one_dropdown",
             "values_list": "bairro_csv",
             "name": "BAIRRO",
@@ -4196,23 +4309,23 @@
                 }
               }
             },
-            "_row_num": 9,
-            "__rowNum__": 8,
+            "_row_num": 8,
+            "__rowNum__": 7,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 2
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 1
           },
           {
             "type": "select_multiple",
             "values_list": "oubairro",
             "name": "oubairro",
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 3
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 2
           },
           {
             "type": "text",
@@ -4225,12 +4338,12 @@
                 }
               }
             },
-            "_row_num": 13,
-            "__rowNum__": 12,
+            "_row_num": 12,
+            "__rowNum__": 11,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 4
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 3
           },
           {
             "type": "integer",
@@ -4250,23 +4363,23 @@
               }
             },
             "constraint": "data('REGIDC') > 99999999 && data('REGIDC') < 1000000000 || data('oubairro') == null",
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 13,
+            "__rowNum__": 12,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 5
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 4
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "regidcns",
-            "_row_num": 15,
-            "__rowNum__": 14,
+            "_row_num": 14,
+            "__rowNum__": 13,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 6
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 5
           },
           {
             "type": "select_one_dropdown",
@@ -4281,12 +4394,12 @@
               }
             },
             "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-            "_row_num": 20,
-            "__rowNum__": 19,
+            "_row_num": 19,
+            "__rowNum__": 18,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 7
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 6
           },
           {
             "type": "integer",
@@ -4299,23 +4412,23 @@
                 }
               }
             },
-            "_row_num": 21,
-            "__rowNum__": 20,
+            "_row_num": 20,
+            "__rowNum__": 19,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 8
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 7
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "camons",
-            "_row_num": 22,
-            "__rowNum__": 21,
+            "_row_num": 21,
+            "__rowNum__": 20,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 9
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 8
           },
           {
             "type": "text",
@@ -4328,12 +4441,12 @@
                 }
               }
             },
-            "_row_num": 25,
-            "__rowNum__": 24,
+            "_row_num": 24,
+            "__rowNum__": 23,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 10
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 9
           },
           {
             "type": "integer",
@@ -4353,23 +4466,23 @@
               }
             },
             "constraint": "(data('CNO')>999  && data('CNO')<10000) || data('oubairro') != null",
-            "_row_num": 27,
-            "__rowNum__": 26,
+            "_row_num": 26,
+            "__rowNum__": 25,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 11
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 10
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "cnons",
-            "_row_num": 28,
-            "__rowNum__": 27,
+            "_row_num": 27,
+            "__rowNum__": 26,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen8",
-            "promptIdx": 12
+            "_branch_label_enclosing_screen": "inc/_screen7",
+            "promptIdx": 11
           },
           {
             "type": "text",
@@ -4382,12 +4495,12 @@
                 }
               }
             },
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 34,
+            "__rowNum__": 33,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen34",
-            "promptIdx": 13
+            "_branch_label_enclosing_screen": "inc/_screen33",
+            "promptIdx": 12
           },
           {
             "type": "select_one",
@@ -4401,11 +4514,29 @@
                 }
               }
             },
+            "_row_num": 35,
+            "__rowNum__": 34,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "inc/_screen33",
+            "promptIdx": 13
+          },
+          {
+            "type": "integer",
+            "name": "REGNO",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Register number (triage survey)",
+                  "default": "Número de registo (ficha de triagem)"
+                }
+              }
+            },
             "_row_num": 36,
             "__rowNum__": 35,
             "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen34",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "inc/_screen33",
             "promptIdx": 14
           },
           {
@@ -4430,7 +4561,7 @@
             "__rowNum__": 37,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen34",
+            "_branch_label_enclosing_screen": "inc/_screen33",
             "promptIdx": 15
           },
           {
@@ -4441,7 +4572,7 @@
             "__rowNum__": 38,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen34",
+            "_branch_label_enclosing_screen": "inc/_screen33",
             "promptIdx": 16
           },
           {
@@ -4459,7 +4590,7 @@
             "__rowNum__": 43,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen34",
+            "_branch_label_enclosing_screen": "inc/_screen33",
             "promptIdx": 17
           },
           {
@@ -4594,7 +4725,7 @@
           },
           {
             "type": "select_one_with_other",
-            "values_list": "telinf",
+            "values_list": "telinf1",
             "name": "TELEINF1",
             "_row_num": 63,
             "__rowNum__": 62,
@@ -4630,7 +4761,7 @@
           },
           {
             "type": "select_one_with_other",
-            "values_list": "telinf",
+            "values_list": "telinf2",
             "name": "TELEINF2",
             "_row_num": 65,
             "__rowNum__": 64,
@@ -4666,7 +4797,7 @@
           },
           {
             "type": "select_one_with_other",
-            "values_list": "telinf",
+            "values_list": "telinf2",
             "name": "TELEINF3",
             "_row_num": 67,
             "__rowNum__": 66,
@@ -4687,11 +4818,11 @@
                 }
               }
             },
-            "_row_num": 70,
-            "__rowNum__": 69,
+            "_row_num": 76,
+            "__rowNum__": 75,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen69",
+            "_branch_label_enclosing_screen": "inc/_screen75",
             "promptIdx": 29
           },
           {
@@ -4706,11 +4837,11 @@
                 }
               }
             },
-            "_row_num": 72,
-            "__rowNum__": 71,
+            "_row_num": 78,
+            "__rowNum__": 77,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen69",
+            "_branch_label_enclosing_screen": "inc/_screen75",
             "promptIdx": 30
           },
           {
@@ -4725,11 +4856,11 @@
                 }
               }
             },
-            "_row_num": 73,
-            "__rowNum__": 72,
+            "_row_num": 79,
+            "__rowNum__": 78,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen69",
+            "_branch_label_enclosing_screen": "inc/_screen75",
             "promptIdx": 31
           },
           {
@@ -4742,11 +4873,11 @@
                 }
               }
             },
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "_row_num": 81,
+            "__rowNum__": 80,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen69",
+            "_branch_label_enclosing_screen": "inc/_screen75",
             "promptIdx": 32
           },
           {
@@ -4761,11 +4892,11 @@
                 }
               }
             },
-            "_row_num": 79,
-            "__rowNum__": 78,
+            "_row_num": 85,
+            "__rowNum__": 84,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen69",
+            "_branch_label_enclosing_screen": "inc/_screen75",
             "promptIdx": 33
           },
           {
@@ -4795,11 +4926,11 @@
             "inputAttributes": {
               "type": "number"
             },
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 89,
+            "__rowNum__": 88,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen82",
+            "_branch_label_enclosing_screen": "inc/_screen88",
             "promptIdx": 34
           },
           {
@@ -4820,11 +4951,11 @@
               }
             },
             "constraint": "(data('BRACOCRI')>49 && data('BRACOCRI')<343 && data('BRACOCRI')%2 == 0) || data('CONSENT') == '2'",
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 90,
+            "__rowNum__": 89,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen82",
+            "_branch_label_enclosing_screen": "inc/_screen88",
             "promptIdx": 35
           },
           {
@@ -4839,11 +4970,11 @@
                 }
               }
             },
-            "_row_num": 87,
-            "__rowNum__": 86,
+            "_row_num": 93,
+            "__rowNum__": 92,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen86",
+            "_branch_label_enclosing_screen": "inc/_screen92",
             "promptIdx": 36
           },
           {
@@ -4864,11 +4995,11 @@
               }
             },
             "constraint": "adate.diffInDays(data('DATINC'), data('INTINICI'))<1 || adate.hasUncertainty(data('INTINICI')) ||data('CONSENT') == '2'",
-            "_row_num": 89,
-            "__rowNum__": 88,
+            "_row_num": 95,
+            "__rowNum__": 94,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen86",
+            "_branch_label_enclosing_screen": "inc/_screen92",
             "promptIdx": 37
           },
           {
@@ -4883,11 +5014,11 @@
                 }
               }
             },
-            "_row_num": 93,
-            "__rowNum__": 92,
+            "_row_num": 99,
+            "__rowNum__": 98,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen92",
+            "_branch_label_enclosing_screen": "inc/_screen98",
             "promptIdx": 38
           },
           {
@@ -4902,11 +5033,11 @@
                 }
               }
             },
-            "_row_num": 94,
-            "__rowNum__": 93,
+            "_row_num": 100,
+            "__rowNum__": 99,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen92",
+            "_branch_label_enclosing_screen": "inc/_screen98",
             "promptIdx": 39
           },
           {
@@ -4921,11 +5052,11 @@
                 }
               }
             },
-            "_row_num": 95,
-            "__rowNum__": 94,
+            "_row_num": 101,
+            "__rowNum__": 100,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen92",
+            "_branch_label_enclosing_screen": "inc/_screen98",
             "promptIdx": 40
           },
           {
@@ -4940,11 +5071,11 @@
                 }
               }
             },
-            "_row_num": 98,
-            "__rowNum__": 97,
+            "_row_num": 104,
+            "__rowNum__": 103,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen97",
+            "_branch_label_enclosing_screen": "inc/_screen103",
             "promptIdx": 41
           },
           {
@@ -4959,11 +5090,11 @@
                 }
               }
             },
-            "_row_num": 99,
-            "__rowNum__": 98,
+            "_row_num": 105,
+            "__rowNum__": 104,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen97",
+            "_branch_label_enclosing_screen": "inc/_screen103",
             "promptIdx": 42
           },
           {
@@ -4978,11 +5109,11 @@
                 }
               }
             },
-            "_row_num": 100,
-            "__rowNum__": 99,
+            "_row_num": 106,
+            "__rowNum__": 105,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen97",
+            "_branch_label_enclosing_screen": "inc/_screen103",
             "promptIdx": 43
           },
           {
@@ -4997,11 +5128,11 @@
                 }
               }
             },
-            "_row_num": 103,
-            "__rowNum__": 102,
+            "_row_num": 109,
+            "__rowNum__": 108,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen102",
+            "_branch_label_enclosing_screen": "inc/_screen108",
             "promptIdx": 44
           },
           {
@@ -5015,11 +5146,11 @@
                 }
               }
             },
-            "_row_num": 104,
-            "__rowNum__": 103,
+            "_row_num": 110,
+            "__rowNum__": 109,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen102",
+            "_branch_label_enclosing_screen": "inc/_screen108",
             "promptIdx": 45
           },
           {
@@ -5034,11 +5165,11 @@
                 }
               }
             },
-            "_row_num": 107,
-            "__rowNum__": 106,
+            "_row_num": 113,
+            "__rowNum__": 112,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen106",
+            "_branch_label_enclosing_screen": "inc/_screen112",
             "promptIdx": 46
           },
           {
@@ -5053,22 +5184,22 @@
                 }
               }
             },
-            "_row_num": 109,
-            "__rowNum__": 108,
+            "_row_num": 115,
+            "__rowNum__": 114,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen106",
+            "_branch_label_enclosing_screen": "inc/_screen112",
             "promptIdx": 47
           },
           {
             "type": "select_multiple",
             "values_list": "ou",
             "name": "tratqualou",
-            "_row_num": 110,
-            "__rowNum__": 109,
+            "_row_num": 116,
+            "__rowNum__": 115,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen106",
+            "_branch_label_enclosing_screen": "inc/_screen112",
             "promptIdx": 48
           },
           {
@@ -5082,11 +5213,11 @@
                 }
               }
             },
-            "_row_num": 112,
-            "__rowNum__": 111,
+            "_row_num": 118,
+            "__rowNum__": 117,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen106",
+            "_branch_label_enclosing_screen": "inc/_screen112",
             "promptIdx": 49
           },
           {
@@ -5101,11 +5232,11 @@
                 }
               }
             },
-            "_row_num": 117,
-            "__rowNum__": 116,
+            "_row_num": 123,
+            "__rowNum__": 122,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen116",
+            "_branch_label_enclosing_screen": "inc/_screen122",
             "promptIdx": 50
           },
           {
@@ -5119,11 +5250,11 @@
                 }
               }
             },
-            "_row_num": 119,
-            "__rowNum__": 118,
+            "_row_num": 125,
+            "__rowNum__": 124,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen116",
+            "_branch_label_enclosing_screen": "inc/_screen122",
             "promptIdx": 51
           },
           {
@@ -5138,11 +5269,11 @@
                 }
               }
             },
-            "_row_num": 121,
-            "__rowNum__": 120,
+            "_row_num": 127,
+            "__rowNum__": 126,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen116",
+            "_branch_label_enclosing_screen": "inc/_screen122",
             "promptIdx": 52
           },
           {
@@ -5156,11 +5287,11 @@
                 }
               }
             },
-            "_row_num": 123,
-            "__rowNum__": 122,
+            "_row_num": 129,
+            "__rowNum__": 128,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen116",
+            "_branch_label_enclosing_screen": "inc/_screen122",
             "promptIdx": 53
           },
           {
@@ -5173,12 +5304,29 @@
                 }
               }
             },
-            "_row_num": 129,
-            "__rowNum__": 128,
+            "_row_num": 135,
+            "__rowNum__": 134,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen127",
+            "_branch_label_enclosing_screen": "inc/_screen133",
             "promptIdx": 54
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "The nurse assessed that the child should not be vaccinated",
+                  "default": "A enfermeira avaliou que a criança não deve ser vacinada"
+                }
+              }
+            },
+            "_row_num": 137,
+            "__rowNum__": 136,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 55
           },
           {
             "type": "note",
@@ -5190,12 +5338,12 @@
                 }
               }
             },
-            "_row_num": 131,
-            "__rowNum__": 130,
+            "_row_num": 140,
+            "__rowNum__": 139,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen127",
-            "promptIdx": 55
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 56
           },
           {
             "type": "note",
@@ -5207,12 +5355,12 @@
                 }
               }
             },
-            "_row_num": 134,
-            "__rowNum__": 133,
+            "_row_num": 143,
+            "__rowNum__": 142,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen127",
-            "promptIdx": 56
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 57
           },
           {
             "type": "note",
@@ -5224,12 +5372,12 @@
                 }
               }
             },
-            "_row_num": 137,
-            "__rowNum__": 136,
+            "_row_num": 146,
+            "__rowNum__": 145,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen127",
-            "promptIdx": 57
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 58
           },
           {
             "type": "note",
@@ -5241,12 +5389,12 @@
                 }
               }
             },
-            "_row_num": 140,
-            "__rowNum__": 139,
+            "_row_num": 149,
+            "__rowNum__": 148,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen127",
-            "promptIdx": 58
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 59
           },
           {
             "type": "note",
@@ -5258,12 +5406,12 @@
                 }
               }
             },
-            "_row_num": 143,
-            "__rowNum__": 142,
+            "_row_num": 152,
+            "__rowNum__": 151,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen127",
-            "promptIdx": 59
+            "_branch_label_enclosing_screen": "inc/_screen133",
+            "promptIdx": 60
           },
           {
             "type": "integer",
@@ -5283,12 +5431,12 @@
               }
             },
             "constraint": "data('RANDOM1')>0 || data('INC') == '2'",
-            "_row_num": 148,
-            "__rowNum__": 147,
+            "_row_num": 157,
+            "__rowNum__": 156,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen147",
-            "promptIdx": 60
+            "_branch_label_enclosing_screen": "inc/_screen156",
+            "promptIdx": 61
           },
           {
             "type": "integer",
@@ -5308,12 +5456,12 @@
               }
             },
             "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-            "_row_num": 149,
-            "__rowNum__": 148,
+            "_row_num": 158,
+            "__rowNum__": 157,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen147",
-            "promptIdx": 61
+            "_branch_label_enclosing_screen": "inc/_screen156",
+            "promptIdx": 62
           },
           {
             "type": "adate",
@@ -5326,12 +5474,12 @@
                 }
               }
             },
-            "_row_num": 154,
-            "__rowNum__": 153,
+            "_row_num": 163,
+            "__rowNum__": 162,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen152",
-            "promptIdx": 62
+            "_branch_label_enclosing_screen": "inc/_screen161",
+            "promptIdx": 63
           },
           {
             "type": "time",
@@ -5344,12 +5492,12 @@
                 }
               }
             },
-            "_row_num": 155,
-            "__rowNum__": 154,
+            "_row_num": 164,
+            "__rowNum__": 163,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "inc/_screen152",
-            "promptIdx": 63
+            "_branch_label_enclosing_screen": "inc/_screen161",
+            "promptIdx": 64
           },
           {
             "type": "integer",
@@ -5369,12 +5517,12 @@
               }
             },
             "constraint": "data('NUMVAC')>0 || data('INC') == '2'",
-            "_row_num": 157,
-            "__rowNum__": 156,
+            "_row_num": 166,
+            "__rowNum__": 165,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen152",
-            "promptIdx": 64
+            "_branch_label_enclosing_screen": "inc/_screen161",
+            "promptIdx": 65
           },
           {
             "type": "integer",
@@ -5394,12 +5542,12 @@
               }
             },
             "constraint": "data('num')>0 || data('INC') == '2'",
-            "_row_num": 158,
-            "__rowNum__": 157,
+            "_row_num": 167,
+            "__rowNum__": 166,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen152",
-            "promptIdx": 65
+            "_branch_label_enclosing_screen": "inc/_screen161",
+            "promptIdx": 66
           },
           {
             "type": "note",
@@ -5411,12 +5559,12 @@
                 }
               }
             },
-            "_row_num": 161,
-            "__rowNum__": 160,
+            "_row_num": 170,
+            "__rowNum__": 169,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen152",
-            "promptIdx": 66
+            "_branch_label_enclosing_screen": "inc/_screen161",
+            "promptIdx": 67
           },
           {
             "type": "select_one_with_other",
@@ -5430,12 +5578,12 @@
                 }
               }
             },
-            "_row_num": 166,
-            "__rowNum__": 165,
+            "_row_num": 175,
+            "__rowNum__": 174,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen165",
-            "promptIdx": 67
+            "_branch_label_enclosing_screen": "inc/_screen174",
+            "promptIdx": 68
           },
           {
             "type": "select_one_with_other",
@@ -5449,12 +5597,12 @@
                 }
               }
             },
-            "_row_num": 168,
-            "__rowNum__": 167,
+            "_row_num": 177,
+            "__rowNum__": 176,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen165",
-            "promptIdx": 68
+            "_branch_label_enclosing_screen": "inc/_screen174",
+            "promptIdx": 69
           },
           {
             "type": "note",
@@ -5466,26 +5614,26 @@
                 }
               }
             },
-            "_row_num": 173,
-            "__rowNum__": 172,
+            "_row_num": 182,
+            "__rowNum__": 181,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen172",
-            "promptIdx": 69
+            "_branch_label_enclosing_screen": "inc/_screen181",
+            "promptIdx": 70
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 177,
-            "_branch_label_enclosing_screen": "inc/_screen177",
-            "promptIdx": 70
+            "_row_num": 186,
+            "_branch_label_enclosing_screen": "inc/_screen186",
+            "promptIdx": 71
           }
         ],
         "validation_tag_map": {
           "finalize": [
-            5,
-            11,
+            4,
+            10,
             15,
             18,
             20,
@@ -5496,10 +5644,10 @@
             34,
             35,
             37,
-            60,
             61,
-            64,
-            65
+            62,
+            65,
+            66
           ]
         },
         "operations": [
@@ -5510,31 +5658,31 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 7,
-              "__rowNum__": 6,
+              "_row_num": 6,
+              "__rowNum__": 5,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATINC', adate.today());\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATINC', adate.today());\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
             "clause": "begin screen",
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 33,
-              "__rowNum__": 32,
+              "_row_num": 32,
+              "__rowNum__": 31,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nif (data('oubairro') != null) {\nassign('BAIRRO', 99);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nif (data('regidcns') !=null) {\nassign('REGIDC', 999999999);\n}\n}\nelse {\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\nif (data('camons') !=null) {\nassign('CAMO', 9999);\nactivePromptIndicies.push(10);\n}\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nif (data('cnons') != null) {\nassign('CNO', 9999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nif (data('oubairro') != null) {\nassign('BAIRRO', 99);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nif (data('regidcns') !=null) {\nassign('REGIDC', 999999999);\n}\n}\nelse {\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\nif (data('camons') !=null) {\nassign('CAMO', 9999);\nactivePromptIndicies.push(9);\n}\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\nif (data('cnons') != null) {\nassign('CNO', 9999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
             "clause": "begin screen",
-            "_row_num": 34,
-            "__rowNum__": 33,
+            "_row_num": 33,
+            "__rowNum__": 32,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -5542,7 +5690,7 @@
               "__rowNum__": 44,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\nif (data('oubairro') == null) {\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nif (data('idns') != null) {\nassign('ID', 9999999);\n}\n}\nactivePromptIndicies.push(17);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\nif (data('oubairro') == null) {\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nif (data('idns') != null) {\nassign('ID', 9999999);\n}\n}\nactivePromptIndicies.push(17);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 2
           },
           {
@@ -5585,8 +5733,8 @@
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else171",
-            "_row_num": 171,
+            "_branch_label": "_else180",
+            "_row_num": 180,
             "operationIdx": 6
           },
           {
@@ -5596,22 +5744,22 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 68,
-              "__rowNum__": 67,
+              "_row_num": 74,
+              "__rowNum__": 73,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nif (data('TELEINF2') == '3') {\nassign('TELEMOVEL2', 999999999);\n}\nif (data('TELEINF3') == '3') {\nassign('TELEMOVEL3', 999999999);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
             "clause": "begin screen",
-            "_row_num": 69,
-            "__rowNum__": 68,
+            "_row_num": 75,
+            "__rowNum__": 74,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 81,
-              "__rowNum__": 80,
+              "_row_num": 87,
+              "__rowNum__": 86,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(29);\nif (data('CARTVIS') == '1') {\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nif (data('VACTRANS') == '2') {\nactivePromptIndicies.push(32);\n}\n}\nif (data('CARTVIS') == '2') {\nactivePromptIndicies.push(33);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -5619,22 +5767,8 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 82,
-            "__rowNum__": 81,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 85,
-              "__rowNum__": 84,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 9
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 86,
-            "__rowNum__": 85,
+            "_row_num": 88,
+            "__rowNum__": 87,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -5642,8 +5776,8 @@
               "__rowNum__": 90,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\nif (data('MOTCONT')=='2') {\nactivePromptIndicies.push(37);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 10
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 9
           },
           {
             "clause": "begin screen",
@@ -5652,8 +5786,22 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 96,
-              "__rowNum__": 95,
+              "_row_num": 97,
+              "__rowNum__": 96,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\nif (data('MOTCONT')=='2') {\nactivePromptIndicies.push(37);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 10
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 98,
+            "__rowNum__": 97,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 102,
+              "__rowNum__": 101,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\n\nreturn activePromptIndicies;\n}\n",
@@ -5661,13 +5809,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 97,
-            "__rowNum__": 96,
+            "_row_num": 103,
+            "__rowNum__": 102,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 101,
-              "__rowNum__": 100,
+              "_row_num": 107,
+              "__rowNum__": 106,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\n\nreturn activePromptIndicies;\n}\n",
@@ -5675,13 +5823,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 102,
-            "__rowNum__": 101,
+            "_row_num": 108,
+            "__rowNum__": 107,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 105,
-              "__rowNum__": 104,
+              "_row_num": 111,
+              "__rowNum__": 110,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\n\nreturn activePromptIndicies;\n}\n",
@@ -5689,13 +5837,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 106,
-            "__rowNum__": 105,
+            "_row_num": 112,
+            "__rowNum__": 111,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 115,
-              "__rowNum__": 114,
+              "_row_num": 121,
+              "__rowNum__": 120,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(46);\nif (data('TRATAMENT') =='1') {\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\nif (data('tratqualou') != null) {\nactivePromptIndicies.push(49);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -5703,13 +5851,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 116,
-            "__rowNum__": 115,
+            "_row_num": 122,
+            "__rowNum__": 121,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 125,
-              "__rowNum__": 124,
+              "_row_num": 131,
+              "__rowNum__": 130,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(50);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(51);\n}\nactivePromptIndicies.push(52);\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(53);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -5717,114 +5865,114 @@
           },
           {
             "clause": "if",
-            "condition": "data('PODEINC')=='2' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
-            "_row_num": 126,
-            "__rowNum__": 125,
+            "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
+            "_row_num": 132,
+            "__rowNum__": 131,
             "_token_type": "goto_label",
-            "_branch_label": "_then126",
+            "_branch_label": "_then132",
             "operationIdx": 16
           },
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else146",
-            "_row_num": 146,
+            "_branch_label": "_else155",
+            "_row_num": 155,
             "operationIdx": 17
           },
           {
             "clause": "begin screen",
-            "_row_num": 127,
-            "__rowNum__": 126,
+            "_row_num": 133,
+            "__rowNum__": 132,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 145,
-              "__rowNum__": 144,
+              "_row_num": 154,
+              "__rowNum__": 153,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(54);\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(55);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(56);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(57);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(58);\n}\nif (data('SARVAC') == '1') {\nactivePromptIndicies.push(59);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(54);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(55);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(56);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(57);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(58);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(59);\n}\nif (data('SARVAC') == '1') {\nactivePromptIndicies.push(60);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 18
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif164",
-            "_row_num": 164,
+            "_branch_label": "_endif173",
+            "_row_num": 173,
             "operationIdx": 19
           },
           {
             "clause": "begin screen",
-            "_row_num": 147,
-            "__rowNum__": 146,
+            "_row_num": 156,
+            "__rowNum__": 155,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 151,
-              "__rowNum__": 150,
+              "_row_num": 160,
+              "__rowNum__": 159,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(60);\nactivePromptIndicies.push(61);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(61);\nactivePromptIndicies.push(62);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 20
           },
           {
             "clause": "begin screen",
-            "_row_num": 152,
-            "__rowNum__": 151,
+            "_row_num": 161,
+            "__rowNum__": 160,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 163,
-              "__rowNum__": 162,
+              "_row_num": 172,
+              "__rowNum__": 171,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(62);\nactivePromptIndicies.push(63);\nassign('HORVACVAS', adate.hoursMinutes(data('horvacvas')));\nactivePromptIndicies.push(64);\nactivePromptIndicies.push(65);\nassign('NUMEST', freebase.studyNumber(\"MAD\",5,data('num')));\nif (data('num') != null) {\nactivePromptIndicies.push(66);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(63);\nactivePromptIndicies.push(64);\nassign('HORVACVAS', adate.hoursMinutes(data('horvacvas')));\nactivePromptIndicies.push(65);\nactivePromptIndicies.push(66);\nassign('NUMEST', freebase.studyNumber(\"MAD\",5,data('num')));\nif (data('num') != null) {\nactivePromptIndicies.push(67);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 21
           },
           {
             "clause": "begin screen",
-            "_row_num": 165,
-            "__rowNum__": 164,
+            "_row_num": 174,
+            "__rowNum__": 173,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 170,
-              "__rowNum__": 169,
+              "_row_num": 179,
+              "__rowNum__": 178,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(67);\nif (data('INC') == '1') {\nactivePromptIndicies.push(68);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(68);\nif (data('INC') == '1') {\nactivePromptIndicies.push(69);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 22
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif176",
-            "_row_num": 176,
+            "_branch_label": "_endif185",
+            "_row_num": 185,
             "operationIdx": 23
           },
           {
             "clause": "begin screen",
-            "_row_num": 172,
-            "__rowNum__": 171,
+            "_row_num": 181,
+            "__rowNum__": 180,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 175,
-              "__rowNum__": 174,
+              "_row_num": 184,
+              "__rowNum__": 183,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(69);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(70);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 24
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 177,
+            "_row_num": 186,
             "operationIdx": 25
           },
           {
-            "_row_num": 177,
+            "_row_num": 186,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(70);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(71);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -5833,38 +5981,38 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 177,
+            "_row_num": 186,
             "operationIdx": 27
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_screen8": 1,
-          "_screen34": 2,
+          "_screen7": 1,
+          "_screen33": 2,
           "_screen46": 3,
           "_screen57": 4,
           "_then60": 7,
           "_screen61": 7,
-          "_screen69": 8,
-          "_screen82": 9,
-          "_screen86": 10,
-          "_screen92": 11,
-          "_screen97": 12,
-          "_screen102": 13,
-          "_screen106": 14,
-          "_screen116": 15,
-          "_then126": 18,
-          "_screen127": 18,
-          "_else146": 20,
-          "_screen147": 20,
-          "_screen152": 21,
-          "_endif164": 22,
-          "_screen165": 22,
-          "_else171": 24,
-          "_screen172": 24,
-          "_endif176": 25,
+          "_screen75": 8,
+          "_screen88": 9,
+          "_screen92": 10,
+          "_screen98": 11,
+          "_screen103": 12,
+          "_screen108": 13,
+          "_screen112": 14,
+          "_screen122": 15,
+          "_then132": 18,
+          "_screen133": 18,
+          "_else155": 20,
+          "_screen156": 20,
+          "_screen161": 21,
+          "_endif173": 22,
+          "_screen174": 22,
+          "_else180": 24,
+          "_screen181": 24,
+          "_endif185": 25,
           "_contents": 26,
-          "_screen177": 26
+          "_screen186": 26
         }
       },
       "edit": {
@@ -6321,7 +6469,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 168,
+            "_row_num": 177,
             "section_name": "inc"
           },
           {
@@ -6340,7 +6488,7 @@
         "valuesList": "bairro_csv",
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 8,
             "section_name": "inc"
           },
           {
@@ -6362,7 +6510,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 84,
+            "_row_num": 90,
             "section_name": "inc"
           },
           {
@@ -6380,7 +6528,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 20,
             "section_name": "inc"
           },
           {
@@ -6412,7 +6560,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 21,
             "section_name": "inc"
           },
           {
@@ -6437,7 +6585,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 25,
+            "_row_num": 24,
             "section_name": "inc"
           },
           {
@@ -6460,7 +6608,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 76,
             "section_name": "inc"
           },
           {
@@ -6478,7 +6626,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 26,
             "section_name": "inc"
           },
           {
@@ -6510,7 +6658,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 27,
             "section_name": "inc"
           },
           {
@@ -6555,7 +6703,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 103,
+            "_row_num": 109,
             "section_name": "inc"
           },
           {
@@ -6601,7 +6749,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 154,
+            "_row_num": 163,
             "section_name": "inc"
           },
           {
@@ -6620,7 +6768,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 100,
             "section_name": "inc"
           },
           {
@@ -6639,7 +6787,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 100,
+            "_row_num": 106,
             "section_name": "inc"
           },
           {
@@ -6712,7 +6860,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 166,
+            "_row_num": 175,
             "section_name": "inc"
           },
           {
@@ -6731,7 +6879,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 99,
             "section_name": "inc"
           },
           {
@@ -6750,7 +6898,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 155,
+            "_row_num": 164,
             "section_name": "inc"
           },
           {
@@ -6890,7 +7038,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 89,
+            "_row_num": 95,
             "section_name": "inc"
           },
           {
@@ -6909,7 +7057,7 @@
         "valuesList": "Motivo",
         "_defn": [
           {
-            "_row_num": 87,
+            "_row_num": 93,
             "section_name": "inc"
           },
           {
@@ -6927,7 +7075,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 123,
+            "_row_num": 129,
             "section_name": "inc"
           },
           {
@@ -6945,7 +7093,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 34,
             "section_name": "inc"
           },
           {
@@ -6981,7 +7129,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 167,
             "section_name": "inc"
           },
           {
@@ -7013,7 +7161,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 157,
+            "_row_num": 166,
             "section_name": "inc"
           },
           {
@@ -7031,7 +7179,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 119,
+            "_row_num": 125,
             "section_name": "inc"
           },
           {
@@ -7049,7 +7197,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 12,
             "section_name": "inc"
           },
           {
@@ -7071,7 +7219,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 104,
+            "_row_num": 110,
             "section_name": "inc"
           },
           {
@@ -7099,7 +7247,7 @@
         "valuesList": "oubairro",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 9,
             "section_name": "inc"
           },
           {
@@ -7125,7 +7273,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 121,
+            "_row_num": 127,
             "section_name": "inc"
           },
           {
@@ -7144,7 +7292,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 117,
+            "_row_num": 123,
             "section_name": "inc"
           },
           {
@@ -7162,7 +7310,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 148,
+            "_row_num": 157,
             "section_name": "inc"
           },
           {
@@ -7180,7 +7328,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 149,
+            "_row_num": 158,
             "section_name": "inc"
           },
           {
@@ -7198,7 +7346,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 13,
             "section_name": "inc"
           },
           {
@@ -7230,7 +7378,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 14,
             "section_name": "inc"
           },
           {
@@ -7251,7 +7399,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 36,
             "section_name": "inc"
           },
           {
@@ -7270,7 +7418,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 98,
+            "_row_num": 104,
             "section_name": "inc"
           },
           {
@@ -7289,7 +7437,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 78,
             "section_name": "inc"
           },
           {
@@ -7308,7 +7456,7 @@
         "valuesList": "sexo",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 35,
             "section_name": "inc"
           },
           {
@@ -7341,7 +7489,7 @@
         "valuesList": "tabz_csv",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 19,
             "section_name": "inc"
           },
           {
@@ -7361,7 +7509,7 @@
       },
       "TELEINF1": {
         "type": "string",
-        "valuesList": "telinf",
+        "valuesList": "telinf1",
         "_defn": [
           {
             "_row_num": 63,
@@ -7380,7 +7528,7 @@
       },
       "TELEINF2": {
         "type": "string",
-        "valuesList": "telinf",
+        "valuesList": "telinf2",
         "_defn": [
           {
             "_row_num": 65,
@@ -7399,7 +7547,7 @@
       },
       "TELEINF3": {
         "type": "string",
-        "valuesList": "telinf",
+        "valuesList": "telinf2",
         "_defn": [
           {
             "_row_num": 67,
@@ -7474,7 +7622,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 89,
             "section_name": "inc"
           },
           {
@@ -7493,7 +7641,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 99,
+            "_row_num": 105,
             "section_name": "inc"
           },
           {
@@ -7512,7 +7660,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 113,
             "section_name": "inc"
           },
           {
@@ -7539,7 +7687,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 115,
             "section_name": "inc"
           },
           {
@@ -7570,7 +7718,7 @@
         "valuesList": "ou",
         "_defn": [
           {
-            "_row_num": 110,
+            "_row_num": 116,
             "section_name": "inc"
           },
           {
@@ -7591,7 +7739,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 112,
+            "_row_num": 118,
             "section_name": "inc"
           },
           {
@@ -7610,7 +7758,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 79,
             "section_name": "inc"
           },
           {
@@ -7629,7 +7777,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 79,
+            "_row_num": 85,
             "section_name": "inc"
           },
           {
@@ -7648,7 +7796,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 101,
             "section_name": "inc"
           },
           {
@@ -7950,21 +8098,21 @@
         "_aspect": "TELEINF1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":21},{\"choice_list_name\":\"telinf\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":22}]"
+        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":21},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":22}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":21},{\"choice_list_name\":\"telinf\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":22}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":23},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":24},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":25}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":21},{\"choice_list_name\":\"telinf\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":22}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":23},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":24},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":25}]"
       },
       {
         "_partition": "Column",

@@ -12,8 +12,8 @@ function display() {
     selYea = $('#selDateYear');
     
     // Set the background to be a picture.
-    var body = $('body').first();
-    body.css('background', 'url(img/form_logo.png) fixed');
+    //var body = $('body').first();
+    //body.css('background', 'url(img/form_logo.png) fixed');
     initDrops();
     //initButtons();
 }

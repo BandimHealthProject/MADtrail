@@ -77,10 +77,24 @@
         "_row_num": 4
       },
       {
+        "type": "select_one_with_other",
+        "values_list": "ass",
+        "name": "ASSISTENTE3",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Assistant",
+              "default": "Assistente"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      {
         "type": "assign",
         "name": "DATSEGUI3",
         "calculation": "adate.today()",
-        "_row_num": 5
+        "_row_num": 6
       },
       {
         "type": "adate",
@@ -90,20 +104,6 @@
             "text": {
               "english": "Date of call",
               "default": "Data da ligação"
-            }
-          }
-        },
-        "_row_num": 6
-      },
-      {
-        "type": "select_one_with_other",
-        "values_list": "ass",
-        "name": "ASSISTENTE3",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Assistant",
-              "default": "Assistente"
             }
           }
         },
@@ -138,17 +138,44 @@
         "_row_num": 10
       },
       {
-        "clause": "end screen",
+        "clause": "if",
+        "condition": "data('CHAMADA11') == '4' || data('CHAMADA12') == '4'",
         "_row_num": 11
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA13",
+        "calculation": 4,
+        "_row_num": 13
+      },
+      {
+        "clause": "end if",
+        "_row_num": 14
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 15
       },
       {
         "clause": "if",
         "condition": "data('CHAMADA13') != '1'",
-        "_row_num": 12
+        "_row_num": 16
       },
       {
         "clause": "begin screen",
-        "_row_num": 13
+        "_row_num": 17
       },
       {
         "type": "select_one",
@@ -168,20 +195,47 @@
             }
           }
         },
-        "_row_num": 14
+        "_row_num": 18
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA21') == '4' || data('CHAMADA22') == '4'",
+        "_row_num": 19
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA23",
+        "calculation": 4,
+        "_row_num": 21
+      },
+      {
+        "clause": "end if",
+        "_row_num": 22
       },
       {
         "clause": "end screen",
-        "_row_num": 15
+        "_row_num": 23
       },
       {
         "clause": "if",
         "condition": "data('CHAMADA23') != '1'",
-        "_row_num": 16
+        "_row_num": 24
       },
       {
         "clause": "begin screen",
-        "_row_num": 17
+        "_row_num": 25
       },
       {
         "type": "select_one",
@@ -201,58 +255,66 @@
             }
           }
         },
-        "_row_num": 18
+        "_row_num": 26
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA31') == '4' || data('CHAMADA32') == '4'",
+        "_row_num": 27
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 28
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA33",
+        "calculation": 4,
+        "_row_num": 29
+      },
+      {
+        "clause": "end if",
+        "_row_num": 30
       },
       {
         "clause": "end screen",
-        "_row_num": 19
+        "_row_num": 31
       },
       {
         "clause": "end if",
-        "_row_num": 20
+        "_row_num": 32
       },
       {
         "clause": "end if",
-        "_row_num": 21
+        "_row_num": 33
       },
       {
         "clause": "end if",
-        "_row_num": 22
+        "_row_num": 34
       },
       {
         "branch_label": "2nd try",
         "clause": "if",
         "condition": "(data('CHAMADA11') != null || data('CHAMADA21') != null || data('CHAMADA31') != null) && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
-        "_row_num": 23
+        "_row_num": 35
       },
       {
         "clause": "begin screen",
-        "_row_num": 24
+        "_row_num": 36
       },
       {
         "type": "assign",
         "name": "START",
         "calculation": "now()",
-        "_row_num": 25
-      },
-      {
-        "type": "assign",
-        "name": "DATSEGUI2",
-        "calculation": "adate.today()",
-        "_row_num": 26
-      },
-      {
-        "type": "adate",
-        "name": "DATSEGUI2",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Date of call",
-              "default": "Data da ligação"
-            }
-          }
-        },
-        "_row_num": 27
+        "_row_num": 37
       },
       {
         "type": "select_one_with_other",
@@ -266,15 +328,34 @@
             }
           }
         },
-        "_row_num": 28
+        "_row_num": 38
+      },
+      {
+        "type": "assign",
+        "name": "DATSEGUI2",
+        "calculation": "adate.today()",
+        "_row_num": 39
+      },
+      {
+        "type": "adate",
+        "name": "DATSEGUI2",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of call",
+              "default": "Data da ligação"
+            }
+          }
+        },
+        "_row_num": 40
       },
       {
         "clause": "end screen",
-        "_row_num": 29
+        "_row_num": 41
       },
       {
         "clause": "begin screen",
-        "_row_num": 30
+        "_row_num": 42
       },
       {
         "type": "select_one",
@@ -294,20 +375,47 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 43
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA11') == '4'",
+        "_row_num": 44
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 45
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA12",
+        "calculation": 4,
+        "_row_num": 46
+      },
+      {
+        "clause": "end if",
+        "_row_num": 47
       },
       {
         "clause": "end screen",
-        "_row_num": 32
+        "_row_num": 48
       },
       {
         "clause": "if",
         "condition": "data('CHAMADA12') != '1'",
-        "_row_num": 33
+        "_row_num": 49
       },
       {
         "clause": "begin screen",
-        "_row_num": 34
+        "_row_num": 50
       },
       {
         "type": "select_one",
@@ -327,20 +435,47 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 51
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA21') == '4'",
+        "_row_num": 52
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 53
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA22",
+        "calculation": 4,
+        "_row_num": 54
+      },
+      {
+        "clause": "end if",
+        "_row_num": 55
       },
       {
         "clause": "end screen",
-        "_row_num": 36
+        "_row_num": 56
       },
       {
         "clause": "if",
         "condition": "data('CHAMADA22') != '1'",
-        "_row_num": 37
+        "_row_num": 57
       },
       {
         "clause": "begin screen",
-        "_row_num": 38
+        "_row_num": 58
       },
       {
         "type": "select_one",
@@ -360,58 +495,66 @@
             }
           }
         },
-        "_row_num": 39
+        "_row_num": 59
+      },
+      {
+        "clause": "if",
+        "condition": "data('CHAMADA31') == '4'",
+        "_row_num": 60
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 61
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA32",
+        "calculation": 4,
+        "_row_num": 62
+      },
+      {
+        "clause": "end if",
+        "_row_num": 63
       },
       {
         "clause": "end screen",
-        "_row_num": 40
+        "_row_num": 64
       },
       {
         "clause": "end if",
-        "_row_num": 41
+        "_row_num": 65
       },
       {
         "clause": "end if",
-        "_row_num": 42
+        "_row_num": 66
       },
       {
         "clause": "end if",
-        "_row_num": 43
+        "_row_num": 67
       },
       {
         "branch_label": "1st try",
         "clause": "if",
         "condition": "data('CHAMADA12') == null && data('CHAMADA22') == null && data('CHAMADA32') == null && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
-        "_row_num": 44
+        "_row_num": 68
       },
       {
         "clause": "begin screen",
-        "_row_num": 45
+        "_row_num": 69
       },
       {
         "type": "assign",
         "name": "START",
         "calculation": "now()",
-        "_row_num": 46
-      },
-      {
-        "type": "assign",
-        "name": "DATSEGUI1",
-        "calculation": "adate.today()",
-        "_row_num": 47
-      },
-      {
-        "type": "adate",
-        "name": "DATSEGUI1",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Date of call",
-              "default": "Data da ligação"
-            }
-          }
-        },
-        "_row_num": 48
+        "_row_num": 70
       },
       {
         "type": "select_one_with_other",
@@ -425,15 +568,34 @@
             }
           }
         },
-        "_row_num": 49
+        "_row_num": 71
+      },
+      {
+        "type": "assign",
+        "name": "DATSEGUI1",
+        "calculation": "adate.today()",
+        "_row_num": 72
+      },
+      {
+        "type": "adate",
+        "name": "DATSEGUI1",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of call",
+              "default": "Data da ligação"
+            }
+          }
+        },
+        "_row_num": 73
       },
       {
         "clause": "end screen",
-        "_row_num": 50
+        "_row_num": 74
       },
       {
         "clause": "begin screen",
-        "_row_num": 51
+        "_row_num": 75
       },
       {
         "type": "select_one",
@@ -453,20 +615,47 @@
             }
           }
         },
-        "_row_num": 52
+        "_row_num": 76
+      },
+      {
+        "clause": "if",
+        "condition": "data('chamada1') == '4'",
+        "_row_num": 77
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 78
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA11",
+        "calculation": 4,
+        "_row_num": 79
+      },
+      {
+        "clause": "end if",
+        "_row_num": 80
       },
       {
         "clause": "end screen",
-        "_row_num": 53
+        "_row_num": 81
       },
       {
         "clause": "if",
         "condition": "data('CHAMADA11') != '1'",
-        "_row_num": 54
+        "_row_num": 82
       },
       {
         "clause": "begin screen",
-        "_row_num": 55
+        "_row_num": 83
       },
       {
         "type": "select_one",
@@ -486,20 +675,47 @@
             }
           }
         },
-        "_row_num": 56
+        "_row_num": 84
+      },
+      {
+        "clause": "if",
+        "condition": "data('chamada2') == '4'",
+        "_row_num": 85
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 86
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA21",
+        "calculation": 4,
+        "_row_num": 87
+      },
+      {
+        "clause": "end if",
+        "_row_num": 88
       },
       {
         "clause": "end screen",
-        "_row_num": 57
+        "_row_num": 89
       },
       {
         "clause": "if",
         "condition": "data('CHAMADA21') != '1'",
-        "_row_num": 58
+        "_row_num": 90
       },
       {
         "clause": "begin screen",
-        "_row_num": 59
+        "_row_num": 91
       },
       {
         "type": "select_one",
@@ -519,36 +735,63 @@
             }
           }
         },
-        "_row_num": 60
+        "_row_num": 92
+      },
+      {
+        "clause": "if",
+        "condition": "data('chamada3') == '4'",
+        "_row_num": 93
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+              "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+            }
+          }
+        },
+        "_row_num": 94
+      },
+      {
+        "type": "assign",
+        "name": "CHAMADA31",
+        "calculation": 4,
+        "_row_num": 95
+      },
+      {
+        "clause": "end if",
+        "_row_num": 96
       },
       {
         "clause": "end screen",
-        "_row_num": 61
+        "_row_num": 97
       },
       {
         "clause": "end if",
-        "_row_num": 62
+        "_row_num": 98
       },
       {
         "clause": "end if",
-        "_row_num": 63
+        "_row_num": 99
       },
       {
         "clause": "end if",
-        "_row_num": 64
+        "_row_num": 100
       },
       {
         "clause": "if",
         "condition": "data('CHAMADA11') == '1' || data('CHAMADA21') == '1' || data('CHAMADA31') == '1' || data('CHAMADA12') == '1' || data('CHAMADA22') == '1' || data('CHAMADA32') == '1' ||data('CHAMADA13') == '1' || data('CHAMADA23') == '1' || data('CHAMADA33') == '1'",
-        "_row_num": 65
+        "_row_num": 101
       },
       {
         "clause": "do section FU",
-        "_row_num": 66
+        "_row_num": 102
       },
       {
         "clause": "end if",
-        "_row_num": 67
+        "_row_num": 103
       }
     ],
     "FU": [
@@ -2239,83 +2482,101 @@
         "_row_num": 56
       },
       {
+        "name": "chamada1",
+        "type": "integer",
+        "isSessionVariable": true,
+        "comment": "tableApp",
+        "_row_num": 58
+      },
+      {
+        "name": "chamada2",
+        "type": "integer",
+        "isSessionVariable": true,
+        "_row_num": 59
+      },
+      {
+        "name": "chamada3",
+        "type": "integer",
+        "isSessionVariable": true,
+        "_row_num": 60
+      },
+      {
         "name": "DATINC",
         "type": "adate",
         "isSessionVariable": false,
-        "comment": "tableApp",
-        "_row_num": 58
+        "_row_num": 61
       },
       {
         "name": "DOB",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 59
+        "_row_num": 62
       },
       {
         "name": "FOLLOWUP",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 60
+        "_row_num": 63
       },
       {
         "name": "IDADEANO",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 61
+        "_row_num": 64
       },
       {
         "name": "IDADEMES",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 62
+        "_row_num": 65
       },
       {
         "name": "IDINC",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 63
+        "_row_num": 66
       },
       {
         "name": "NOMECRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 64
+        "_row_num": 67
       },
       {
         "name": "NOMERESP",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 65
+        "_row_num": 68
       },
       {
         "name": "NUMEST",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 66
+        "_row_num": 69
       },
       {
         "name": "SEX",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 67
+        "_row_num": 70
       },
       {
         "name": "TELEMOVEL1",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 68
+        "_row_num": 71
       },
       {
         "name": "TELEMOVEL2",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 69
+        "_row_num": 72
       },
       {
         "name": "TELEMOVEL3",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 70
+        "_row_num": 73
       }
     ]
   },
@@ -3048,7 +3309,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 71,
             "section_name": "survey"
           },
           {
@@ -3065,7 +3326,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 38,
             "section_name": "survey"
           },
           {
@@ -3081,7 +3342,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 7,
+            "_row_num": 5,
             "section_name": "survey"
           },
           {
@@ -3097,7 +3358,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 76,
             "section_name": "survey"
           },
           {
@@ -3113,7 +3374,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 43,
             "section_name": "survey"
           },
           {
@@ -3145,7 +3406,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
@@ -3161,7 +3422,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 51,
             "section_name": "survey"
           },
           {
@@ -3177,7 +3438,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 18,
             "section_name": "survey"
           },
           {
@@ -3193,7 +3454,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 92,
             "section_name": "survey"
           },
           {
@@ -3209,7 +3470,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 39,
+            "_row_num": 59,
             "section_name": "survey"
           },
           {
@@ -3225,7 +3486,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 26,
             "section_name": "survey"
           },
           {
@@ -3245,7 +3506,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 73,
             "section_name": "survey"
           },
           {
@@ -3265,7 +3526,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 40,
             "section_name": "survey"
           },
           {
@@ -3285,7 +3546,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "survey"
           },
           {
@@ -3952,16 +4213,50 @@
         "isSessionVariable": false,
         "elementKey": "VITALCRI"
       },
+      "chamada1": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 58,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "comment": "tableApp",
+        "elementKey": "chamada1"
+      },
+      "chamada2": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 59,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "chamada2"
+      },
+      "chamada3": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "chamada3"
+      },
       "DATINC": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
-        "comment": "tableApp",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
         "_row_num": 2,
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 58,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -3977,7 +4272,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -3988,7 +4283,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -3999,7 +4294,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -4010,7 +4305,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -4021,7 +4316,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -4032,7 +4327,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -4043,7 +4338,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -4054,7 +4349,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -4065,7 +4360,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -4076,7 +4371,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -4087,7 +4382,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -4098,7 +4393,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -4122,24 +4417,6 @@
         },
         "prompts": [
           {
-            "type": "adate",
-            "name": "DATSEGUI3",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Date of call",
-                  "default": "Data da ligação"
-                }
-              }
-            },
-            "_row_num": 6,
-            "__rowNum__": 5,
-            "_token_type": "prompt",
-            "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen3",
-            "promptIdx": 0
-          },
-          {
             "type": "select_one_with_other",
             "values_list": "ass",
             "name": "ASSISTENTE3",
@@ -4151,10 +4428,28 @@
                 }
               }
             },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen3",
+            "promptIdx": 0
+          },
+          {
+            "type": "adate",
+            "name": "DATSEGUI3",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of call",
+                  "default": "Data da ligação"
+                }
+              }
+            },
             "_row_num": 7,
             "__rowNum__": 6,
             "_token_type": "prompt",
-            "_type": "select_one_with_other",
+            "_type": "adate",
             "_branch_label_enclosing_screen": "survey/_screen3",
             "promptIdx": 1
           },
@@ -4184,6 +4479,23 @@
             "promptIdx": 2
           },
           {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+                }
+              }
+            },
+            "_row_num": 12,
+            "__rowNum__": 11,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen9",
+            "promptIdx": 3
+          },
+          {
             "type": "select_one",
             "values_list": "cham",
             "name": "CHAMADA23",
@@ -4201,12 +4513,29 @@
                 }
               }
             },
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 18,
+            "__rowNum__": 17,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen13",
-            "promptIdx": 3
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 4
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+                }
+              }
+            },
+            "_row_num": 20,
+            "__rowNum__": 19,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 5
           },
           {
             "type": "select_one",
@@ -4226,30 +4555,29 @@
                 }
               }
             },
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 26,
+            "__rowNum__": 25,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen17",
-            "promptIdx": 4
+            "_branch_label_enclosing_screen": "survey/_screen25",
+            "promptIdx": 6
           },
           {
-            "type": "adate",
-            "name": "DATSEGUI2",
+            "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Date of call",
-                  "default": "Data da ligação"
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
                 }
               }
             },
-            "_row_num": 27,
-            "__rowNum__": 26,
+            "_row_num": 28,
+            "__rowNum__": 27,
             "_token_type": "prompt",
-            "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen24",
-            "promptIdx": 5
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen25",
+            "promptIdx": 7
           },
           {
             "type": "select_one_with_other",
@@ -4263,12 +4591,30 @@
                 }
               }
             },
-            "_row_num": 28,
-            "__rowNum__": 27,
+            "_row_num": 38,
+            "__rowNum__": 37,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "survey/_screen24",
-            "promptIdx": 6
+            "_branch_label_enclosing_screen": "survey/_screen36",
+            "promptIdx": 8
+          },
+          {
+            "type": "adate",
+            "name": "DATSEGUI2",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of call",
+                  "default": "Data da ligação"
+                }
+              }
+            },
+            "_row_num": 40,
+            "__rowNum__": 39,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen36",
+            "promptIdx": 9
           },
           {
             "type": "select_one",
@@ -4288,12 +4634,29 @@
                 }
               }
             },
-            "_row_num": 31,
-            "__rowNum__": 30,
+            "_row_num": 43,
+            "__rowNum__": 42,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen30",
-            "promptIdx": 7
+            "_branch_label_enclosing_screen": "survey/_screen42",
+            "promptIdx": 10
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+                }
+              }
+            },
+            "_row_num": 45,
+            "__rowNum__": 44,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen42",
+            "promptIdx": 11
           },
           {
             "type": "select_one",
@@ -4313,12 +4676,29 @@
                 }
               }
             },
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 51,
+            "__rowNum__": 50,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen34",
-            "promptIdx": 8
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 12
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+                }
+              }
+            },
+            "_row_num": 53,
+            "__rowNum__": 52,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 13
           },
           {
             "type": "select_one",
@@ -4338,30 +4718,29 @@
                 }
               }
             },
-            "_row_num": 39,
-            "__rowNum__": 38,
+            "_row_num": 59,
+            "__rowNum__": 58,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen38",
-            "promptIdx": 9
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 14
           },
           {
-            "type": "adate",
-            "name": "DATSEGUI1",
+            "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Date of call",
-                  "default": "Data da ligação"
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
                 }
               }
             },
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 61,
+            "__rowNum__": 60,
             "_token_type": "prompt",
-            "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 10
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 15
           },
           {
             "type": "select_one_with_other",
@@ -4375,12 +4754,30 @@
                 }
               }
             },
-            "_row_num": 49,
-            "__rowNum__": 48,
+            "_row_num": 71,
+            "__rowNum__": 70,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 11
+            "_branch_label_enclosing_screen": "survey/_screen69",
+            "promptIdx": 16
+          },
+          {
+            "type": "adate",
+            "name": "DATSEGUI1",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of call",
+                  "default": "Data da ligação"
+                }
+              }
+            },
+            "_row_num": 73,
+            "__rowNum__": 72,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen69",
+            "promptIdx": 17
           },
           {
             "type": "select_one",
@@ -4400,12 +4797,29 @@
                 }
               }
             },
-            "_row_num": 52,
-            "__rowNum__": 51,
+            "_row_num": 76,
+            "__rowNum__": 75,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen51",
-            "promptIdx": 12
+            "_branch_label_enclosing_screen": "survey/_screen75",
+            "promptIdx": 18
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+                }
+              }
+            },
+            "_row_num": 78,
+            "__rowNum__": 77,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen75",
+            "promptIdx": 19
           },
           {
             "type": "select_one",
@@ -4425,12 +4839,29 @@
                 }
               }
             },
-            "_row_num": 56,
-            "__rowNum__": 55,
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen55",
-            "promptIdx": 13
+            "_branch_label_enclosing_screen": "survey/_screen83",
+            "promptIdx": 20
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+                }
+              }
+            },
+            "_row_num": 86,
+            "__rowNum__": 85,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen83",
+            "promptIdx": 21
           },
           {
             "type": "select_one",
@@ -4450,21 +4881,38 @@
                 }
               }
             },
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "_row_num": 92,
+            "__rowNum__": 91,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen59",
-            "promptIdx": 14
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 22
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<font color = \"red\">Previous calls said this number is incorrect </font>",
+                  "default": "<font color = \"red\">As chamadas anteriores informaram que este número está incorreto </font>"
+                }
+              }
+            },
+            "_row_num": 94,
+            "__rowNum__": 93,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 23
           },
           {
             "clause": "do section FU",
-            "_row_num": 66,
-            "__rowNum__": 65,
+            "_row_num": 102,
+            "__rowNum__": 101,
             "_token_type": "prompt",
             "_do_section_name": "FU",
             "_type": "_section",
-            "promptIdx": 15,
+            "promptIdx": 24,
             "display": {
               "title": {
                 "text": {
@@ -4479,9 +4927,9 @@
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 68,
-            "_branch_label_enclosing_screen": "survey/_screen68",
-            "promptIdx": 16
+            "_row_num": 104,
+            "_branch_label_enclosing_screen": "survey/_screen104",
+            "promptIdx": 25
           }
         ],
         "validation_tag_map": {
@@ -4500,8 +4948,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else22",
-            "_row_num": 22,
+            "_branch_label": "_else34",
+            "_row_num": 34,
             "operationIdx": 1
           },
           {
@@ -4515,7 +4963,7 @@
               "__rowNum__": 7,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATSEGUI3', adate.today());\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nactivePromptIndicies.push(0);\nassign('DATSEGUI3', adate.today());\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 2
           },
           {
@@ -4525,58 +4973,28 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 11,
-              "__rowNum__": 10,
+              "_row_num": 15,
+              "__rowNum__": 14,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\nif (data('CHAMADA11') == '4' || data('CHAMADA12') == '4') {\nactivePromptIndicies.push(3);\nassign('CHAMADA13', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 3
           },
           {
             "clause": "if",
             "condition": "data('CHAMADA13') != '1'",
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "_row_num": 16,
+            "__rowNum__": 15,
             "_token_type": "goto_label",
-            "_branch_label": "_then12",
+            "_branch_label": "_then16",
             "operationIdx": 4
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else21",
-            "_row_num": 21,
+            "_branch_label": "_else33",
+            "_row_num": 33,
             "operationIdx": 5
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 13,
-            "__rowNum__": 12,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 15,
-              "__rowNum__": 14,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 6
-          },
-          {
-            "clause": "if",
-            "condition": "data('CHAMADA23') != '1'",
-            "_row_num": 16,
-            "__rowNum__": 15,
-            "_token_type": "goto_label",
-            "_branch_label": "_then16",
-            "operationIdx": 7
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else20",
-            "_row_num": 20,
-            "operationIdx": 8
           },
           {
             "clause": "begin screen",
@@ -4585,304 +5003,334 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 19,
-              "__rowNum__": 18,
+              "_row_num": 23,
+              "__rowNum__": 22,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\nif (data('CHAMADA21') == '4' || data('CHAMADA22') == '4') {\nactivePromptIndicies.push(5);\nassign('CHAMADA23', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 6
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA23') != '1'",
+            "_row_num": 24,
+            "__rowNum__": 23,
+            "_token_type": "goto_label",
+            "_branch_label": "_then24",
+            "operationIdx": 7
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else32",
+            "_row_num": 32,
+            "operationIdx": 8
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 25,
+            "__rowNum__": 24,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 31,
+              "__rowNum__": 30,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\nif (data('CHAMADA31') == '4' || data('CHAMADA32') == '4') {\nactivePromptIndicies.push(7);\nassign('CHAMADA33', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 9
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif20",
-            "_row_num": 20,
+            "_branch_label": "_endif32",
+            "_row_num": 32,
             "operationIdx": 10
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif21",
-            "_row_num": 21,
+            "_branch_label": "_endif33",
+            "_row_num": 33,
             "operationIdx": 11
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif22",
-            "_row_num": 22,
+            "_branch_label": "_endif34",
+            "_row_num": 34,
             "operationIdx": 12
           },
           {
             "clause": "if",
             "condition": "(data('CHAMADA11') != null || data('CHAMADA21') != null || data('CHAMADA31') != null) && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
-            "_row_num": 23,
-            "__rowNum__": 22,
+            "_row_num": 35,
+            "__rowNum__": 34,
             "_token_type": "goto_label",
-            "_branch_label": "_then23",
+            "_branch_label": "_then35",
             "operationIdx": 13
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else43",
-            "_row_num": 43,
-            "operationIdx": 14
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 24,
-            "__rowNum__": 23,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 29,
-              "__rowNum__": 28,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATSEGUI2', adate.today());\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 15
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 30,
-            "__rowNum__": 29,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 32,
-              "__rowNum__": 31,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 16
-          },
-          {
-            "clause": "if",
-            "condition": "data('CHAMADA12') != '1'",
-            "_row_num": 33,
-            "__rowNum__": 32,
-            "_token_type": "goto_label",
-            "_branch_label": "_then33",
-            "operationIdx": 17
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else42",
-            "_row_num": 42,
-            "operationIdx": 18
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 34,
-            "__rowNum__": 33,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 36,
-              "__rowNum__": 35,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 19
-          },
-          {
-            "clause": "if",
-            "condition": "data('CHAMADA22') != '1'",
-            "_row_num": 37,
-            "__rowNum__": 36,
-            "_token_type": "goto_label",
-            "_branch_label": "_then37",
-            "operationIdx": 20
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else41",
-            "_row_num": 41,
-            "operationIdx": 21
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 38,
-            "__rowNum__": 37,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 40,
-              "__rowNum__": 39,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 22
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif41",
-            "_row_num": 41,
-            "operationIdx": 23
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif42",
-            "_row_num": 42,
-            "operationIdx": 24
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif43",
-            "_row_num": 43,
-            "operationIdx": 25
-          },
-          {
-            "clause": "if",
-            "condition": "data('CHAMADA12') == null && data('CHAMADA22') == null && data('CHAMADA32') == null && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
-            "_row_num": 44,
-            "__rowNum__": 43,
-            "_token_type": "goto_label",
-            "_branch_label": "_then44",
-            "operationIdx": 26
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else64",
-            "_row_num": 64,
-            "operationIdx": 27
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 45,
-            "__rowNum__": 44,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 50,
-              "__rowNum__": 49,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nassign('DATSEGUI1', adate.today());\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 28
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 51,
-            "__rowNum__": 50,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 53,
-              "__rowNum__": 52,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 29
-          },
-          {
-            "clause": "if",
-            "condition": "data('CHAMADA11') != '1'",
-            "_row_num": 54,
-            "__rowNum__": 53,
-            "_token_type": "goto_label",
-            "_branch_label": "_then54",
-            "operationIdx": 30
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else63",
-            "_row_num": 63,
-            "operationIdx": 31
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 55,
-            "__rowNum__": 54,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 57,
-              "__rowNum__": 56,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 32
-          },
-          {
-            "clause": "if",
-            "condition": "data('CHAMADA21') != '1'",
-            "_row_num": 58,
-            "__rowNum__": 57,
-            "_token_type": "goto_label",
-            "_branch_label": "_then58",
-            "operationIdx": 33
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else62",
-            "_row_num": 62,
-            "operationIdx": 34
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 59,
-            "__rowNum__": 58,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 61,
-              "__rowNum__": 60,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 35
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif62",
-            "_row_num": 62,
-            "operationIdx": 36
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif63",
-            "_row_num": 63,
-            "operationIdx": 37
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif64",
-            "_row_num": 64,
-            "operationIdx": 38
-          },
-          {
-            "clause": "if",
-            "condition": "data('CHAMADA11') == '1' || data('CHAMADA21') == '1' || data('CHAMADA31') == '1' || data('CHAMADA12') == '1' || data('CHAMADA22') == '1' || data('CHAMADA32') == '1' ||data('CHAMADA13') == '1' || data('CHAMADA23') == '1' || data('CHAMADA33') == '1'",
-            "_row_num": 65,
-            "__rowNum__": 64,
-            "_token_type": "goto_label",
-            "_branch_label": "_then65",
-            "operationIdx": 39
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
             "_branch_label": "_else67",
             "_row_num": 67,
+            "operationIdx": 14
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 36,
+            "__rowNum__": 35,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 41,
+              "__rowNum__": 40,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nactivePromptIndicies.push(8);\nassign('DATSEGUI2', adate.today());\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 15
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 42,
+            "__rowNum__": 41,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 48,
+              "__rowNum__": 47,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\nif (data('CHAMADA11') == '4') {\nactivePromptIndicies.push(11);\nassign('CHAMADA12', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 16
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA12') != '1'",
+            "_row_num": 49,
+            "__rowNum__": 48,
+            "_token_type": "goto_label",
+            "_branch_label": "_then49",
+            "operationIdx": 17
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else66",
+            "_row_num": 66,
+            "operationIdx": 18
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 50,
+            "__rowNum__": 49,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 56,
+              "__rowNum__": 55,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\nif (data('CHAMADA21') == '4') {\nactivePromptIndicies.push(13);\nassign('CHAMADA22', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA22') != '1'",
+            "_row_num": 57,
+            "__rowNum__": 56,
+            "_token_type": "goto_label",
+            "_branch_label": "_then57",
+            "operationIdx": 20
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else65",
+            "_row_num": 65,
+            "operationIdx": 21
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 58,
+            "__rowNum__": 57,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 64,
+              "__rowNum__": 63,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nif (data('CHAMADA31') == '4') {\nactivePromptIndicies.push(15);\nassign('CHAMADA32', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 22
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif65",
+            "_row_num": 65,
+            "operationIdx": 23
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif66",
+            "_row_num": 66,
+            "operationIdx": 24
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif67",
+            "_row_num": 67,
+            "operationIdx": 25
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA12') == null && data('CHAMADA22') == null && data('CHAMADA32') == null && data('CHAMADA13') == null && data('CHAMADA23') == null && data('CHAMADA33') == null",
+            "_row_num": 68,
+            "__rowNum__": 67,
+            "_token_type": "goto_label",
+            "_branch_label": "_then68",
+            "operationIdx": 26
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else100",
+            "_row_num": 100,
+            "operationIdx": 27
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 69,
+            "__rowNum__": 68,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 74,
+              "__rowNum__": 73,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('START', now());\nactivePromptIndicies.push(16);\nassign('DATSEGUI1', adate.today());\nactivePromptIndicies.push(17);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 28
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 75,
+            "__rowNum__": 74,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 81,
+              "__rowNum__": 80,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nif (data('chamada1') == '4') {\nactivePromptIndicies.push(19);\nassign('CHAMADA11', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 29
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA11') != '1'",
+            "_row_num": 82,
+            "__rowNum__": 81,
+            "_token_type": "goto_label",
+            "_branch_label": "_then82",
+            "operationIdx": 30
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else99",
+            "_row_num": 99,
+            "operationIdx": 31
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 83,
+            "__rowNum__": 82,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 89,
+              "__rowNum__": 88,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nif (data('chamada2') == '4') {\nactivePromptIndicies.push(21);\nassign('CHAMADA21', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 32
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA21') != '1'",
+            "_row_num": 90,
+            "__rowNum__": 89,
+            "_token_type": "goto_label",
+            "_branch_label": "_then90",
+            "operationIdx": 33
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else98",
+            "_row_num": 98,
+            "operationIdx": 34
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 91,
+            "__rowNum__": 90,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 97,
+              "__rowNum__": 96,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\nif (data('chamada3') == '4') {\nactivePromptIndicies.push(23);\nassign('CHAMADA31', 4);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 35
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif98",
+            "_row_num": 98,
+            "operationIdx": 36
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif99",
+            "_row_num": 99,
+            "operationIdx": 37
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif100",
+            "_row_num": 100,
+            "operationIdx": 38
+          },
+          {
+            "clause": "if",
+            "condition": "data('CHAMADA11') == '1' || data('CHAMADA21') == '1' || data('CHAMADA31') == '1' || data('CHAMADA12') == '1' || data('CHAMADA22') == '1' || data('CHAMADA32') == '1' ||data('CHAMADA13') == '1' || data('CHAMADA23') == '1' || data('CHAMADA33') == '1'",
+            "_row_num": 101,
+            "__rowNum__": 100,
+            "_token_type": "goto_label",
+            "_branch_label": "_then101",
+            "operationIdx": 39
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else103",
+            "_row_num": 103,
             "operationIdx": 40
           },
           {
             "clause": "do section FU",
-            "_row_num": 66,
-            "__rowNum__": 65,
+            "_row_num": 102,
+            "__rowNum__": 101,
             "_token_type": "do_section",
             "_do_section_name": "FU",
             "operationIdx": 41
@@ -4890,20 +5338,20 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif67",
-            "_row_num": 67,
+            "_branch_label": "_endif103",
+            "_row_num": 103,
             "operationIdx": 42
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 68,
+            "_row_num": 104,
             "operationIdx": 43
           },
           {
-            "_row_num": 68,
+            "_row_num": 104,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(25);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -4912,7 +5360,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 68,
+            "_row_num": 104,
             "operationIdx": 45
           }
         ],
@@ -4921,49 +5369,49 @@
           "_then2": 2,
           "_screen3": 2,
           "_screen9": 3,
-          "_then12": 6,
-          "_screen13": 6,
-          "_then16": 9,
-          "_screen17": 9,
-          "_else20": 11,
-          "_endif20": 11,
-          "_else21": 12,
-          "_endif21": 12,
-          "_else22": 13,
-          "_endif22": 13,
+          "_then16": 6,
+          "_screen17": 6,
+          "_then24": 9,
+          "_screen25": 9,
+          "_else32": 11,
+          "_endif32": 11,
+          "_else33": 12,
+          "_endif33": 12,
+          "_else34": 13,
+          "_endif34": 13,
           "2nd try": 13,
-          "_then23": 15,
-          "_screen24": 15,
-          "_screen30": 16,
-          "_then33": 19,
-          "_screen34": 19,
-          "_then37": 22,
-          "_screen38": 22,
-          "_else41": 24,
-          "_endif41": 24,
-          "_else42": 25,
-          "_endif42": 25,
-          "_else43": 26,
-          "_endif43": 26,
+          "_then35": 15,
+          "_screen36": 15,
+          "_screen42": 16,
+          "_then49": 19,
+          "_screen50": 19,
+          "_then57": 22,
+          "_screen58": 22,
+          "_else65": 24,
+          "_endif65": 24,
+          "_else66": 25,
+          "_endif66": 25,
+          "_else67": 26,
+          "_endif67": 26,
           "1st try": 26,
-          "_then44": 28,
-          "_screen45": 28,
-          "_screen51": 29,
-          "_then54": 32,
-          "_screen55": 32,
-          "_then58": 35,
-          "_screen59": 35,
-          "_else62": 37,
-          "_endif62": 37,
-          "_else63": 38,
-          "_endif63": 38,
-          "_else64": 39,
-          "_endif64": 39,
-          "_then65": 41,
-          "_else67": 43,
-          "_endif67": 43,
+          "_then68": 28,
+          "_screen69": 28,
+          "_screen75": 29,
+          "_then82": 32,
+          "_screen83": 32,
+          "_then90": 35,
+          "_screen91": 35,
+          "_else98": 37,
+          "_endif98": 37,
+          "_else99": 38,
+          "_endif99": 38,
+          "_else100": 39,
+          "_endif100": 39,
+          "_then101": 41,
+          "_else103": 43,
+          "_endif103": 43,
           "_contents": 44,
-          "_screen68": 44
+          "_screen104": 44
         }
       },
       "FU": {
@@ -6313,7 +6761,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 71,
             "section_name": "survey"
           },
           {
@@ -6333,7 +6781,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 38,
             "section_name": "survey"
           },
           {
@@ -6352,7 +6800,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 7,
+            "_row_num": 5,
             "section_name": "survey"
           },
           {
@@ -6371,7 +6819,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 76,
             "section_name": "survey"
           },
           {
@@ -6390,7 +6838,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 43,
             "section_name": "survey"
           },
           {
@@ -6428,7 +6876,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
@@ -6447,7 +6895,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 51,
             "section_name": "survey"
           },
           {
@@ -6466,7 +6914,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 18,
             "section_name": "survey"
           },
           {
@@ -6485,7 +6933,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 92,
             "section_name": "survey"
           },
           {
@@ -6504,7 +6952,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 39,
+            "_row_num": 59,
             "section_name": "survey"
           },
           {
@@ -6523,7 +6971,7 @@
         "valuesList": "cham",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 26,
             "section_name": "survey"
           },
           {
@@ -6546,7 +6994,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 73,
             "section_name": "survey"
           },
           {
@@ -6569,7 +7017,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 40,
             "section_name": "survey"
           },
           {
@@ -6592,7 +7040,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "survey"
           },
           {
@@ -7439,16 +7887,59 @@
         "elementSet": "data",
         "elementPath": "VITALCRI"
       },
+      "chamada1": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 58,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "comment": "tableApp",
+        "elementKey": "chamada1",
+        "elementName": "chamada1",
+        "elementSet": "data",
+        "elementPath": "chamada1"
+      },
+      "chamada2": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 59,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "chamada2",
+        "elementName": "chamada2",
+        "elementSet": "data",
+        "elementPath": "chamada2"
+      },
+      "chamada3": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "chamada3",
+        "elementName": "chamada3",
+        "elementSet": "data",
+        "elementPath": "chamada3"
+      },
       "DATINC": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
-        "comment": "tableApp",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
         "_row_num": 2,
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 58,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -7467,7 +7958,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -7481,7 +7972,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -7495,7 +7986,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -7509,7 +8000,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -7523,7 +8014,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -7537,7 +8028,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -7551,7 +8042,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -7565,7 +8056,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -7579,7 +8070,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -7593,7 +8084,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -7607,7 +8098,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -7621,7 +8112,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],

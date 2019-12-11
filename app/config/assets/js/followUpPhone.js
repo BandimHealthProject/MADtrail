@@ -12,8 +12,8 @@ function display() {
 
     console.log(date);
     // Set the background to be a picture.
-    var body = $('body').first();
-    body.css('background', 'url(img/form_logo.png) fixed');
+    //var body = $('body').first();
+    //body.css('background', 'url(img/form_logo.png) fixed');
     loadChildren();
 }
 
@@ -24,6 +24,7 @@ function loadChildren() {
     var sql = "SELECT " + varNames + 
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_PHONE ON i._id = MADTRIAL_FU_PHONE.IDINC " + // join on tablet generated IDs
+        " WHERE i.INC = 1" +
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " + // This makes sure the most recent follup up is shown
         " ORDER BY i.NUMEST ASC";
     children = [];
@@ -105,11 +106,11 @@ function populateView() {
                 FU1.push(child);
             } else if (child.FOLLOWUP == 1 & (child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null) {
                 FU1.push(child);
-            } else if ((child.FOLLOWUP == 1 & child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null) {
+            } else if (child.FOLLOWUP == 1 & ((child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null)) {
                 FU2.push(child);
             } else if (child.FOLLOWUP == 2 & (child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null) {
                 FU2.push(child);
-            } else if ((child.FOLLOWUP == 2 & child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null) {
+            } else if (child.FOLLOWUP == 2 & ((child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null)) {
                 FU3.push(child);
             } else if (child.FOLLOWUP == 3 & (child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null) {
                 FU3.push(child);
@@ -252,6 +253,17 @@ function getDefaults(child) {
     defaults['TELEMOVEL1'] = child.TELEMOVEL1;
     defaults['TELEMOVEL2'] = child.TELEMOVEL2;
     defaults['TELEMOVEL3'] = child.TELEMOVEL3;
+    
+    // status on phone numbers - 4: incorrect number
+    if (child.CHAMADA11 == 4 | child.CHAMADA12 == 4 | child.CHAMADA13 == 4) {
+        defaults['chamada1'] = 4
+    }
+    if (child.CHAMADA21 == 4 | child.CHAMADA22 == 4 | child.CHAMADA23 == 4) {
+        defaults['chamada2'] = 4
+    }
+    if (child.CHAMADA31 == 4 | child.CHAMADA32 == 4 | child.CHAMADA33 == 4) {
+        defaults['chamada3'] = 4
+    }
     return defaults;
 }
 
