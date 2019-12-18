@@ -18,11 +18,21 @@ return {
             - (match[2] ? +match[2] : 0));
     },
     studyNumber: function(letters,zeros,num) {
-        var number = num + ""
+        var number = Number(num) + "";
         while (number.length < zeros) {
-            number = "0" + number
+            number = "0" + number;
         };
         return letters + number;
+    },
+    randomLabel: function(sex,random1,random2) {
+        random1 = Number(random1);
+        random2 = Number(random2);
+        if (sex == 1) {
+            sex = "M";
+        } else {
+            sex = "F";
+        }
+        return label = sex + "_" + random1 + "-" + random2;
     }
 }
 });

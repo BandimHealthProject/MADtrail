@@ -101,20 +101,23 @@ function populateView() {
     var FU2 = [];
     var FU3 = [];
     children.forEach(function(child) {
-        if (child.DATSEGUI1 != todayAdate & child.DATSEGUI2 != todayAdate & child.DATSEGUI3 != todayAdate) {
-            if (child.FOLLOWUP == 0 ) {
-                FU1.push(child);
-            } else if (child.FOLLOWUP == 1 & (child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null) {
-                FU1.push(child);
-            } else if (child.FOLLOWUP == 1 & ((child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null)) {
-                FU2.push(child);
-            } else if (child.FOLLOWUP == 2 & (child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null) {
-                FU2.push(child);
-            } else if (child.FOLLOWUP == 2 & ((child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null)) {
-                FU3.push(child);
-            } else if (child.FOLLOWUP == 3 & (child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null) {
-                FU3.push(child);
-            }
+        var visitedToday;
+        if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate) {
+            visitedToday = true;
+        }
+
+        if (child.FOLLOWUP == 0 ) {
+            FU1.push(child);
+        } else if (child.FOLLOWUP == 1 & ((child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+            FU1.push(child);
+        } else if (child.FOLLOWUP == 1 & ((child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null)) {
+            FU2.push(child);
+        } else if (child.FOLLOWUP == 2 & ((child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+            FU2.push(child);
+        } else if (child.FOLLOWUP == 2 & ((child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null)) {
+            FU3.push(child);
+        } else if (child.FOLLOWUP == 3 & ((child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+            FU3.push(child);
         }
     });
 
@@ -131,6 +134,12 @@ function populateView() {
         console.log(this);
         var that = this;      
         
+        // Check if visited today
+        var visited = '';
+        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate) {
+            visited = "visited";
+        };
+        
         // Set date/time contraint
         var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
@@ -140,7 +149,7 @@ function populateView() {
         console.log("today", today);
 
         if (incDate3m <= today) {
-        ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class','' + ' btn ' + this.type).text(this.NUMEST)));
+        ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type).text(this.NUMEST)));
         }
 
         var btn = ul1.find('#' + this.rowId);
@@ -154,6 +163,12 @@ function populateView() {
         console.log(this);
         var that = this;      
         
+        // Check if visited today
+        var visited = '';
+        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate) {
+            visited = "visited";
+        };
+        
         // Set date/time contraint
         var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
@@ -163,7 +178,7 @@ function populateView() {
         console.log("today", today);
 
         if (incDate6m <= today) {
-        ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class','' + ' btn ' + this.type).text(this.NUMEST)));
+        ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type).text(this.NUMEST)));
         }
         
         var btn = ul2.find('#' + this.rowId);
@@ -177,6 +192,12 @@ function populateView() {
         console.log(this);
         var that = this;      
         
+        // Check if visited today
+        var visited = '';
+        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate) {
+            visited = "visited";
+        };
+        
         // Set date/time contraint
         var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
@@ -186,7 +207,7 @@ function populateView() {
         console.log("today", today);
 
         if (incDate12m <= today) {
-        ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class','' + ' btn ' + this.type).text(this.NUMEST)));
+        ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type).text(this.NUMEST)));
         }
         
         var btn = ul3.find('#' + this.rowId);

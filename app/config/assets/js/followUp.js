@@ -15,7 +15,6 @@ function display() {
     //var body = $('body').first();
     //body.css('background', 'url(img/form_logo.png) fixed');
     initDrops();
-    //initButtons();
 }
 
 function initDrops() {

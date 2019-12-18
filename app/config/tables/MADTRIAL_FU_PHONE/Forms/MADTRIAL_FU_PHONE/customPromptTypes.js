@@ -110,6 +110,7 @@ var adate = promptTypes.input_type.extend({
     updateDateProps: function(d,m,y) {
         
         that = this;
+        var renderContext = that.renderContext;
         if (d=="" || m=="" || y=="") {
             that.asDate = null;
             that.$('.adate-ageInYears').text("")
@@ -147,8 +148,13 @@ var adate = promptTypes.input_type.extend({
             }
             if (yD!=0 || mD!=0 || dD!=0) {
                 txt += dD + " dias.";
-            }            
-            that.$('.adate-ageInYears').text(txt)
+            }     
+            if (renderContext.display.adate && renderContext.display.adate.helperText == false) {
+                that.$('.adate-ageInYears').text("");
+            } else {
+                that.$('.adate-ageInYears').text(txt);
+            }       
+            
         }
     },
     setSelects : function(strValue) {

@@ -17,36 +17,47 @@
     <script type="text/javascript" src="js/IDTabz.js"></script>
     
     <style>
-        ul#persons > li {
+        ul {
             list-style:none;
         }
-        ul#persons > li > button {
-            margin:10px;
-            height:45px;
-            width:100%;
-            background-size: 30px;        
-        }
         button.child {
-            background-color: lightgoldenrodyellow;
-            text-align:left;
-            text-indent: 40px;
+            background-color: mediumseagreen;
             background-image: url(./img/baby.png);
+            text-align:left;
             background-repeat: no-repeat;
             background-position: 10px;
+            background-size: 30px;
+            padding-left: 55px;
+            margin:10px;
+            height:100px;
+            width:100%;
+            color: black; 
         }   
     </style>
 </head>
 
-<body>
+<body onload="display()">
     <div id="main" class="container" style="height: 100vh;">
-        <h1>Crianças incluídas hoje</h1>
+        <h1>Crianças</h1>
+        <div class="row">
+            <h3>Data de inclusão</h3>
+            <div class="form-group col-xs-4">
+                <select id="selDateDay" placeholder="Day" class="form-control">
+                </select>
+            </div>
+            <div class="form-group col-xs-4">
+                <select id="selDateMonth" placeholder="Month" class="form-control">
+                </select>
+            </div>
+            <div class="form-group col-xs-4">
+                <select id="selDateYear" placeholder="Year" class="form-control">
+                </select>
+            </div>
+        </div>
+        <div>
         <ul id="persons" style="padding:20px;">            
         </ul>
+        </div>
     </div>
-    <script>
-    $(function() {
-        display();
-    });
-    </script>
 </body>
 </html>

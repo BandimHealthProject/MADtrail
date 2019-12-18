@@ -26,7 +26,7 @@ function loadChildren() {
         " LEFT JOIN MADTRIAL_FU_VIS ON i._id = MADTRIAL_FU_VIS.IDINC " + // join on tablet generated IDs
         " WHERE i.INC = 1 AND i.TABZ IS NOT NULL " +
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " + // This makes sure the most recent follup up is shown
-        " ORDER BY i.NUMEST ASC";
+        " ORDER BY i.TABZ ASC, i.CAMO ASC, i.NOMECRI ASC";
     children = [];
     console.log("Querying database for included children...");
     console.log(sql);
@@ -115,139 +115,132 @@ function populateView() {
     var y = today.getFullYear();
     var todayAdate = "D:" + d + ",M:" + m + ",Y:" + y;
     console.log("adate",todayAdate);
-    // Here we need to do the sorting into 4 lists.
-    // FU1: First follow-up not completed
-    // FU2: Second follow-up not completed
-    // FU3: Third follow-up not completed¨
-    // FU4: Fourth follow-up not completed
 
-    var FU1 = [];
-    var FU2 = [];
-    var FU3 = [];
-    var FU4 = [];
     children.forEach(function(child) {
-        if (child.DATSEGUI1 != todayAdate & child.DATSEGUI2 != todayAdate) {
-            if (child.FOLLOWUP == 0 ) {
-                FU1.push(child);
-            } else if (child.FOLLOWUP == 1 & (child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI2 == null) {
-                FU1.push(child);
-            } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI2 != null)) {
-                FU2.push(child);
-            } else if (child.FOLLOWUP == 2 & (child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null) {
-                FU2.push(child);
-            } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI3 != null)) {
-                FU3.push(child);
-            } else if (child.FOLLOWUP == 3 & (child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null) {
-                FU3.push(child);
-            } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI3 != null)) {
-                FU4.push(child);
-            } else if (child.FOLLOWUP == 4 & (child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null) {
-                FU4.push(child);
-            }
+        var visitedToday;
+        if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate) {
+            visitedToday = true;
+        }
+
+        if (child.FOLLOWUP == 0 ) {
+            child['FU'] = 1;
+        } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI2 == null | visitedToday == true)) {
+            child['FU'] = 1;
+        } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI2 != null)) {
+            child['FU'] = 2;
+        } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+            child['FU'] = 2;
+        } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI3 != null)) {
+            child['FU'] = 3;
+        } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+            child['FU'] = 3;
+        } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI3 != null)) {
+            child['FU'] = 4;
+        } else if (child.FOLLOWUP == 4 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+            child['FU'] = 4;
         }
     });
-
-    console.log("FU1:",FU1);
-    console.log("FU2:",FU2);
-    console.log("FU3:",FU3);
-    console.log("FU4:",FU4);
-
+    console.log("CHILDREN:", children);
     var ul1 = $('#fu1');
     var ul2 = $('#fu2');
     var ul3 = $('#fu3');
     var ul4 = $('#fu4');
 
-    // First follow-up
-    $.each(FU1, function() {
+    // Follow-up list
+    $.each(children, function() {
         console.log(this);
         var that = this;      
+        
+        // Check if visited today
+        var visited = '';
+        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate) {
+            visited = "visited";
+        };
         
         // Set date/time contraint
         var incD = Number(this.DATINC.slice(2, this.DATINC.search("M")-1));
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
         var incY = this.DATINC.slice(this.DATINC.search("Y")+2);  
-        var incDate2d = new Date(incY, incM-1, incD + 2);
-        console.log("inc + 2d", incDate2d);
-        console.log("today", today);
-
-        if (incDate2d <= today) {
-        ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class','' + ' btn ' + this.type).text(this.NUMEST)));
+        var FuDate; 
+        if (this.FU == 1) {
+            FuDate = new Date(incY, incM-1, incD + 2);
+        } else if (this.FU == 2) {
+            FuDate = new Date(incY, incM-1, incD + 4);
+        } else if (this.FU == 3) {
+            FuDate = new Date(incY, incM-1, incD + 7);
+        } else if (this.FU == 4) {
+            FuDate = new Date(incY, incM-1, incD + 14);
         }
 
-        var btn = ul1.find('#' + this.rowId);
-        btn.on("click", function() {
+        // set text to display
+        var displayText = setDisplayText(that);
+
+        // list
+        if (this.TABZ > 10 & this.TABZ < 29 & FuDate <= today) {
+            ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
+        if (this.TABZ > 30 & this.TABZ < 36 & FuDate <= today) {
+            ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
+        if (this.TABZ > 41 & this.TABZ < 45 & FuDate <= today) {
+            ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
+        if (this.TABZ > 70 & this.TABZ < 95 & FuDate <= today) {
+            ul4.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
+        console.log("today", today);
+
+        // Buttons
+        var btn1 = ul1.find('#' + this.rowId);
+        btn1.on("click", function() {
+            openForm(that);
+        })        
+        var btn2 = ul2.find('#' + this.rowId);
+        btn2.on("click", function() {
+            openForm(that);
+        })                
+        var btn3 = ul3.find('#' + this.rowId);
+        btn3.on("click", function() {
+            openForm(that);
+        })
+        var btn4 = ul4.find('#' + this.rowId);
+        btn4.on("click", function() {
             openForm(that);
         })
     });
+}
 
-    // second follow-up
-    $.each(FU2, function() {
-        console.log(this);
-        var that = this;      
-        
-        // Set date/time contraint
-        var incD = Number(this.DATINC.slice(2, this.DATINC.search("M")-1));
-        var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
-        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);   
-        var incDate4d = new Date(incY, incM-1, incD + 4);
-        console.log("inc + 2d", incDate4d);
-        console.log("today", today);
+function setDisplayText(child) {
+    var camo;
+    if (child.CAMO == 9999) {
+        camo = child.CAMOONDE;
+    } else {
+        camo = child.CAMO;
+    }
 
-        if (incDate4d <= today) {
-        ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class','' + ' btn ' + this.type).text(this.NUMEST)));
-        }
-        
-        var btn = ul2.find('#' + this.rowId);
-        btn.on("click", function() {
-            openForm(that);
-        })
-    });
+    var idade;
+    if (child.DOB == "D:NS,M:NS,Y:NS") {
+        idade = "Idade: " + child.IDADEANO + " ano(s), " + child.IDADEMES + " mes(es)";
+    } else {
+        var d = child.DOB.slice(2, child.DOB.search("M")-1);
+        var m = child.DOB.slice(child.DOB.search("M")+2, child.DOB.search("Y")-1);
+        var y = child.DOB.slice(child.DOB.search("Y")+2);   
+        idade = "Nascimento: " + d + "/" + m + "/" + y;
+    }
 
-    // Third follow-up
-    $.each(FU3, function() {
-        console.log(this);
-        var that = this;      
-        
-        // Set date/time contraint
-        var incD = Number(this.DATINC.slice(2, this.DATINC.search("M")-1));
-        var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
-        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);   
-        var incDate7d = new Date(incY, incM-1, incD + 7);
-        console.log("inc + 7d", incDate7d);
-        console.log("today", today);
-
-        if (incDate7d <= today) {
-        ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class','' + ' btn ' + this.type).text(this.NUMEST)));
-        }
-        
-        var btn = ul3.find('#' + this.rowId);
-        btn.on("click", function() {
-            openForm(that);
-        })
-    });
-
-    // Fourth follow-up
-    $.each(FU4, function() {
-        console.log(this);
-        var that = this;      
-        
-        // Set date/time contraint
-        var incD = Number(this.DATINC.slice(2, this.DATINC.search("M")-1));
-        var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
-        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);   
-        var incDate14d = new Date(incY, incM-1, incD + 14);
-        console.log("inc + 14d", incDate14d);
-        console.log("today", today);
-
-        if (incDate14d <= today) {
-        ul4.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class','' + ' btn ' + this.type).text(this.NUMEST)));
-        }
-        
-        var btn = ul4.find('#' + this.rowId);
-        btn.on("click", function() {
-            openForm(that);
-        })
-    });
+    var displayText = "TABZ: " + child.TABZ + "; CAMO: " + camo + "<br />" + 
+        "Nome: " + child.NOMECRI + "<br />" + 
+        idade + "<br />" + 
+        "Responsável: " + child.NOMERESP;
+    return displayText
 }
 
 function openForm(child) {
