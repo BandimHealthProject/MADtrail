@@ -70,11 +70,11 @@ function loadChildren() {
     // SQL to get children
     
     var todayAdate = "D:" + selDay.val() + ",M:" + selMon.val() + ",Y:" + selYea.val();  ;
-    var varNames = "_id, CAMO, CAMOONDE, DATINC, ID, NOMECRI, REGNO, SEX, TABZ"
+    var varNames = "_id, DATINC, DOB, IDADEANO, IDADEMES, NOMECRI, NOMEMAE, SEX"
     var sql = "SELECT " + varNames + 
         " FROM MADTRIAL_INC " +
-        " WHERE DATINC = '" + todayAdate + "' AND INC = 1 " +
-        " ORDER BY NOMECRI ASC";
+        " WHERE DATINC = '" + todayAdate + "'" +
+        " ORDER BY _savepoint_timestamp ASC";
     children = [];
     console.log("Querying database for included children...");
     console.log(sql);
@@ -83,16 +83,14 @@ function loadChildren() {
         for (var row = 0; row < result.getCount(); row++) {
             var rowId = result.getData(row,"_id").slice(5);
             
-            var CAMO = result.getData(row,"CAMO");
-            var CAMOONDE = result.getData(row,"CAMOONDE");
-            var DATINC = result.getData(row,"DATINC");
-            var ID = result.getData(row,"ID");
+            var DOB = result.getData(row,"DOB");
+            var IDADEANO = result.getData(row,"IDADEANO");
+            var IDADEMES = result.getData(row,"IDADEMES");
             var NOMECRI = titleCase(result.getData(row,"NOMECRI"));
-            var REGNO = result.getData(row,"REGNO");
+            var NOMEMAE = titleCase(result.getData(row,"NOMEMAE"));
             var SEX = result.getData(row,"SEX");
-            var TABZ = result.getData(row,"TABZ");
 
-            var p = { type: 'child', rowId, CAMO, CAMOONDE, DATINC, ID, NOMECRI, REGNO, SEX, TABZ };
+            var p = { type: 'child', rowId, DOB, IDADEANO, IDADEMES, NOMECRI, NOMEMAE, SEX };
             console.log(p);
             children.push(p);
         }
@@ -120,41 +118,22 @@ function populateView() {
         var that = this;      
         
         // Set display text
-        var camo;
-        if (this.CAMO == 9999) {
-            camo = this.CAMOONDE;
+        var idade;
+        if (this.DOB == "D:NS,M:NS,Y:NS") {
+            idade = "Idade: " + Number(this.IDADEANO) + " ano(s), " + Number(this.IDADEMES) + " mes(es)";
         } else {
-            camo = this.CAMO;
+            var d = this.DOB.slice(2, this.DOB.search("M")-1);
+            var m = this.DOB.slice(this.DOB.search("M")+2, this.DOB.search("Y")-1);
+            var y = this.DOB.slice(this.DOB.search("Y")+2);   
+            idade = "Nascimento: " + d + "/" + m + "/" + y;
         }
-        
-        var tabz;
-        if (this.TABZ > 100) {
-            tabz = "<b>Não sabe</b>";
-        } else {
-            tabz = this.TABZ;
-        }
-
-        var id;
-        if (this.ID == 9999999) {
-            id = "<b>Não sabe</b>"
-        } else {
-            id = this.ID
-        }
-
-        var regno;
-        if (this.ID == 999) {
-            regno = "<b>Não sabe</b>"
-        } else {
-            regno = this.REGNO
-        }
-
-        var displayText = "TABZ: " + tabz + "; CAMO: " + camo + "<br />" + 
-            "ID: " + id + "<br />" +
-            "Nome: " + this.NOMECRI + "<br />" + 
-            "Regno: " + regno;
+    
+        var displayText = "Nome: " + this.NOMECRI + "<br />" + 
+            idade + "<br />" + 
+            "Mãe: " + this.NOMEMAE;
        
         // list
-        ul.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class','' + ' btn ' + this.type + this.SEX).append(displayText)));
+        ul.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', '' + ' btn ' + this.type + this.SEX).append(displayText)));
                 
         var btn = ul.find('#' + this.rowId);
         btn.on("click", function() {
@@ -172,7 +151,7 @@ function openForm(rowId, child) {
             null,
             "MADTRIAL_INC",
             rowId,
-            "MADTRIAL_INC_EDIT",
+            "MADTRIAL_INC",
             null,);
 }
 

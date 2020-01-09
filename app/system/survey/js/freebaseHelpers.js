@@ -22,7 +22,7 @@ return {
         while (number.length < zeros) {
             number = "0" + number;
         };
-        return letters + number;
+        return letters + "-" + number;
     },
     randomLabel: function(sex,random1,random2) {
         random1 = Number(random1);
@@ -33,6 +33,39 @@ return {
             sex = "F";
         }
         return label = sex + "_" + random1 + "-" + random2;
+    },
+    characters: function(string) {
+        var str = string;
+        if (str == null) {
+            return 0;
+        } else {
+            return str.length;
+        }
+    },
+    relation: function(relation,language) {
+        var rela;
+        if (relation == '1') {
+            if (language == 'EN') {
+                rela = 'Mother';
+            } else {
+                rela = 'Mãe';
+            }
+        } else if (relation == '2') {
+            if (language == 'EN') {
+                rela = 'Father';
+            } else {
+                rela = 'Pai';
+            }
+        } else if (relation == null) {
+            if (language == 'EN') {
+                rela = "Don't know"; 
+            } else {
+                rela = "Não sabe"
+            }
+        } else {
+            rela = relation;
+        }
+        return rela;
     }
 }
 });

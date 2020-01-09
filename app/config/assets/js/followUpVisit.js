@@ -20,7 +20,7 @@ function display() {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST, i._id, i.CAMO, i.CAMOONDE, i.DATINC, i.DOB, i.ID, i.IDADEANO, i.IDADEMES, i.INC, i.NOMECRI, i.NOMERESP, i.SEX, i.TABZ, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, INFORMADOR, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
+    var varNames = "i.NUMEST, i._id, i.CAMO, i.CAMOONDE, i.DATINC, i.DOB, i.ID, i.IDADEANO, i.IDADEMES, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TABZ, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, INFORMADOR, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
     var sql = "SELECT " + varNames + 
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_VIS ON i._id = MADTRIAL_FU_VIS.IDINC " + // join on tablet generated IDs
@@ -46,7 +46,7 @@ function loadChildren() {
             var IDADEMES = result.getData(row,"IDADEMES");
             var INC = result.getData(row,"INC");
             var NOMECRI = titleCase(result.getData(row,"NOMECRI"));
-            var NOMERESP = titleCase(result.getData(row,"NOMERESP"));
+            var NOMEMAE = titleCase(result.getData(row,"NOMEMAE"));
             var SEX = result.getData(row,"SEX");
             var TABZ = result.getData(row,"TABZ");
             var DATSEGUI1 = result.getData(row,"DATSEGUI1");
@@ -87,7 +87,7 @@ function loadChildren() {
             var VACOU5TIPO = result.getData(row,"VACOU5TIPO");
             var VPI = result.getData(row,"VPI");
 
-            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMERESP, SEX, TABZ, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, INFORMADOR, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
+            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, INFORMADOR, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
             console.log(p);
             children.push(p);
         }
@@ -108,13 +108,8 @@ function loadChildren() {
 function populateView() {
     console.log("CHILDREN:", children);
     var today = new Date(date);
-
-    // Set today's date as adate for easy comparing
-    var d = today.getDate();
-    var m = today.getMonth()+1;
-    var y = today.getFullYear();
-    var todayAdate = "D:" + d + ",M:" + m + ",Y:" + y;
-    console.log("adate",todayAdate);
+    var todayAdate = setTodayAdate();
+    console.log("adate",todayAdate); 
 
     children.forEach(function(child) {
         var visitedToday;
@@ -124,23 +119,40 @@ function populateView() {
 
         if (child.FOLLOWUP == 0 ) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI2 == null | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.SUCCEED2 == null | visitedToday == true)) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI2 != null)) {
+        } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.SUCCEED2 != null)) {
             child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.SUCCEED3 == null | visitedToday == true)) {
             child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI3 != null)) {
+        } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.SUCCEED3 != null)) {
             child['FU'] = 3;
-        } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.SUCCEED3 == null | visitedToday == true)) {
             child['FU'] = 3;
-        } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.DATSEGUI3 != null)) {
+        } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.SUCCEED3 != null)) {
             child['FU'] = 4;
-        } else if (child.FOLLOWUP == 4 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 4 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.SUCCEED3 == null | visitedToday == true)) {
+            child['FU'] = 4;
+        }
+
+        // Inclusion date and constrains on FU
+        var incD = Number(child.DATINC.slice(2, child.DATINC.search("M")-1));
+        var incM = child.DATINC.slice(child.DATINC.search("M")+2, child.DATINC.search("Y")-1);
+        var incY = child.DATINC.slice(child.DATINC.search("Y")+2);  
+        var dateInc = new Date(incY, incM-1, incD);
+        var diffInDays = (today.getTime() - dateInc.getTime())/(1000*3600*24);
+        console.log("diff", diffInDays);
+        if (child.FU == 1 & diffInDays >= 4) {
+            child['FU'] = 2;
+        }
+        if (child.FU == 2 & diffInDays >= 7) {
+            child['FU'] = 3;
+        }
+        if (child.FU == 3 & diffInDays >= 14) {
             child['FU'] = 4;
         }
     });
-    console.log("CHILDREN:", children);
+    console.log("CHILDREN - FU sortet:", children);
     var ul1 = $('#fu1');
     var ul2 = $('#fu2');
     var ul3 = $('#fu3');
@@ -158,10 +170,10 @@ function populateView() {
         };
         
         // Set date/time contraint
+        var FuDate; 
         var incD = Number(this.DATINC.slice(2, this.DATINC.search("M")-1));
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
-        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);  
-        var FuDate; 
+        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);
         if (this.FU == 1) {
             FuDate = new Date(incY, incM-1, incD + 2);
         } else if (this.FU == 2) {
@@ -218,6 +230,16 @@ function populateView() {
     });
 }
 
+function setTodayAdate() {
+    var today = new Date(date);
+
+    // Set today's date as adate for easy comparing
+    var d = today.getDate();
+    var m = today.getMonth()+1;
+    var y = today.getFullYear();
+    return "D:" + d + ",M:" + m + ",Y:" + y;
+}
+
 function setDisplayText(child) {
     var camo;
     if (child.CAMO == 9999) {
@@ -228,7 +250,7 @@ function setDisplayText(child) {
 
     var idade;
     if (child.DOB == "D:NS,M:NS,Y:NS") {
-        idade = "Idade: " + child.IDADEANO + " ano(s), " + child.IDADEMES + " mes(es)";
+        idade = "Idade: " + Number(child.IDADEANO) + " ano(s), " + Number(child.IDADEMES) + " mes(es)";
     } else {
         var d = child.DOB.slice(2, child.DOB.search("M")-1);
         var m = child.DOB.slice(child.DOB.search("M")+2, child.DOB.search("Y")-1);
@@ -239,7 +261,7 @@ function setDisplayText(child) {
     var displayText = "TABZ: " + child.TABZ + "; CAMO: " + camo + "<br />" + 
         "Nome: " + child.NOMECRI + "<br />" + 
         idade + "<br />" + 
-        "Responsável: " + child.NOMERESP;
+        "Mãe: " + child.NOMEMAE;
     return displayText
 }
 
@@ -248,65 +270,41 @@ function openForm(child) {
     var rowId = child.FUrowId;
     var tableId = 'MADTRIAL_FU_VIS';
     var formId = 'MADTRIAL_FU_VIS';
-    
-    if (child.FOLLOWUP > 1) {
-        // next try if we haven't tried a third time yet and we don't have answers to INFORMADOR and ESTADOCRI
-        if ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI3 == null) {
-            console.log("Opening next try FU:", rowId);
-            odkTables.editRowWithSurvey(
-                null,
-                tableId,
-                rowId,
-                formId,
-                null,);
-        } else {
-            // Next FU visit
-            var defaults = getDefaults(child);
-            defaults['LASTFUSUC'] = setLastSucces(child);
-            defaults['FOLLOWUP'] = child.FOLLOWUP + 1;
-            console.log("Opening first try next FU:", defaults);
-            odkTables.addRowWithSurvey(
-                null,
-                tableId,
-                formId,
-                null,
-                defaults);
-        }
-    } else if (child.FOLLOWUP == 1) {
-        // next try if we haven't tried a third time yet and we don't have answers to INFORMADOR and ESTADOCRI
-        if ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.DATSEGUI2 == null) {
-            console.log("Opening next try FU:", rowId);
-            odkTables.editRowWithSurvey(
-                null,
-                tableId,
-                rowId,
-                formId,
-                null,);
-        } else {
-            // Next FU visit
-            var defaults = getDefaults(child);
-            defaults['LASTFUSUC'] = setLastSucces(child);
-            defaults['FOLLOWUP'] = child.FOLLOWUP + 1;
-            console.log("Opening first try next FU:", defaults);
-            odkTables.addRowWithSurvey(
-                null,
-                tableId,
-                formId,
-                null,
-                defaults);
-        }
-    } else {
-        // First FU-call
+    var todayAdate = setTodayAdate();
+
+    if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate) {
+        var defaults = {};
+        defaults['editvisit'] = "true"
+        console.log("Opening FU for edit", defaults);
+        odkTables.editRowWithSurvey(
+            null,
+            tableId,
+            rowId,
+            formId,
+            null,);
+    } 
+
+    if (child.FU != child.FOLLOWUP) {
+        // new FU
         var defaults = getDefaults(child);
         defaults['LASTFUSUC'] = setLastSucces(child);
-        defaults['FOLLOWUP'] = 1;
-        console.log("Opening first try FU:", defaults);
+        defaults['FOLLOWUP'] = child.FU;
+        console.log("Opening first try next FU:", defaults);
         odkTables.addRowWithSurvey(
             null,
             tableId,
             formId,
             null,
             defaults);
+    } else {
+        // next try if we haven't tried a third time yet
+        console.log("Opening next try FU:", rowId);
+        odkTables.editRowWithSurvey(
+            null,
+            tableId,
+            rowId,
+            formId,
+            null,);
     }
 }
 
@@ -341,7 +339,7 @@ function getDefaults(child) {
     defaults['IDADEMES'] = child.IDADEMES;
     defaults['IDINC'] = "uuid:" + child.rowId;
     defaults['NOMECRI'] = child.NOMECRI;
-    defaults['NOMERESP'] = child.NOMERESP;
+    defaults['NOMEMAE'] = child.NOMEMAE;
     defaults['NUMEST'] = child.NUMEST;
     defaults['SEX'] = child.SEX;
     defaults['TABZ'] = child.TABZ;

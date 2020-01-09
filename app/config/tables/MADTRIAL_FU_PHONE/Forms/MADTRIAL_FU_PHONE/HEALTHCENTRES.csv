@@ -1,73 +1,146 @@
-reg,regname,cscode,csname
-1,Oio,101,CS Ga-Mamadu
-1,Oio,102,CS Nhacra
-1,Oio,103,CS Encheia
-1,Oio,104,CS Binar
-1,Oio,105,Hospital de Bissora
-1,Oio,106,Hospital de Mansoa
-1,Oio,107,CS Fanhe
-1,Oio,108,Missao Catolica de Nhoma
-1,Oio,109,CS Mores
-1,Oio,110,CS Mansaba
-1,Oio,111,CS Candjambari
-1,Oio,112,Centro Nutricional de Mansoa
-1,Oio,113,Hospital de Farim
-1,Oio,114,CS Binta
-2,Biombo,201,CS Ondame
-2,Biombo,202,Clinica Bom Samaritana
-2,Biombo,203,CS Dorse
-2,Biombo,204,CS Quinhamel
-2,Biombo,205,Centro Materno Infantil
-2,Biombo,206,CS Bigimita
-2,Biombo,207,CS Ilonde
-2,Biombo,208,CS SABim
-2,Biombo,209,CS Prabis
-2,Biombo,210,Hospital de Cumura
-2,Biombo,211,Clinica de Bor
-2,Biombo,212,Irma di Safim/Padre di Safim
-3,SAB,301,HNSM Bercario (Luis)
-3,SAB,302,HNSM Pediatria
-3,SAB,303,SMI Centro Materno Infantil
-3,SAB,304,CS Bandim
-3,SAB,305,CS Belem
-3,SAB,306,CS Cuntum. Sobrada
-3,SAB,307,CS Cuntum Madina
-3,SAB,308,CS Plak
-3,SAB,309,CS Quelele
-3,SAB,310,Ceu et Terra
-3,SAB,311,Clinica de Bra. Seminario de Padre
-3,SAB,312,CS Bairro Militar
-3,SAB,313,Hospital Militar. Chines
-3,SAB,314,Casa Emanuel
-3,SAB,315,CS Ajuda
-3,SAB,316,Raul Follerau
-3,SAB,317,Clinica Sissoko. Mindara
-3,SAB,318,Clinica 3 di Augusto
-3,SAB,319,CS Antula
-7,Cacheu,701,Hospital Canchungo (regiao)
-7,Cacheu,702,CS Co
-7,Cacheu,703,CS Pelundo
-7,Cacheu,704,CS Djolmete
-7,Cacheu,705,CS Bula
-7,Cacheu,706,CS Caio + PSB Caio
-7,Cacheu,707,CS Calequisse
-7,Cacheu,708,CS Caniop
-7,Cacheu,709,CS Batucar
-7,Cacheu,710,CS Haidara
-7,Cacheu,711,CS Cacheu
-7,Cacheu,712,CS Sao Vicente
-7,Cacheu,713,CS Caiomet (Barala)
-7,Cacheu,714,Irma di Bula
-7,Cacheu,715,Irma di Co
-7,Cacheu,716,Irma di Caio
-7,Cacheu,717,PSB Caio
-15,Sao Domingos,1501,CS Irma Ingore
-15,Sao Domingos,1502,Ingore estado
-15,Sao Domingos,1503,CS Barro
-15,Sao Domingos,1504,CS Bigene
-15,Sao Domingos,1505,CS Sedengal
-15,Sao Domingos,1506,Hospital de Sao Domingos
-15,Sao Domingos,1507,CS Suzana
-15,Sao Domingos,1508,CS Varela
-15,Sao Domingos,1509,Dispensario Menomita Catel
-15,Sao Domingos,1510,CS Fronteira Sanu
+reg,regname,cscode,csname,;;;;;;;;;reg;regname;cscode;csname
+1,Oio,101,CS Ga-Mamadu,;;;;;;;;;1;Oio;101;CS Ga-Mamadu
+1,Oio,102,CS Nhacra,;;;;;;;;;1;Oio;102;CS Nhacra
+1,Oio,103,CS Encheia,;;;;;;;;;1;Oio;103;CS Encheia
+1,Oio,104,CS Binar,;;;;;;;;;1;Oio;104;CS Binar
+1,Oio,105,Hospital de Bissora,;;;;;;;;;1;Oio;105;Hospital de Bissora
+1,Oio,106,Hospital de Mansoa,;;;;;;;;;1;Oio;106;Hospital de Mansoa
+1,Oio,107,CS Fanhe,;;;;;;;;;1;Oio;107;CS Fanhe
+1,Oio,108,Missao Catolica de Nhoma,;;;;;;;;;1;Oio;108;Missao Catolica de Nhoma
+1,Oio,109,CS Mores,;;;;;;;;;1;Oio;109;CS Mores
+1,Oio,110,CS Mansaba,;;;;;;;;;1;Oio;110;CS Mansaba
+1,Oio,111,CS Candjambari,;;;;;;;;;1;Oio;111;CS Candjambari
+1,Oio,112,Centro Nutricional de Mansoa,;;;;;;;;;1;Oio;112;Centro Nutricional de Mansoa
+1,Oio,113,Hospital de Farim,;;;;;;;;;1;Oio;113;Hospital de Farim
+1,Oio,114,CS Binta,;;;;;;;;;1;Oio;114;CS Binta
+1,Oio,115,CS Portugole,;;;;;;;;;1;Oio;115;CS Portugole
+1,Oio,116,CS Cuntima,;;;;;;;;;1;Oio;116;CS Cuntima
+1,Oio,117,CS Guidage,;;;;;;;;;1;Oio;117;CS Guidage
+1,Oio,118,CS Olossato,;;;;;;;;;1;Oio;118;CS Olossato
+2,Biombo,201,CS Ondame,;;;;;;;;;2;Biombo;201;CS Ondame
+2,Biombo,202,Clinica Bom Samaritana,;;;;;;;;;2;Biombo;202;Clinica Bom Samaritana
+2,Biombo,203,CS Dorse,;;;;;;;;;2;Biombo;203;CS Dorse
+2,Biombo,204,CS Quinhamel,;;;;;;;;;2;Biombo;204;CS Quinhamel
+2,Biombo,205,Centro Materno Infantil,;;;;;;;;;2;Biombo;205;Centro Materno Infantil
+2,Biombo,206,CS Bigimita,;;;;;;;;;2;Biombo;206;CS Bigimita
+2,Biombo,207,CS Ilonde,;;;;;;;;;2;Biombo;207;CS Ilonde
+2,Biombo,208,CS SABim,;;;;;;;;;2;Biombo;208;CS SABim
+2,Biombo,209,CS Prabis,;;;;;;;;;2;Biombo;209;CS Prabis
+2,Biombo,210,Hospital de Cumura,;;;;;;;;;2;Biombo;210;Hospital de Cumura
+2,Biombo,211,Clinica de Bor,;;;;;;;;;2;Biombo;211;Clinica de Bor
+2,Biombo,212,Irma di Safim/Padre di Safim,;;;;;;;;;2;Biombo;212;Irma di Safim/Padre di Safim
+3,SAB,301,HNSM Bercario (Luis),;;;;;;;;;3;SAB;301;HNSM Bercario (Luis)
+3,SAB,302,HNSM Pediatria,;;;;;;;;;3;SAB;302;HNSM Pediatria
+3,SAB,303,SMI Centro Materno Infantil,;;;;;;;;;3;SAB;303;SMI Centro Materno Infantil
+3,SAB,304,CS Bandim,;;;;;;;;;3;SAB;304;CS Bandim
+3,SAB,305,CS Belem,;;;;;;;;;3;SAB;305;CS Belem
+3,SAB,306,CS Cuntum. Sobrada,;;;;;;;;;3;SAB;306;CS Cuntum. Sobrada
+3,SAB,307,CS Cuntum Madina,;;;;;;;;;3;SAB;307;CS Cuntum Madina
+3,SAB,308,CS Plak,;;;;;;;;;3;SAB;308;CS Plak
+3,SAB,309,CS Quelele,;;;;;;;;;3;SAB;309;CS Quelele
+3,SAB,310,Ceu et Terra,;;;;;;;;;3;SAB;310;Ceu et Terra
+3,SAB,311,Clinica de Bra. Seminario de Padre,;;;;;;;;;3;SAB;311;Clinica de Bra. Seminario de Padre
+3,SAB,312,CS Bairro Militar,;;;;;;;;;3;SAB;312;CS Bairro Militar
+3,SAB,313,Hospital Militar. Chines,;;;;;;;;;3;SAB;313;Hospital Militar. Chines
+3,SAB,314,Casa Emanuel,;;;;;;;;;3;SAB;314;Casa Emanuel
+3,SAB,315,CS Ajuda,;;;;;;;;;3;SAB;315;CS Ajuda
+3,SAB,316,Raul Follerau,;;;;;;;;;3;SAB;316;Raul Follerau
+3,SAB,317,Clinica Sissoko. Mindara,;;;;;;;;;3;SAB;317;Clinica Sissoko. Mindara
+3,SAB,318,Clinica 3 di Augusto,;;;;;;;;;3;SAB;318;Clinica 3 di Augusto
+3,SAB,319,CS Antula,;;;;;;;;;3;SAB;319;CS Antula
+3,SAB,320,CS Gã Beafada,;;;;;;;;;3;SAB;320;CS Gã Beafada
+3,SAB,321,CS Pefine,;;;;;;;;;3;SAB;321;CS Pefine
+3,SAB,322,CS Santa Luzia,;;;;;;;;;3;SAB;322;CS Santa Luzia
+3,SAB,323,CS Luanda,;;;;;;;;;3;SAB;323;CS Luanda
+3,SAB,324,CS Missará,;;;;;;;;;3;SAB;324;CS Missará
+3,SAB,325,CS Centro,;;;;;;;;;3;SAB;325;CS Centro
+5,Gabu,501,Hospital Gabu,;;;;;;;;;5;Gabu;501;Hospital Gabu
+5,Gabu,502,CS Canjadude,;;;;;;;;;5;Gabu;502;CS Canjadude
+5,Gabu,503,CS Cansisse,;;;;;;;;;5;Gabu;503;CS Cansisse
+5,Gabu,504,CS Tumanna,;;;;;;;;;5;Gabu;504;CS Tumanna
+5,Gabu,505,CS Pitche,;;;;;;;;;5;Gabu;505;CS Pitche
+5,Gabu,506,CS Dara,;;;;;;;;;5;Gabu;506;CS Dara
+5,Gabu,507,CS Canquelifa,;;;;;;;;;5;Gabu;507;CS Canquelifa
+5,Gabu,508,CS Buruntuma,;;;;;;;;;5;Gabu;508;CS Buruntuma
+5,Gabu,509,CS Pirada,;;;;;;;;;5;Gabu;509;CS Pirada
+5,Gabu,510,CS Bajocunda,;;;;;;;;;5;Gabu;510;CS Bajocunda
+5,Gabu,511,CS Canjufa,;;;;;;;;;5;Gabu;511;CS Canjufa
+5,Gabu,512,CS Sonaco,;;;;;;;;;5;Gabu;512;CS Sonaco
+5,Gabu,513,CS Fasse,;;;;;;;;;5;Gabu;513;CS Fasse
+5,Gabu,514,CS Paunca,;;;;;;;;;5;Gabu;514;CS Paunca
+5,Gabu,515,CS Mansadjani,;;;;;;;;;5;Gabu;515;CS Mansadjani
+5,Gabu,516,CS Mafanco,;;;;;;;;;5;Gabu;516;CS Mafanco
+5,Gabu,517,CS Lugadjole,;;;;;;;;;5;Gabu;517;CS Lugadjole
+5,Gabu,518,CS Dandum,;;;;;;;;;5;Gabu;518;CS Dandum
+5,Gabu,519,CS Beli,;;;;;;;;;5;Gabu;519;CS Beli
+7,Cacheu,701,Hospital Canchungo (regiao),;;;;;;;;;7;Cacheu;701;Hospital Canchungo (regiao)
+7,Cacheu,702,CS Co,;;;;;;;;;7;Cacheu;702;CS Co
+7,Cacheu,703,CS Pelundo,;;;;;;;;;7;Cacheu;703;CS Pelundo
+7,Cacheu,704,CS Djolmete,;;;;;;;;;7;Cacheu;704;CS Djolmete
+7,Cacheu,705,CS Bula,;;;;;;;;;7;Cacheu;705;CS Bula
+7,Cacheu,706,CS Caio + PSB Caio,;;;;;;;;;7;Cacheu;706;CS Caio + PSB Caio
+7,Cacheu,707,CS Calequisse,;;;;;;;;;7;Cacheu;707;CS Calequisse
+7,Cacheu,708,CS Caniop,;;;;;;;;;7;Cacheu;708;CS Caniop
+7,Cacheu,709,CS Batucar,;;;;;;;;;7;Cacheu;709;CS Batucar
+7,Cacheu,710,CS Haidara,;;;;;;;;;7;Cacheu;710;CS Haidara
+7,Cacheu,711,CS Cacheu,;;;;;;;;;7;Cacheu;711;CS Cacheu
+7,Cacheu,712,CS Sao Vicente,;;;;;;;;;7;Cacheu;712;CS Sao Vicente
+7,Cacheu,713,CS Caiomet (Barala),;;;;;;;;;7;Cacheu;713;CS Caiomet (Barala)
+7,Cacheu,714,Irma di Bula,;;;;;;;;;7;Cacheu;714;Irma di Bula
+7,Cacheu,715,Irma di Co,;;;;;;;;;7;Cacheu;715;Irma di Co
+7,Cacheu,716,Irma di Caio,;;;;;;;;;7;Cacheu;716;Irma di Caio
+7,Cacheu,717,PSB Caio,;;;;;;;;;7;Cacheu;717;PSB Caio
+7,Cacheu,718,CS Bara,;;;;;;;;;7;Cacheu;718;CS Bara
+7,Cacheu,719,CS Pexixe,;;;;;;;;;7;Cacheu;719;CS Pexixe
+7,Cacheu,720,CS Jeta,;;;;;;;;;7;Cacheu;720;CS Jeta
+8,Bafata,801,Hospital Bafata (Bafata I),;;;;;;;;;8;Bafata;801;Hospital Bafata (Bafata I)
+8,Bafata,802,CS Bafata II,;;;;;;;;;8;Bafata;802;CS Bafata II
+8,Bafata,803,CS Bafata III,;;;;;;;;;8;Bafata;803;CS Bafata III
+8,Bafata,804,CS Cosse,;;;;;;;;;8;Bafata;804;CS Cosse
+8,Bafata,805,CS Ga-Mamudu,;;;;;;;;;8;Bafata;805;CS Ga-Mamudu
+8,Bafata,806,CS Geba,;;;;;;;;;8;Bafata;806;CS Geba
+8,Bafata,807,CS Xitole,;;;;;;;;;8;Bafata;807;CS Xitole
+8,Bafata,808,CS Bambadinca,;;;;;;;;;8;Bafata;808;CS Bambadinca
+8,Bafata,809,CS Ga-Carnes,;;;;;;;;;8;Bafata;809;CS Ga-Carnes
+8,Bafata,810,CS Tendinto,;;;;;;;;;8;Bafata;810;CS Tendinto
+8,Bafata,811,CS Contuboel,;;;;;;;;;8;Bafata;811;CS Contuboel
+8,Bafata,812,CS Fajonquito,;;;;;;;;;8;Bafata;812;CS Fajonquito
+8,Bafata,813,CS Cambaju,;;;;;;;;;8;Bafata;813;CS Cambaju
+8,Bafata,814,CS Sare-Bacar,;;;;;;;;;8;Bafata;814;CS Sare-Bacar
+11,Quinara,1101,CS Dar Es Salam,;;;;;;;;;11;Quinara;1101;CS Dar Es Salam
+11,Quinara,1102,CS Empada,;;;;;;;;;11;Quinara;1102;CS Empada
+11,Quinara,1103,CS Buba,;;;;;;;;;11;Quinara;1103;CS Buba
+11,Quinara,1104,CS Falacunda,;;;;;;;;;11;Quinara;1104;CS Falacunda
+11,Quinara,1105,CS Tite,;;;;;;;;;11;Quinara;1105;CS Tite
+11,Quinara,1106,CS Brandão,;;;;;;;;;11;Quinara;1106;CS Brandão
+12,Tombali,1201,Hospital Catio,;;;;;;;;;12;Tombali;1201;Hospital Catio
+12,Tombali,1202,CS Timbo,;;;;;;;;;12;Tombali;1202;CS Timbo
+12,Tombali,1203,CS Komo,;;;;;;;;;12;Tombali;1203;CS Komo
+12,Tombali,1204,CS Quebo,;;;;;;;;;12;Tombali;1204;CS Quebo
+12,Tombali,1205,CS Bedanda,;;;;;;;;;12;Tombali;1205;CS Bedanda
+12,Tombali,1206,CS Calaque,;;;;;;;;;12;Tombali;1206;CS Calaque
+12,Tombali,1207,CS Sanconha,;;;;;;;;;12;Tombali;1207;CS Sanconha
+12,Tombali,1208,CS Cacine,;;;;;;;;;12;Tombali;1208;CS Cacine
+13,Bijagos,1301,CS Bubaque,;;;;;;;;;13;Bijagos;1301;CS Bubaque
+13,Bijagos,1302,CS Canhabaque,;;;;;;;;;13;Bijagos;1302;CS Canhabaque
+13,Bijagos,1303,CS Orangozinho,;;;;;;;;;13;Bijagos;1303;CS Orangozinho
+13,Bijagos,1304,CS Soga,;;;;;;;;;13;Bijagos;1304;CS Soga
+13,Bijagos,1305,CS Canogo,;;;;;;;;;13;Bijagos;1305;CS Canogo
+13,Bijagos,1306,CS Uno,;;;;;;;;;13;Bijagos;1306;CS Uno
+13,Bijagos,1307,CS Orango Grande,;;;;;;;;;13;Bijagos;1307;CS Orango Grande
+13,Bijagos,1308,CS Uracane,;;;;;;;;;13;Bijagos;1308;CS Uracane
+13,Bijagos,1309,CS Unhocomo,;;;;;;;;;13;Bijagos;1309;CS Unhocomo
+13,Bijagos,1310,CS Formosa,;;;;;;;;;13;Bijagos;1310;CS Formosa
+13,Bijagos,1311,CS Caravela,;;;;;;;;;13;Bijagos;1311;CS Caravela
+14,Bolama,1401,CS Bolama,;;;;;;;;;14;Bolama;1401;CS Bolama
+14,Bolama,1402,CS Ilha de Galinhas,;;;;;;;;;14;Bolama;1402;CS Ilha de Galinhas
+15,Sao Domingos,1501,CS Irma Ingore,;;;;;;;;;15;Sao Domingos;1501;CS Irma Ingore
+15,Sao Domingos,1502,Ingore estado,;;;;;;;;;15;Sao Domingos;1502;Ingore estado
+15,Sao Domingos,1503,CS Barro,;;;;;;;;;15;Sao Domingos;1503;CS Barro
+15,Sao Domingos,1504,CS Bigene,;;;;;;;;;15;Sao Domingos;1504;CS Bigene
+15,Sao Domingos,1505,CS Sedengal,;;;;;;;;;15;Sao Domingos;1505;CS Sedengal
+15,Sao Domingos,1506,Hospital de Sao Domingos,;;;;;;;;;15;Sao Domingos;1506;Hospital de Sao Domingos
+15,Sao Domingos,1507,CS Suzana,;;;;;;;;;15;Sao Domingos;1507;CS Suzana
+15,Sao Domingos,1508,CS Varela,;;;;;;;;;15;Sao Domingos;1508;CS Varela
+15,Sao Domingos,1509,Dispensario Menomita Catel,;;;;;;;;;15;Sao Domingos;1509;Dispensario Menomita Catel
+15,Sao Domingos,1510,CS Fronteira Sanu,;;;;;;;;;15;Sao Domingos;1510;CS Fronteira Sanu

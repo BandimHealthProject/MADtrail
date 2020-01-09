@@ -28,7 +28,7 @@ window.odkFrameworkDefinitions = {
       "string_token": "required_exception_message",
       "text": {
         "english": "Exception while evaluating required() expression. See console log.",
-        "default": "Missing"
+        "default": "Valor falta"
       },
       "_row_num": 5
     },
@@ -36,7 +36,7 @@ window.odkFrameworkDefinitions = {
       "string_token": "constraint_exception_message",
       "text": {
         "english": "Exception while evaluating constraint() expression. See console log.",
-        "default": "Missing"
+        "default": "Valor falta"
       },
       "_row_num": 6
     },

@@ -39,6 +39,11 @@ function initButtons() {
     btnEdit.on("click", function() {
         odkTables.launchHTML(null, 'config/assets/IDTabz.html');
     });
+    // List of included children
+    var btnInc = $('#btnInc');
+    btnInc.on("click", function() {
+        odkTables.launchHTML(null, 'config/assets/listInc.html');
+    });
     // Sync
     var btnSync = $('#btnSync');
     btnSync.on("click", function() {

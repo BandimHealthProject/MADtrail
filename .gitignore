@@ -13,3 +13,6 @@ app/output/csv/csv/MADTRIAL_INC.properties.csv
 app/output/db/webDb/sqlite.db
 app/output/db/webDb/sqlite.db-shm
 app/output/db/webDb/sqlite.db-wal
+app/output/*
+app/config/tables/MADTRIAL_INC/Forms/MADTRIAL_INC_EDIT/~$MADTRIAL_INC_EDIT.xlsx
+app/config/tables/MADTRIAL_INC/Forms/MADTRIAL_INC_EDIT/~$MADTRIAL_INC.xlsx

@@ -20,7 +20,7 @@ function display() {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST, i._id, i.DATINC, i.DOB, i.IDADEANO, i.IDADEMES, i.INC, i.NOMECRI, i.NOMERESP, i.SEX, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, HOSPI, VITALCRI, MADTRIAL_FU_PHONE._id AS FUrowId "
+    var varNames = "i.NUMEST, i._id, i.DATINC, i.DOB, i.IDADEANO, i.IDADEMES, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TELEINF1, i.TELEINF2, i.TELEINF3, i.TELEMOVEL1, i.TELEMOVEL2, i.TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, HOSPI, VITALCRI, MADTRIAL_FU_PHONE._id AS FUrowId "
     var sql = "SELECT " + varNames + 
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_PHONE ON i._id = MADTRIAL_FU_PHONE.IDINC " + // join on tablet generated IDs
@@ -43,8 +43,11 @@ function loadChildren() {
             var IDADEMES = result.getData(row,"IDADEMES");
             var INC = result.getData(row,"INC");
             var NOMECRI = titleCase(result.getData(row,"NOMECRI"));
-            var NOMERESP = titleCase(result.getData(row,"NOMERESP"));
+            var NOMEMAE = titleCase(result.getData(row,"NOMEMAE"));
             var SEX = result.getData(row,"SEX");
+            var TELEINF1 = result.getData(row,"TELEINF1");
+            var TELEINF2 = result.getData(row,"TELEINF2");
+            var TELEINF3 = result.getData(row,"TELEINF3");
             var TELEMOVEL1 = result.getData(row,"TELEMOVEL1");
             var TELEMOVEL2 = result.getData(row,"TELEMOVEL2");
             var TELEMOVEL3 = result.getData(row,"TELEMOVEL3");
@@ -64,7 +67,7 @@ function loadChildren() {
             var HOSPI = result.getData(row,"HOSPI");
             var VITALCRI = result.getData(row,"VITALCRI");
 
-            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, IDADEANO, IDADEMES, INC, NOMECRI, NOMERESP, SEX, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, HOSPI, VITALCRI };
+            var p = { type: 'child', NUMEST, rowId, FUrowId, DATINC, DOB, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TELEINF1, TELEINF2, TELEINF3, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, CHAMADA11, CHAMADA12, CHAMADA13, CHAMADA21, CHAMADA22, CHAMADA23, CHAMADA31, CHAMADA32, CHAMADA33, DATSEGUI1, DATSEGUI2, DATSEGUI3, FOLLOWUP, HOSPI, VITALCRI };
             console.log(p);
             children.push(p);
         }
@@ -85,21 +88,9 @@ function loadChildren() {
 function populateView() {
     console.log("CHILDREN:", children);
     var today = new Date(date);
-
-    // Set today's date as adate for easy comparing
-    var d = today.getDate();
-    var m = today.getMonth()+1;
-    var y = today.getFullYear();
-    var todayAdate = "D:" + d + ",M:" + m + ",Y:" + y;
+    var todayAdate = setTodayAdate();
     console.log("adate",todayAdate);
-    // Here we need to do the sorting into 3 lists.
-    // FU1: First follow-up not completed
-    // FU2: Second follow-up not completed
-    // FU3: Third follow-up not completed
 
-    var FU1 = [];
-    var FU2 = [];
-    var FU3 = [];
     children.forEach(function(child) {
         var visitedToday;
         if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate) {
@@ -107,30 +98,26 @@ function populateView() {
         }
 
         if (child.FOLLOWUP == 0 ) {
-            FU1.push(child);
-        } else if (child.FOLLOWUP == 1 & ((child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
-            FU1.push(child);
-        } else if (child.FOLLOWUP == 1 & ((child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null)) {
-            FU2.push(child);
-        } else if (child.FOLLOWUP == 2 & ((child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
-            FU2.push(child);
-        } else if (child.FOLLOWUP == 2 & ((child.VITALCRI != null & child.HOSPI != null) | child.DATSEGUI3 != null)) {
-            FU3.push(child);
-        } else if (child.FOLLOWUP == 3 & ((child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null | visitedToday == true)) {
-            FU3.push(child);
+            child['FU'] = 1;
+        } else if (child.FOLLOWUP == 1 & ((child.VITALCRI == null | child.HOSPI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
+            child['FU'] = 1;
+        } else if (child.FOLLOWUP == 1 & ((child.VITALCRI != null & child.HOSPI != null) | (child.CHAMADA13 != null | child.CHAMADA23 != null | child.CHAMADA33 != null))) {
+            child['FU'] = 2;
+        } else if (child.FOLLOWUP == 2 & ((child.VITALCRI == null | child.HOSPI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
+            child['FU'] = 2;
+        } else if (child.FOLLOWUP == 2 & ((child.VITALCRI != null & child.HOSPI != null) | (child.CHAMADA13 != null | child.CHAMADA23 != null | child.CHAMADA33 != null))) {
+            child['FU'] = 3;
+        } else if (child.FOLLOWUP == 3 & ((child.VITALCRI == null | child.HOSPI == null) & (child.CHAMADA13 == null & child.CHAMADA23 == null & child.CHAMADA33 == null) | visitedToday == true)) {
+            child['FU'] = 3;
         }
     });
-
-    console.log("FU1:",FU1);
-    console.log("FU2:",FU2);
-    console.log("FU3:",FU3);
-
+    console.log("CHILDREN - FU sortet:", children);
     var ul1 = $('#fu1');
     var ul2 = $('#fu2');
     var ul3 = $('#fu3');
 
     // First follow-up
-    $.each(FU1, function() {
+    $.each(children, function() {
         console.log(this);
         var that = this;      
         
@@ -143,78 +130,78 @@ function populateView() {
         // Set date/time contraint
         var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
         var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
-        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);  
-        var incDate3m = new Date(incY, incM-1 + 3, incD);
-        console.log("inc + 3m", incDate3m);
+        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);
+        var FuDate; 
+        if (this.FU == 1) {
+            FuDate = new Date(incY, incM-1 + 3, incD);
+        } else if (this.FU == 2) {
+            FuDate = new Date(incY, incM-1 + 6, incD);
+        } else if (this.FU == 3) {
+            FuDate = new Date(incY, incM-1 + 12, incD);
+        }
+        
+        // set text to display
+        var displayText = setDisplayText(that);
+
+        // list
+        if (this.FU == 1 & FuDate <= today) {
+            ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
+        if (this.FU == 2 & FuDate <= today) {
+            ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
+        if (this.FU == 3 & FuDate <= today) {
+            ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
         console.log("today", today);
 
-        if (incDate3m <= today) {
-        ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type).text(this.NUMEST)));
-        }
-
-        var btn = ul1.find('#' + this.rowId);
-        btn.on("click", function() {
+        // Buttons
+        var btn1 = ul1.find('#' + this.rowId);
+        btn1.on("click", function() {
+            openForm(that);
+        })        
+        var btn2 = ul2.find('#' + this.rowId);
+        btn2.on("click", function() {
+            openForm(that);
+        })                
+        var btn3 = ul3.find('#' + this.rowId);
+        btn3.on("click", function() {
             openForm(that);
         })
     });
+}
 
-    // second follow-up
-    $.each(FU2, function() {
-        console.log(this);
-        var that = this;      
-        
-        // Check if visited today
-        var visited = '';
-        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate) {
-            visited = "visited";
-        };
-        
-        // Set date/time contraint
-        var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
-        var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
-        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);   
-        var incDate6m = new Date(incY, incM-1 + 6, incD);
-        console.log("inc + 6m", incDate6m);
-        console.log("today", today);
+function setTodayAdate() {
+    var today = new Date(date);
 
-        if (incDate6m <= today) {
-        ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type).text(this.NUMEST)));
-        }
-        
-        var btn = ul2.find('#' + this.rowId);
-        btn.on("click", function() {
-            openForm(that);
-        })
-    });
+    // Set today's date as adate for easy comparing
+    var d = today.getDate();
+    var m = today.getMonth()+1;
+    var y = today.getFullYear();
+    return "D:" + d + ",M:" + m + ",Y:" + y;
+}
 
-    // Third follow-up
-    $.each(FU3, function() {
-        console.log(this);
-        var that = this;      
-        
-        // Check if visited today
-        var visited = '';
-        if (this.DATSEGUI1 == todayAdate | this.DATSEGUI2 == todayAdate | this.DATSEGUI3 == todayAdate) {
-            visited = "visited";
-        };
-        
-        // Set date/time contraint
-        var incD = this.DATINC.slice(2, this.DATINC.search("M")-1);
-        var incM = this.DATINC.slice(this.DATINC.search("M")+2, this.DATINC.search("Y")-1);
-        var incY = this.DATINC.slice(this.DATINC.search("Y")+2);   
-        var incDate12m = new Date(incY, incM-1 + 12, incD);
-        console.log("inc + 12m", incDate12m);
-        console.log("today", today);
+function setDisplayText(child) {
+    var idade;
+    if (child.DOB == "D:NS,M:NS,Y:NS") {
+        idade = "Idade: " + Number(child.IDADEANO) + " ano(s), " + Number(child.IDADEMES) + " mes(es)";
+    } else {
+        var d = child.DOB.slice(2, child.DOB.search("M")-1);
+        var m = child.DOB.slice(child.DOB.search("M")+2, child.DOB.search("Y")-1);
+        var y = child.DOB.slice(child.DOB.search("Y")+2);   
+        idade = "Nascimento: " + d + "/" + m + "/" + y;
+    }
 
-        if (incDate12m <= today) {
-        ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type).text(this.NUMEST)));
-        }
-        
-        var btn = ul3.find('#' + this.rowId);
-        btn.on("click", function() {
-            openForm(that);
-        })
-    });
+    var displayText = "Nome: " + child.NOMECRI + "<br />" + 
+        idade + "<br />" + 
+        "Mãe: " + child.NOMEMAE;
+    return displayText
 }
 
 function openForm(child) {
@@ -222,40 +209,40 @@ function openForm(child) {
     var rowId = child.FUrowId;
     var tableId = 'MADTRIAL_FU_PHONE';
     var formId = 'MADTRIAL_FU_PHONE';
+    var todayAdate = setTodayAdate();
+
+    if (child.DATSEGUI1 == todayAdate | child.DATSEGUI2 == todayAdate | child.DATSEGUI3 == todayAdate) {
+        var defaults = {};
+        defaults['editvisit'] = "true"
+        console.log("Opening FU for edit", defaults);
+        odkTables.editRowWithSurvey(
+            null,
+            tableId,
+            rowId,
+            formId,
+            null,);
+    } 
     
-    if (child.FOLLOWUP != 0) {
-        // next try if we haven't called 3 times yet and we don't have answers to VITALCRI and HOSPI
-        if ((child.VITALCRI == null | child.HOSPI == null) & child.DATSEGUI3 == null) {
-            console.log("Opening next try FU:", rowId);
-            odkTables.editRowWithSurvey(
-                null,
-                tableId,
-                rowId,
-                formId,
-                null,);
-        } else {
-            // Next FU-call
-            var defaults = getDefaults(child);
-            defaults['FOLLOWUP'] = child.FOLLOWUP + 1;
-            console.log("Opening first try next FU:", defaults);
-            odkTables.addRowWithSurvey(
-                null,
-                tableId,
-                formId,
-                null,
-                defaults);
-        }
-    } else {
-        // First FU-call
+    if (child.FU != child.FOLLOWUP) {
+        // new FU
         var defaults = getDefaults(child);
-        defaults['FOLLOWUP'] = 1;
-        console.log("Opening first try FU:", defaults);
+        defaults['FOLLOWUP'] = child.FU;
+        console.log("Opening first try next FU:", defaults);
         odkTables.addRowWithSurvey(
             null,
             tableId,
             formId,
             null,
             defaults);
+    } else {
+        // next try if we haven't tried a third time yet
+        console.log("Opening next try FU:", rowId);
+        odkTables.editRowWithSurvey(
+            null,
+            tableId,
+            rowId,
+            formId,
+            null,);
     }
 }
 
@@ -268,9 +255,12 @@ function getDefaults(child) {
     defaults['IDADEMES'] = child.IDADEMES;
     defaults['IDINC'] = "uuid:" + child.rowId;
     defaults['NOMECRI'] = child.NOMECRI;
-    defaults['NOMERESP'] = child.NOMERESP;
+    defaults['NOMEMAE'] = child.NOMEMAE;
     defaults['NUMEST'] = child.NUMEST;
     defaults['SEX'] = child.SEX;
+    defaults['TELEINF1'] = child.TELEINF1;
+    defaults['TELEINF2'] = child.TELEINF2;
+    defaults['TELEINF3'] = child.TELEINF3;
     defaults['TELEMOVEL1'] = child.TELEMOVEL1;
     defaults['TELEMOVEL2'] = child.TELEMOVEL2;
     defaults['TELEMOVEL3'] = child.TELEMOVEL3;
