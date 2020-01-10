@@ -1084,7 +1084,7 @@
       {
         "type": "select_one",
         "values_list": "sim/não/ns",
-        "name": "TOSSEE",
+        "name": "TOSSE",
         "display": {
           "prompt": {
             "text": {
@@ -2626,7 +2626,7 @@
         "_row_num": 65
       },
       {
-        "name": "TOSSEE",
+        "name": "TOSSE",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 66
@@ -4332,7 +4332,7 @@
         "isSessionVariable": false,
         "elementKey": "TESTEMUNHO"
       },
-      "TOSSEE": {
+      "TOSSE": {
         "type": "string",
         "valuesList": "sim/não/ns",
         "_defn": [
@@ -4346,7 +4346,7 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "TOSSEE"
+        "elementKey": "TOSSE"
       },
       "TRATAMENT": {
         "type": "string",
@@ -5477,7 +5477,7 @@
           {
             "type": "select_one",
             "values_list": "sim/não/ns",
-            "name": "TOSSEE",
+            "name": "TOSSE",
             "display": {
               "prompt": {
                 "text": {
@@ -8039,7 +8039,7 @@
         "elementSet": "data",
         "elementPath": "TESTEMUNHO"
       },
-      "TOSSEE": {
+      "TOSSE": {
         "type": "string",
         "valuesList": "sim/não/ns",
         "_defn": [
@@ -8053,10 +8053,10 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "TOSSEE",
-        "elementName": "TOSSEE",
+        "elementKey": "TOSSE",
+        "elementName": "TOSSE",
         "elementSet": "data",
-        "elementPath": "TOSSEE"
+        "elementPath": "TOSSE"
       },
       "TRATAMENT": {
         "type": "string",
@@ -8608,7 +8608,7 @@
       },
       {
         "_partition": "Column",
-        "_aspect": "TOSSEE",
+        "_aspect": "TOSSE",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":11}]"

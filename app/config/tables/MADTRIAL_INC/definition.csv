@@ -60,7 +60,7 @@ TELEMOVEL2,TELEMOVEL2,integer,[]
 TELEMOVEL3,TELEMOVEL3,integer,[]
 TEMPERATURA,TEMPERATURA,string,[]
 TESTEMUNHO,TESTEMUNHO,string,[]
-TOSSEE,TOSSEE,string,[]
+TOSSE,TOSSE,string,[]
 TRATAMENT,TRATAMENT,string,[]
 TRATIMG,TRATIMG,mimeUri,"[""TRATIMG_contentType"",""TRATIMG_uriFragment""]"
 TRATIMG_contentType,contentType,mimeType,[]
