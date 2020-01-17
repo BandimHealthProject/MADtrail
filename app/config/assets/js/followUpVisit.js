@@ -20,13 +20,18 @@ function display() {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST, i._id, i.CAMO, i.CAMOONDE, i.DATINC, i.DOB, i.ID, i.IDADEANO, i.IDADEMES, i.INC, i.NOMECRI, i.NOMEMAE, i.SEX, i.TABZ, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, INFORMADOR, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
-    var sql = "SELECT " + varNames + 
+    var varNames = "i.NUMEST AS NUMEST, i._id AS _id, i.DATINC AS DATINC, i.ID AS ID, i.INC AS INC, i.NOMECRI AS NOMECRI, i.NOMEMAE AS NOMEMAE, i.SEX AS SEX, i.TELEMOVEL1 AS TELEMOVEL1, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
+    var sql = "SELECT " + varNames + ", i.CAMO AS CAMO, i.CAMOONDE AS CAMOONDE, i.CNO AS CNO, i.TABZ AS TABZ, i.DOB AS DOB, i.IDADEANO AS IDADEANO, i.IDADEMES AS IDADEMES " +
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_VIS ON i._id = MADTRIAL_FU_VIS.IDINC " + // join on tablet generated IDs
-        " WHERE i.INC = 1 AND i.TABZ IS NOT NULL " +
+        " WHERE i.INC = 1 AND i.TABZ IS NOT NULL AND FOLLOWUP IS NULL " +
+        " UNION " + 
+        " SELECT " + varNames + ", MADTRIAL_FU_VIS.CAMO AS CAMO, MADTRIAL_FU_VIS.CAMOONDE AS CAMOONDE, MADTRIAL_FU_VIS.CNO AS CNO, MADTRIAL_FU_VIS.TABZ AS TABZ, MADTRIAL_FU_VIS.DOB AS DOB, MADTRIAL_FU_VIS.IDADEANO AS IDADEANO, MADTRIAL_FU_VIS.IDADEMES AS IDADEMES " +
+        " FROM MADTRIAL_INC AS i " +
+        " LEFT JOIN MADTRIAL_FU_VIS ON i._id = MADTRIAL_FU_VIS.IDINC " + // join on tablet generated IDs
+        " WHERE i.INC = 1 AND i.TABZ IS NOT NULL AND FOLLOWUP IS NOT NULL " +
         " GROUP BY i._id HAVING MAX(FOLLOWUP) OR FOLLOWUP IS NULL " + // This makes sure the most recent follup up is shown
-        " ORDER BY i.TABZ ASC, i.CAMO ASC, i.NOMECRI ASC";
+        " ORDER BY TABZ ASC, CAMO ASC, i.NOMECRI ASC";
     children = [];
     console.log("Querying database for included children...");
     console.log(sql);
@@ -39,9 +44,10 @@ function loadChildren() {
             
             var CAMO = result.getData(row,"CAMO");
             var CAMOONDE = result.getData(row,"CAMOONDE");
+            var CNO = result.getData(row,"CNO");
             var DATINC = result.getData(row,"DATINC");
             var DOB = result.getData(row,"DOB");
-            var ID = result.getData(row,'ID');
+            var ID = result.getData(row,"ID");
             var IDADEANO = result.getData(row,"IDADEANO");
             var IDADEMES = result.getData(row,"IDADEMES");
             var INC = result.getData(row,"INC");
@@ -49,12 +55,12 @@ function loadChildren() {
             var NOMEMAE = titleCase(result.getData(row,"NOMEMAE"));
             var SEX = result.getData(row,"SEX");
             var TABZ = result.getData(row,"TABZ");
+            var TELEMOVEL1 = result.getData(row,"TELEMOVEL1");
             var DATSEGUI1 = result.getData(row,"DATSEGUI1");
             var DATSEGUI2 = result.getData(row,"DATSEGUI2");
             var DATSEGUI3 = result.getData(row,"DATSEGUI3");
             var ESTADOCRI = result.getData(row,"ESTADOCRI");
             var FOLLOWUP = Number(result.getData(row,"FOLLOWUP")); // variabel for followup - made into integer
-            var INFORMADOR = result.getData(row,"INFORMADOR");
             var LASTFUSUC = result.getData(row,"LASTFUSUC");
             var SUCCEED1 = result.getData(row,"SUCCEED1");
             var SUCCEED2 = result.getData(row,"SUCCEED2");
@@ -87,7 +93,7 @@ function loadChildren() {
             var VACOU5TIPO = result.getData(row,"VACOU5TIPO");
             var VPI = result.getData(row,"VPI");
 
-            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, INFORMADOR, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
+            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, CNO, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, TELEMOVEL1, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
             console.log(p);
             children.push(p);
         }
@@ -119,19 +125,19 @@ function populateView() {
 
         if (child.FOLLOWUP == 0 ) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.SUCCEED2 == null | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 1 & ((child.ESTADOCRI == null & child.SUCCEED2 == null) | child.ESTADOCRI == 2 | visitedToday == true)) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.SUCCEED2 != null)) {
+        } else if (child.FOLLOWUP == 1 & (child.ESTADOCRI != null | child.SUCCEED2 != null)) {
             child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.SUCCEED3 == null | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 2 & ((child.ESTADOCRI == null & child.SUCCEED3 == null) | child.ESTADOCRI == 2 | visitedToday == true)) {
             child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.SUCCEED3 != null)) {
+        } else if (child.FOLLOWUP == 2 & (child.ESTADOCRI != null | child.SUCCEED3 != null)) {
             child['FU'] = 3;
-        } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.SUCCEED3 == null | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 3 & ((child.ESTADOCRI == null & child.SUCCEED3 == null) | child.ESTADOCRI == 2 | visitedToday == true)) {
             child['FU'] = 3;
-        } else if (child.FOLLOWUP == 3 & ((child.INFORMADOR != null & child.ESTADOCRI != null) | child.SUCCEED3 != null)) {
+        } else if (child.FOLLOWUP == 3 & (child.ESTADOCRI != null | child.SUCCEED3 != null)) {
             child['FU'] = 4;
-        } else if (child.FOLLOWUP == 4 & ((child.INFORMADOR == null | child.ESTADOCRI == null) & child.SUCCEED3 == null | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 4 & ((child.ESTADOCRI == null & child.SUCCEED3 == null) | child.ESTADOCRI == 2 | visitedToday == true)) {
             child['FU'] = 4;
         }
 
@@ -261,7 +267,8 @@ function setDisplayText(child) {
     var displayText = "TABZ: " + child.TABZ + "; CAMO: " + camo + "<br />" + 
         "Nome: " + child.NOMECRI + "<br />" + 
         idade + "<br />" + 
-        "Mãe: " + child.NOMEMAE;
+        "Mãe: " + child.NOMEMAE + "<br />" + 
+        "Telemovel: " + child.TELEMOVEL1;
     return displayText
 }
 
@@ -331,6 +338,7 @@ function getDefaults(child) {
     var defaults = {};
     defaults['CAMO'] = child.CAMO;
     defaults['CAMOONDE'] = child.CAMOONDE;
+    defaults['CNO'] = child.CNO;
     defaults['DATINC'] = child.DATINC;
     defaults['DOB'] = child.DOB;
     defaults['FOLLOWUP'] = child.FOLLOWUP;
@@ -360,7 +368,7 @@ function getDefaults(child) {
     defaults['ROX2'] = child.ROX2;
     defaults['SARAMPO1'] = child.SARAMPO1;
     defaults['VACOU1'] = child.VACOU1;
-    defaults['VACOU1TIPO'] = child.VACOU2TIPO;
+    defaults['VACOU1TIPO'] = child.VACOU1TIPO;
     defaults['VACOU2'] = child.VACOU2;
     defaults['VACOU2TIPO'] = child.VACOU2TIPO;
     defaults['VACOU3'] = child.VACOU3;
