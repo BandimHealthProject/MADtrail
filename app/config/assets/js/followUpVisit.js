@@ -20,7 +20,7 @@ function display() {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST AS NUMEST, i._id AS _id, i.DATINC AS DATINC, i.ID AS ID, i.INC AS INC, i.NOMECRI AS NOMECRI, i.NOMEMAE AS NOMEMAE, i.SEX AS SEX, i.TELEMOVEL1 AS TELEMOVEL1, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
+    var varNames = "i.NUMEST AS NUMEST, i._id AS _id, i.DATINC AS DATINC, i.ID AS ID, i.INC AS INC, i.NOMECRI AS NOMECRI, i.NOMEMAE AS NOMEMAE, i.SEX AS SEX, i.TELEMOVEL1 AS TELEMOVEL1, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
     var sql = "SELECT " + varNames + ", i.CAMO AS CAMO, i.CAMOONDE AS CAMOONDE, i.CNO AS CNO, i.TABZ AS TABZ, i.DOB AS DOB, i.IDADEANO AS IDADEANO, i.IDADEMES AS IDADEMES " +
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_VIS ON i._id = MADTRIAL_FU_VIS.IDINC " + // join on tablet generated IDs
@@ -56,6 +56,7 @@ function loadChildren() {
             var SEX = result.getData(row,"SEX");
             var TABZ = result.getData(row,"TABZ");
             var TELEMOVEL1 = result.getData(row,"TELEMOVEL1");
+            var DATASAI = result.getData(row,"DATASAI");
             var DATSEGUI1 = result.getData(row,"DATSEGUI1");
             var DATSEGUI2 = result.getData(row,"DATSEGUI2");
             var DATSEGUI3 = result.getData(row,"DATSEGUI3");
@@ -93,7 +94,7 @@ function loadChildren() {
             var VACOU5TIPO = result.getData(row,"VACOU5TIPO");
             var VPI = result.getData(row,"VPI");
 
-            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, CNO, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, TELEMOVEL1, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
+            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, CNO, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, TELEMOVEL1, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
             console.log(p);
             children.push(p);
         }
@@ -123,21 +124,21 @@ function populateView() {
             visitedToday = true;
         }
 
-        if (child.FOLLOWUP == 0 ) {
+        if (child.FOLLOWUP == 0 & child.DATASAI == null) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 & ((child.ESTADOCRI == null & child.SUCCEED2 == null) | child.ESTADOCRI == 2 | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 1 & ((child.ESTADOCRI == null & child.SUCCEED2 == null & child.DATASAI == null) | visitedToday == true)) {
             child['FU'] = 1;
-        } else if (child.FOLLOWUP == 1 & (child.ESTADOCRI != null | child.SUCCEED2 != null)) {
+        } else if (child.FOLLOWUP == 1 & (child.ESTADOCRI != null | child.SUCCEED2 != null) & child.DATASAI == null) {
             child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 & ((child.ESTADOCRI == null & child.SUCCEED3 == null) | child.ESTADOCRI == 2 | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 2 & ((child.ESTADOCRI == null & child.SUCCEED3 == null & child.DATASAI == null) | visitedToday == true)) {
             child['FU'] = 2;
-        } else if (child.FOLLOWUP == 2 & (child.ESTADOCRI != null | child.SUCCEED3 != null)) {
+        } else if (child.FOLLOWUP == 2 & (child.ESTADOCRI != null | child.SUCCEED3 != null) & child.DATASAI == null) {
             child['FU'] = 3;
-        } else if (child.FOLLOWUP == 3 & ((child.ESTADOCRI == null & child.SUCCEED3 == null) | child.ESTADOCRI == 2 | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 3 & ((child.ESTADOCRI == null & child.SUCCEED3 == null & child.DATASAI == null) | visitedToday == true)) {
             child['FU'] = 3;
-        } else if (child.FOLLOWUP == 3 & (child.ESTADOCRI != null | child.SUCCEED3 != null)) {
+        } else if (child.FOLLOWUP == 3 & (child.ESTADOCRI != null | child.SUCCEED3 != null) & child.DATASAI == null) {
             child['FU'] = 4;
-        } else if (child.FOLLOWUP == 4 & ((child.ESTADOCRI == null & child.SUCCEED3 == null) | child.ESTADOCRI == 2 | visitedToday == true)) {
+        } else if (child.FOLLOWUP == 4 & ((child.ESTADOCRI == null & child.SUCCEED3 == null & child.DATASAI == null) | visitedToday == true)) {
             child['FU'] = 4;
         }
 
@@ -163,6 +164,7 @@ function populateView() {
     var ul2 = $('#fu2');
     var ul3 = $('#fu3');
     var ul4 = $('#fu4');
+    var ul5 = $('#fu5');
 
     // Follow-up list
     $.each(children, function() {
@@ -209,8 +211,13 @@ function populateView() {
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
-        if (this.TABZ > 70 & this.TABZ < 95 & FuDate <= today) {
+        if (((this.TABZ > 70 & this.TABZ < 80) | (this.TABZ > 90 & this.TABZ < 95)) & FuDate <= today) {
             ul4.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
+            console.log("FU", this.FU);
+            console.log("FuDate", FuDate);
+        }
+        if (this.TABZ == 51 & FuDate <= today) {
+            ul5.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
             console.log("FU", this.FU);
             console.log("FuDate", FuDate);
         }
@@ -231,6 +238,10 @@ function populateView() {
         })
         var btn4 = ul4.find('#' + this.rowId);
         btn4.on("click", function() {
+            openForm(that);
+        })
+        var btn5 = ul5.find('#' + this.rowId);
+        btn5.on("click", function() {
             openForm(that);
         })
     });

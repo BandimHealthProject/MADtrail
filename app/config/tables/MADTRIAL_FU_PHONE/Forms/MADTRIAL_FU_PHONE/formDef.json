@@ -35,7 +35,7 @@
           "locale": {
             "text": {
               "english": "Portuguese",
-              "default": "Portugues"
+              "default": "Português"
             }
           }
         },
@@ -264,7 +264,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -479,7 +479,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -698,7 +698,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -903,7 +903,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -1118,7 +1118,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -1337,7 +1337,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -1542,7 +1542,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -1757,7 +1757,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -1976,7 +1976,7 @@
           "hint": {
             "text": {
               "english": "If you cannot get information on the first call, call each number three times",
-              "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+              "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
             }
           }
         },
@@ -2206,7 +2206,7 @@
           "prompt": {
             "text": {
               "english": "Is the child still alive?",
-              "default": "A criança ainda esta viva?"
+              "default": "A criança ainda está viva?"
             }
           }
         },
@@ -2320,7 +2320,7 @@
           "prompt": {
             "text": {
               "english": "Has the child received other vaccines since being vaccinated at Simão Mendes?",
-              "default": "A criança recebeu outras vacinas desde que foi vacinada no Simão Mendes?"
+              "default": "A criança recebeu outras vacinas desde que foi vacinada em Simão Mendes?"
             }
           }
         },
@@ -2360,7 +2360,7 @@
           "prompt": {
             "text": {
               "english": "Other Vaccine",
-              "default": "Outro Vacina"
+              "default": "Outra vacina"
             }
           }
         },
@@ -2405,7 +2405,7 @@
           "prompt": {
             "text": {
               "english": "How many times?",
-              "default": "Quantos vezes?"
+              "default": "Quantas vezes?"
             }
           }
         },
@@ -2571,7 +2571,7 @@
           "prompt": {
             "text": {
               "english": "Has the child been hospitalized more than once?",
-              "default": "A criança foi enternada no hospital mais de um vez?"
+              "default": "A criança foi internada no hospital mais do que uma vez? ##omit \"no hospital\" as it could theoretically also be at a health center?"
             }
           }
         },
@@ -2741,7 +2741,7 @@
           "prompt": {
             "text": {
               "english": "Has the child been admitted to hospital more than twice?",
-              "default": "A criança foi Internada no hospital mais de duas vezes?"
+              "default": "A criança foi internada no hospital mais do que duas vezes? ##omit \"no hospital\" as it could theoretically also be at a health center?"
             }
           }
         },
@@ -2909,7 +2909,7 @@
           "prompt": {
             "text": {
               "english": "We can visit you to ask more questions about your child's death.",
-              "default": "Podemos visita-lo para fazer mais perguntas sobre a morte de seu filho"
+              "default": "Podemos visita-lo para fazer mais perguntas sobre a morte de seu filho/sua filha?"
             }
           }
         },
@@ -3023,7 +3023,7 @@
           "title": {
             "text": {
               "english": "Doesn't answer the phone",
-              "default": "Não atende o telemovel"
+              "default": "Não atende o telemóvel"
             }
           }
         },
@@ -3036,7 +3036,7 @@
           "title": {
             "text": {
               "english": "Incorrect Number",
-              "default": "Numero Incorreto"
+              "default": "Numero incorreto"
             }
           }
         },
@@ -3231,7 +3231,7 @@
           "title": {
             "text": {
               "english": "Yellow fever",
-              "default": "Febre amarelo"
+              "default": "Febre amarela"
             }
           }
         },
@@ -3282,12 +3282,51 @@
         "display": {
           "title": {
             "text": {
-              "english": "Assistant 1",
-              "default": "Assistente 1"
+              "english": "Eduardo Gomes",
+              "default": "Eduardo Gomes"
             }
           }
         },
         "_row_num": 24
+      },
+      {
+        "choice_list_name": "ass",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Jailson Sydenei Dias Martins",
+              "default": "Jailson Sydenei Dias Martins"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "choice_list_name": "ass",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Laerte Lima Almeida",
+              "default": "Laerte Lima Almeida"
+            }
+          }
+        },
+        "_row_num": 26
+      },
+      {
+        "choice_list_name": "ass",
+        "data_value": "10",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Igualdino S. Borges",
+              "default": "Igualdino S. Borges"
+            }
+          }
+        },
+        "_row_num": 27
       },
       {
         "choice_list_name": "ns",
@@ -3300,7 +3339,7 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 28
       },
       {
         "choice_list_name": "vezes",
@@ -3313,7 +3352,7 @@
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 29
       },
       {
         "choice_list_name": "vezes",
@@ -3326,7 +3365,7 @@
             }
           }
         },
-        "_row_num": 27
+        "_row_num": 30
       },
       {
         "choice_list_name": "vezes",
@@ -3339,7 +3378,7 @@
             }
           }
         },
-        "_row_num": 28
+        "_row_num": 31
       },
       {
         "choice_list_name": "vezes",
@@ -3352,7 +3391,7 @@
             }
           }
         },
-        "_row_num": 29
+        "_row_num": 32
       },
       {
         "choice_list_name": "vezes",
@@ -3365,7 +3404,7 @@
             }
           }
         },
-        "_row_num": 30
+        "_row_num": 33
       },
       {
         "choice_list_name": "hospalta",
@@ -3378,7 +3417,7 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 34
       },
       {
         "choice_list_name": "dontknowhosp",
@@ -3391,7 +3430,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 35
       },
       {
         "choice_list_name": "dontknowhosp",
@@ -3404,7 +3443,7 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 36
       },
       {
         "choice_list_name": "reg",
@@ -3417,7 +3456,7 @@
             }
           }
         },
-        "_row_num": 34
+        "_row_num": 37
       },
       {
         "choice_list_name": "reg",
@@ -3430,7 +3469,7 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 38
       },
       {
         "choice_list_name": "reg",
@@ -3443,7 +3482,7 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 39
       },
       {
         "choice_list_name": "reg",
@@ -3456,7 +3495,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 40
       },
       {
         "choice_list_name": "reg",
@@ -3469,7 +3508,7 @@
             }
           }
         },
-        "_row_num": 38
+        "_row_num": 41
       },
       {
         "choice_list_name": "reg",
@@ -3482,7 +3521,7 @@
             }
           }
         },
-        "_row_num": 39
+        "_row_num": 42
       },
       {
         "choice_list_name": "reg",
@@ -3495,7 +3534,7 @@
             }
           }
         },
-        "_row_num": 40
+        "_row_num": 43
       },
       {
         "choice_list_name": "reg",
@@ -3508,7 +3547,7 @@
             }
           }
         },
-        "_row_num": 41
+        "_row_num": 44
       },
       {
         "choice_list_name": "reg",
@@ -3521,7 +3560,7 @@
             }
           }
         },
-        "_row_num": 42
+        "_row_num": 45
       },
       {
         "choice_list_name": "reg",
@@ -3534,7 +3573,7 @@
             }
           }
         },
-        "_row_num": 43
+        "_row_num": 46
       },
       {
         "choice_list_name": "reg",
@@ -3547,7 +3586,7 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 47
       },
       {
         "choice_list_name": "reg",
@@ -3560,7 +3599,7 @@
             }
           }
         },
-        "_row_num": 45
+        "_row_num": 48
       }
     ],
     "calculates": [
@@ -4115,7 +4154,7 @@
           "locale": {
             "text": {
               "english": "Portuguese",
-              "default": "Portugues"
+              "default": "Português"
             }
           }
         },
@@ -4147,7 +4186,7 @@
               "locale": {
                 "text": {
                   "english": "Portuguese",
-                  "default": "Portugues"
+                  "default": "Português"
                 }
               }
             },
@@ -4232,7 +4271,7 @@
             "title": {
               "text": {
                 "english": "Doesn't answer the phone",
-                "default": "Não atende o telemovel"
+                "default": "Não atende o telemóvel"
               }
             }
           },
@@ -4245,7 +4284,7 @@
             "title": {
               "text": {
                 "english": "Incorrect Number",
-                "default": "Numero Incorreto"
+                "default": "Numero incorreto"
               }
             }
           },
@@ -4446,7 +4485,7 @@
             "title": {
               "text": {
                 "english": "Yellow fever",
-                "default": "Febre amarelo"
+                "default": "Febre amarela"
               }
             }
           },
@@ -4501,12 +4540,51 @@
           "display": {
             "title": {
               "text": {
-                "english": "Assistant 1",
-                "default": "Assistente 1"
+                "english": "Eduardo Gomes",
+                "default": "Eduardo Gomes"
               }
             }
           },
           "_row_num": 24
+        },
+        {
+          "choice_list_name": "ass",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Jailson Sydenei Dias Martins",
+                "default": "Jailson Sydenei Dias Martins"
+              }
+            }
+          },
+          "_row_num": 25
+        },
+        {
+          "choice_list_name": "ass",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Laerte Lima Almeida",
+                "default": "Laerte Lima Almeida"
+              }
+            }
+          },
+          "_row_num": 26
+        },
+        {
+          "choice_list_name": "ass",
+          "data_value": "10",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Igualdino S. Borges",
+                "default": "Igualdino S. Borges"
+              }
+            }
+          },
+          "_row_num": 27
         }
       ],
       "ns": [
@@ -4521,7 +4599,7 @@
               }
             }
           },
-          "_row_num": 25
+          "_row_num": 28
         }
       ],
       "vezes": [
@@ -4536,7 +4614,7 @@
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 29
         },
         {
           "choice_list_name": "vezes",
@@ -4549,7 +4627,7 @@
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 30
         },
         {
           "choice_list_name": "vezes",
@@ -4562,7 +4640,7 @@
               }
             }
           },
-          "_row_num": 28
+          "_row_num": 31
         },
         {
           "choice_list_name": "vezes",
@@ -4575,7 +4653,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 32
         },
         {
           "choice_list_name": "vezes",
@@ -4588,7 +4666,7 @@
               }
             }
           },
-          "_row_num": 30
+          "_row_num": 33
         }
       ],
       "hospalta": [
@@ -4603,7 +4681,7 @@
               }
             }
           },
-          "_row_num": 31
+          "_row_num": 34
         }
       ],
       "dontknowhosp": [
@@ -4618,7 +4696,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 35
         },
         {
           "choice_list_name": "dontknowhosp",
@@ -4631,7 +4709,7 @@
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 36
         }
       ],
       "reg": [
@@ -4646,7 +4724,7 @@
               }
             }
           },
-          "_row_num": 34
+          "_row_num": 37
         },
         {
           "choice_list_name": "reg",
@@ -4659,7 +4737,7 @@
               }
             }
           },
-          "_row_num": 35
+          "_row_num": 38
         },
         {
           "choice_list_name": "reg",
@@ -4672,7 +4750,7 @@
               }
             }
           },
-          "_row_num": 36
+          "_row_num": 39
         },
         {
           "choice_list_name": "reg",
@@ -4685,7 +4763,7 @@
               }
             }
           },
-          "_row_num": 37
+          "_row_num": 40
         },
         {
           "choice_list_name": "reg",
@@ -4698,7 +4776,7 @@
               }
             }
           },
-          "_row_num": 38
+          "_row_num": 41
         },
         {
           "choice_list_name": "reg",
@@ -4711,7 +4789,7 @@
               }
             }
           },
-          "_row_num": 39
+          "_row_num": 42
         },
         {
           "choice_list_name": "reg",
@@ -4724,7 +4802,7 @@
               }
             }
           },
-          "_row_num": 40
+          "_row_num": 43
         },
         {
           "choice_list_name": "reg",
@@ -4737,7 +4815,7 @@
               }
             }
           },
-          "_row_num": 41
+          "_row_num": 44
         },
         {
           "choice_list_name": "reg",
@@ -4750,7 +4828,7 @@
               }
             }
           },
-          "_row_num": 42
+          "_row_num": 45
         },
         {
           "choice_list_name": "reg",
@@ -4763,7 +4841,7 @@
               }
             }
           },
-          "_row_num": 43
+          "_row_num": 46
         },
         {
           "choice_list_name": "reg",
@@ -4776,7 +4854,7 @@
               }
             }
           },
-          "_row_num": 44
+          "_row_num": 47
         },
         {
           "choice_list_name": "reg",
@@ -4789,7 +4867,7 @@
               }
             }
           },
-          "_row_num": 45
+          "_row_num": 48
         }
       ]
     },
@@ -6150,7 +6228,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -6345,7 +6423,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -6540,7 +6618,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -6718,7 +6796,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -6913,7 +6991,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -7108,7 +7186,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -7286,7 +7364,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -7481,7 +7559,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -7676,7 +7754,7 @@
               "hint": {
                 "text": {
                   "english": "If you cannot get information on the first call, call each number three times",
-                  "default": "Se voce não conseguir obter informação na primeira chamada, liga cada numero trez vezes"
+                  "default": "Se você não consegue obter informação na primeira chamada, liga cada número tres vezes"
                 }
               }
             },
@@ -8459,7 +8537,7 @@
               "prompt": {
                 "text": {
                   "english": "Is the child still alive?",
-                  "default": "A criança ainda esta viva?"
+                  "default": "A criança ainda está viva?"
                 }
               }
             },
@@ -8557,7 +8635,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child received other vaccines since being vaccinated at Simão Mendes?",
-                  "default": "A criança recebeu outras vacinas desde que foi vacinada no Simão Mendes?"
+                  "default": "A criança recebeu outras vacinas desde que foi vacinada em Simão Mendes?"
                 }
               }
             },
@@ -8594,7 +8672,7 @@
               "prompt": {
                 "text": {
                   "english": "Other Vaccine",
-                  "default": "Outro Vacina"
+                  "default": "Outra vacina"
                 }
               }
             },
@@ -8632,7 +8710,7 @@
               "prompt": {
                 "text": {
                   "english": "How many times?",
-                  "default": "Quantos vezes?"
+                  "default": "Quantas vezes?"
                 }
               }
             },
@@ -8790,7 +8868,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child been hospitalized more than once?",
-                  "default": "A criança foi enternada no hospital mais de um vez?"
+                  "default": "A criança foi internada no hospital mais do que uma vez? ##omit \"no hospital\" as it could theoretically also be at a health center?"
                 }
               }
             },
@@ -8948,7 +9026,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child been admitted to hospital more than twice?",
-                  "default": "A criança foi Internada no hospital mais de duas vezes?"
+                  "default": "A criança foi internada no hospital mais do que duas vezes? ##omit \"no hospital\" as it could theoretically also be at a health center?"
                 }
               }
             },
@@ -9100,7 +9178,7 @@
               "prompt": {
                 "text": {
                   "english": "We can visit you to ask more questions about your child's death.",
-                  "default": "Podemos visita-lo para fazer mais perguntas sobre a morte de seu filho"
+                  "default": "Podemos visita-lo para fazer mais perguntas sobre a morte de seu filho/sua filha?"
                 }
               }
             },
@@ -11401,105 +11479,105 @@
         "_aspect": "ASSISTENTE1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Assistant 1\",\"default\":\"Assistente 1\"}}},\"_row_num\":24}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Eduardo Gomes\",\"default\":\"Eduardo Gomes\"}}},\"_row_num\":24},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson Sydenei Dias Martins\",\"default\":\"Jailson Sydenei Dias Martins\"}}},\"_row_num\":25},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte Lima Almeida\",\"default\":\"Laerte Lima Almeida\"}}},\"_row_num\":26},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino S. Borges\",\"default\":\"Igualdino S. Borges\"}}},\"_row_num\":27}]"
       },
       {
         "_partition": "Column",
         "_aspect": "ASSISTENTE2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Assistant 1\",\"default\":\"Assistente 1\"}}},\"_row_num\":24}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Eduardo Gomes\",\"default\":\"Eduardo Gomes\"}}},\"_row_num\":24},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson Sydenei Dias Martins\",\"default\":\"Jailson Sydenei Dias Martins\"}}},\"_row_num\":25},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte Lima Almeida\",\"default\":\"Laerte Lima Almeida\"}}},\"_row_num\":26},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino S. Borges\",\"default\":\"Igualdino S. Borges\"}}},\"_row_num\":27}]"
       },
       {
         "_partition": "Column",
         "_aspect": "ASSISTENTE3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Assistant 1\",\"default\":\"Assistente 1\"}}},\"_row_num\":24}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Eduardo Gomes\",\"default\":\"Eduardo Gomes\"}}},\"_row_num\":24},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson Sydenei Dias Martins\",\"default\":\"Jailson Sydenei Dias Martins\"}}},\"_row_num\":25},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte Lima Almeida\",\"default\":\"Laerte Lima Almeida\"}}},\"_row_num\":26},{\"choice_list_name\":\"ass\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino S. Borges\",\"default\":\"Igualdino S. Borges\"}}},\"_row_num\":27}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA11",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA12",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA13",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA21",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA22",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA23",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA31",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA32",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "CHAMADA33",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemovel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero Incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
+        "_value": "[{\"choice_list_name\":\"cham\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Follow up possible\",\"default\":\"Seguimento realizado\"}}},\"_row_num\":2},{\"choice_list_name\":\"cham\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No network\",\"default\":\"Sem rede\"}}},\"_row_num\":3},{\"choice_list_name\":\"cham\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Doesn't answer the phone\",\"default\":\"Não atende o telemóvel\"}}},\"_row_num\":4},{\"choice_list_name\":\"cham\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Incorrect Number\",\"default\":\"Numero incorreto\"}}},\"_row_num\":5},{\"choice_list_name\":\"cham\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"No one to provide information\",\"default\":\"Ninguem para fornecer informaçeos\"}}},\"_row_num\":6}]"
       },
       {
         "_partition": "Column",
         "_aspect": "HOSPALTA1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":31}]"
+        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":34}]"
       },
       {
         "_partition": "Column",
         "_aspect": "HOSPALTA2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":31}]"
+        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":34}]"
       },
       {
         "_partition": "Column",
         "_aspect": "HOSPALTA3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":31}]"
+        "_value": "[{\"choice_list_name\":\"hospalta\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"The child still admitted\",\"default\":\"A criança esta ainda internada\"}}},\"_row_num\":34}]"
       },
       {
         "_partition": "Column",
@@ -11527,7 +11605,7 @@
         "_aspect": "HOSPIVEZ",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"vezes\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"1\",\"default\":\"1\"}}},\"_row_num\":26},{\"choice_list_name\":\"vezes\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"2\",\"default\":\"2\"}}},\"_row_num\":27},{\"choice_list_name\":\"vezes\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"3\",\"default\":\"3\"}}},\"_row_num\":28},{\"choice_list_name\":\"vezes\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"More than 3 times\",\"default\":\"Mais de 3 vezes\"}}},\"_row_num\":29},{\"choice_list_name\":\"vezes\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não Sabe\"}}},\"_row_num\":30}]"
+        "_value": "[{\"choice_list_name\":\"vezes\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"1\",\"default\":\"1\"}}},\"_row_num\":29},{\"choice_list_name\":\"vezes\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"2\",\"default\":\"2\"}}},\"_row_num\":30},{\"choice_list_name\":\"vezes\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"3\",\"default\":\"3\"}}},\"_row_num\":31},{\"choice_list_name\":\"vezes\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"More than 3 times\",\"default\":\"Mais de 3 vezes\"}}},\"_row_num\":32},{\"choice_list_name\":\"vezes\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não Sabe\"}}},\"_row_num\":33}]"
       },
       {
         "_partition": "Column",
@@ -11548,7 +11626,7 @@
         "_aspect": "REG",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"reg\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"SAB\",\"default\":\"SAB\"}}},\"_row_num\":34},{\"choice_list_name\":\"reg\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Oio\",\"default\":\"Oio\"}}},\"_row_num\":35},{\"choice_list_name\":\"reg\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Farim\",\"default\":\"Farim\"}}},\"_row_num\":36},{\"choice_list_name\":\"reg\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Biombo\",\"default\":\"Biombo\"}}},\"_row_num\":37},{\"choice_list_name\":\"reg\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Cacheu\",\"default\":\"Cacheu\"}}},\"_row_num\":38},{\"choice_list_name\":\"reg\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Sao Domingos\",\"default\":\"Sao Domingos\"}}},\"_row_num\":39},{\"choice_list_name\":\"reg\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Bafata\",\"default\":\"Bafata\"}}},\"_row_num\":40},{\"choice_list_name\":\"reg\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Gabu\",\"default\":\"Gabu\"}}},\"_row_num\":41},{\"choice_list_name\":\"reg\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Quinara\",\"default\":\"Quinara\"}}},\"_row_num\":42},{\"choice_list_name\":\"reg\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Tombali\",\"default\":\"Tombali\"}}},\"_row_num\":43},{\"choice_list_name\":\"reg\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Bubaque\",\"default\":\"Bubaque\"}}},\"_row_num\":44},{\"choice_list_name\":\"reg\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Bolama\",\"default\":\"Bolama\"}}},\"_row_num\":45}]"
+        "_value": "[{\"choice_list_name\":\"reg\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"SAB\",\"default\":\"SAB\"}}},\"_row_num\":37},{\"choice_list_name\":\"reg\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Oio\",\"default\":\"Oio\"}}},\"_row_num\":38},{\"choice_list_name\":\"reg\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Farim\",\"default\":\"Farim\"}}},\"_row_num\":39},{\"choice_list_name\":\"reg\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Biombo\",\"default\":\"Biombo\"}}},\"_row_num\":40},{\"choice_list_name\":\"reg\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Cacheu\",\"default\":\"Cacheu\"}}},\"_row_num\":41},{\"choice_list_name\":\"reg\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Sao Domingos\",\"default\":\"Sao Domingos\"}}},\"_row_num\":42},{\"choice_list_name\":\"reg\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Bafata\",\"default\":\"Bafata\"}}},\"_row_num\":43},{\"choice_list_name\":\"reg\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Gabu\",\"default\":\"Gabu\"}}},\"_row_num\":44},{\"choice_list_name\":\"reg\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Quinara\",\"default\":\"Quinara\"}}},\"_row_num\":45},{\"choice_list_name\":\"reg\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Tombali\",\"default\":\"Tombali\"}}},\"_row_num\":46},{\"choice_list_name\":\"reg\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Bubaque\",\"default\":\"Bubaque\"}}},\"_row_num\":47},{\"choice_list_name\":\"reg\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Bolama\",\"default\":\"Bolama\"}}},\"_row_num\":48}]"
       },
       {
         "_partition": "Column",
@@ -11562,7 +11640,7 @@
         "_aspect": "VACTIPO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"vac\",\"data_value\":\"BCG\",\"display\":{\"title\":{\"text\":{\"english\":\"BCG\",\"default\":\"BCG\"}}},\"_row_num\":13},{\"choice_list_name\":\"vac\",\"data_value\":\"VPO\",\"display\":{\"title\":{\"text\":{\"english\":\"VPO\",\"default\":\"VPO\"}}},\"_row_num\":14},{\"choice_list_name\":\"vac\",\"data_value\":\"Penta\",\"display\":{\"title\":{\"text\":{\"english\":\"Penta\",\"default\":\"Penta\"}}},\"_row_num\":15},{\"choice_list_name\":\"vac\",\"data_value\":\"PCV\",\"display\":{\"title\":{\"text\":{\"english\":\"PCV\",\"default\":\"PCV\"}}},\"_row_num\":16},{\"choice_list_name\":\"vac\",\"data_value\":\"Rota\",\"display\":{\"title\":{\"text\":{\"english\":\"Rota\",\"default\":\"Rota\"}}},\"_row_num\":17},{\"choice_list_name\":\"vac\",\"data_value\":\"VPI\",\"display\":{\"title\":{\"text\":{\"english\":\"VPI\",\"default\":\"VPI\"}}},\"_row_num\":18},{\"choice_list_name\":\"vac\",\"data_value\":\"Sarampo\",\"display\":{\"title\":{\"text\":{\"english\":\"Measles\",\"default\":\"Sarampo\"}}},\"_row_num\":19},{\"choice_list_name\":\"vac\",\"data_value\":\"Amarelo\",\"display\":{\"title\":{\"text\":{\"english\":\"Yellow fever\",\"default\":\"Febre amarelo\"}}},\"_row_num\":20},{\"choice_list_name\":\"vac\",\"data_value\":\"Ou\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":21}]"
+        "_value": "[{\"choice_list_name\":\"vac\",\"data_value\":\"BCG\",\"display\":{\"title\":{\"text\":{\"english\":\"BCG\",\"default\":\"BCG\"}}},\"_row_num\":13},{\"choice_list_name\":\"vac\",\"data_value\":\"VPO\",\"display\":{\"title\":{\"text\":{\"english\":\"VPO\",\"default\":\"VPO\"}}},\"_row_num\":14},{\"choice_list_name\":\"vac\",\"data_value\":\"Penta\",\"display\":{\"title\":{\"text\":{\"english\":\"Penta\",\"default\":\"Penta\"}}},\"_row_num\":15},{\"choice_list_name\":\"vac\",\"data_value\":\"PCV\",\"display\":{\"title\":{\"text\":{\"english\":\"PCV\",\"default\":\"PCV\"}}},\"_row_num\":16},{\"choice_list_name\":\"vac\",\"data_value\":\"Rota\",\"display\":{\"title\":{\"text\":{\"english\":\"Rota\",\"default\":\"Rota\"}}},\"_row_num\":17},{\"choice_list_name\":\"vac\",\"data_value\":\"VPI\",\"display\":{\"title\":{\"text\":{\"english\":\"VPI\",\"default\":\"VPI\"}}},\"_row_num\":18},{\"choice_list_name\":\"vac\",\"data_value\":\"Sarampo\",\"display\":{\"title\":{\"text\":{\"english\":\"Measles\",\"default\":\"Sarampo\"}}},\"_row_num\":19},{\"choice_list_name\":\"vac\",\"data_value\":\"Amarelo\",\"display\":{\"title\":{\"text\":{\"english\":\"Yellow fever\",\"default\":\"Febre amarela\"}}},\"_row_num\":20},{\"choice_list_name\":\"vac\",\"data_value\":\"Ou\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":21}]"
       },
       {
         "_partition": "Column",

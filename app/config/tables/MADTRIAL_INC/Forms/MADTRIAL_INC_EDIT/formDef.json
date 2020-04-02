@@ -34,7 +34,7 @@
           "locale": {
             "text": {
               "english": "Portuguese",
-              "default": "Portugues"
+              "default": "Português"
             }
           }
         },
@@ -282,11 +282,11 @@
           "constraint_message": {
             "text": {
               "english": "Must be 7 digits long:",
-              "default": "Deve ter 7 números:"
+              "default": "Deve ter 7 dígitos:"
             }
           }
         },
-        "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('oubairro') != null",
+        "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('changeid') != '1'",
         "_row_num": 27
       },
       {
@@ -342,58 +342,73 @@
         "_row_num": 36
       },
       {
-        "type": "select_multiple",
-        "values_list": "oubairro",
-        "name": "oubairro",
+        "clause": "if",
+        "condition": "data('BAIRRO') == 77",
         "_row_num": 37
       },
       {
-        "clause": "if",
-        "condition": "data('oubairro') != null",
+        "type": "select_one_dropdown",
+        "values_list": "tabz_csv",
+        "name": "TABZ",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Neighborhood outside project area",
+              "default": "Bairro fora da área do projeto"
+            }
+          }
+        },
+        "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
         "_row_num": 38
       },
       {
-        "type": "assign",
-        "name": "BAIRRO",
-        "calculation": 99,
+        "clause": "if",
+        "condition": "data('TABZ') == 7777",
         "_row_num": 39
       },
       {
         "type": "text",
-        "name": "OBAIRRO",
+        "name": "OUBAIRRO",
         "display": {
           "prompt": {
             "text": {
-              "english": "Other neighborhood",
-              "default": "Outro bairro"
+              "english": "What neighborhood?",
+              "default": "Que bairro?"
             }
           }
         },
         "_row_num": 40
       },
       {
-        "type": "integer",
-        "name": "REGIDC",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Equipa movel ID",
-              "default": "ID da equipa movel"
-            }
-          },
-          "constraint_message": {
-            "text": {
-              "english": "Must be 4 digits long:",
-              "default": "Deve ter 9 números:"
-            }
-          }
-        },
-        "constraint": "data('REGIDC') > 99999999 && data('REGIDC') < 1000000000 || data('oubairro') == null",
+        "clause": "else",
         "_row_num": 41
       },
       {
-        "clause": "else",
+        "type": "text",
+        "name": "CAMOONDE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Pleace describe how to find the house",
+              "default": "Por favor, descreva como encontrar a casa"
+            }
+          }
+        },
         "_row_num": 42
+      },
+      {
+        "clause": "end if",
+        "_row_num": 43
+      },
+      {
+        "type": "assign",
+        "name": "CAMO",
+        "calculation": 9999,
+        "_row_num": 44
+      },
+      {
+        "clause": "else",
+        "_row_num": 45
       },
       {
         "type": "select_one_dropdown",
@@ -408,7 +423,7 @@
           }
         },
         "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-        "_row_num": 43
+        "_row_num": 46
       },
       {
         "type": "integer",
@@ -421,24 +436,24 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 47
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "camons",
-        "_row_num": 45
+        "_row_num": 48
       },
       {
         "clause": "if",
         "condition": "data('camons') !=null",
-        "_row_num": 46
+        "_row_num": 49
       },
       {
         "type": "assign",
         "name": "CAMO",
         "calculation": 9999,
-        "_row_num": 47
+        "_row_num": 50
       },
       {
         "type": "text",
@@ -451,11 +466,11 @@
             }
           }
         },
-        "_row_num": 48
+        "_row_num": 51
       },
       {
         "clause": "end if",
-        "_row_num": 49
+        "_row_num": 52
       },
       {
         "type": "text",
@@ -470,43 +485,31 @@
           "constraint_message": {
             "text": {
               "english": "Must be 5 digits long:",
-              "default": "Deve ter 5 números:"
+              "default": "Deve ter 5 dígitos:"
             }
           }
         },
-        "constraint": "(freebase.characters(data('CNO')) == 5 && data('CNO') != null)|| data('oubairro') != null",
+        "constraint": "(freebase.characters(data('CNO')) == 5 && data('CNO') != null)|| data('BAIRRO') == 77",
         "inputAttributes": {
           "type": "number"
         },
-        "_row_num": 50
+        "_row_num": 53
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "cnons",
-        "_row_num": 51
+        "_row_num": 54
       },
       {
         "clause": "if",
         "condition": "data('cnons') != null",
-        "_row_num": 52
+        "_row_num": 55
       },
       {
         "type": "assign",
         "name": "CNO",
         "calculation": 99999,
-        "_row_num": 53
-      },
-      {
-        "clause": "end if",
-        "_row_num": 54
-      },
-      {
-        "clause": "end if",
-        "_row_num": 55
-      },
-      {
-        "clause": "end screen",
         "_row_num": 56
       },
       {
@@ -514,13 +517,25 @@
         "_row_num": 57
       },
       {
-        "clause": "if",
-        "condition": "data('changeid') == '1' || data('changetabz') =='1'",
+        "clause": "end if",
         "_row_num": 58
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 59
+      },
+      {
+        "clause": "end if",
+        "_row_num": 60
+      },
+      {
+        "clause": "if",
+        "condition": "data('changeid') == '1' || data('changetabz') =='1'",
+        "_row_num": 61
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 62
       },
       {
         "type": "note",
@@ -532,12 +547,12 @@
             }
           }
         },
-        "_row_num": 60
+        "_row_num": 63
       },
       {
         "clause": "if",
         "condition": "data('SEX') =='1'",
-        "_row_num": 61
+        "_row_num": 64
       },
       {
         "type": "note",
@@ -549,11 +564,11 @@
             }
           }
         },
-        "_row_num": 62
+        "_row_num": 65
       },
       {
         "clause": "else",
-        "_row_num": 63
+        "_row_num": 66
       },
       {
         "type": "note",
@@ -565,16 +580,16 @@
             }
           }
         },
-        "_row_num": 64
+        "_row_num": 67
       },
       {
         "clause": "end if",
-        "_row_num": 65
+        "_row_num": 68
       },
       {
         "clause": "if",
         "condition": "data('DOB') == 'D:NS,M:NS,Y:NS'",
-        "_row_num": 66
+        "_row_num": 69
       },
       {
         "type": "note",
@@ -586,11 +601,11 @@
             }
           }
         },
-        "_row_num": 67
+        "_row_num": 70
       },
       {
         "clause": "else",
-        "_row_num": 68
+        "_row_num": 71
       },
       {
         "type": "note",
@@ -602,11 +617,11 @@
             }
           }
         },
-        "_row_num": 69
+        "_row_num": 72
       },
       {
         "clause": "end if",
-        "_row_num": 70
+        "_row_num": 73
       },
       {
         "type": "note",
@@ -618,7 +633,7 @@
             }
           }
         },
-        "_row_num": 71
+        "_row_num": 74
       },
       {
         "type": "note",
@@ -630,7 +645,7 @@
             }
           }
         },
-        "_row_num": 72
+        "_row_num": 75
       },
       {
         "type": "note",
@@ -642,12 +657,12 @@
             }
           }
         },
-        "_row_num": 73
+        "_row_num": 76
       },
       {
         "clause": "if",
         "condition": "data('CAMO') == '9999'",
-        "_row_num": 74
+        "_row_num": 77
       },
       {
         "type": "note",
@@ -659,11 +674,11 @@
             }
           }
         },
-        "_row_num": 75
+        "_row_num": 78
       },
       {
         "clause": "else",
-        "_row_num": 76
+        "_row_num": 79
       },
       {
         "type": "note",
@@ -675,19 +690,19 @@
             }
           }
         },
-        "_row_num": 77
+        "_row_num": 80
       },
       {
         "clause": "end if",
-        "_row_num": 78
+        "_row_num": 81
       },
       {
         "clause": "end screen",
-        "_row_num": 79
+        "_row_num": 82
       },
       {
         "clause": "end if",
-        "_row_num": 80
+        "_row_num": 83
       }
     ],
     "choices": [
@@ -711,7 +726,7 @@
           "title": {
             "text": {
               "english": "Female",
-              "default": "Feminina"
+              "default": "Feminino"
             }
           }
         },
@@ -775,7 +790,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Dont't know",
+              "english": "Don't know",
               "default": "Não sabe"
             }
           }
@@ -822,19 +837,6 @@
         "_row_num": 11
       },
       {
-        "choice_list_name": "oubairro",
-        "data_value": "99",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Doesn't live in the project area",
-              "default": "Não mora na área do projeto"
-            }
-          }
-        },
-        "_row_num": 12
-      },
-      {
         "choice_list_name": "ns",
         "data_value": "99",
         "display": {
@@ -845,7 +847,7 @@
             }
           }
         },
-        "_row_num": 13
+        "_row_num": 12
       },
       {
         "choice_list_name": "enf",
@@ -858,7 +860,7 @@
             }
           }
         },
-        "_row_num": 14
+        "_row_num": 13
       },
       {
         "choice_list_name": "ass",
@@ -871,7 +873,7 @@
             }
           }
         },
-        "_row_num": 15
+        "_row_num": 14
       },
       {
         "choice_list_name": "tratament",
@@ -884,7 +886,7 @@
             }
           }
         },
-        "_row_num": 16
+        "_row_num": 15
       },
       {
         "choice_list_name": "tratament",
@@ -897,7 +899,7 @@
             }
           }
         },
-        "_row_num": 17
+        "_row_num": 16
       },
       {
         "choice_list_name": "tratament",
@@ -910,7 +912,7 @@
             }
           }
         },
-        "_row_num": 18
+        "_row_num": 17
       },
       {
         "choice_list_name": "tratament",
@@ -923,7 +925,7 @@
             }
           }
         },
-        "_row_num": 19
+        "_row_num": 18
       },
       {
         "choice_list_name": "tratament",
@@ -936,7 +938,7 @@
             }
           }
         },
-        "_row_num": 20
+        "_row_num": 19
       },
       {
         "choice_list_name": "telinf1",
@@ -949,7 +951,7 @@
             }
           }
         },
-        "_row_num": 21
+        "_row_num": 20
       },
       {
         "choice_list_name": "telinf1",
@@ -959,6 +961,19 @@
             "text": {
               "english": "Father",
               "default": "Pai"
+            }
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "telinf2",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Mother",
+              "default": "Mãe"
             }
           }
         },
@@ -966,19 +981,6 @@
       },
       {
         "choice_list_name": "telinf2",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Mother",
-              "default": "Mãe"
-            }
-          }
-        },
-        "_row_num": 23
-      },
-      {
-        "choice_list_name": "telinf2",
         "data_value": "2",
         "display": {
           "title": {
@@ -988,7 +990,7 @@
             }
           }
         },
-        "_row_num": 24
+        "_row_num": 23
       },
       {
         "choice_list_name": "telinf2",
@@ -1001,7 +1003,7 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 24
       },
       {
         "choice_list_name": "nsID",
@@ -1010,11 +1012,11 @@
           "title": {
             "text": {
               "english": "Didn't suceed to identify ID",
-              "default": "Não conseguir identifcar o ID"
+              "default": "Não conseguiu identifcar o ID"
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 25
       },
       {
         "choice_list_name": "nsREGIDC",
@@ -1023,11 +1025,11 @@
           "title": {
             "text": {
               "english": "Don't have ID",
-              "default": "Não tene ID"
+              "default": "Não tem ID"
             }
           }
         },
-        "_row_num": 27
+        "_row_num": 26
       },
       {
         "choice_list_name": "signature",
@@ -1040,7 +1042,7 @@
             }
           }
         },
-        "_row_num": 28
+        "_row_num": 27
       },
       {
         "choice_list_name": "signature",
@@ -1053,7 +1055,7 @@
             }
           }
         },
-        "_row_num": 29
+        "_row_num": 28
       },
       {
         "choice_list_name": "resp",
@@ -1066,7 +1068,7 @@
             }
           }
         },
-        "_row_num": 30
+        "_row_num": 29
       },
       {
         "choice_list_name": "resp",
@@ -1079,7 +1081,7 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 30
       },
       {
         "choice_list_name": "resp",
@@ -1092,7 +1094,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 31
       },
       {
         "choice_list_name": "resp",
@@ -1105,7 +1107,7 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 32
       }
     ],
     "queries": [
@@ -1364,215 +1366,209 @@
         "_row_num": 39
       },
       {
-        "name": "OBAIRRO",
+        "name": "OSIMP",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 40
       },
       {
-        "name": "OSIMP",
+        "name": "OUBAIRRO",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 41
       },
       {
-        "name": "OUBAIRRO",
-        "type": "select_multiple",
-        "isSessionVariable": false,
-        "_row_num": 42
-      },
-      {
         "name": "PODEINC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 43
+        "_row_num": 42
       },
       {
         "name": "PODEVAC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 44
+        "_row_num": 43
       },
       {
         "name": "RANDOM",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 45
+        "_row_num": 44
       },
       {
         "name": "RANDOM1",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 46
+        "_row_num": 45
       },
       {
         "name": "RANDOM2",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 47
+        "_row_num": 46
       },
       {
         "name": "REGIDC",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 48
+        "_row_num": 47
       },
       {
         "name": "regidcns",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 49
+        "_row_num": 48
       },
       {
         "name": "REGNO",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 50
+        "_row_num": 49
       },
       {
         "name": "regnons",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 51
+        "_row_num": 50
       },
       {
         "name": "RENORREI",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 52
+        "_row_num": 51
       },
       {
         "name": "RESP",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 53
+        "_row_num": 52
       },
       {
         "name": "SARVAC",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 54
+        "_row_num": 53
       },
       {
         "name": "SEX",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 55
+        "_row_num": 54
       },
       {
         "name": "START",
         "type": "assign",
         "isSessionVariable": false,
-        "_row_num": 56
+        "_row_num": 55
       },
       {
         "name": "TABZ",
         "type": "select_one_dropdown",
         "isSessionVariable": false,
-        "_row_num": 57
+        "_row_num": 56
       },
       {
         "name": "TELEINF1",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 58
+        "_row_num": 57
       },
       {
         "name": "TELEINF2",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 59
+        "_row_num": 58
       },
       {
         "name": "TELEINF3",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 60
+        "_row_num": 59
       },
       {
         "name": "TELEMOVEL1",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 61
+        "_row_num": 60
       },
       {
         "name": "TELEMOVEL2",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 62
+        "_row_num": 61
       },
       {
         "name": "TELEMOVEL3",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 63
+        "_row_num": 62
       },
       {
         "name": "TEMPERATURA",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 64
+        "_row_num": 63
       },
       {
         "name": "TESTEMUNHO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 65
+        "_row_num": 64
       },
       {
-        "name": "TOSSEE",
+        "name": "TOSSE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 66
+        "_row_num": 65
       },
       {
         "name": "TRATAMENT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 67
+        "_row_num": 66
       },
       {
         "name": "TRATIMG",
         "type": "image",
         "isSessionVariable": false,
-        "_row_num": 68
+        "_row_num": 67
       },
       {
         "name": "TRATQUAL",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 69
+        "_row_num": 68
       },
       {
         "name": "TRATQUALOU",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 70
+        "_row_num": 69
       },
       {
         "name": "VENAOVAS",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 71
+        "_row_num": 70
       },
       {
         "name": "VOMITO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 72
+        "_row_num": 71
       },
       {
         "name": "changeid",
         "type": "select_one",
         "isSessionVariable": true,
         "comments": "edit",
-        "_row_num": 74
+        "_row_num": 73
       },
       {
         "name": "changetabz",
         "type": "select_one",
         "isSessionVariable": true,
-        "_row_num": 75
+        "_row_num": 74
       }
     ]
   },
@@ -1626,7 +1622,7 @@
           "locale": {
             "text": {
               "english": "Portuguese",
-              "default": "Portugues"
+              "default": "Português"
             }
           }
         },
@@ -1658,7 +1654,7 @@
               "locale": {
                 "text": {
                   "english": "Portuguese",
-                  "default": "Portugues"
+                  "default": "Português"
                 }
               }
             },
@@ -1729,7 +1725,7 @@
             "title": {
               "text": {
                 "english": "Female",
-                "default": "Feminina"
+                "default": "Feminino"
               }
             }
           },
@@ -1799,7 +1795,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Dont't know",
+                "english": "Don't know",
                 "default": "Não sabe"
               }
             }
@@ -1848,21 +1844,6 @@
           "_row_num": 11
         }
       ],
-      "oubairro": [
-        {
-          "choice_list_name": "oubairro",
-          "data_value": "99",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Doesn't live in the project area",
-                "default": "Não mora na área do projeto"
-              }
-            }
-          },
-          "_row_num": 12
-        }
-      ],
       "ns": [
         {
           "choice_list_name": "ns",
@@ -1875,7 +1856,7 @@
               }
             }
           },
-          "_row_num": 13
+          "_row_num": 12
         }
       ],
       "enf": [
@@ -1890,7 +1871,7 @@
               }
             }
           },
-          "_row_num": 14
+          "_row_num": 13
         }
       ],
       "ass": [
@@ -1905,7 +1886,7 @@
               }
             }
           },
-          "_row_num": 15
+          "_row_num": 14
         }
       ],
       "tratament": [
@@ -1920,7 +1901,7 @@
               }
             }
           },
-          "_row_num": 16
+          "_row_num": 15
         },
         {
           "choice_list_name": "tratament",
@@ -1933,7 +1914,7 @@
               }
             }
           },
-          "_row_num": 17
+          "_row_num": 16
         },
         {
           "choice_list_name": "tratament",
@@ -1946,7 +1927,7 @@
               }
             }
           },
-          "_row_num": 18
+          "_row_num": 17
         },
         {
           "choice_list_name": "tratament",
@@ -1959,7 +1940,7 @@
               }
             }
           },
-          "_row_num": 19
+          "_row_num": 18
         },
         {
           "choice_list_name": "tratament",
@@ -1972,7 +1953,7 @@
               }
             }
           },
-          "_row_num": 20
+          "_row_num": 19
         }
       ],
       "telinf1": [
@@ -1987,7 +1968,7 @@
               }
             }
           },
-          "_row_num": 21
+          "_row_num": 20
         },
         {
           "choice_list_name": "telinf1",
@@ -2000,7 +1981,7 @@
               }
             }
           },
-          "_row_num": 22
+          "_row_num": 21
         }
       ],
       "telinf2": [
@@ -2015,7 +1996,7 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 22
         },
         {
           "choice_list_name": "telinf2",
@@ -2028,7 +2009,7 @@
               }
             }
           },
-          "_row_num": 24
+          "_row_num": 23
         },
         {
           "choice_list_name": "telinf2",
@@ -2041,7 +2022,7 @@
               }
             }
           },
-          "_row_num": 25
+          "_row_num": 24
         }
       ],
       "nsID": [
@@ -2052,11 +2033,11 @@
             "title": {
               "text": {
                 "english": "Didn't suceed to identify ID",
-                "default": "Não conseguir identifcar o ID"
+                "default": "Não conseguiu identifcar o ID"
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 25
         }
       ],
       "nsREGIDC": [
@@ -2067,11 +2048,11 @@
             "title": {
               "text": {
                 "english": "Don't have ID",
-                "default": "Não tene ID"
+                "default": "Não tem ID"
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 26
         }
       ],
       "signature": [
@@ -2086,7 +2067,7 @@
               }
             }
           },
-          "_row_num": 28
+          "_row_num": 27
         },
         {
           "choice_list_name": "signature",
@@ -2099,7 +2080,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 28
         }
       ],
       "resp": [
@@ -2114,7 +2095,7 @@
               }
             }
           },
-          "_row_num": 30
+          "_row_num": 29
         },
         {
           "choice_list_name": "resp",
@@ -2127,7 +2108,7 @@
               }
             }
           },
-          "_row_num": 31
+          "_row_num": 30
         },
         {
           "choice_list_name": "resp",
@@ -2140,7 +2121,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 31
         },
         {
           "choice_list_name": "resp",
@@ -2153,7 +2134,7 @@
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 32
         }
       ]
     },
@@ -2217,7 +2198,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 47,
             "section_name": "edit"
           },
           {
@@ -2237,7 +2218,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 48,
             "section_name": "edit"
           },
           {
@@ -2252,7 +2233,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 42,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 51,
             "section_name": "edit"
           },
           {
@@ -2303,7 +2288,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 53,
             "section_name": "edit"
           },
           {
@@ -2323,7 +2308,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 54,
             "section_name": "edit"
           },
           {
@@ -2680,26 +2665,11 @@
         "isSessionVariable": false,
         "elementKey": "NVACPOR"
       },
-      "OBAIRRO": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 40,
-            "section_name": "edit"
-          },
-          {
-            "_row_num": 40,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OBAIRRO"
-      },
       "OSIMP": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 41,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -2707,14 +2677,14 @@
         "elementKey": "OSIMP"
       },
       "OUBAIRRO": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "OUBAIRRO_items"
-        },
+        "type": "string",
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 40,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -2725,7 +2695,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -2736,7 +2706,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -2747,7 +2717,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -2758,7 +2728,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 46,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -2769,7 +2739,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -2780,11 +2750,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 41,
-            "section_name": "edit"
-          },
-          {
-            "_row_num": 48,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -2799,7 +2765,7 @@
         },
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -2810,7 +2776,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -2825,7 +2791,7 @@
         },
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -2836,7 +2802,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -2847,7 +2813,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -2858,7 +2824,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -2869,7 +2835,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 55,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -2879,7 +2845,7 @@
       "START": {
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -2892,11 +2858,15 @@
         "valuesList": "tabz_csv",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 38,
             "section_name": "edit"
           },
           {
-            "_row_num": 57,
+            "_row_num": 46,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -2907,7 +2877,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 58,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -2918,7 +2888,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -2929,7 +2899,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -2940,7 +2910,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -2951,7 +2921,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -2962,7 +2932,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -2973,7 +2943,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -2984,29 +2954,29 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "TESTEMUNHO"
       },
-      "TOSSEE": {
+      "TOSSE": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "TOSSEE"
+        "elementKey": "TOSSE"
       },
       "TRATAMENT": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -3031,7 +3001,7 @@
         },
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -3046,7 +3016,7 @@
         },
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -3057,7 +3027,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -3068,7 +3038,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -3079,7 +3049,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -3095,7 +3065,7 @@
             "section_name": "edit"
           },
           {
-            "_row_num": 74,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -3111,27 +3081,12 @@
             "section_name": "edit"
           },
           {
-            "_row_num": 75,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
         "isSessionVariable": true,
         "elementKey": "changetabz"
-      },
-      "oubairro": {
-        "_defn": [
-          {
-            "_row_num": 37,
-            "section_name": "edit"
-          }
-        ],
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "oubairro_items"
-        },
-        "valuesList": "oubairro",
-        "elementKey": "oubairro"
       }
     },
     "section_names": [
@@ -3441,11 +3396,11 @@
               "constraint_message": {
                 "text": {
                   "english": "Must be 7 digits long:",
-                  "default": "Deve ter 7 números:"
+                  "default": "Deve ter 7 dígitos:"
                 }
               }
             },
-            "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('oubairro') != null",
+            "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('changeid') != '1'",
             "_row_num": 27,
             "__rowNum__": 26,
             "_token_type": "prompt",
@@ -3484,24 +3439,33 @@
             "promptIdx": 14
           },
           {
-            "type": "select_multiple",
-            "values_list": "oubairro",
-            "name": "oubairro",
-            "_row_num": 37,
-            "__rowNum__": 36,
+            "type": "select_one_dropdown",
+            "values_list": "tabz_csv",
+            "name": "TABZ",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Neighborhood outside project area",
+                  "default": "Bairro fora da área do projeto"
+                }
+              }
+            },
+            "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
+            "_row_num": 38,
+            "__rowNum__": 37,
             "_token_type": "prompt",
-            "_type": "select_multiple",
+            "_type": "select_one_dropdown",
             "_branch_label_enclosing_screen": "edit/_screen35",
             "promptIdx": 15
           },
           {
             "type": "text",
-            "name": "OBAIRRO",
+            "name": "OUBAIRRO",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Other neighborhood",
-                  "default": "Outro bairro"
+                  "english": "What neighborhood?",
+                  "default": "Que bairro?"
                 }
               }
             },
@@ -3513,27 +3477,20 @@
             "promptIdx": 16
           },
           {
-            "type": "integer",
-            "name": "REGIDC",
+            "type": "text",
+            "name": "CAMOONDE",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Equipa movel ID",
-                  "default": "ID da equipa movel"
-                }
-              },
-              "constraint_message": {
-                "text": {
-                  "english": "Must be 4 digits long:",
-                  "default": "Deve ter 9 números:"
+                  "english": "Pleace describe how to find the house",
+                  "default": "Por favor, descreva como encontrar a casa"
                 }
               }
             },
-            "constraint": "data('REGIDC') > 99999999 && data('REGIDC') < 1000000000 || data('oubairro') == null",
-            "_row_num": 41,
-            "__rowNum__": 40,
+            "_row_num": 42,
+            "__rowNum__": 41,
             "_token_type": "prompt",
-            "_type": "integer",
+            "_type": "text",
             "_branch_label_enclosing_screen": "edit/_screen35",
             "promptIdx": 17
           },
@@ -3550,8 +3507,8 @@
               }
             },
             "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-            "_row_num": 43,
-            "__rowNum__": 42,
+            "_row_num": 46,
+            "__rowNum__": 45,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
             "_branch_label_enclosing_screen": "edit/_screen35",
@@ -3568,8 +3525,8 @@
                 }
               }
             },
-            "_row_num": 44,
-            "__rowNum__": 43,
+            "_row_num": 47,
+            "__rowNum__": 46,
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "edit/_screen35",
@@ -3579,8 +3536,8 @@
             "type": "select_multiple",
             "values_list": "ns",
             "name": "camons",
-            "_row_num": 45,
-            "__rowNum__": 44,
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "prompt",
             "_type": "select_multiple",
             "_branch_label_enclosing_screen": "edit/_screen35",
@@ -3597,8 +3554,8 @@
                 }
               }
             },
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 51,
+            "__rowNum__": 50,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "edit/_screen35",
@@ -3617,16 +3574,16 @@
               "constraint_message": {
                 "text": {
                   "english": "Must be 5 digits long:",
-                  "default": "Deve ter 5 números:"
+                  "default": "Deve ter 5 dígitos:"
                 }
               }
             },
-            "constraint": "(freebase.characters(data('CNO')) == 5 && data('CNO') != null)|| data('oubairro') != null",
+            "constraint": "(freebase.characters(data('CNO')) == 5 && data('CNO') != null)|| data('BAIRRO') == 77",
             "inputAttributes": {
               "type": "number"
             },
-            "_row_num": 50,
-            "__rowNum__": 49,
+            "_row_num": 53,
+            "__rowNum__": 52,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "edit/_screen35",
@@ -3636,8 +3593,8 @@
             "type": "select_multiple",
             "values_list": "ns",
             "name": "cnons",
-            "_row_num": 51,
-            "__rowNum__": 50,
+            "_row_num": 54,
+            "__rowNum__": 53,
             "_token_type": "prompt",
             "_type": "select_multiple",
             "_branch_label_enclosing_screen": "edit/_screen35",
@@ -3653,11 +3610,11 @@
                 }
               }
             },
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "_row_num": 63,
+            "__rowNum__": 62,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 24
           },
           {
@@ -3670,11 +3627,11 @@
                 }
               }
             },
-            "_row_num": 62,
-            "__rowNum__": 61,
+            "_row_num": 65,
+            "__rowNum__": 64,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 25
           },
           {
@@ -3687,11 +3644,11 @@
                 }
               }
             },
-            "_row_num": 64,
-            "__rowNum__": 63,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 26
           },
           {
@@ -3704,11 +3661,11 @@
                 }
               }
             },
-            "_row_num": 67,
-            "__rowNum__": 66,
+            "_row_num": 70,
+            "__rowNum__": 69,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 27
           },
           {
@@ -3721,11 +3678,11 @@
                 }
               }
             },
-            "_row_num": 69,
-            "__rowNum__": 68,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 28
           },
           {
@@ -3738,11 +3695,11 @@
                 }
               }
             },
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 74,
+            "__rowNum__": 73,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 29
           },
           {
@@ -3755,11 +3712,11 @@
                 }
               }
             },
-            "_row_num": 72,
-            "__rowNum__": 71,
+            "_row_num": 75,
+            "__rowNum__": 74,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 30
           },
           {
@@ -3772,11 +3729,11 @@
                 }
               }
             },
-            "_row_num": 73,
-            "__rowNum__": 72,
+            "_row_num": 76,
+            "__rowNum__": 75,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 31
           },
           {
@@ -3789,11 +3746,11 @@
                 }
               }
             },
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "_row_num": 78,
+            "__rowNum__": 77,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 32
           },
           {
@@ -3806,26 +3763,25 @@
                 }
               }
             },
-            "_row_num": 77,
-            "__rowNum__": 76,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen59",
+            "_branch_label_enclosing_screen": "edit/_screen62",
             "promptIdx": 33
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 81,
-            "_branch_label_enclosing_screen": "edit/_screen81",
+            "_row_num": 84,
+            "_branch_label_enclosing_screen": "edit/_screen84",
             "promptIdx": 34
           }
         ],
         "validation_tag_map": {
           "finalize": [
             12,
-            17,
             22
           ]
         },
@@ -3893,8 +3849,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else57",
-            "_row_num": 57,
+            "_branch_label": "_else60",
+            "_row_num": 60,
             "operationIdx": 6
           },
           {
@@ -3904,45 +3860,45 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 56,
-              "__rowNum__": 55,
+              "_row_num": 59,
+              "__rowNum__": 58,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\nif (data('oubairro') != null) {\nassign('BAIRRO', 99);\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\n}\nelse {\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nif (data('camons') !=null) {\nassign('CAMO', 9999);\nactivePromptIndicies.push(21);\n}\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nif (data('cnons') != null) {\nassign('CNO', 99999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nif (data('BAIRRO') == 77) {\nactivePromptIndicies.push(15);\nif (data('TABZ') == 7777) {\nactivePromptIndicies.push(16);\n}\nelse {\nactivePromptIndicies.push(17);\n}\nassign('CAMO', 9999);\n}\nelse {\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nif (data('camons') !=null) {\nassign('CAMO', 9999);\nactivePromptIndicies.push(21);\n}\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nif (data('cnons') != null) {\nassign('CNO', 99999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif57",
-            "_row_num": 57,
+            "_branch_label": "_endif60",
+            "_row_num": 60,
             "operationIdx": 8
           },
           {
             "clause": "if",
             "condition": "data('changeid') == '1' || data('changetabz') =='1'",
-            "_row_num": 58,
-            "__rowNum__": 57,
+            "_row_num": 61,
+            "__rowNum__": 60,
             "_token_type": "goto_label",
-            "_branch_label": "_then58",
+            "_branch_label": "_then61",
             "operationIdx": 9
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else80",
-            "_row_num": 80,
+            "_branch_label": "_else83",
+            "_row_num": 83,
             "operationIdx": 10
           },
           {
             "clause": "begin screen",
-            "_row_num": 59,
-            "__rowNum__": 58,
+            "_row_num": 62,
+            "__rowNum__": 61,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 79,
-              "__rowNum__": 78,
+              "_row_num": 82,
+              "__rowNum__": 81,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nif (data('SEX') =='1') {\nactivePromptIndicies.push(25);\n}\nelse {\nactivePromptIndicies.push(26);\n}\nif (data('DOB') == 'D:NS,M:NS,Y:NS') {\nactivePromptIndicies.push(27);\n}\nelse {\nactivePromptIndicies.push(28);\n}\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nif (data('CAMO') == '9999') {\nactivePromptIndicies.push(32);\n}\nelse {\nactivePromptIndicies.push(33);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -3951,18 +3907,18 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif80",
-            "_row_num": 80,
+            "_branch_label": "_endif83",
+            "_row_num": 83,
             "operationIdx": 12
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 81,
+            "_row_num": 84,
             "operationIdx": 13
           },
           {
-            "_row_num": 81,
+            "_row_num": 84,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -3973,7 +3929,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 81,
+            "_row_num": 84,
             "operationIdx": 15
           }
         ],
@@ -3985,14 +3941,14 @@
           "_endif33": 5,
           "_then34": 7,
           "_screen35": 7,
-          "_else57": 9,
-          "_endif57": 9,
-          "_then58": 11,
-          "_screen59": 11,
-          "_else80": 13,
-          "_endif80": 13,
+          "_else60": 9,
+          "_endif60": 9,
+          "_then61": 11,
+          "_screen62": 11,
+          "_else83": 13,
+          "_endif83": 13,
           "_contents": 14,
-          "_screen81": 14
+          "_screen84": 14
         }
       },
       "initial": {
@@ -4229,7 +4185,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 47,
             "section_name": "edit"
           },
           {
@@ -4257,7 +4213,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 48,
             "section_name": "edit"
           },
           {
@@ -4278,7 +4234,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 42,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 51,
             "section_name": "edit"
           },
           {
@@ -4349,7 +4309,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 53,
             "section_name": "edit"
           },
           {
@@ -4377,7 +4337,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 54,
             "section_name": "edit"
           },
           {
@@ -4840,29 +4800,11 @@
         "elementSet": "data",
         "elementPath": "NVACPOR"
       },
-      "OBAIRRO": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 40,
-            "section_name": "edit"
-          },
-          {
-            "_row_num": 40,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OBAIRRO",
-        "elementName": "OBAIRRO",
-        "elementSet": "data",
-        "elementPath": "OBAIRRO"
-      },
       "OSIMP": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 41,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -4873,18 +4815,14 @@
         "elementPath": "OSIMP"
       },
       "OUBAIRRO": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "OUBAIRRO_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "OUBAIRRO.items",
-          "notUnitOfRetention": true
-        },
+        "type": "string",
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 40,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -4892,16 +4830,13 @@
         "elementKey": "OUBAIRRO",
         "elementName": "OUBAIRRO",
         "elementSet": "data",
-        "elementPath": "OUBAIRRO",
-        "listChildElementKeys": [
-          "OUBAIRRO_items"
-        ]
+        "elementPath": "OUBAIRRO"
       },
       "PODEINC": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -4915,7 +4850,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -4929,7 +4864,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -4943,7 +4878,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 46,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -4957,7 +4892,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -4971,11 +4906,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 41,
-            "section_name": "edit"
-          },
-          {
-            "_row_num": 48,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -4998,7 +4929,7 @@
         },
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -5015,7 +4946,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -5038,7 +4969,7 @@
         },
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -5055,7 +4986,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -5069,7 +5000,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -5083,7 +5014,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -5097,7 +5028,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 55,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -5110,7 +5041,7 @@
       "START": {
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -5126,11 +5057,15 @@
         "valuesList": "tabz_csv",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 38,
             "section_name": "edit"
           },
           {
-            "_row_num": 57,
+            "_row_num": 46,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -5144,7 +5079,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 58,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -5158,7 +5093,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -5172,7 +5107,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -5186,7 +5121,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -5200,7 +5135,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 62,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -5214,7 +5149,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -5228,7 +5163,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 64,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -5242,7 +5177,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -5252,25 +5187,25 @@
         "elementSet": "data",
         "elementPath": "TESTEMUNHO"
       },
-      "TOSSEE": {
+      "TOSSE": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "TOSSEE",
-        "elementName": "TOSSEE",
+        "elementKey": "TOSSE",
+        "elementName": "TOSSE",
         "elementSet": "data",
-        "elementPath": "TOSSEE"
+        "elementPath": "TOSSE"
       },
       "TRATAMENT": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -5304,7 +5239,7 @@
         },
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -5331,7 +5266,7 @@
         },
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -5348,7 +5283,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -5362,7 +5297,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -5376,7 +5311,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -5395,7 +5330,7 @@
             "section_name": "edit"
           },
           {
-            "_row_num": 74,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -5414,7 +5349,7 @@
             "section_name": "edit"
           },
           {
-            "_row_num": 75,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
@@ -5423,31 +5358,6 @@
         "elementName": "changetabz",
         "elementSet": "data",
         "elementPath": "changetabz"
-      },
-      "oubairro": {
-        "_defn": [
-          {
-            "_row_num": 37,
-            "section_name": "edit"
-          }
-        ],
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "oubairro_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "oubairro.items",
-          "notUnitOfRetention": true
-        },
-        "valuesList": "oubairro",
-        "elementKey": "oubairro",
-        "elementName": "oubairro",
-        "elementSet": "data",
-        "elementPath": "oubairro",
-        "listChildElementKeys": [
-          "oubairro_items"
-        ]
       },
       "camons_items": {
         "type": "string",
@@ -5502,14 +5412,6 @@
         "isSessionVariable": true,
         "notUnitOfRetention": true
       },
-      "OUBAIRRO_items": {
-        "type": "string",
-        "elementKey": "OUBAIRRO_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "OUBAIRRO.items",
-        "notUnitOfRetention": true
-      },
       "regidcns_items": {
         "type": "string",
         "elementKey": "regidcns_items",
@@ -5551,14 +5453,6 @@
         "elementName": "items",
         "elementSet": "data",
         "elementPath": "TRATQUAL.items",
-        "notUnitOfRetention": true
-      },
-      "oubairro_items": {
-        "type": "string",
-        "elementKey": "oubairro_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "oubairro.items",
         "notUnitOfRetention": true
       },
       "_id": {
