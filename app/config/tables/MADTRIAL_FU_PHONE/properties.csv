@@ -27,4 +27,4 @@ Column,VITALCRI,displayChoicesList,object,"[{""choice_list_name"":""sim/não/nã
 FormType,default,FormType.formType,string,SURVEY
 SurveyUtil,default,SurveyUtil.formId,string,MADTRIAL_FU_PHONE
 Table,default,defaultViewType,string,SPREADSHEET
-Table,default,displayName,object,"{""text"":{""english"":""MADtrial - Follow-up Phone"",""default"":""MADtrail - Seguimento Telemovel""}}"
+Table,default,displayName,object,"{""text"":{""english"":""MADtrial - Follow-up Phone"",""default"":""MADtrial - Seguimento Telemovel""}}"

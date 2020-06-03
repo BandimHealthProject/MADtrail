@@ -23,7 +23,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Phone",
-              "default": "MADtrail - Seguimento Telemovel"
+              "default": "MADtrial - Seguimento Telemovel"
             }
           }
         },
@@ -2320,7 +2320,7 @@
           "prompt": {
             "text": {
               "english": "Has the child received other vaccines since being vaccinated at Simão Mendes?",
-              "default": "A criança recebeu outras vacinas desde que foi vacinada em Simão Mendes?"
+              "default": "A criança recebeu outras vacinas desde que foi vacinada no costa em Simão Mendes?"
             }
           }
         },
@@ -2385,7 +2385,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Has the child been admitted to hospital since being vaccinated against measles in Simão Mendes?",
+              "english": "Has the child been admitted to hospital since being vaccinated against measles at Simão Mendes?",
               "default": "A criança foi internada no hospital desde que foi vacinada contra sarampo em Simão Mendes?"
             }
           }
@@ -4142,7 +4142,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Phone",
-              "default": "MADtrail - Seguimento Telemovel"
+              "default": "MADtrial - Seguimento Telemovel"
             }
           }
         },
@@ -4219,7 +4219,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Phone",
-              "default": "MADtrail - Seguimento Telemovel"
+              "default": "MADtrial - Seguimento Telemovel"
             }
           }
         },
@@ -4230,7 +4230,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Phone",
-              "default": "MADtrail - Seguimento Telemovel"
+              "default": "MADtrial - Seguimento Telemovel"
             }
           }
         }
@@ -7930,7 +7930,7 @@
               "title": {
                 "text": {
                   "english": "MADtrial - Follow-up Phone",
-                  "default": "MADtrail - Seguimento Telemovel"
+                  "default": "MADtrial - Seguimento Telemovel"
                 }
               }
             },
@@ -8635,7 +8635,7 @@
               "prompt": {
                 "text": {
                   "english": "Has the child received other vaccines since being vaccinated at Simão Mendes?",
-                  "default": "A criança recebeu outras vacinas desde que foi vacinada em Simão Mendes?"
+                  "default": "A criança recebeu outras vacinas desde que foi vacinada no costa em Simão Mendes?"
                 }
               }
             },
@@ -8690,7 +8690,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Has the child been admitted to hospital since being vaccinated against measles in Simão Mendes?",
+                  "english": "Has the child been admitted to hospital since being vaccinated against measles at Simão Mendes?",
                   "default": "A criança foi internada no hospital desde que foi vacinada contra sarampo em Simão Mendes?"
                 }
               }
@@ -9714,7 +9714,7 @@
               "title": {
                 "text": {
                   "english": "MADtrial - Follow-up Phone",
-                  "default": "MADtrail - Seguimento Telemovel"
+                  "default": "MADtrial - Seguimento Telemovel"
                 }
               }
             },
@@ -11675,7 +11675,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":{\"english\":\"MADtrial - Follow-up Phone\",\"default\":\"MADtrail - Seguimento Telemovel\"}}"
+        "_value": "{\"text\":{\"english\":\"MADtrial - Follow-up Phone\",\"default\":\"MADtrial - Seguimento Telemovel\"}}"
       }
     ]
   }

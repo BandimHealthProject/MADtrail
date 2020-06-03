@@ -53,4 +53,4 @@ Column,VPICHECK,displayChoicesList,object,"[{""choice_list_name"":""vaccheck"","
 FormType,default,FormType.formType,string,SURVEY
 SurveyUtil,default,SurveyUtil.formId,string,MADTRIAL_FU_VIS
 Table,default,defaultViewType,string,SPREADSHEET
-Table,default,displayName,object,"{""text"":{""english"":""MADtrial - Follow-up Visit"",""default"":""MADtrail - Seguimento Visita""}}"
+Table,default,displayName,object,"{""text"":{""english"":""MADtrial - Follow-up Visit"",""default"":""MADtrial - Seguimento Visita""}}"

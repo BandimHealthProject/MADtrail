@@ -9,7 +9,7 @@ reg,regname,cscode,csname,;;;;;;;;;reg;regname;cscode;csname
 1,Oio,108,Missao Catolica de Nhoma,;;;;;;;;;1;Oio;108;Missao Catolica de Nhoma
 1,Oio,109,CS Mores,;;;;;;;;;1;Oio;109;CS Mores
 1,Oio,110,CS Mansaba,;;;;;;;;;1;Oio;110;CS Mansaba
-1,Oio,111,CS Candjambari,;;;;;;;;;1;Oio;111;CS Candjambari
+1,Oio,111,PS Candjambari,;;;;;;;;;1;Oio;111;PS Candjambari
 1,Oio,112,Centro Nutricional de Mansoa,;;;;;;;;;1;Oio;112;Centro Nutricional de Mansoa
 1,Oio,113,Hospital de Farim,;;;;;;;;;1;Oio;113;Hospital de Farim
 1,Oio,114,CS Binta,;;;;;;;;;1;Oio;114;CS Binta
@@ -17,6 +17,9 @@ reg,regname,cscode,csname,;;;;;;;;;reg;regname;cscode;csname
 1,Oio,116,CS Cuntima,;;;;;;;;;1;Oio;116;CS Cuntima
 1,Oio,117,CS Guidage,;;;;;;;;;1;Oio;117;CS Guidage
 1,Oio,118,CS Olossato,;;;;;;;;;1;Oio;118;CS Olossato
+1,Oio,119,CS Jumbembe,;;;;;;;;;1;Oio;119;CS Jumbembe
+1,Oio,120,PS Lendem,;;;;;;;;;1;Oio;120;PS Lendem
+1,Oio,121,PS Gansanima,;;;;;;;;;1;Oio;121;PS Gansanima
 2,Biombo,201,CS Ondame,;;;;;;;;;2;Biombo;201;CS Ondame
 2,Biombo,202,Clinica Bom Samaritana,;;;;;;;;;2;Biombo;202;Clinica Bom Samaritana
 2,Biombo,203,CS Dorse,;;;;;;;;;2;Biombo;203;CS Dorse
@@ -24,7 +27,7 @@ reg,regname,cscode,csname,;;;;;;;;;reg;regname;cscode;csname
 2,Biombo,205,Centro Materno Infantil,;;;;;;;;;2;Biombo;205;Centro Materno Infantil
 2,Biombo,206,CS Bigimita,;;;;;;;;;2;Biombo;206;CS Bigimita
 2,Biombo,207,CS Ilonde,;;;;;;;;;2;Biombo;207;CS Ilonde
-2,Biombo,208,CS SABim,;;;;;;;;;2;Biombo;208;CS SABim
+2,Biombo,208,CS Safim,;;;;;;;;;2;Biombo;208;CS Safim
 2,Biombo,209,CS Prabis,;;;;;;;;;2;Biombo;209;CS Prabis
 2,Biombo,210,Hospital de Cumura,;;;;;;;;;2;Biombo;210;Hospital de Cumura
 2,Biombo,211,Clinica de Bor,;;;;;;;;;2;Biombo;211;Clinica de Bor
@@ -57,7 +60,7 @@ reg,regname,cscode,csname,;;;;;;;;;reg;regname;cscode;csname
 5,Gabu,501,Hospital Gabu,;;;;;;;;;5;Gabu;501;Hospital Gabu
 5,Gabu,502,CS Canjadude,;;;;;;;;;5;Gabu;502;CS Canjadude
 5,Gabu,503,CS Cansisse,;;;;;;;;;5;Gabu;503;CS Cansisse
-5,Gabu,504,CS Tumanna,;;;;;;;;;5;Gabu;504;CS Tumanna
+5,Gabu,504,CS Tumanna (Sara Delo Malam),;;;;;;;;;5;Gabu;504;CS Tumanna (Sara Delo Malam)
 5,Gabu,505,CS Pitche,;;;;;;;;;5;Gabu;505;CS Pitche
 5,Gabu,506,CS Dara,;;;;;;;;;5;Gabu;506;CS Dara
 5,Gabu,507,CS Canquelifa,;;;;;;;;;5;Gabu;507;CS Canquelifa
@@ -93,26 +96,37 @@ reg,regname,cscode,csname,;;;;;;;;;reg;regname;cscode;csname
 7,Cacheu,718,CS Bara,;;;;;;;;;7;Cacheu;718;CS Bara
 7,Cacheu,719,CS Pexixe,;;;;;;;;;7;Cacheu;719;CS Pexixe
 7,Cacheu,720,CS Jeta,;;;;;;;;;7;Cacheu;720;CS Jeta
-8,Bafata,801,Hospital Bafata (Bafata I),;;;;;;;;;8;Bafata;801;Hospital Bafata (Bafata I)
-8,Bafata,802,CS Bafata II,;;;;;;;;;8;Bafata;802;CS Bafata II
-8,Bafata,803,CS Bafata III,;;;;;;;;;8;Bafata;803;CS Bafata III
-8,Bafata,804,CS Cosse,;;;;;;;;;8;Bafata;804;CS Cosse
-8,Bafata,805,CS Ga-Mamudu,;;;;;;;;;8;Bafata;805;CS Ga-Mamudu
+7,Cacheu,721,PS Blequisse,;;;;;;;;;7;Cacheu;721;PS Blequisse
+7,Cacheu,722,PS Carenque,;;;;;;;;;7;Cacheu;722;PS Carenque
+8,Bafata,801,Hospital Regional de Bafata,;;;;;;;;;8;Bafata;801;Hospital Regional de Bafata
+8,Bafata,802,CS Bafata,;;;;;;;;;8;Bafata;802;CS Bafata
+8,Bafata,803,CS Tantam Cosse,;;;;;;;;;8;Bafata;803;CS Tantam Cosse
+8,Bafata,804,CS Galumaro Cosse,;;;;;;;;;8;Bafata;804;CS Galumaro Cosse
+8,Bafata,805,CS Gã-Mamudu (Ganado),;;;;;;;;;8;Bafata;805;CS Gã-Mamudu (Ganado)
 8,Bafata,806,CS Geba,;;;;;;;;;8;Bafata;806;CS Geba
 8,Bafata,807,CS Xitole,;;;;;;;;;8;Bafata;807;CS Xitole
 8,Bafata,808,CS Bambadinca,;;;;;;;;;8;Bafata;808;CS Bambadinca
-8,Bafata,809,CS Ga-Carnes,;;;;;;;;;8;Bafata;809;CS Ga-Carnes
+8,Bafata,809,CS Gã-Carnes,;;;;;;;;;8;Bafata;809;CS Gã-Carnes
 8,Bafata,810,CS Tendinto,;;;;;;;;;8;Bafata;810;CS Tendinto
 8,Bafata,811,CS Contuboel,;;;;;;;;;8;Bafata;811;CS Contuboel
 8,Bafata,812,CS Fajonquito,;;;;;;;;;8;Bafata;812;CS Fajonquito
 8,Bafata,813,CS Cambaju,;;;;;;;;;8;Bafata;813;CS Cambaju
 8,Bafata,814,CS Sare-Bacar,;;;;;;;;;8;Bafata;814;CS Sare-Bacar
+8,Bafata,815,CS Gã-Ture,;;;;;;;;;8;Bafata;815;CS Gã-Ture
 11,Quinara,1101,CS Dar Es Salam,;;;;;;;;;11;Quinara;1101;CS Dar Es Salam
 11,Quinara,1102,CS Empada,;;;;;;;;;11;Quinara;1102;CS Empada
 11,Quinara,1103,CS Buba,;;;;;;;;;11;Quinara;1103;CS Buba
 11,Quinara,1104,CS Falacunda,;;;;;;;;;11;Quinara;1104;CS Falacunda
 11,Quinara,1105,CS Tite,;;;;;;;;;11;Quinara;1105;CS Tite
 11,Quinara,1106,CS Brandão,;;;;;;;;;11;Quinara;1106;CS Brandão
+11,Quinara,1107,PS Batambali,;;;;;;;;;11;Quinara;1107;PS Batambali
+11,Quinara,1108,PS Nhala,;;;;;;;;;11;Quinara;1108;PS Nhala
+11,Quinara,1109,PS Banta,;;;;;;;;;11;Quinara;1109;PS Banta
+11,Quinara,1110,PS GãGregória,;;;;;;;;;11;Quinara;1110;PS GãGregória
+11,Quinara,1111,PS Ndjassane,;;;;;;;;;11;Quinara;1111;PS Ndjassane
+11,Quinara,1112,PS Gampara,;;;;;;;;;11;Quinara;1112;PS Gampara
+11,Quinara,1113,PS Bissassema,;;;;;;;;;11;Quinara;1113;PS Bissassema
+11,Quinara,1114,PS Jabada Porto,;;;;;;;;;11;Quinara;1114;PS Jabada Porto
 12,Tombali,1201,Hospital Catio,;;;;;;;;;12;Tombali;1201;Hospital Catio
 12,Tombali,1202,CS Timbo,;;;;;;;;;12;Tombali;1202;CS Timbo
 12,Tombali,1203,CS Komo,;;;;;;;;;12;Tombali;1203;CS Komo
@@ -121,6 +135,21 @@ reg,regname,cscode,csname,;;;;;;;;;reg;regname;cscode;csname
 12,Tombali,1206,CS Calaque,;;;;;;;;;12;Tombali;1206;CS Calaque
 12,Tombali,1207,CS Sanconha,;;;;;;;;;12;Tombali;1207;CS Sanconha
 12,Tombali,1208,CS Cacine,;;;;;;;;;12;Tombali;1208;CS Cacine
+12,Tombali,1209,PS Mato-Farroba,;;;;;;;;;12;Tombali;1209;PS Mato-Farroba
+12,Tombali,1210,PS Tchugue,;;;;;;;;;12;Tombali;1210;PS Tchugue
+12,Tombali,1211,PS Bocana,;;;;;;;;;12;Tombali;1211;PS Bocana
+12,Tombali,1212,PS Catungo,;;;;;;;;;12;Tombali;1212;PS Catungo
+12,Tombali,1213,PS Mampata,;;;;;;;;;12;Tombali;1213;PS Mampata
+12,Tombali,1214,PS Saltinha,;;;;;;;;;12;Tombali;1214;PS Saltinha
+12,Tombali,1215,PS Unal,;;;;;;;;;12;Tombali;1215;PS Unal
+12,Tombali,1216,PS Caboxanque,;;;;;;;;;12;Tombali;1216;PS Caboxanque
+12,Tombali,1217,PS Iemberem,;;;;;;;;;12;Tombali;1217;PS Iemberem
+12,Tombali,1218,PS Catchamba,;;;;;;;;;12;Tombali;1218;PS Catchamba
+12,Tombali,1219,PS Cadique,;;;;;;;;;12;Tombali;1219;PS Cadique
+12,Tombali,1220,PS Cafine,;;;;;;;;;12;Tombali;1220;PS Cafine
+12,Tombali,1221,PS Cabedu,;;;;;;;;;12;Tombali;1221;PS Cabedu
+12,Tombali,1222,PS Cassumba,;;;;;;;;;12;Tombali;1222;PS Cassumba
+12,Tombali,1223,PS Cassaca,;;;;;;;;;12;Tombali;1223;PS Cassaca
 13,Bijagos,1301,CS Bubaque,;;;;;;;;;13;Bijagos;1301;CS Bubaque
 13,Bijagos,1302,CS Canhabaque,;;;;;;;;;13;Bijagos;1302;CS Canhabaque
 13,Bijagos,1303,CS Orangozinho,;;;;;;;;;13;Bijagos;1303;CS Orangozinho
@@ -134,6 +163,9 @@ reg,regname,cscode,csname,;;;;;;;;;reg;regname;cscode;csname
 13,Bijagos,1311,CS Caravela,;;;;;;;;;13;Bijagos;1311;CS Caravela
 14,Bolama,1401,CS Bolama,;;;;;;;;;14;Bolama;1401;CS Bolama
 14,Bolama,1402,CS Ilha de Galinhas,;;;;;;;;;14;Bolama;1402;CS Ilha de Galinhas
+14,Bolama,1403,PS Gã-Tonghó (São João),;;;;;;;;;14;Bolama;1403;PS Gã-Tonghó (São João)
+14,Bolama,1404,PS Wato,;;;;;;;;;14;Bolama;1404;PS Wato
+14,Bolama,1405,PS Madina,;;;;;;;;;14;Bolama;1405;PS Madina
 15,Sao Domingos,1501,CS Irma Ingore,;;;;;;;;;15;Sao Domingos;1501;CS Irma Ingore
 15,Sao Domingos,1502,Ingore estado,;;;;;;;;;15;Sao Domingos;1502;Ingore estado
 15,Sao Domingos,1503,CS Barro,;;;;;;;;;15;Sao Domingos;1503;CS Barro

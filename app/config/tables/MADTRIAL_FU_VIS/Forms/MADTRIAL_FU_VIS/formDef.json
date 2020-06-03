@@ -22,7 +22,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrail - Seguimento Visita"
+              "default": "MADtrial - Seguimento Visita"
             }
           }
         },
@@ -12455,7 +12455,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrail - Seguimento Visita"
+              "default": "MADtrial - Seguimento Visita"
             }
           }
         },
@@ -12531,7 +12531,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrail - Seguimento Visita"
+              "default": "MADtrial - Seguimento Visita"
             }
           }
         },
@@ -12542,7 +12542,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrail - Seguimento Visita"
+              "default": "MADtrial - Seguimento Visita"
             }
           }
         }
@@ -12552,7 +12552,7 @@
           "title": {
             "text": {
               "english": "MADtrial - Follow-up Visit",
-              "default": "MADtrail - Seguimento Visita"
+              "default": "MADtrial - Seguimento Visita"
             }
           }
         }
@@ -18018,7 +18018,7 @@
               "title": {
                 "text": {
                   "english": "MADtrial - Follow-up Visit",
-                  "default": "MADtrail - Seguimento Visita"
+                  "default": "MADtrial - Seguimento Visita"
                 }
               }
             },
@@ -18987,7 +18987,7 @@
               "title": {
                 "text": {
                   "english": "MADtrial - Follow-up Visit",
-                  "default": "MADtrail - Seguimento Visita"
+                  "default": "MADtrial - Seguimento Visita"
                 }
               }
             },
@@ -26687,7 +26687,7 @@
               "title": {
                 "text": {
                   "english": "MADtrial - Follow-up Visit",
-                  "default": "MADtrail - Seguimento Visita"
+                  "default": "MADtrial - Seguimento Visita"
                 }
               }
             },
@@ -31531,7 +31531,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":{\"english\":\"MADtrial - Follow-up Visit\",\"default\":\"MADtrail - Seguimento Visita\"}}"
+        "_value": "{\"text\":{\"english\":\"MADtrial - Follow-up Visit\",\"default\":\"MADtrial - Seguimento Visita\"}}"
       }
     ]
   }
