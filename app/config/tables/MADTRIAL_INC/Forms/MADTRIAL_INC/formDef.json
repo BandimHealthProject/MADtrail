@@ -1989,12 +1989,51 @@
         "display": {
           "title": {
             "text": {
-              "english": "Suzete Correia",
-              "default": "Suzete Correia"
+              "english": "Suzete",
+              "default": "Suzete"
             }
           }
         },
         "_row_num": 13
+      },
+      {
+        "choice_list_name": "enf",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Abrao",
+              "default": "Abrao"
+            }
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "choice_list_name": "enf",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Augosto Da Costa",
+              "default": "Augosto Da Costa"
+            }
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "choice_list_name": "enf",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Abdel",
+              "default": "Abdel"
+            }
+          }
+        },
+        "_row_num": 16
       },
       {
         "choice_list_name": "ass",
@@ -2002,12 +2041,64 @@
         "display": {
           "title": {
             "text": {
-              "english": "Fatima Caram Cassamá",
-              "default": "Fatima Caram Cassamá"
+              "english": "Fatima",
+              "default": "Fatima"
             }
           }
         },
-        "_row_num": 14
+        "_row_num": 17
+      },
+      {
+        "choice_list_name": "ass",
+        "data_value": "11",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Suzete",
+              "default": "Suzete"
+            }
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "ass",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Abrao",
+              "default": "Abrao"
+            }
+          }
+        },
+        "_row_num": 19
+      },
+      {
+        "choice_list_name": "ass",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Augosto Da Costa",
+              "default": "Augosto Da Costa"
+            }
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "ass",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Abdel",
+              "default": "Abdel"
+            }
+          }
+        },
+        "_row_num": 21
       },
       {
         "choice_list_name": "tratament",
@@ -2020,7 +2111,7 @@
             }
           }
         },
-        "_row_num": 15
+        "_row_num": 22
       },
       {
         "choice_list_name": "tratament",
@@ -2033,7 +2124,7 @@
             }
           }
         },
-        "_row_num": 16
+        "_row_num": 23
       },
       {
         "choice_list_name": "tratament",
@@ -2046,7 +2137,7 @@
             }
           }
         },
-        "_row_num": 17
+        "_row_num": 24
       },
       {
         "choice_list_name": "tratament",
@@ -2059,7 +2150,7 @@
             }
           }
         },
-        "_row_num": 18
+        "_row_num": 25
       },
       {
         "choice_list_name": "tratament",
@@ -2072,127 +2163,36 @@
             }
           }
         },
-        "_row_num": 19
-      },
-      {
-        "choice_list_name": "telinf1",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Mother",
-              "default": "Mãe"
-            }
-          }
-        },
-        "_row_num": 20
-      },
-      {
-        "choice_list_name": "telinf1",
-        "data_value": "2",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Father",
-              "default": "Pai"
-            }
-          }
-        },
-        "_row_num": 21
-      },
-      {
-        "choice_list_name": "telinf2",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Mother",
-              "default": "Mãe"
-            }
-          }
-        },
-        "_row_num": 22
-      },
-      {
-        "choice_list_name": "telinf2",
-        "data_value": "2",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Father",
-              "default": "Pai"
-            }
-          }
-        },
-        "_row_num": 23
-      },
-      {
-        "choice_list_name": "telinf2",
-        "data_value": "3",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Don't have another phone number",
-              "default": "Não tem outro número de telefone"
-            }
-          }
-        },
-        "_row_num": 24
-      },
-      {
-        "choice_list_name": "nsID",
-        "data_value": "99",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Didn't suceed to identify ID",
-              "default": "Não conseguiu identifcar o ID"
-            }
-          }
-        },
-        "_row_num": 25
-      },
-      {
-        "choice_list_name": "nsREGIDC",
-        "data_value": "99",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Don't have ID",
-              "default": "Não tem ID"
-            }
-          }
-        },
         "_row_num": 26
       },
       {
-        "choice_list_name": "signature",
+        "choice_list_name": "telinf1",
         "data_value": "1",
         "display": {
           "title": {
             "text": {
-              "english": "Signature",
-              "default": "Assinatura"
+              "english": "Mother",
+              "default": "Mãe"
             }
           }
         },
         "_row_num": 27
       },
       {
-        "choice_list_name": "signature",
+        "choice_list_name": "telinf1",
         "data_value": "2",
         "display": {
           "title": {
             "text": {
-              "english": "Fingerprint",
-              "default": "Impressão digital"
+              "english": "Father",
+              "default": "Pai"
             }
           }
         },
         "_row_num": 28
       },
       {
-        "choice_list_name": "resp",
+        "choice_list_name": "telinf2",
         "data_value": "1",
         "display": {
           "title": {
@@ -2205,7 +2205,7 @@
         "_row_num": 29
       },
       {
-        "choice_list_name": "resp",
+        "choice_list_name": "telinf2",
         "data_value": "2",
         "display": {
           "title": {
@@ -2218,6 +2218,97 @@
         "_row_num": 30
       },
       {
+        "choice_list_name": "telinf2",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't have another phone number",
+              "default": "Não tem outro número de telefone"
+            }
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "choice_list_name": "nsID",
+        "data_value": "99",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Didn't suceed to identify ID",
+              "default": "Não conseguiu identifcar o ID"
+            }
+          }
+        },
+        "_row_num": 32
+      },
+      {
+        "choice_list_name": "nsREGIDC",
+        "data_value": "99",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't have ID",
+              "default": "Não tem ID"
+            }
+          }
+        },
+        "_row_num": 33
+      },
+      {
+        "choice_list_name": "signature",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Signature",
+              "default": "Assinatura"
+            }
+          }
+        },
+        "_row_num": 34
+      },
+      {
+        "choice_list_name": "signature",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Fingerprint",
+              "default": "Impressão digital"
+            }
+          }
+        },
+        "_row_num": 35
+      },
+      {
+        "choice_list_name": "resp",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Mother",
+              "default": "Mãe"
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "choice_list_name": "resp",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Father",
+              "default": "Pai"
+            }
+          }
+        },
+        "_row_num": 37
+      },
+      {
         "choice_list_name": "resp",
         "data_value": "3",
         "display": {
@@ -2228,7 +2319,7 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 38
       },
       {
         "choice_list_name": "resp",
@@ -2241,7 +2332,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 39
       },
       {
         "choice_list_name": "sim",
@@ -2254,7 +2345,7 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 40
       }
     ],
     "queries": [
@@ -3013,12 +3104,51 @@
           "display": {
             "title": {
               "text": {
-                "english": "Suzete Correia",
-                "default": "Suzete Correia"
+                "english": "Suzete",
+                "default": "Suzete"
               }
             }
           },
           "_row_num": 13
+        },
+        {
+          "choice_list_name": "enf",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Abrao",
+                "default": "Abrao"
+              }
+            }
+          },
+          "_row_num": 14
+        },
+        {
+          "choice_list_name": "enf",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Augosto Da Costa",
+                "default": "Augosto Da Costa"
+              }
+            }
+          },
+          "_row_num": 15
+        },
+        {
+          "choice_list_name": "enf",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Abdel",
+                "default": "Abdel"
+              }
+            }
+          },
+          "_row_num": 16
         }
       ],
       "ass": [
@@ -3028,12 +3158,64 @@
           "display": {
             "title": {
               "text": {
-                "english": "Fatima Caram Cassamá",
-                "default": "Fatima Caram Cassamá"
+                "english": "Fatima",
+                "default": "Fatima"
               }
             }
           },
-          "_row_num": 14
+          "_row_num": 17
+        },
+        {
+          "choice_list_name": "ass",
+          "data_value": "11",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Suzete",
+                "default": "Suzete"
+              }
+            }
+          },
+          "_row_num": 18
+        },
+        {
+          "choice_list_name": "ass",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Abrao",
+                "default": "Abrao"
+              }
+            }
+          },
+          "_row_num": 19
+        },
+        {
+          "choice_list_name": "ass",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Augosto Da Costa",
+                "default": "Augosto Da Costa"
+              }
+            }
+          },
+          "_row_num": 20
+        },
+        {
+          "choice_list_name": "ass",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Abdel",
+                "default": "Abdel"
+              }
+            }
+          },
+          "_row_num": 21
         }
       ],
       "tratament": [
@@ -3048,7 +3230,7 @@
               }
             }
           },
-          "_row_num": 15
+          "_row_num": 22
         },
         {
           "choice_list_name": "tratament",
@@ -3061,7 +3243,7 @@
               }
             }
           },
-          "_row_num": 16
+          "_row_num": 23
         },
         {
           "choice_list_name": "tratament",
@@ -3074,7 +3256,7 @@
               }
             }
           },
-          "_row_num": 17
+          "_row_num": 24
         },
         {
           "choice_list_name": "tratament",
@@ -3087,7 +3269,7 @@
               }
             }
           },
-          "_row_num": 18
+          "_row_num": 25
         },
         {
           "choice_list_name": "tratament",
@@ -3100,7 +3282,7 @@
               }
             }
           },
-          "_row_num": 19
+          "_row_num": 26
         }
       ],
       "telinf1": [
@@ -3115,7 +3297,7 @@
               }
             }
           },
-          "_row_num": 20
+          "_row_num": 27
         },
         {
           "choice_list_name": "telinf1",
@@ -3128,7 +3310,7 @@
               }
             }
           },
-          "_row_num": 21
+          "_row_num": 28
         }
       ],
       "telinf2": [
@@ -3143,7 +3325,7 @@
               }
             }
           },
-          "_row_num": 22
+          "_row_num": 29
         },
         {
           "choice_list_name": "telinf2",
@@ -3156,7 +3338,7 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 30
         },
         {
           "choice_list_name": "telinf2",
@@ -3169,7 +3351,7 @@
               }
             }
           },
-          "_row_num": 24
+          "_row_num": 31
         }
       ],
       "nsID": [
@@ -3184,7 +3366,7 @@
               }
             }
           },
-          "_row_num": 25
+          "_row_num": 32
         }
       ],
       "nsREGIDC": [
@@ -3199,7 +3381,7 @@
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 33
         }
       ],
       "signature": [
@@ -3214,7 +3396,7 @@
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 34
         },
         {
           "choice_list_name": "signature",
@@ -3227,7 +3409,7 @@
               }
             }
           },
-          "_row_num": 28
+          "_row_num": 35
         }
       ],
       "resp": [
@@ -3242,7 +3424,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 36
         },
         {
           "choice_list_name": "resp",
@@ -3255,7 +3437,7 @@
               }
             }
           },
-          "_row_num": 30
+          "_row_num": 37
         },
         {
           "choice_list_name": "resp",
@@ -3268,7 +3450,7 @@
               }
             }
           },
-          "_row_num": 31
+          "_row_num": 38
         },
         {
           "choice_list_name": "resp",
@@ -3281,7 +3463,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 39
         }
       ],
       "sim": [
@@ -3296,7 +3478,7 @@
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 40
         }
       ]
     },
@@ -8488,7 +8670,7 @@
         "_aspect": "ASSISTEN",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Fatima Caram Cassamá\",\"default\":\"Fatima Caram Cassamá\"}}},\"_row_num\":14}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Fatima\",\"default\":\"Fatima\"}}},\"_row_num\":17},{\"choice_list_name\":\"ass\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Suzete\",\"default\":\"Suzete\"}}},\"_row_num\":18},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":19},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":20},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":21}]"
       },
       {
         "_partition": "Column",
@@ -8509,7 +8691,7 @@
         "_aspect": "CONSENTTIPO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"signature\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Signature\",\"default\":\"Assinatura\"}}},\"_row_num\":27},{\"choice_list_name\":\"signature\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fingerprint\",\"default\":\"Impressão digital\"}}},\"_row_num\":28}]"
+        "_value": "[{\"choice_list_name\":\"signature\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Signature\",\"default\":\"Assinatura\"}}},\"_row_num\":34},{\"choice_list_name\":\"signature\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fingerprint\",\"default\":\"Impressão digital\"}}},\"_row_num\":35}]"
       },
       {
         "_partition": "Column",
@@ -8537,7 +8719,7 @@
         "_aspect": "ENFERMEI",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"enf\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Suzete Correia\",\"default\":\"Suzete Correia\"}}},\"_row_num\":13}]"
+        "_value": "[{\"choice_list_name\":\"enf\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Suzete\",\"default\":\"Suzete\"}}},\"_row_num\":13},{\"choice_list_name\":\"enf\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":14},{\"choice_list_name\":\"enf\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":15},{\"choice_list_name\":\"enf\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":16}]"
       },
       {
         "_partition": "Column",
@@ -8586,7 +8768,7 @@
         "_aspect": "RESP",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"resp\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":29},{\"choice_list_name\":\"resp\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":30},{\"choice_list_name\":\"resp\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Sibling\",\"default\":\"Irmã(o)\"}}},\"_row_num\":31},{\"choice_list_name\":\"resp\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Mothers mother\",\"default\":\"Avó\"}}},\"_row_num\":32}]"
+        "_value": "[{\"choice_list_name\":\"resp\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":36},{\"choice_list_name\":\"resp\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":37},{\"choice_list_name\":\"resp\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Sibling\",\"default\":\"Irmã(o)\"}}},\"_row_num\":38},{\"choice_list_name\":\"resp\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Mothers mother\",\"default\":\"Avó\"}}},\"_row_num\":39}]"
       },
       {
         "_partition": "Column",
@@ -8607,28 +8789,28 @@
         "_aspect": "TELEINF1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":20},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":21}]"
+        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":27},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":28}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":22},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":23},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":24}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":29},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":30},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":31}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":22},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":23},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":24}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":29},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":30},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":31}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TESTEMUNHO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":33}]"
+        "_value": "[{\"choice_list_name\":\"sim\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":40}]"
       },
       {
         "_partition": "Column",
@@ -8649,7 +8831,7 @@
         "_aspect": "TRATQUAL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 1\",\"default\":\"Tratamento 1\"}}},\"_row_num\":15},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 2\",\"default\":\"Tratamento 2\"}}},\"_row_num\":16},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 3\",\"default\":\"Tratamento 3\"}}},\"_row_num\":17},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 4\",\"default\":\"Tratamento 4\"}}},\"_row_num\":18},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":19}]"
+        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 1\",\"default\":\"Tratamento 1\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 2\",\"default\":\"Tratamento 2\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 3\",\"default\":\"Tratamento 3\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 4\",\"default\":\"Tratamento 4\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":26}]"
       },
       {
         "_partition": "Column",
