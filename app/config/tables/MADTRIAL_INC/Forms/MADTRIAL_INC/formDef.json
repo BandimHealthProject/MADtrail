@@ -1211,12 +1211,12 @@
       {
         "type": "select_one",
         "values_list": "sim/não/ns",
-        "name": "TRATAMENT",
+        "name": "TRATAMENT_A",
         "display": {
           "prompt": {
             "text": {
               "english": "Did the child receive any treatments?",
-              "default": "A criança recebeu algum tratamento?"
+              "default": "A criança recebeu algum tratamento (antes inclusao)?"
             }
           }
         },
@@ -1224,13 +1224,13 @@
       },
       {
         "clause": "if",
-        "condition": "data('TRATAMENT') =='1'",
+        "condition": "data('TRATAMENT_A') =='1'",
         "_row_num": 136
       },
       {
         "type": "select_multiple",
         "values_list": "tratament",
-        "name": "TRATQUAL",
+        "name": "TRATQUAL_A",
         "display": {
           "prompt": {
             "text": {
@@ -1243,12 +1243,12 @@
       },
       {
         "clause": "if",
-        "condition": "selected(data('TRATQUAL'),'77')",
+        "condition": "selected(data('TRATQUAL_A'),'77')",
         "_row_num": 138
       },
       {
         "type": "text",
-        "name": "TRATQUALOU",
+        "name": "TRATQUALOU_A",
         "display": {
           "prompt": {
             "text": {
@@ -1276,6 +1276,73 @@
         "_row_num": 143
       },
       {
+        "type": "select_one",
+        "values_list": "sim/não/ns",
+        "name": "TRATAMENT_R",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the child get any treatments prescribed?",
+              "default": "A criança deve receber algum tratamento (receita)?"
+            }
+          }
+        },
+        "_row_num": 144
+      },
+      {
+        "clause": "if",
+        "condition": "data('TRATAMENT_R') =='1'",
+        "_row_num": 145
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "tratament",
+        "name": "TRATQUAL_R",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What treatments are prescribed ?",
+              "default": "Qual tratamento foi receitado?"
+            }
+          }
+        },
+        "_row_num": 146
+      },
+      {
+        "clause": "if",
+        "condition": "selected(data('TRATQUAL_R'),'77')",
+        "_row_num": 147
+      },
+      {
+        "type": "text",
+        "name": "TRATQUALOU_R",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Other:",
+              "default": "Outro:"
+            }
+          }
+        },
+        "_row_num": 148
+      },
+      {
+        "clause": "end if",
+        "_row_num": 149
+      },
+      {
+        "clause": "end if",
+        "_row_num": 150
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 151
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 152
+      },
+      {
         "type": "image",
         "name": "TRATIMG",
         "display": {
@@ -1286,15 +1353,15 @@
             }
           }
         },
-        "_row_num": 144
+        "_row_num": 153
       },
       {
         "clause": "end screen",
-        "_row_num": 145
+        "_row_num": 154
       },
       {
         "clause": "begin screen",
-        "_row_num": 146
+        "_row_num": 155
       },
       {
         "type": "select_one",
@@ -1315,12 +1382,12 @@
           }
         },
         "constraint": "data('PODEVAC') != null || data('CONSENT') == '2'",
-        "_row_num": 147
+        "_row_num": 156
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 148
+        "_row_num": 157
       },
       {
         "type": "text",
@@ -1333,11 +1400,11 @@
             }
           }
         },
-        "_row_num": 149
+        "_row_num": 158
       },
       {
         "clause": "end if",
-        "_row_num": 150
+        "_row_num": 159
       },
       {
         "type": "select_one",
@@ -1358,12 +1425,12 @@
           }
         },
         "constraint": "data('PODEINC') != null || data('CONSENT') == '2'",
-        "_row_num": 151
+        "_row_num": 160
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 152
+        "_row_num": 161
       },
       {
         "type": "text",
@@ -1376,11 +1443,11 @@
             }
           }
         },
-        "_row_num": 153
+        "_row_num": 162
       },
       {
         "clause": "end if",
-        "_row_num": 154
+        "_row_num": 163
       },
       {
         "type": "select_one",
@@ -1401,26 +1468,26 @@
           }
         },
         "constraint": "data('JAINC') != null || data('CONSENT') == '2'",
-        "_row_num": 155
+        "_row_num": 164
       },
       {
         "clause": "end screen",
-        "_row_num": 156
+        "_row_num": 165
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
-        "_row_num": 157
+        "_row_num": 166
       },
       {
         "clause": "begin screen",
-        "_row_num": 158
+        "_row_num": 167
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 159
+        "_row_num": 168
       },
       {
         "type": "note",
@@ -1432,12 +1499,12 @@
             }
           }
         },
-        "_row_num": 160
+        "_row_num": 169
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 161
+        "_row_num": 170
       },
       {
         "type": "note",
@@ -1449,16 +1516,16 @@
             }
           }
         },
-        "_row_num": 162
+        "_row_num": 171
       },
       {
         "clause": "end if",
-        "_row_num": 163
+        "_row_num": 172
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 164
+        "_row_num": 173
       },
       {
         "type": "note",
@@ -1470,16 +1537,16 @@
             }
           }
         },
-        "_row_num": 165
+        "_row_num": 174
       },
       {
         "clause": "end if",
-        "_row_num": 166
+        "_row_num": 175
       },
       {
         "clause": "if",
         "condition": "data('JAINC') == '1'",
-        "_row_num": 167
+        "_row_num": 176
       },
       {
         "type": "note",
@@ -1491,16 +1558,16 @@
             }
           }
         },
-        "_row_num": 168
+        "_row_num": 177
       },
       {
         "clause": "end if",
-        "_row_num": 169
+        "_row_num": 178
       },
       {
         "clause": "if",
         "condition": "data('BRACOCRI') <110",
-        "_row_num": 170
+        "_row_num": 179
       },
       {
         "type": "note",
@@ -1512,16 +1579,16 @@
             }
           }
         },
-        "_row_num": 171
+        "_row_num": 180
       },
       {
         "clause": "end if",
-        "_row_num": 172
+        "_row_num": 181
       },
       {
         "clause": "if",
         "condition": "data('TEMPERATURA')>38",
-        "_row_num": 173
+        "_row_num": 182
       },
       {
         "type": "note",
@@ -1533,16 +1600,16 @@
             }
           }
         },
-        "_row_num": 174
+        "_row_num": 183
       },
       {
         "clause": "end if",
-        "_row_num": 175
+        "_row_num": 184
       },
       {
         "clause": "if",
         "condition": "data('VENAOVAS') == '2'",
-        "_row_num": 176
+        "_row_num": 185
       },
       {
         "type": "note",
@@ -1554,16 +1621,16 @@
             }
           }
         },
-        "_row_num": 177
+        "_row_num": 186
       },
       {
         "clause": "end if",
-        "_row_num": 178
+        "_row_num": 187
       },
       {
         "clause": "if",
         "condition": "data('SARVAC') == '1'",
-        "_row_num": 179
+        "_row_num": 188
       },
       {
         "type": "note",
@@ -1575,23 +1642,23 @@
             }
           }
         },
-        "_row_num": 180
+        "_row_num": 189
       },
       {
         "clause": "end if",
-        "_row_num": 181
+        "_row_num": 190
       },
       {
         "clause": "end screen",
-        "_row_num": 182
+        "_row_num": 191
       },
       {
         "clause": "else",
-        "_row_num": 183
+        "_row_num": 192
       },
       {
         "clause": "begin screen",
-        "_row_num": 184
+        "_row_num": 193
       },
       {
         "type": "integer",
@@ -1611,7 +1678,7 @@
           }
         },
         "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-        "_row_num": 185
+        "_row_num": 194
       },
       {
         "type": "integer",
@@ -1631,13 +1698,13 @@
           }
         },
         "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-        "_row_num": 186
+        "_row_num": 195
       },
       {
         "type": "assign",
         "name": "RANDOM",
         "calculation": "freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2'))",
-        "_row_num": 187
+        "_row_num": 196
       },
       {
         "type": "note",
@@ -1649,27 +1716,27 @@
             }
           }
         },
-        "_row_num": 188
+        "_row_num": 197
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 1,
-        "_row_num": 189
+        "_row_num": 198
       },
       {
         "clause": "end screen",
-        "_row_num": 190
+        "_row_num": 199
       },
       {
         "clause": "begin screen",
-        "_row_num": 191
+        "_row_num": 200
       },
       {
         "type": "assign",
         "name": "DATVACVAS",
         "calculation": "data('DATINC')",
-        "_row_num": 192
+        "_row_num": 201
       },
       {
         "type": "adate",
@@ -1685,7 +1752,7 @@
             "helperText": false
           }
         },
-        "_row_num": 193
+        "_row_num": 202
       },
       {
         "type": "time",
@@ -1705,13 +1772,13 @@
           }
         },
         "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-        "_row_num": 194
+        "_row_num": 203
       },
       {
         "type": "assign",
         "name": "HORVACVAS",
         "calculation": "adate.hoursMinutes(data('HORA'))",
-        "_row_num": 195
+        "_row_num": 204
       },
       {
         "type": "integer",
@@ -1731,13 +1798,13 @@
           }
         },
         "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-        "_row_num": 196
+        "_row_num": 205
       },
       {
         "type": "assign",
         "name": "NUMEST",
         "calculation": "freebase.studyNumber(\"MAD\",4,data('NUM'))",
-        "_row_num": 197
+        "_row_num": 206
       },
       {
         "type": "note",
@@ -1749,19 +1816,19 @@
             }
           }
         },
-        "_row_num": 198
+        "_row_num": 207
       },
       {
         "clause": "end screen",
-        "_row_num": 199
+        "_row_num": 208
       },
       {
         "clause": "end if",
-        "_row_num": 200
+        "_row_num": 209
       },
       {
         "clause": "begin screen",
-        "_row_num": 201
+        "_row_num": 210
       },
       {
         "type": "select_one_with_other",
@@ -1775,12 +1842,12 @@
             }
           }
         },
-        "_row_num": 202
+        "_row_num": 211
       },
       {
         "clause": "if",
         "condition": "data('INC') == '1'",
-        "_row_num": 203
+        "_row_num": 212
       },
       {
         "type": "select_one_with_other",
@@ -1794,23 +1861,23 @@
             }
           }
         },
-        "_row_num": 204
+        "_row_num": 213
       },
       {
         "clause": "end if",
-        "_row_num": 205
+        "_row_num": 214
       },
       {
         "clause": "end screen",
-        "_row_num": 206
+        "_row_num": 215
       },
       {
         "clause": "else",
-        "_row_num": 207
+        "_row_num": 216
       },
       {
         "clause": "begin screen",
-        "_row_num": 208
+        "_row_num": 217
       },
       {
         "type": "note",
@@ -1822,21 +1889,21 @@
             }
           }
         },
-        "_row_num": 209
+        "_row_num": 218
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 210
+        "_row_num": 219
       },
       {
         "clause": "end screen",
-        "_row_num": 211
+        "_row_num": 220
       },
       {
         "clause": "end if",
-        "_row_num": 212
+        "_row_num": 221
       }
     ],
     "choices": [
@@ -1985,19 +2052,6 @@
       },
       {
         "choice_list_name": "enf",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Suzete",
-              "default": "Suzete"
-            }
-          }
-        },
-        "_row_num": 13
-      },
-      {
-        "choice_list_name": "enf",
         "data_value": "2",
         "display": {
           "title": {
@@ -2007,7 +2061,8 @@
             }
           }
         },
-        "_row_num": 14
+        "Comment": "removed Suzete (enf=1) on 19-01-2022",
+        "_row_num": 13
       },
       {
         "choice_list_name": "enf",
@@ -2020,7 +2075,7 @@
             }
           }
         },
-        "_row_num": 15
+        "_row_num": 14
       },
       {
         "choice_list_name": "enf",
@@ -2033,7 +2088,7 @@
             }
           }
         },
-        "_row_num": 16
+        "_row_num": 15
       },
       {
         "choice_list_name": "ass",
@@ -2046,20 +2101,8 @@
             }
           }
         },
-        "_row_num": 17
-      },
-      {
-        "choice_list_name": "ass",
-        "data_value": "11",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Suzete",
-              "default": "Suzete"
-            }
-          }
-        },
-        "_row_num": 18
+        "Comment": "removed Suzete (ass=11) on 19-01-2022",
+        "_row_num": 16
       },
       {
         "choice_list_name": "ass",
@@ -2072,7 +2115,7 @@
             }
           }
         },
-        "_row_num": 19
+        "_row_num": 17
       },
       {
         "choice_list_name": "ass",
@@ -2085,7 +2128,7 @@
             }
           }
         },
-        "_row_num": 20
+        "_row_num": 18
       },
       {
         "choice_list_name": "ass",
@@ -2098,7 +2141,7 @@
             }
           }
         },
-        "_row_num": 21
+        "_row_num": 19
       },
       {
         "choice_list_name": "tratament",
@@ -2106,12 +2149,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 1",
-              "default": "Tratamento 1"
+              "english": "Paracetamol",
+              "default": "Paracetamol"
             }
           }
         },
-        "_row_num": 22
+        "_row_num": 20
       },
       {
         "choice_list_name": "tratament",
@@ -2119,12 +2162,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 2",
-              "default": "Tratamento 2"
+              "english": "Amoxicillina",
+              "default": "Amoxicillina"
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 21
       },
       {
         "choice_list_name": "tratament",
@@ -2132,12 +2175,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 3",
-              "default": "Tratamento 3"
+              "english": "Complexo B",
+              "default": "Complexo B"
             }
           }
         },
-        "_row_num": 24
+        "_row_num": 22
       },
       {
         "choice_list_name": "tratament",
@@ -2145,12 +2188,116 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 4",
-              "default": "Tratamento 4"
+              "english": "Salbutamol",
+              "default": "Salbutamol"
+            }
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Diazepam",
+              "default": "Diazepam"
+            }
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Prometazina",
+              "default": "Prometazina"
             }
           }
         },
         "_row_num": 25
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "7",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Treatment 7",
+              "default": "Tratamento 7"
+            }
+          }
+        },
+        "_row_num": 26
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "8",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Treatment 8",
+              "default": "Tratamento 8"
+            }
+          }
+        },
+        "_row_num": 27
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "9",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Treatment 9",
+              "default": "Tratamento 9"
+            }
+          }
+        },
+        "_row_num": 28
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "10",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Treatment 10",
+              "default": "Tratamento 10"
+            }
+          }
+        },
+        "_row_num": 29
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "11",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Treatment 11",
+              "default": "Tratamento 11"
+            }
+          }
+        },
+        "_row_num": 30
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "12",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Treatment 12",
+              "default": "Tratamento 12"
+            }
+          }
+        },
+        "_row_num": 31
       },
       {
         "choice_list_name": "tratament",
@@ -2163,7 +2310,7 @@
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 32
       },
       {
         "choice_list_name": "telinf1",
@@ -2176,7 +2323,7 @@
             }
           }
         },
-        "_row_num": 27
+        "_row_num": 33
       },
       {
         "choice_list_name": "telinf1",
@@ -2189,7 +2336,7 @@
             }
           }
         },
-        "_row_num": 28
+        "_row_num": 34
       },
       {
         "choice_list_name": "telinf2",
@@ -2202,7 +2349,7 @@
             }
           }
         },
-        "_row_num": 29
+        "_row_num": 35
       },
       {
         "choice_list_name": "telinf2",
@@ -2215,7 +2362,7 @@
             }
           }
         },
-        "_row_num": 30
+        "_row_num": 36
       },
       {
         "choice_list_name": "telinf2",
@@ -2228,7 +2375,7 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 37
       },
       {
         "choice_list_name": "nsID",
@@ -2241,7 +2388,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 38
       },
       {
         "choice_list_name": "nsREGIDC",
@@ -2254,7 +2401,7 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 39
       },
       {
         "choice_list_name": "signature",
@@ -2267,7 +2414,7 @@
             }
           }
         },
-        "_row_num": 34
+        "_row_num": 40
       },
       {
         "choice_list_name": "signature",
@@ -2280,7 +2427,7 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 41
       },
       {
         "choice_list_name": "resp",
@@ -2293,7 +2440,7 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 42
       },
       {
         "choice_list_name": "resp",
@@ -2306,7 +2453,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 43
       },
       {
         "choice_list_name": "resp",
@@ -2319,7 +2466,7 @@
             }
           }
         },
-        "_row_num": 38
+        "_row_num": 44
       },
       {
         "choice_list_name": "resp",
@@ -2332,7 +2479,7 @@
             }
           }
         },
-        "_row_num": 39
+        "_row_num": 45
       },
       {
         "choice_list_name": "sim",
@@ -2345,7 +2492,7 @@
             }
           }
         },
-        "_row_num": 40
+        "_row_num": 46
       }
     ],
     "queries": [
@@ -2766,47 +2913,83 @@
         "_row_num": 66
       },
       {
+        "name": "TRATAMENT_A",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 67
+      },
+      {
+        "name": "TRATAMENT_R",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 68
+      },
+      {
         "name": "TRATIMG",
         "type": "image",
         "isSessionVariable": false,
-        "_row_num": 67
+        "_row_num": 69
       },
       {
         "name": "TRATQUAL",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 68
+        "_row_num": 70
+      },
+      {
+        "name": "TRATQUAL_A",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 71
+      },
+      {
+        "name": "TRATQUAL_R",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 72
       },
       {
         "name": "TRATQUALOU",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 69
+        "_row_num": 73
+      },
+      {
+        "name": "TRATQUALOU_A",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 74
+      },
+      {
+        "name": "TRATQUALOU_R",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 75
       },
       {
         "name": "VENAOVAS",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 70
+        "_row_num": 76
       },
       {
         "name": "VOMITO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 71
+        "_row_num": 77
       },
       {
         "name": "changeid",
         "type": "select_one",
         "isSessionVariable": true,
         "comments": "edit",
-        "_row_num": 73
+        "_row_num": 79
       },
       {
         "name": "changetabz",
         "type": "select_one",
         "isSessionVariable": true,
-        "_row_num": 74
+        "_row_num": 80
       }
     ]
   },
@@ -3100,19 +3283,6 @@
       "enf": [
         {
           "choice_list_name": "enf",
-          "data_value": "1",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Suzete",
-                "default": "Suzete"
-              }
-            }
-          },
-          "_row_num": 13
-        },
-        {
-          "choice_list_name": "enf",
           "data_value": "2",
           "display": {
             "title": {
@@ -3122,7 +3292,8 @@
               }
             }
           },
-          "_row_num": 14
+          "Comment": "removed Suzete (enf=1) on 19-01-2022",
+          "_row_num": 13
         },
         {
           "choice_list_name": "enf",
@@ -3135,7 +3306,7 @@
               }
             }
           },
-          "_row_num": 15
+          "_row_num": 14
         },
         {
           "choice_list_name": "enf",
@@ -3148,7 +3319,7 @@
               }
             }
           },
-          "_row_num": 16
+          "_row_num": 15
         }
       ],
       "ass": [
@@ -3163,20 +3334,8 @@
               }
             }
           },
-          "_row_num": 17
-        },
-        {
-          "choice_list_name": "ass",
-          "data_value": "11",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Suzete",
-                "default": "Suzete"
-              }
-            }
-          },
-          "_row_num": 18
+          "Comment": "removed Suzete (ass=11) on 19-01-2022",
+          "_row_num": 16
         },
         {
           "choice_list_name": "ass",
@@ -3189,7 +3348,7 @@
               }
             }
           },
-          "_row_num": 19
+          "_row_num": 17
         },
         {
           "choice_list_name": "ass",
@@ -3202,7 +3361,7 @@
               }
             }
           },
-          "_row_num": 20
+          "_row_num": 18
         },
         {
           "choice_list_name": "ass",
@@ -3215,7 +3374,7 @@
               }
             }
           },
-          "_row_num": 21
+          "_row_num": 19
         }
       ],
       "tratament": [
@@ -3225,12 +3384,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 1",
-                "default": "Tratamento 1"
+                "english": "Paracetamol",
+                "default": "Paracetamol"
               }
             }
           },
-          "_row_num": 22
+          "_row_num": 20
         },
         {
           "choice_list_name": "tratament",
@@ -3238,12 +3397,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 2",
-                "default": "Tratamento 2"
+                "english": "Amoxicillina",
+                "default": "Amoxicillina"
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 21
         },
         {
           "choice_list_name": "tratament",
@@ -3251,12 +3410,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 3",
-                "default": "Tratamento 3"
+                "english": "Complexo B",
+                "default": "Complexo B"
               }
             }
           },
-          "_row_num": 24
+          "_row_num": 22
         },
         {
           "choice_list_name": "tratament",
@@ -3264,12 +3423,116 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 4",
-                "default": "Tratamento 4"
+                "english": "Salbutamol",
+                "default": "Salbutamol"
+              }
+            }
+          },
+          "_row_num": 23
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Diazepam",
+                "default": "Diazepam"
+              }
+            }
+          },
+          "_row_num": 24
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "6",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Prometazina",
+                "default": "Prometazina"
               }
             }
           },
           "_row_num": 25
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "7",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Treatment 7",
+                "default": "Tratamento 7"
+              }
+            }
+          },
+          "_row_num": 26
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "8",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Treatment 8",
+                "default": "Tratamento 8"
+              }
+            }
+          },
+          "_row_num": 27
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "9",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Treatment 9",
+                "default": "Tratamento 9"
+              }
+            }
+          },
+          "_row_num": 28
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "10",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Treatment 10",
+                "default": "Tratamento 10"
+              }
+            }
+          },
+          "_row_num": 29
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "11",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Treatment 11",
+                "default": "Tratamento 11"
+              }
+            }
+          },
+          "_row_num": 30
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "12",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Treatment 12",
+                "default": "Tratamento 12"
+              }
+            }
+          },
+          "_row_num": 31
         },
         {
           "choice_list_name": "tratament",
@@ -3282,7 +3545,7 @@
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 32
         }
       ],
       "telinf1": [
@@ -3297,7 +3560,7 @@
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 33
         },
         {
           "choice_list_name": "telinf1",
@@ -3310,7 +3573,7 @@
               }
             }
           },
-          "_row_num": 28
+          "_row_num": 34
         }
       ],
       "telinf2": [
@@ -3325,7 +3588,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 35
         },
         {
           "choice_list_name": "telinf2",
@@ -3338,7 +3601,7 @@
               }
             }
           },
-          "_row_num": 30
+          "_row_num": 36
         },
         {
           "choice_list_name": "telinf2",
@@ -3351,7 +3614,7 @@
               }
             }
           },
-          "_row_num": 31
+          "_row_num": 37
         }
       ],
       "nsID": [
@@ -3366,7 +3629,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 38
         }
       ],
       "nsREGIDC": [
@@ -3381,7 +3644,7 @@
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 39
         }
       ],
       "signature": [
@@ -3396,7 +3659,7 @@
               }
             }
           },
-          "_row_num": 34
+          "_row_num": 40
         },
         {
           "choice_list_name": "signature",
@@ -3409,7 +3672,7 @@
               }
             }
           },
-          "_row_num": 35
+          "_row_num": 41
         }
       ],
       "resp": [
@@ -3424,7 +3687,7 @@
               }
             }
           },
-          "_row_num": 36
+          "_row_num": 42
         },
         {
           "choice_list_name": "resp",
@@ -3437,7 +3700,7 @@
               }
             }
           },
-          "_row_num": 37
+          "_row_num": 43
         },
         {
           "choice_list_name": "resp",
@@ -3450,7 +3713,7 @@
               }
             }
           },
-          "_row_num": 38
+          "_row_num": 44
         },
         {
           "choice_list_name": "resp",
@@ -3463,7 +3726,7 @@
               }
             }
           },
-          "_row_num": 39
+          "_row_num": 45
         }
       ],
       "sim": [
@@ -3478,7 +3741,7 @@
               }
             }
           },
-          "_row_num": 40
+          "_row_num": 46
         }
       ]
     },
@@ -3508,7 +3771,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 204,
+            "_row_num": 213,
             "section_name": "inc"
           },
           {
@@ -3761,7 +4024,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 193,
+            "_row_num": 202,
             "section_name": "inc"
           },
           {
@@ -3849,7 +4112,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 202,
+            "_row_num": 211,
             "section_name": "inc"
           },
           {
@@ -3881,7 +4144,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 194,
+            "_row_num": 203,
             "section_name": "inc"
           },
           {
@@ -4004,7 +4267,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 155,
+            "_row_num": 164,
             "section_name": "inc"
           },
           {
@@ -4035,7 +4298,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 153,
+            "_row_num": 162,
             "section_name": "inc"
           },
           {
@@ -4095,7 +4358,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 196,
+            "_row_num": 205,
             "section_name": "inc"
           },
           {
@@ -4121,7 +4384,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 149,
+            "_row_num": 158,
             "section_name": "inc"
           },
           {
@@ -4167,7 +4430,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 151,
+            "_row_num": 160,
             "section_name": "inc"
           },
           {
@@ -4183,7 +4446,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 147,
+            "_row_num": 156,
             "section_name": "inc"
           },
           {
@@ -4209,7 +4472,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 185,
+            "_row_num": 194,
             "section_name": "inc"
           },
           {
@@ -4224,7 +4487,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 186,
+            "_row_num": 195,
             "section_name": "inc"
           },
           {
@@ -4542,12 +4805,7 @@
       },
       "TRATAMENT": {
         "type": "string",
-        "valuesList": "sim/não/ns",
         "_defn": [
-          {
-            "_row_num": 135,
-            "section_name": "inc"
-          },
           {
             "_row_num": 66,
             "section_name": "model"
@@ -4555,6 +4813,38 @@
         ],
         "isSessionVariable": false,
         "elementKey": "TRATAMENT"
+      },
+      "TRATAMENT_A": {
+        "type": "string",
+        "valuesList": "sim/não/ns",
+        "_defn": [
+          {
+            "_row_num": 135,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 67,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATAMENT_A"
+      },
+      "TRATAMENT_R": {
+        "type": "string",
+        "valuesList": "sim/não/ns",
+        "_defn": [
+          {
+            "_row_num": 144,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 68,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATAMENT_R"
       },
       "TRATIMG": {
         "type": "object",
@@ -4574,11 +4864,11 @@
         },
         "_defn": [
           {
-            "_row_num": 144,
+            "_row_num": 153,
             "section_name": "inc"
           },
           {
-            "_row_num": 67,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -4591,6 +4881,21 @@
           "type": "string",
           "elementKey": "TRATQUAL_items"
         },
+        "_defn": [
+          {
+            "_row_num": 70,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATQUAL"
+      },
+      "TRATQUAL_A": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "TRATQUAL_A_items"
+        },
         "valuesList": "tratament",
         "_defn": [
           {
@@ -4598,14 +4903,45 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 68,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "TRATQUAL"
+        "elementKey": "TRATQUAL_A"
+      },
+      "TRATQUAL_R": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "TRATQUAL_R_items"
+        },
+        "valuesList": "tratament",
+        "_defn": [
+          {
+            "_row_num": 146,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 72,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATQUAL_R"
       },
       "TRATQUALOU": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 73,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATQUALOU"
+      },
+      "TRATQUALOU_A": {
         "type": "string",
         "_defn": [
           {
@@ -4613,12 +4949,27 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 69,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "TRATQUALOU"
+        "elementKey": "TRATQUALOU_A"
+      },
+      "TRATQUALOU_R": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 148,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 75,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATQUALOU_R"
       },
       "VENAOVAS": {
         "type": "string",
@@ -4629,7 +4980,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 70,
+            "_row_num": 76,
             "section_name": "model"
           }
         ],
@@ -4645,7 +4996,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 71,
+            "_row_num": 77,
             "section_name": "model"
           }
         ],
@@ -4656,7 +5007,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 79,
             "section_name": "model"
           }
         ],
@@ -4667,7 +5018,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 80,
             "section_name": "model"
           }
         ],
@@ -5792,12 +6143,12 @@
           {
             "type": "select_one",
             "values_list": "sim/não/ns",
-            "name": "TRATAMENT",
+            "name": "TRATAMENT_A",
             "display": {
               "prompt": {
                 "text": {
                   "english": "Did the child receive any treatments?",
-                  "default": "A criança recebeu algum tratamento?"
+                  "default": "A criança recebeu algum tratamento (antes inclusao)?"
                 }
               }
             },
@@ -5811,7 +6162,7 @@
           {
             "type": "select_multiple",
             "values_list": "tratament",
-            "name": "TRATQUAL",
+            "name": "TRATQUAL_A",
             "display": {
               "prompt": {
                 "text": {
@@ -5829,7 +6180,7 @@
           },
           {
             "type": "text",
-            "name": "TRATQUALOU",
+            "name": "TRATQUALOU_A",
             "display": {
               "prompt": {
                 "text": {
@@ -5846,6 +6197,62 @@
             "promptIdx": 53
           },
           {
+            "type": "select_one",
+            "values_list": "sim/não/ns",
+            "name": "TRATAMENT_R",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the child get any treatments prescribed?",
+                  "default": "A criança deve receber algum tratamento (receita)?"
+                }
+              }
+            },
+            "_row_num": 144,
+            "__rowNum__": 143,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "inc/_screen143",
+            "promptIdx": 54
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "tratament",
+            "name": "TRATQUAL_R",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What treatments are prescribed ?",
+                  "default": "Qual tratamento foi receitado?"
+                }
+              }
+            },
+            "_row_num": 146,
+            "__rowNum__": 145,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "inc/_screen143",
+            "promptIdx": 55
+          },
+          {
+            "type": "text",
+            "name": "TRATQUALOU_R",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Other:",
+                  "default": "Outro:"
+                }
+              }
+            },
+            "_row_num": 148,
+            "__rowNum__": 147,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "inc/_screen143",
+            "promptIdx": 56
+          },
+          {
             "type": "image",
             "name": "TRATIMG",
             "display": {
@@ -5856,12 +6263,12 @@
                 }
               }
             },
-            "_row_num": 144,
-            "__rowNum__": 143,
+            "_row_num": 153,
+            "__rowNum__": 152,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "inc/_screen143",
-            "promptIdx": 54
+            "_branch_label_enclosing_screen": "inc/_screen152",
+            "promptIdx": 57
           },
           {
             "type": "select_one",
@@ -5882,12 +6289,12 @@
               }
             },
             "constraint": "data('PODEVAC') != null || data('CONSENT') == '2'",
-            "_row_num": 147,
-            "__rowNum__": 146,
+            "_row_num": 156,
+            "__rowNum__": 155,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen146",
-            "promptIdx": 55
+            "_branch_label_enclosing_screen": "inc/_screen155",
+            "promptIdx": 58
           },
           {
             "type": "text",
@@ -5900,12 +6307,12 @@
                 }
               }
             },
-            "_row_num": 149,
-            "__rowNum__": 148,
+            "_row_num": 158,
+            "__rowNum__": 157,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen146",
-            "promptIdx": 56
+            "_branch_label_enclosing_screen": "inc/_screen155",
+            "promptIdx": 59
           },
           {
             "type": "select_one",
@@ -5926,12 +6333,12 @@
               }
             },
             "constraint": "data('PODEINC') != null || data('CONSENT') == '2'",
-            "_row_num": 151,
-            "__rowNum__": 150,
+            "_row_num": 160,
+            "__rowNum__": 159,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen146",
-            "promptIdx": 57
+            "_branch_label_enclosing_screen": "inc/_screen155",
+            "promptIdx": 60
           },
           {
             "type": "text",
@@ -5944,12 +6351,12 @@
                 }
               }
             },
-            "_row_num": 153,
-            "__rowNum__": 152,
+            "_row_num": 162,
+            "__rowNum__": 161,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen146",
-            "promptIdx": 58
+            "_branch_label_enclosing_screen": "inc/_screen155",
+            "promptIdx": 61
           },
           {
             "type": "select_one",
@@ -5970,12 +6377,12 @@
               }
             },
             "constraint": "data('JAINC') != null || data('CONSENT') == '2'",
-            "_row_num": 155,
-            "__rowNum__": 154,
+            "_row_num": 164,
+            "__rowNum__": 163,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen146",
-            "promptIdx": 59
+            "_branch_label_enclosing_screen": "inc/_screen155",
+            "promptIdx": 62
           },
           {
             "type": "note",
@@ -5987,12 +6394,12 @@
                 }
               }
             },
-            "_row_num": 160,
-            "__rowNum__": 159,
+            "_row_num": 169,
+            "__rowNum__": 168,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen158",
-            "promptIdx": 60
+            "_branch_label_enclosing_screen": "inc/_screen167",
+            "promptIdx": 63
           },
           {
             "type": "note",
@@ -6004,12 +6411,12 @@
                 }
               }
             },
-            "_row_num": 162,
-            "__rowNum__": 161,
+            "_row_num": 171,
+            "__rowNum__": 170,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen158",
-            "promptIdx": 61
+            "_branch_label_enclosing_screen": "inc/_screen167",
+            "promptIdx": 64
           },
           {
             "type": "note",
@@ -6021,12 +6428,12 @@
                 }
               }
             },
-            "_row_num": 165,
-            "__rowNum__": 164,
+            "_row_num": 174,
+            "__rowNum__": 173,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen158",
-            "promptIdx": 62
+            "_branch_label_enclosing_screen": "inc/_screen167",
+            "promptIdx": 65
           },
           {
             "type": "note",
@@ -6038,12 +6445,12 @@
                 }
               }
             },
-            "_row_num": 168,
-            "__rowNum__": 167,
+            "_row_num": 177,
+            "__rowNum__": 176,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen158",
-            "promptIdx": 63
+            "_branch_label_enclosing_screen": "inc/_screen167",
+            "promptIdx": 66
           },
           {
             "type": "note",
@@ -6055,12 +6462,12 @@
                 }
               }
             },
-            "_row_num": 171,
-            "__rowNum__": 170,
+            "_row_num": 180,
+            "__rowNum__": 179,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen158",
-            "promptIdx": 64
+            "_branch_label_enclosing_screen": "inc/_screen167",
+            "promptIdx": 67
           },
           {
             "type": "note",
@@ -6072,12 +6479,12 @@
                 }
               }
             },
-            "_row_num": 174,
-            "__rowNum__": 173,
+            "_row_num": 183,
+            "__rowNum__": 182,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen158",
-            "promptIdx": 65
+            "_branch_label_enclosing_screen": "inc/_screen167",
+            "promptIdx": 68
           },
           {
             "type": "note",
@@ -6089,12 +6496,12 @@
                 }
               }
             },
-            "_row_num": 177,
-            "__rowNum__": 176,
+            "_row_num": 186,
+            "__rowNum__": 185,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen158",
-            "promptIdx": 66
+            "_branch_label_enclosing_screen": "inc/_screen167",
+            "promptIdx": 69
           },
           {
             "type": "note",
@@ -6106,12 +6513,12 @@
                 }
               }
             },
-            "_row_num": 180,
-            "__rowNum__": 179,
+            "_row_num": 189,
+            "__rowNum__": 188,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen158",
-            "promptIdx": 67
+            "_branch_label_enclosing_screen": "inc/_screen167",
+            "promptIdx": 70
           },
           {
             "type": "integer",
@@ -6131,12 +6538,12 @@
               }
             },
             "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-            "_row_num": 185,
-            "__rowNum__": 184,
+            "_row_num": 194,
+            "__rowNum__": 193,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen184",
-            "promptIdx": 68
+            "_branch_label_enclosing_screen": "inc/_screen193",
+            "promptIdx": 71
           },
           {
             "type": "integer",
@@ -6156,12 +6563,12 @@
               }
             },
             "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-            "_row_num": 186,
-            "__rowNum__": 185,
+            "_row_num": 195,
+            "__rowNum__": 194,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen184",
-            "promptIdx": 69
+            "_branch_label_enclosing_screen": "inc/_screen193",
+            "promptIdx": 72
           },
           {
             "type": "note",
@@ -6173,12 +6580,12 @@
                 }
               }
             },
-            "_row_num": 188,
-            "__rowNum__": 187,
+            "_row_num": 197,
+            "__rowNum__": 196,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen184",
-            "promptIdx": 70
+            "_branch_label_enclosing_screen": "inc/_screen193",
+            "promptIdx": 73
           },
           {
             "type": "adate",
@@ -6194,12 +6601,12 @@
                 "helperText": false
               }
             },
-            "_row_num": 193,
-            "__rowNum__": 192,
+            "_row_num": 202,
+            "__rowNum__": 201,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen191",
-            "promptIdx": 71
+            "_branch_label_enclosing_screen": "inc/_screen200",
+            "promptIdx": 74
           },
           {
             "type": "time",
@@ -6219,12 +6626,12 @@
               }
             },
             "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-            "_row_num": 194,
-            "__rowNum__": 193,
+            "_row_num": 203,
+            "__rowNum__": 202,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "inc/_screen191",
-            "promptIdx": 72
+            "_branch_label_enclosing_screen": "inc/_screen200",
+            "promptIdx": 75
           },
           {
             "type": "integer",
@@ -6244,12 +6651,12 @@
               }
             },
             "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-            "_row_num": 196,
-            "__rowNum__": 195,
+            "_row_num": 205,
+            "__rowNum__": 204,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen191",
-            "promptIdx": 73
+            "_branch_label_enclosing_screen": "inc/_screen200",
+            "promptIdx": 76
           },
           {
             "type": "note",
@@ -6261,12 +6668,12 @@
                 }
               }
             },
-            "_row_num": 198,
-            "__rowNum__": 197,
+            "_row_num": 207,
+            "__rowNum__": 206,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen191",
-            "promptIdx": 74
+            "_branch_label_enclosing_screen": "inc/_screen200",
+            "promptIdx": 77
           },
           {
             "type": "select_one_with_other",
@@ -6280,12 +6687,12 @@
                 }
               }
             },
-            "_row_num": 202,
-            "__rowNum__": 201,
+            "_row_num": 211,
+            "__rowNum__": 210,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen201",
-            "promptIdx": 75
+            "_branch_label_enclosing_screen": "inc/_screen210",
+            "promptIdx": 78
           },
           {
             "type": "select_one_with_other",
@@ -6299,12 +6706,12 @@
                 }
               }
             },
-            "_row_num": 204,
-            "__rowNum__": 203,
+            "_row_num": 213,
+            "__rowNum__": 212,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen201",
-            "promptIdx": 76
+            "_branch_label_enclosing_screen": "inc/_screen210",
+            "promptIdx": 79
           },
           {
             "type": "note",
@@ -6316,20 +6723,20 @@
                 }
               }
             },
-            "_row_num": 209,
-            "__rowNum__": 208,
+            "_row_num": 218,
+            "__rowNum__": 217,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen208",
-            "promptIdx": 77
+            "_branch_label_enclosing_screen": "inc/_screen217",
+            "promptIdx": 80
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 213,
-            "_branch_label_enclosing_screen": "inc/_screen213",
-            "promptIdx": 78
+            "_row_num": 222,
+            "_branch_label_enclosing_screen": "inc/_screen222",
+            "promptIdx": 81
           }
         ],
         "validation_tag_map": {
@@ -6356,13 +6763,13 @@
             39,
             40,
             42,
-            55,
-            57,
-            59,
-            68,
-            69,
+            58,
+            60,
+            62,
+            71,
             72,
-            73
+            75,
+            76
           ]
         },
         "operations": [
@@ -6476,8 +6883,8 @@
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else207",
-            "_row_num": 207,
+            "_branch_label": "_else216",
+            "_row_num": 216,
             "operationIdx": 8
           },
           {
@@ -6618,7 +7025,7 @@
               "__rowNum__": 141,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(51);\nif (data('TRATAMENT') =='1') {\nactivePromptIndicies.push(52);\nif (selected(data('TRATQUAL'),'77')) {\nactivePromptIndicies.push(53);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(51);\nif (data('TRATAMENT_A') =='1') {\nactivePromptIndicies.push(52);\nif (selected(data('TRATQUAL_A'),'77')) {\nactivePromptIndicies.push(53);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 20
           },
           {
@@ -6628,82 +7035,82 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 145,
-              "__rowNum__": 144,
+              "_row_num": 151,
+              "__rowNum__": 150,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\nif (data('TRATAMENT_R') =='1') {\nactivePromptIndicies.push(55);\nif (selected(data('TRATQUAL_R'),'77')) {\nactivePromptIndicies.push(56);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 21
           },
           {
             "clause": "begin screen",
-            "_row_num": 146,
-            "__rowNum__": 145,
+            "_row_num": 152,
+            "__rowNum__": 151,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 156,
-              "__rowNum__": 155,
+              "_row_num": 154,
+              "__rowNum__": 153,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(55);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(56);\n}\nactivePromptIndicies.push(57);\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(58);\n}\nactivePromptIndicies.push(59);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(57);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 22
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 155,
+            "__rowNum__": 154,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 165,
+              "__rowNum__": 164,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(58);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(59);\n}\nactivePromptIndicies.push(60);\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(61);\n}\nactivePromptIndicies.push(62);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 23
           },
           {
             "clause": "if",
             "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
-            "_row_num": 157,
-            "__rowNum__": 156,
+            "_row_num": 166,
+            "__rowNum__": 165,
             "_token_type": "goto_label",
-            "_branch_label": "_then157",
-            "operationIdx": 23
+            "_branch_label": "_then166",
+            "operationIdx": 24
           },
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else183",
-            "_row_num": 183,
-            "operationIdx": 24
+            "_branch_label": "_else192",
+            "_row_num": 192,
+            "operationIdx": 25
           },
           {
             "clause": "begin screen",
-            "_row_num": 158,
-            "__rowNum__": 157,
+            "_row_num": 167,
+            "__rowNum__": 166,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 182,
-              "__rowNum__": 181,
+              "_row_num": 191,
+              "__rowNum__": 190,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(60);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(61);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(62);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(63);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(64);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(65);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(66);\n}\nif (data('SARVAC') == '1') {\nactivePromptIndicies.push(67);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 25
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(63);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(64);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(65);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(66);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(67);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(68);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(69);\n}\nif (data('SARVAC') == '1') {\nactivePromptIndicies.push(70);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 26
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif200",
-            "_row_num": 200,
-            "operationIdx": 26
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 184,
-            "__rowNum__": 183,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 190,
-              "__rowNum__": 189,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(68);\nactivePromptIndicies.push(69);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(70);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
+            "_branch_label": "_endif209",
+            "_row_num": 209,
             "operationIdx": 27
           },
           {
             "clause": "begin screen",
-            "_row_num": 191,
-            "__rowNum__": 190,
+            "_row_num": 193,
+            "__rowNum__": 192,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -6711,64 +7118,78 @@
               "__rowNum__": 198,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(73);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(74);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(73);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 28
           },
           {
             "clause": "begin screen",
-            "_row_num": 201,
-            "__rowNum__": 200,
+            "_row_num": 200,
+            "__rowNum__": 199,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 206,
-              "__rowNum__": 205,
+              "_row_num": 208,
+              "__rowNum__": 207,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(75);\nif (data('INC') == '1') {\nactivePromptIndicies.push(76);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(74);\nactivePromptIndicies.push(75);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(76);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(77);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 29
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 210,
+            "__rowNum__": 209,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 215,
+              "__rowNum__": 214,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(78);\nif (data('INC') == '1') {\nactivePromptIndicies.push(79);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 30
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif212",
-            "_row_num": 212,
-            "operationIdx": 30
+            "_branch_label": "_endif221",
+            "_row_num": 221,
+            "operationIdx": 31
           },
           {
             "clause": "begin screen",
-            "_row_num": 208,
-            "__rowNum__": 207,
+            "_row_num": 217,
+            "__rowNum__": 216,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 211,
-              "__rowNum__": 210,
+              "_row_num": 220,
+              "__rowNum__": 219,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(77);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 31
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(80);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 32
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 213,
-            "operationIdx": 32
+            "_row_num": 222,
+            "operationIdx": 33
           },
           {
-            "_row_num": 213,
+            "_row_num": 222,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(78);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(81);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 33
+            "operationIdx": 34
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 213,
-            "operationIdx": 34
+            "_row_num": 222,
+            "operationIdx": 35
           }
         ],
         "branch_label_map": {
@@ -6793,19 +7214,20 @@
           "_screen130": 19,
           "_screen134": 20,
           "_screen143": 21,
-          "_screen146": 22,
-          "_then157": 25,
-          "_screen158": 25,
-          "_else183": 27,
-          "_screen184": 27,
-          "_screen191": 28,
-          "_endif200": 29,
-          "_screen201": 29,
-          "_else207": 31,
-          "_screen208": 31,
-          "_endif212": 32,
-          "_contents": 33,
-          "_screen213": 33
+          "_screen152": 22,
+          "_screen155": 23,
+          "_then166": 26,
+          "_screen167": 26,
+          "_else192": 28,
+          "_screen193": 28,
+          "_screen200": 29,
+          "_endif209": 30,
+          "_screen210": 30,
+          "_else216": 32,
+          "_screen217": 32,
+          "_endif221": 33,
+          "_contents": 34,
+          "_screen222": 34
         }
       },
       "initial": {
@@ -6996,7 +7418,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 204,
+            "_row_num": 213,
             "section_name": "inc"
           },
           {
@@ -7318,7 +7740,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 193,
+            "_row_num": 202,
             "section_name": "inc"
           },
           {
@@ -7429,7 +7851,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 202,
+            "_row_num": 211,
             "section_name": "inc"
           },
           {
@@ -7467,7 +7889,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 194,
+            "_row_num": 203,
             "section_name": "inc"
           },
           {
@@ -7622,7 +8044,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 155,
+            "_row_num": 164,
             "section_name": "inc"
           },
           {
@@ -7659,7 +8081,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 153,
+            "_row_num": 162,
             "section_name": "inc"
           },
           {
@@ -7731,7 +8153,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 196,
+            "_row_num": 205,
             "section_name": "inc"
           },
           {
@@ -7763,7 +8185,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 149,
+            "_row_num": 158,
             "section_name": "inc"
           },
           {
@@ -7818,7 +8240,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 151,
+            "_row_num": 160,
             "section_name": "inc"
           },
           {
@@ -7837,7 +8259,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 147,
+            "_row_num": 156,
             "section_name": "inc"
           },
           {
@@ -7869,7 +8291,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 185,
+            "_row_num": 194,
             "section_name": "inc"
           },
           {
@@ -7887,7 +8309,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 186,
+            "_row_num": 195,
             "section_name": "inc"
           },
           {
@@ -8281,12 +8703,7 @@
       },
       "TRATAMENT": {
         "type": "string",
-        "valuesList": "sim/não/ns",
         "_defn": [
-          {
-            "_row_num": 135,
-            "section_name": "inc"
-          },
           {
             "_row_num": 66,
             "section_name": "model"
@@ -8297,6 +8714,44 @@
         "elementName": "TRATAMENT",
         "elementSet": "data",
         "elementPath": "TRATAMENT"
+      },
+      "TRATAMENT_A": {
+        "type": "string",
+        "valuesList": "sim/não/ns",
+        "_defn": [
+          {
+            "_row_num": 135,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 67,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATAMENT_A",
+        "elementName": "TRATAMENT_A",
+        "elementSet": "data",
+        "elementPath": "TRATAMENT_A"
+      },
+      "TRATAMENT_R": {
+        "type": "string",
+        "valuesList": "sim/não/ns",
+        "_defn": [
+          {
+            "_row_num": 144,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 68,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATAMENT_R",
+        "elementName": "TRATAMENT_R",
+        "elementSet": "data",
+        "elementPath": "TRATAMENT_R"
       },
       "TRATIMG": {
         "type": "object",
@@ -8322,11 +8777,11 @@
         },
         "_defn": [
           {
-            "_row_num": 144,
+            "_row_num": 153,
             "section_name": "inc"
           },
           {
-            "_row_num": 67,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -8351,14 +8806,9 @@
           "elementPath": "TRATQUAL.items",
           "notUnitOfRetention": true
         },
-        "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 137,
-            "section_name": "inc"
-          },
-          {
-            "_row_num": 68,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -8371,15 +8821,71 @@
           "TRATQUAL_items"
         ]
       },
+      "TRATQUAL_A": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "TRATQUAL_A_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "TRATQUAL_A.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "tratament",
+        "_defn": [
+          {
+            "_row_num": 137,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 71,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATQUAL_A",
+        "elementName": "TRATQUAL_A",
+        "elementSet": "data",
+        "elementPath": "TRATQUAL_A",
+        "listChildElementKeys": [
+          "TRATQUAL_A_items"
+        ]
+      },
+      "TRATQUAL_R": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "TRATQUAL_R_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "TRATQUAL_R.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "tratament",
+        "_defn": [
+          {
+            "_row_num": 146,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 72,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATQUAL_R",
+        "elementName": "TRATQUAL_R",
+        "elementSet": "data",
+        "elementPath": "TRATQUAL_R",
+        "listChildElementKeys": [
+          "TRATQUAL_R_items"
+        ]
+      },
       "TRATQUALOU": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 139,
-            "section_name": "inc"
-          },
-          {
-            "_row_num": 69,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -8388,6 +8894,42 @@
         "elementName": "TRATQUALOU",
         "elementSet": "data",
         "elementPath": "TRATQUALOU"
+      },
+      "TRATQUALOU_A": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 139,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 74,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATQUALOU_A",
+        "elementName": "TRATQUALOU_A",
+        "elementSet": "data",
+        "elementPath": "TRATQUALOU_A"
+      },
+      "TRATQUALOU_R": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 148,
+            "section_name": "inc"
+          },
+          {
+            "_row_num": 75,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRATQUALOU_R",
+        "elementName": "TRATQUALOU_R",
+        "elementSet": "data",
+        "elementPath": "TRATQUALOU_R"
       },
       "VENAOVAS": {
         "type": "string",
@@ -8398,7 +8940,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 70,
+            "_row_num": 76,
             "section_name": "model"
           }
         ],
@@ -8417,7 +8959,7 @@
             "section_name": "inc"
           },
           {
-            "_row_num": 71,
+            "_row_num": 77,
             "section_name": "model"
           }
         ],
@@ -8431,7 +8973,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 73,
+            "_row_num": 79,
             "section_name": "model"
           }
         ],
@@ -8445,7 +8987,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 80,
             "section_name": "model"
           }
         ],
@@ -8549,6 +9091,22 @@
         "elementName": "items",
         "elementSet": "data",
         "elementPath": "TRATQUAL.items",
+        "notUnitOfRetention": true
+      },
+      "TRATQUAL_A_items": {
+        "type": "string",
+        "elementKey": "TRATQUAL_A_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "TRATQUAL_A.items",
+        "notUnitOfRetention": true
+      },
+      "TRATQUAL_R_items": {
+        "type": "string",
+        "elementKey": "TRATQUAL_R_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "TRATQUAL_R.items",
         "notUnitOfRetention": true
       },
       "_id": {
@@ -8670,7 +9228,7 @@
         "_aspect": "ASSISTEN",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Fatima\",\"default\":\"Fatima\"}}},\"_row_num\":17},{\"choice_list_name\":\"ass\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Suzete\",\"default\":\"Suzete\"}}},\"_row_num\":18},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":19},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":20},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":21}]"
+        "_value": "[{\"choice_list_name\":\"ass\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Fatima\",\"default\":\"Fatima\"}}},\"Comment\":\"removed Suzete (ass=11) on 19-01-2022\",\"_row_num\":16},{\"choice_list_name\":\"ass\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":17},{\"choice_list_name\":\"ass\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":18},{\"choice_list_name\":\"ass\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":19}]"
       },
       {
         "_partition": "Column",
@@ -8691,7 +9249,7 @@
         "_aspect": "CONSENTTIPO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"signature\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Signature\",\"default\":\"Assinatura\"}}},\"_row_num\":34},{\"choice_list_name\":\"signature\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fingerprint\",\"default\":\"Impressão digital\"}}},\"_row_num\":35}]"
+        "_value": "[{\"choice_list_name\":\"signature\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Signature\",\"default\":\"Assinatura\"}}},\"_row_num\":40},{\"choice_list_name\":\"signature\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fingerprint\",\"default\":\"Impressão digital\"}}},\"_row_num\":41}]"
       },
       {
         "_partition": "Column",
@@ -8719,7 +9277,7 @@
         "_aspect": "ENFERMEI",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"enf\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Suzete\",\"default\":\"Suzete\"}}},\"_row_num\":13},{\"choice_list_name\":\"enf\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"_row_num\":14},{\"choice_list_name\":\"enf\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":15},{\"choice_list_name\":\"enf\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"enf\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Abrao\",\"default\":\"Abrao\"}}},\"Comment\":\"removed Suzete (enf=1) on 19-01-2022\",\"_row_num\":13},{\"choice_list_name\":\"enf\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Augosto Da Costa\",\"default\":\"Augosto Da Costa\"}}},\"_row_num\":14},{\"choice_list_name\":\"enf\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":15}]"
       },
       {
         "_partition": "Column",
@@ -8768,7 +9326,7 @@
         "_aspect": "RESP",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"resp\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":36},{\"choice_list_name\":\"resp\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":37},{\"choice_list_name\":\"resp\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Sibling\",\"default\":\"Irmã(o)\"}}},\"_row_num\":38},{\"choice_list_name\":\"resp\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Mothers mother\",\"default\":\"Avó\"}}},\"_row_num\":39}]"
+        "_value": "[{\"choice_list_name\":\"resp\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":42},{\"choice_list_name\":\"resp\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":43},{\"choice_list_name\":\"resp\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Sibling\",\"default\":\"Irmã(o)\"}}},\"_row_num\":44},{\"choice_list_name\":\"resp\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Mothers mother\",\"default\":\"Avó\"}}},\"_row_num\":45}]"
       },
       {
         "_partition": "Column",
@@ -8789,28 +9347,28 @@
         "_aspect": "TELEINF1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":27},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":28}]"
+        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":33},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":34}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":29},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":30},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":31}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":35},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":36},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":37}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":29},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":30},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":31}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":35},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":36},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":37}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TESTEMUNHO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":40}]"
+        "_value": "[{\"choice_list_name\":\"sim\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":46}]"
       },
       {
         "_partition": "Column",
@@ -8821,17 +9379,31 @@
       },
       {
         "_partition": "Column",
-        "_aspect": "TRATAMENT",
+        "_aspect": "TRATAMENT_A",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":11}]"
       },
       {
         "_partition": "Column",
-        "_aspect": "TRATQUAL",
+        "_aspect": "TRATAMENT_R",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 1\",\"default\":\"Tratamento 1\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 2\",\"default\":\"Tratamento 2\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 3\",\"default\":\"Tratamento 3\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 4\",\"default\":\"Tratamento 4\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":26}]"
+        "_value": "[{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10},{\"choice_list_name\":\"sim/não/ns\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":11}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "TRATQUAL_A",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":20},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":21},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 7\",\"default\":\"Tratamento 7\"}}},\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 8\",\"default\":\"Tratamento 8\"}}},\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 9\",\"default\":\"Tratamento 9\"}}},\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 10\",\"default\":\"Tratamento 10\"}}},\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 11\",\"default\":\"Tratamento 11\"}}},\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 12\",\"default\":\"Tratamento 12\"}}},\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":32}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "TRATQUAL_R",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":20},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":21},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 7\",\"default\":\"Tratamento 7\"}}},\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 8\",\"default\":\"Tratamento 8\"}}},\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 9\",\"default\":\"Tratamento 9\"}}},\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 10\",\"default\":\"Tratamento 10\"}}},\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 11\",\"default\":\"Tratamento 11\"}}},\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 12\",\"default\":\"Tratamento 12\"}}},\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":32}]"
       },
       {
         "_partition": "Column",
