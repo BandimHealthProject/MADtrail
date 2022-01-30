@@ -4,7 +4,7 @@
 'use strict';
 /* global odkTables, util, odkCommon, odkData */
 
-var children, date;
+var tabzList, children, date;
 // note that persons are the MIFs
 function display() {
     console.log("Persons list loading");
@@ -14,13 +14,35 @@ function display() {
     // Set the background to be a picture.
     //var body = $('body').first();
     //body.css('background', 'url(img/form_logo.png) fixed');
+    
+}
+
+// Get masterlList from CSV
+$.ajax({
+    url: 'TABZ.csv',
+    dataType: ' ',
+}).done(getTabzList);
+
+function getTabzList(data) {
+    tabzList = [];
+    var allRows = data.split(/\r?\n|\r/);
+    for (var row = 1; row < allRows.length; row++) {  // start at row = 1 to skip header
+            allRows[row] = allRows[row].replace(/"/g,""); // remove quotes from strings
+            var rowValues = allRows[row].split(",");
+            var p = {bairroName: rowValues[0], bairro: rowValues[1], tabzName: rowValues[2], tabz: rowValues[3]};
+            if (p.bairro != undefined) { // only push rows with reg number
+                tabzList.push(p);
+            }
+    }
+    console.log("tabzList", tabzList);
     loadChildren();
 }
+
 
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST AS NUMEST, i._id AS _id, i.DATINC AS DATINC, i.ID AS ID, i.INC AS INC, i.NOMECRI AS NOMECRI, i.NOMEMAE AS NOMEMAE, i.SEX AS SEX, i.TELEMOVEL1 AS TELEMOVEL1, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
+    var varNames = "i.NUMEST AS NUMEST, i._id AS _id, i.DATINC AS DATINC, i.ID AS ID, i.INC AS INC, i.NOMECRI AS NOMECRI, i.NOMEMAE AS NOMEMAE, i.SEX AS SEX, i.TELEMOVEL1 AS TELEMOVEL1, i.TELEMOVEL2 AS TELEMOVEL2, i.TELEMOVEL3 AS TELEMOVEL3, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
     var sql = "SELECT " + varNames + ", i.CAMO AS CAMO, i.CAMOONDE AS CAMOONDE, i.CNO AS CNO, i.TABZ AS TABZ, i.DOB AS DOB, i.IDADEANO AS IDADEANO, i.IDADEMES AS IDADEMES " +
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_VIS ON i._id = MADTRIAL_FU_VIS.IDINC " + // join on tablet generated IDs
@@ -56,6 +78,8 @@ function loadChildren() {
             var SEX = result.getData(row,"SEX");
             var TABZ = result.getData(row,"TABZ");
             var TELEMOVEL1 = result.getData(row,"TELEMOVEL1");
+            var TELEMOVEL2 = result.getData(row,"TELEMOVEL2");
+            var TELEMOVEL3 = result.getData(row,"TELEMOVEL3");
             var DATASAI = result.getData(row,"DATASAI");
             var DATSEGUI1 = result.getData(row,"DATSEGUI1");
             var DATSEGUI2 = result.getData(row,"DATSEGUI2");
@@ -94,8 +118,8 @@ function loadChildren() {
             var VACOU5TIPO = result.getData(row,"VACOU5TIPO");
             var VPI = result.getData(row,"VPI");
 
-            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, CNO, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, TELEMOVEL1, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
-            console.log(p);
+            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, CNO, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
+            //console.log(p);
             children.push(p);
         }
         console.log("loadChildren:", children)
@@ -117,6 +141,19 @@ function populateView() {
     var today = new Date(date);
     var todayAdate = setTodayAdate();
     console.log("adate",todayAdate); 
+
+    // merge tabzList
+    children.forEach(function(child) {
+        var result = tabzList.filter(function(tabz) {
+            return tabz.tabz === child.TABZ;
+        });
+        child.TABZNAME = (result[0] !== undefined) ? result[0].tabzName : null; 
+        child.BAIRRO = (result[0] !== undefined) ? result[0].bairro : null; 
+        child. BAIRRONAME = (result[0] !== undefined) ? result[0].bairroName : null; 
+    });
+    
+    // sort according to tabz name
+    children.sort((a,b) => (a.TABZNAME > b.TABZNAME) ? 1 : ((b.TABZNAME > a.TABZNAME) ? -1 : 0))
 
     children.forEach(function(child) {
         var visitedToday;
@@ -148,7 +185,7 @@ function populateView() {
         var incY = child.DATINC.slice(child.DATINC.search("Y")+2);  
         var dateInc = new Date(incY, incM-1, incD);
         var diffInDays = (today.getTime() - dateInc.getTime())/(1000*3600*24);
-        console.log("diff", diffInDays);
+        // console.log("diff", diffInDays);
         if (child.FU == 1 & diffInDays >= 4) {
             child['FU'] = 2;
         }
@@ -168,7 +205,7 @@ function populateView() {
 
     // Follow-up list
     $.each(children, function() {
-        console.log(this);
+        //console.log(this);
         var that = this;      
         
         // Check if visited today
@@ -198,31 +235,20 @@ function populateView() {
         // list
         if (this.TABZ > 10 & this.TABZ < 29 & FuDate <= today) {
             ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
-            console.log("FU", this.FU);
-            console.log("FuDate", FuDate);
         }
         if (this.TABZ > 30 & this.TABZ < 36 & FuDate <= today) {
             ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
-            console.log("FU", this.FU);
-            console.log("FuDate", FuDate);
         }
         if (this.TABZ > 41 & this.TABZ < 45 & FuDate <= today) {
             ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
-            console.log("FU", this.FU);
-            console.log("FuDate", FuDate);
-        }
+         }
         if (((this.TABZ > 70 & this.TABZ < 80) | (this.TABZ > 90 & this.TABZ < 95)) & FuDate <= today) {
             ul4.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
-            console.log("FU", this.FU);
-            console.log("FuDate", FuDate);
         }
-        if (this.TABZ == 51 & FuDate <= today) {
+        if (this.BAIRRO == 77 & FuDate <= today) {
             ul5.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
-            console.log("FU", this.FU);
-            console.log("FuDate", FuDate);
         }
-        console.log("today", today);
-
+        
         // Buttons
         var btn1 = ul1.find('#' + this.rowId);
         btn1.on("click", function() {
@@ -258,11 +284,15 @@ function setTodayAdate() {
 }
 
 function setDisplayText(child) {
-    var camo;
-    if (child.CAMO == 9999) {
-        camo = child.CAMOONDE;
+    var address;
+    if (child.BAIRRO == 77) {
+        address = "Bairro: " + "<b>" + child.TABZNAME + "</b>" + "<br />" + 
+        "Obs: " + child.CAMOONDE;
+    } else if (child.CAMO == 9999) {
+        address = "TABZ: " + child.TABZNAME + "<br />" + 
+        "Obs: " + child.CAMOONDE;
     } else {
-        camo = child.CAMO;
+        address = "TABZ: " + child.TABZ + "; CAMO: " + child.CAMO;
     }
 
     var idade;
@@ -275,11 +305,22 @@ function setDisplayText(child) {
         idade = "Nascimento: " + d + "/" + m + "/" + y;
     }
 
-    var displayText = "TABZ: " + child.TABZ + "; CAMO: " + camo + "<br />" + 
+    var phonenumber = "Telemovel: Não tem";
+    if (child.TELEMOVEL1 != 999999999 & child.TELEMOVEL1 != undefined) {
+        phonenumber = "Telemovel: " + child.TELEMOVEL1;
+        if (child.TELEMOVEL2 != 999999999 & child.TELEMOVEL2 != undefined) {
+            phonenumber = phonenumber + ", " + child.TELEMOVEL2;
+            if (child.TELEMOVEL3 != 999999999 & child.TELEMOVEL3 != undefined) {
+                phonenumber = phonenumber + ", " + child.TELEMOVEL3;
+            }
+        }
+    }
+
+    var displayText = address + "<br />" + 
         "Nome: " + child.NOMECRI + "<br />" + 
         idade + "<br />" + 
         "Mãe: " + child.NOMEMAE + "<br />" + 
-        "Telemovel: " + child.TELEMOVEL1;
+        phonenumber;
     return displayText
 }
 
