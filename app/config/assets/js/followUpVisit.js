@@ -42,7 +42,7 @@ function getTabzList(data) {
 function loadChildren() {
     // SQL to get children
     
-    var varNames = "i.NUMEST AS NUMEST, i._id AS _id, i.DATINC AS DATINC, i.ID AS ID, i.INC AS INC, i.NOMECRI AS NOMECRI, i.NOMEMAE AS NOMEMAE, i.SEX AS SEX, i.TELEMOVEL1 AS TELEMOVEL1, i.TELEMOVEL2 AS TELEMOVEL2, i.TELEMOVEL3 AS TELEMOVEL3, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
+    var varNames = "i.NUMEST AS NUMEST, i._id AS _id, i.DATINC AS DATINC, i.ID AS ID, i.INC AS INC, i.NOMECRI AS NOMECRI, i.NOMEMAE AS NOMEMAE, i.SEX AS SEX, i.TELEMOVEL1 AS TELEMOVEL1, i.TELEMOVEL2 AS TELEMOVEL2, i.TELEMOVEL3 AS TELEMOVEL3, i.OUBAIRRO AS OUBAIRRO, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI, MADTRIAL_FU_VIS._id AS FUrowId "
     var sql = "SELECT " + varNames + ", i.CAMO AS CAMO, i.CAMOONDE AS CAMOONDE, i.CNO AS CNO, i.TABZ AS TABZ, i.DOB AS DOB, i.IDADEANO AS IDADEANO, i.IDADEMES AS IDADEMES " +
         " FROM MADTRIAL_INC AS i " +
         " LEFT JOIN MADTRIAL_FU_VIS ON i._id = MADTRIAL_FU_VIS.IDINC " + // join on tablet generated IDs
@@ -80,6 +80,7 @@ function loadChildren() {
             var TELEMOVEL1 = result.getData(row,"TELEMOVEL1");
             var TELEMOVEL2 = result.getData(row,"TELEMOVEL2");
             var TELEMOVEL3 = result.getData(row,"TELEMOVEL3");
+            var OUBAIRRO = result.getData(row,"OUBAIRRO");
             var DATASAI = result.getData(row,"DATASAI");
             var DATSEGUI1 = result.getData(row,"DATSEGUI1");
             var DATSEGUI2 = result.getData(row,"DATSEGUI2");
@@ -118,7 +119,7 @@ function loadChildren() {
             var VACOU5TIPO = result.getData(row,"VACOU5TIPO");
             var VPI = result.getData(row,"VPI");
 
-            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, CNO, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
+            var p = { type: 'child', NUMEST, rowId, FUrowId, CAMO, CAMOONDE, CNO, DATINC, DOB, ID, IDADEANO, IDADEMES, INC, NOMECRI, NOMEMAE, SEX, TABZ, TELEMOVEL1, TELEMOVEL2, TELEMOVEL3, OUBAIRRO, DATASAI, DATSEGUI1, DATSEGUI2, DATSEGUI3, ESTADOCRI, FOLLOWUP, LASTFUSUC, SUCCEED1, SUCCEED2, SUCCEED3, BCG, FEBAMAREL, PCV1, PCV2, PCV3, PENTA1, PENTA2, PENTA3, POLIO1, POLIO2, POLIO3, POLIONAS, ROX1, ROX2, SARAMPO1, VACOU1, VACOU1TIPO, VACOU2, VACOU2TIPO, VACOU3, VACOU3TIPO, VACOU4, VACOU4TIPO, VACOU5, VACOU5TIPO, VPI };
             //console.log(p);
             children.push(p);
         }
@@ -286,8 +287,13 @@ function setTodayAdate() {
 function setDisplayText(child) {
     var address;
     if (child.BAIRRO == 77) {
-        address = "Bairro: " + "<b>" + child.TABZNAME + "</b>" + "<br />" + 
-        "Obs: " + child.CAMOONDE;
+        if (child.TABZ == 7777) {
+            address = "Bairro: " + "<b>" + child.TABZNAME + "</b>" + "<br />" + 
+            "Obs: " + child.OUBAIRRO;
+        } else {
+            address = "Bairro: " + "<b>" + child.TABZNAME + "</b>" + "<br />" + 
+            "Obs: " + child.CAMOONDE;
+        }
     } else if (child.CAMO == 9999) {
         address = "TABZ: " + child.TABZNAME + "<br />" + 
         "Obs: " + child.CAMOONDE;
