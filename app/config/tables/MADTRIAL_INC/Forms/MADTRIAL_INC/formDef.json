@@ -522,7 +522,7 @@
             }
           }
         },
-        "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 170000000 || data('BAIRRO') != 77",
+        "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 1000000000 || data('BAIRRO') != 77",
         "_row_num": 56
       },
       {
@@ -5775,7 +5775,7 @@
                 }
               }
             },
-            "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 170000000 || data('BAIRRO') != 77",
+            "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 1000000000 || data('BAIRRO') != 77",
             "_row_num": 56,
             "__rowNum__": 55,
             "_token_type": "prompt",
