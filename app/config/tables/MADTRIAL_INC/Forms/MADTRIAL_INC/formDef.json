@@ -517,12 +517,12 @@
           },
           "constraint_message": {
             "text": {
-              "english": "Must be 9 digits long:",
-              "default": "Deve ter 9 dígitos:"
+              "english": "Must be 8 digits long:",
+              "default": "Deve ter 8 dígitos:"
             }
           }
         },
-        "constraint": "data('REGIDC') > 99999999 && data('REGIDC') < 1000000000 || data('BAIRRO') != 77",
+        "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 170000000 || data('BAIRRO') != 77",
         "_row_num": 56
       },
       {
@@ -1116,53 +1116,28 @@
         "_row_num": 123
       },
       {
-        "clause": "end screen",
+        "clause": "if",
+        "condition": "data('MOTCONT')=='1'",
         "_row_num": 124
       },
       {
-        "clause": "begin screen",
+        "type": "assign",
+        "name": "REGDATE",
+        "calculation": "data(\"DATINC\")",
         "_row_num": 125
       },
       {
-        "type": "select_one",
-        "values_list": "sim/não/ns",
-        "name": "RENORREI",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Runny nose",
-              "default": "Rinorreia (ranho)"
-            }
-          }
-        },
+        "clause": "else",
         "_row_num": 126
       },
       {
-        "type": "select_one",
-        "values_list": "sim/não/ns",
-        "name": "TOSSE",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Cough",
-              "default": "Tosse"
-            }
-          }
-        },
+        "type": "assign",
+        "name": "REGDATE",
+        "calculation": "data(\"INTINICI\")",
         "_row_num": 127
       },
       {
-        "type": "select_one",
-        "values_list": "sim/não/ns",
-        "name": "DIFRESP",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Respiratory difficulty",
-              "default": "Dificuldade respiratória"
-            }
-          }
-        },
+        "clause": "end if",
         "_row_num": 128
       },
       {
@@ -1176,6 +1151,56 @@
       {
         "type": "select_one",
         "values_list": "sim/não/ns",
+        "name": "RENORREI",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Runny nose",
+              "default": "Rinorreia (ranho)"
+            }
+          }
+        },
+        "_row_num": 131
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/ns",
+        "name": "TOSSE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Cough",
+              "default": "Tosse"
+            }
+          }
+        },
+        "_row_num": 132
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/ns",
+        "name": "DIFRESP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Respiratory difficulty",
+              "default": "Dificuldade respiratória"
+            }
+          }
+        },
+        "_row_num": 133
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 134
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 135
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não/ns",
         "name": "CONVULSA",
         "display": {
           "prompt": {
@@ -1185,7 +1210,7 @@
             }
           }
         },
-        "_row_num": 131
+        "_row_num": 136
       },
       {
         "type": "text",
@@ -1198,15 +1223,15 @@
             }
           }
         },
-        "_row_num": 132
+        "_row_num": 137
       },
       {
         "clause": "end screen",
-        "_row_num": 133
+        "_row_num": 138
       },
       {
         "clause": "begin screen",
-        "_row_num": 134
+        "_row_num": 139
       },
       {
         "type": "select_one",
@@ -1220,12 +1245,12 @@
             }
           }
         },
-        "_row_num": 135
+        "_row_num": 140
       },
       {
         "clause": "if",
         "condition": "data('TRATAMENT_A') =='1'",
-        "_row_num": 136
+        "_row_num": 141
       },
       {
         "type": "select_multiple",
@@ -1239,12 +1264,12 @@
             }
           }
         },
-        "_row_num": 137
+        "_row_num": 142
       },
       {
         "clause": "if",
         "condition": "selected(data('TRATQUAL_A'),'77')",
-        "_row_num": 138
+        "_row_num": 143
       },
       {
         "type": "text",
@@ -1257,23 +1282,23 @@
             }
           }
         },
-        "_row_num": 139
+        "_row_num": 144
       },
       {
         "clause": "end if",
-        "_row_num": 140
+        "_row_num": 145
       },
       {
         "clause": "end if",
-        "_row_num": 141
+        "_row_num": 146
       },
       {
         "clause": "end screen",
-        "_row_num": 142
+        "_row_num": 147
       },
       {
         "clause": "begin screen",
-        "_row_num": 143
+        "_row_num": 148
       },
       {
         "type": "select_one",
@@ -1287,12 +1312,12 @@
             }
           }
         },
-        "_row_num": 144
+        "_row_num": 149
       },
       {
         "clause": "if",
         "condition": "data('TRATAMENT_R') =='1'",
-        "_row_num": 145
+        "_row_num": 150
       },
       {
         "type": "select_multiple",
@@ -1306,12 +1331,12 @@
             }
           }
         },
-        "_row_num": 146
+        "_row_num": 151
       },
       {
         "clause": "if",
         "condition": "selected(data('TRATQUAL_R'),'77')",
-        "_row_num": 147
+        "_row_num": 152
       },
       {
         "type": "text",
@@ -1324,23 +1349,23 @@
             }
           }
         },
-        "_row_num": 148
+        "_row_num": 153
       },
       {
         "clause": "end if",
-        "_row_num": 149
+        "_row_num": 154
       },
       {
         "clause": "end if",
-        "_row_num": 150
+        "_row_num": 155
       },
       {
         "clause": "end screen",
-        "_row_num": 151
+        "_row_num": 156
       },
       {
         "clause": "begin screen",
-        "_row_num": 152
+        "_row_num": 157
       },
       {
         "type": "image",
@@ -1353,15 +1378,15 @@
             }
           }
         },
-        "_row_num": 153
+        "_row_num": 158
       },
       {
         "clause": "end screen",
-        "_row_num": 154
+        "_row_num": 159
       },
       {
         "clause": "begin screen",
-        "_row_num": 155
+        "_row_num": 160
       },
       {
         "type": "select_one",
@@ -1382,12 +1407,12 @@
           }
         },
         "constraint": "data('PODEVAC') != null || data('CONSENT') == '2'",
-        "_row_num": 156
+        "_row_num": 161
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 157
+        "_row_num": 162
       },
       {
         "type": "text",
@@ -1400,11 +1425,11 @@
             }
           }
         },
-        "_row_num": 158
+        "_row_num": 163
       },
       {
         "clause": "end if",
-        "_row_num": 159
+        "_row_num": 164
       },
       {
         "type": "select_one",
@@ -1425,12 +1450,12 @@
           }
         },
         "constraint": "data('PODEINC') != null || data('CONSENT') == '2'",
-        "_row_num": 160
+        "_row_num": 165
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 161
+        "_row_num": 166
       },
       {
         "type": "text",
@@ -1443,11 +1468,11 @@
             }
           }
         },
-        "_row_num": 162
+        "_row_num": 167
       },
       {
         "clause": "end if",
-        "_row_num": 163
+        "_row_num": 168
       },
       {
         "type": "select_one",
@@ -1468,26 +1493,26 @@
           }
         },
         "constraint": "data('JAINC') != null || data('CONSENT') == '2'",
-        "_row_num": 164
+        "_row_num": 169
       },
       {
         "clause": "end screen",
-        "_row_num": 165
+        "_row_num": 170
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
-        "_row_num": 166
+        "_row_num": 171
       },
       {
         "clause": "begin screen",
-        "_row_num": 167
+        "_row_num": 172
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 168
+        "_row_num": 173
       },
       {
         "type": "note",
@@ -1499,12 +1524,12 @@
             }
           }
         },
-        "_row_num": 169
+        "_row_num": 174
       },
       {
         "clause": "if",
         "condition": "data('PODEVAC')=='2'",
-        "_row_num": 170
+        "_row_num": 175
       },
       {
         "type": "note",
@@ -1516,16 +1541,16 @@
             }
           }
         },
-        "_row_num": 171
+        "_row_num": 176
       },
       {
         "clause": "end if",
-        "_row_num": 172
+        "_row_num": 177
       },
       {
         "clause": "if",
         "condition": "data('PODEINC')=='2'",
-        "_row_num": 173
+        "_row_num": 178
       },
       {
         "type": "note",
@@ -1537,16 +1562,16 @@
             }
           }
         },
-        "_row_num": 174
+        "_row_num": 179
       },
       {
         "clause": "end if",
-        "_row_num": 175
+        "_row_num": 180
       },
       {
         "clause": "if",
         "condition": "data('JAINC') == '1'",
-        "_row_num": 176
+        "_row_num": 181
       },
       {
         "type": "note",
@@ -1558,16 +1583,16 @@
             }
           }
         },
-        "_row_num": 177
+        "_row_num": 182
       },
       {
         "clause": "end if",
-        "_row_num": 178
+        "_row_num": 183
       },
       {
         "clause": "if",
         "condition": "data('BRACOCRI') <110",
-        "_row_num": 179
+        "_row_num": 184
       },
       {
         "type": "note",
@@ -1579,16 +1604,16 @@
             }
           }
         },
-        "_row_num": 180
+        "_row_num": 185
       },
       {
         "clause": "end if",
-        "_row_num": 181
+        "_row_num": 186
       },
       {
         "clause": "if",
         "condition": "data('TEMPERATURA')>38",
-        "_row_num": 182
+        "_row_num": 187
       },
       {
         "type": "note",
@@ -1600,16 +1625,16 @@
             }
           }
         },
-        "_row_num": 183
+        "_row_num": 188
       },
       {
         "clause": "end if",
-        "_row_num": 184
+        "_row_num": 189
       },
       {
         "clause": "if",
         "condition": "data('VENAOVAS') == '2'",
-        "_row_num": 185
+        "_row_num": 190
       },
       {
         "type": "note",
@@ -1621,16 +1646,16 @@
             }
           }
         },
-        "_row_num": 186
+        "_row_num": 191
       },
       {
         "clause": "end if",
-        "_row_num": 187
+        "_row_num": 192
       },
       {
         "clause": "if",
         "condition": "data('SARVAC') == '1'",
-        "_row_num": 188
+        "_row_num": 193
       },
       {
         "type": "note",
@@ -1642,23 +1667,23 @@
             }
           }
         },
-        "_row_num": 189
+        "_row_num": 194
       },
       {
         "clause": "end if",
-        "_row_num": 190
+        "_row_num": 195
       },
       {
         "clause": "end screen",
-        "_row_num": 191
+        "_row_num": 196
       },
       {
         "clause": "else",
-        "_row_num": 192
+        "_row_num": 197
       },
       {
         "clause": "begin screen",
-        "_row_num": 193
+        "_row_num": 198
       },
       {
         "type": "integer",
@@ -1678,7 +1703,7 @@
           }
         },
         "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-        "_row_num": 194
+        "_row_num": 199
       },
       {
         "type": "integer",
@@ -1698,13 +1723,13 @@
           }
         },
         "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-        "_row_num": 195
+        "_row_num": 200
       },
       {
         "type": "assign",
         "name": "RANDOM",
         "calculation": "freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2'))",
-        "_row_num": 196
+        "_row_num": 201
       },
       {
         "type": "note",
@@ -1716,27 +1741,27 @@
             }
           }
         },
-        "_row_num": 197
+        "_row_num": 202
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 1,
-        "_row_num": 198
+        "_row_num": 203
       },
       {
         "clause": "end screen",
-        "_row_num": 199
+        "_row_num": 204
       },
       {
         "clause": "begin screen",
-        "_row_num": 200
+        "_row_num": 205
       },
       {
         "type": "assign",
         "name": "DATVACVAS",
         "calculation": "data('DATINC')",
-        "_row_num": 201
+        "_row_num": 206
       },
       {
         "type": "adate",
@@ -1752,7 +1777,7 @@
             "helperText": false
           }
         },
-        "_row_num": 202
+        "_row_num": 207
       },
       {
         "type": "time",
@@ -1772,13 +1797,13 @@
           }
         },
         "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-        "_row_num": 203
+        "_row_num": 208
       },
       {
         "type": "assign",
         "name": "HORVACVAS",
         "calculation": "adate.hoursMinutes(data('HORA'))",
-        "_row_num": 204
+        "_row_num": 209
       },
       {
         "type": "integer",
@@ -1798,13 +1823,13 @@
           }
         },
         "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-        "_row_num": 205
+        "_row_num": 210
       },
       {
         "type": "assign",
         "name": "NUMEST",
         "calculation": "freebase.studyNumber(\"MAD\",4,data('NUM'))",
-        "_row_num": 206
+        "_row_num": 211
       },
       {
         "type": "note",
@@ -1816,19 +1841,19 @@
             }
           }
         },
-        "_row_num": 207
+        "_row_num": 212
       },
       {
         "clause": "end screen",
-        "_row_num": 208
+        "_row_num": 213
       },
       {
         "clause": "end if",
-        "_row_num": 209
+        "_row_num": 214
       },
       {
         "clause": "begin screen",
-        "_row_num": 210
+        "_row_num": 215
       },
       {
         "type": "select_one_with_other",
@@ -1842,12 +1867,12 @@
             }
           }
         },
-        "_row_num": 211
+        "_row_num": 216
       },
       {
         "clause": "if",
         "condition": "data('INC') == '1'",
-        "_row_num": 212
+        "_row_num": 217
       },
       {
         "type": "select_one_with_other",
@@ -1861,23 +1886,23 @@
             }
           }
         },
-        "_row_num": 213
+        "_row_num": 218
       },
       {
         "clause": "end if",
-        "_row_num": 214
+        "_row_num": 219
       },
       {
         "clause": "end screen",
-        "_row_num": 215
+        "_row_num": 220
       },
       {
         "clause": "else",
-        "_row_num": 216
+        "_row_num": 221
       },
       {
         "clause": "begin screen",
-        "_row_num": 217
+        "_row_num": 222
       },
       {
         "type": "note",
@@ -1889,21 +1914,21 @@
             }
           }
         },
-        "_row_num": 218
+        "_row_num": 223
       },
       {
         "type": "assign",
         "name": "INC",
         "calculation": 2,
-        "_row_num": 219
+        "_row_num": 224
       },
       {
         "clause": "end screen",
-        "_row_num": 220
+        "_row_num": 225
       },
       {
         "clause": "end if",
-        "_row_num": 221
+        "_row_num": 226
       }
     ],
     "choices": [
@@ -2227,11 +2252,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 7",
-              "default": "Tratamento 7"
+              "english": "Soro fisiologico",
+              "default": "Soro fisiologico"
             }
           }
         },
+        "Comment": "added 16-02-2022",
         "_row_num": 26
       },
       {
@@ -2240,11 +2266,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 8",
-              "default": "Tratamento 8"
+              "english": "Vitamina C",
+              "default": "Vitamina C"
             }
           }
         },
+        "Comment": "added 16-02-2023",
         "_row_num": 27
       },
       {
@@ -2253,11 +2280,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 9",
-              "default": "Tratamento 9"
+              "english": "SRO",
+              "default": "SRO"
             }
           }
         },
+        "Comment": "added 16-02-2024",
         "_row_num": 28
       },
       {
@@ -2266,11 +2294,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 10",
-              "default": "Tratamento 10"
+              "english": "Sulfate de Zinco",
+              "default": "Sulfate de Zinco"
             }
           }
         },
+        "Comment": "added 16-02-2025",
         "_row_num": 29
       },
       {
@@ -2279,11 +2308,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 11",
-              "default": "Tratamento 11"
+              "english": "Azitomicina",
+              "default": "Azitomicina"
             }
           }
         },
+        "Comment": "added 16-02-2026",
         "_row_num": 30
       },
       {
@@ -2292,12 +2322,97 @@
         "display": {
           "title": {
             "text": {
-              "english": "Treatment 12",
-              "default": "Tratamento 12"
+              "english": "Brufen",
+              "default": "Brufen"
             }
           }
         },
+        "Comment": "added 16-02-2027",
         "_row_num": 31
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "13",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Albendazol",
+              "default": "Albendazol"
+            }
+          }
+        },
+        "Comment": "added 16-02-2028",
+        "_row_num": 32
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "14",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Mebendazol",
+              "default": "Mebendazol"
+            }
+          }
+        },
+        "Comment": "added 16-02-2029",
+        "_row_num": 33
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "15",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Metroniazol",
+              "default": "Metroniazol"
+            }
+          }
+        },
+        "Comment": "added 16-02-2030",
+        "_row_num": 34
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "16",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Nistatina",
+              "default": "Nistatina"
+            }
+          }
+        },
+        "Comment": "added 16-02-2031",
+        "_row_num": 35
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "17",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Augmentin",
+              "default": "Augmentin"
+            }
+          }
+        },
+        "Comment": "added 16-02-2032",
+        "_row_num": 36
+      },
+      {
+        "choice_list_name": "tratament",
+        "data_value": "18",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Erytromecina",
+              "default": "Erytromecina"
+            }
+          }
+        },
+        "Comment": "added 16-02-2033",
+        "_row_num": 37
       },
       {
         "choice_list_name": "tratament",
@@ -2310,7 +2425,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 38
       },
       {
         "choice_list_name": "telinf1",
@@ -2323,7 +2438,7 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 39
       },
       {
         "choice_list_name": "telinf1",
@@ -2336,7 +2451,7 @@
             }
           }
         },
-        "_row_num": 34
+        "_row_num": 40
       },
       {
         "choice_list_name": "telinf2",
@@ -2349,7 +2464,7 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 41
       },
       {
         "choice_list_name": "telinf2",
@@ -2362,7 +2477,7 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 42
       },
       {
         "choice_list_name": "telinf2",
@@ -2375,7 +2490,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 43
       },
       {
         "choice_list_name": "nsID",
@@ -2388,7 +2503,7 @@
             }
           }
         },
-        "_row_num": 38
+        "_row_num": 44
       },
       {
         "choice_list_name": "nsREGIDC",
@@ -2401,7 +2516,7 @@
             }
           }
         },
-        "_row_num": 39
+        "_row_num": 45
       },
       {
         "choice_list_name": "signature",
@@ -2414,7 +2529,7 @@
             }
           }
         },
-        "_row_num": 40
+        "_row_num": 46
       },
       {
         "choice_list_name": "signature",
@@ -2427,7 +2542,7 @@
             }
           }
         },
-        "_row_num": 41
+        "_row_num": 47
       },
       {
         "choice_list_name": "resp",
@@ -2440,7 +2555,7 @@
             }
           }
         },
-        "_row_num": 42
+        "_row_num": 48
       },
       {
         "choice_list_name": "resp",
@@ -2453,7 +2568,7 @@
             }
           }
         },
-        "_row_num": 43
+        "_row_num": 49
       },
       {
         "choice_list_name": "resp",
@@ -2466,7 +2581,7 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 50
       },
       {
         "choice_list_name": "resp",
@@ -2479,7 +2594,7 @@
             }
           }
         },
-        "_row_num": 45
+        "_row_num": 51
       },
       {
         "choice_list_name": "sim",
@@ -2492,7 +2607,7 @@
             }
           }
         },
-        "_row_num": 46
+        "_row_num": 52
       }
     ],
     "queries": [
@@ -2990,6 +3105,27 @@
         "type": "select_one",
         "isSessionVariable": true,
         "_row_num": 80
+      },
+      {
+        "name": "changeregno",
+        "type": "select_one",
+        "isSessionVariable": true,
+        "comments": "added 16-02-2022",
+        "_row_num": 81
+      },
+      {
+        "name": "changeregdate",
+        "type": "select_one",
+        "isSessionVariable": true,
+        "comments": "added 16-02-2022",
+        "_row_num": 82
+      },
+      {
+        "name": "REGDATE",
+        "type": "adate",
+        "isSessionVariable": false,
+        "comments": "added 16-02-2022",
+        "_row_num": 83
       }
     ]
   },
@@ -3462,11 +3598,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 7",
-                "default": "Tratamento 7"
+                "english": "Soro fisiologico",
+                "default": "Soro fisiologico"
               }
             }
           },
+          "Comment": "added 16-02-2022",
           "_row_num": 26
         },
         {
@@ -3475,11 +3612,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 8",
-                "default": "Tratamento 8"
+                "english": "Vitamina C",
+                "default": "Vitamina C"
               }
             }
           },
+          "Comment": "added 16-02-2023",
           "_row_num": 27
         },
         {
@@ -3488,11 +3626,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 9",
-                "default": "Tratamento 9"
+                "english": "SRO",
+                "default": "SRO"
               }
             }
           },
+          "Comment": "added 16-02-2024",
           "_row_num": 28
         },
         {
@@ -3501,11 +3640,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 10",
-                "default": "Tratamento 10"
+                "english": "Sulfate de Zinco",
+                "default": "Sulfate de Zinco"
               }
             }
           },
+          "Comment": "added 16-02-2025",
           "_row_num": 29
         },
         {
@@ -3514,11 +3654,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 11",
-                "default": "Tratamento 11"
+                "english": "Azitomicina",
+                "default": "Azitomicina"
               }
             }
           },
+          "Comment": "added 16-02-2026",
           "_row_num": 30
         },
         {
@@ -3527,12 +3668,97 @@
           "display": {
             "title": {
               "text": {
-                "english": "Treatment 12",
-                "default": "Tratamento 12"
+                "english": "Brufen",
+                "default": "Brufen"
               }
             }
           },
+          "Comment": "added 16-02-2027",
           "_row_num": 31
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "13",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Albendazol",
+                "default": "Albendazol"
+              }
+            }
+          },
+          "Comment": "added 16-02-2028",
+          "_row_num": 32
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "14",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Mebendazol",
+                "default": "Mebendazol"
+              }
+            }
+          },
+          "Comment": "added 16-02-2029",
+          "_row_num": 33
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "15",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Metroniazol",
+                "default": "Metroniazol"
+              }
+            }
+          },
+          "Comment": "added 16-02-2030",
+          "_row_num": 34
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "16",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Nistatina",
+                "default": "Nistatina"
+              }
+            }
+          },
+          "Comment": "added 16-02-2031",
+          "_row_num": 35
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "17",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Augmentin",
+                "default": "Augmentin"
+              }
+            }
+          },
+          "Comment": "added 16-02-2032",
+          "_row_num": 36
+        },
+        {
+          "choice_list_name": "tratament",
+          "data_value": "18",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Erytromecina",
+                "default": "Erytromecina"
+              }
+            }
+          },
+          "Comment": "added 16-02-2033",
+          "_row_num": 37
         },
         {
           "choice_list_name": "tratament",
@@ -3545,7 +3771,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 38
         }
       ],
       "telinf1": [
@@ -3560,7 +3786,7 @@
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 39
         },
         {
           "choice_list_name": "telinf1",
@@ -3573,7 +3799,7 @@
               }
             }
           },
-          "_row_num": 34
+          "_row_num": 40
         }
       ],
       "telinf2": [
@@ -3588,7 +3814,7 @@
               }
             }
           },
-          "_row_num": 35
+          "_row_num": 41
         },
         {
           "choice_list_name": "telinf2",
@@ -3601,7 +3827,7 @@
               }
             }
           },
-          "_row_num": 36
+          "_row_num": 42
         },
         {
           "choice_list_name": "telinf2",
@@ -3614,7 +3840,7 @@
               }
             }
           },
-          "_row_num": 37
+          "_row_num": 43
         }
       ],
       "nsID": [
@@ -3629,7 +3855,7 @@
               }
             }
           },
-          "_row_num": 38
+          "_row_num": 44
         }
       ],
       "nsREGIDC": [
@@ -3644,7 +3870,7 @@
               }
             }
           },
-          "_row_num": 39
+          "_row_num": 45
         }
       ],
       "signature": [
@@ -3659,7 +3885,7 @@
               }
             }
           },
-          "_row_num": 40
+          "_row_num": 46
         },
         {
           "choice_list_name": "signature",
@@ -3672,7 +3898,7 @@
               }
             }
           },
-          "_row_num": 41
+          "_row_num": 47
         }
       ],
       "resp": [
@@ -3687,7 +3913,7 @@
               }
             }
           },
-          "_row_num": 42
+          "_row_num": 48
         },
         {
           "choice_list_name": "resp",
@@ -3700,7 +3926,7 @@
               }
             }
           },
-          "_row_num": 43
+          "_row_num": 49
         },
         {
           "choice_list_name": "resp",
@@ -3713,7 +3939,7 @@
               }
             }
           },
-          "_row_num": 44
+          "_row_num": 50
         },
         {
           "choice_list_name": "resp",
@@ -3726,7 +3952,7 @@
               }
             }
           },
-          "_row_num": 45
+          "_row_num": 51
         }
       ],
       "sim": [
@@ -3741,7 +3967,7 @@
               }
             }
           },
-          "_row_num": 46
+          "_row_num": 52
         }
       ]
     },
@@ -3771,7 +3997,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 213,
+            "_row_num": 218,
             "section_name": "inc"
           },
           {
@@ -3984,7 +4210,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 131,
+            "_row_num": 136,
             "section_name": "inc"
           },
           {
@@ -4024,7 +4250,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 202,
+            "_row_num": 207,
             "section_name": "inc"
           },
           {
@@ -4056,7 +4282,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 128,
+            "_row_num": 133,
             "section_name": "inc"
           },
           {
@@ -4112,7 +4338,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 211,
+            "_row_num": 216,
             "section_name": "inc"
           },
           {
@@ -4144,7 +4370,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 203,
+            "_row_num": 208,
             "section_name": "inc"
           },
           {
@@ -4267,7 +4493,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 164,
+            "_row_num": 169,
             "section_name": "inc"
           },
           {
@@ -4298,7 +4524,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 162,
+            "_row_num": 167,
             "section_name": "inc"
           },
           {
@@ -4358,7 +4584,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 205,
+            "_row_num": 210,
             "section_name": "inc"
           },
           {
@@ -4384,7 +4610,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 163,
             "section_name": "inc"
           },
           {
@@ -4399,7 +4625,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 132,
+            "_row_num": 137,
             "section_name": "inc"
           },
           {
@@ -4430,7 +4656,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 160,
+            "_row_num": 165,
             "section_name": "inc"
           },
           {
@@ -4446,7 +4672,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 156,
+            "_row_num": 161,
             "section_name": "inc"
           },
           {
@@ -4472,7 +4698,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 194,
+            "_row_num": 199,
             "section_name": "inc"
           },
           {
@@ -4487,7 +4713,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 195,
+            "_row_num": 200,
             "section_name": "inc"
           },
           {
@@ -4573,7 +4799,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 126,
+            "_row_num": 131,
             "section_name": "inc"
           },
           {
@@ -4792,7 +5018,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 127,
+            "_row_num": 132,
             "section_name": "inc"
           },
           {
@@ -4819,7 +5045,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 135,
+            "_row_num": 140,
             "section_name": "inc"
           },
           {
@@ -4835,7 +5061,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 144,
+            "_row_num": 149,
             "section_name": "inc"
           },
           {
@@ -4864,7 +5090,7 @@
         },
         "_defn": [
           {
-            "_row_num": 153,
+            "_row_num": 158,
             "section_name": "inc"
           },
           {
@@ -4899,7 +5125,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 137,
+            "_row_num": 142,
             "section_name": "inc"
           },
           {
@@ -4919,7 +5145,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 146,
+            "_row_num": 151,
             "section_name": "inc"
           },
           {
@@ -4945,7 +5171,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 139,
+            "_row_num": 144,
             "section_name": "inc"
           },
           {
@@ -4960,7 +5186,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 148,
+            "_row_num": 153,
             "section_name": "inc"
           },
           {
@@ -5024,6 +5250,44 @@
         ],
         "isSessionVariable": true,
         "elementKey": "changetabz"
+      },
+      "changeregno": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "changeregno"
+      },
+      "changeregdate": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 82,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "changeregdate"
+      },
+      "REGDATE": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 83,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDATE"
       }
     },
     "section_names": [
@@ -5506,12 +5770,12 @@
               },
               "constraint_message": {
                 "text": {
-                  "english": "Must be 9 digits long:",
-                  "default": "Deve ter 9 dígitos:"
+                  "english": "Must be 8 digits long:",
+                  "default": "Deve ter 8 dígitos:"
                 }
               }
             },
-            "constraint": "data('REGIDC') > 99999999 && data('REGIDC') < 1000000000 || data('BAIRRO') != 77",
+            "constraint": "data('REGIDC') > 10000000 && data('REGIDC') < 170000000 || data('BAIRRO') != 77",
             "_row_num": 56,
             "__rowNum__": 55,
             "_token_type": "prompt",
@@ -6058,11 +6322,11 @@
                 }
               }
             },
-            "_row_num": 126,
-            "__rowNum__": 125,
+            "_row_num": 131,
+            "__rowNum__": 130,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen125",
+            "_branch_label_enclosing_screen": "inc/_screen130",
             "promptIdx": 46
           },
           {
@@ -6077,11 +6341,11 @@
                 }
               }
             },
-            "_row_num": 127,
-            "__rowNum__": 126,
+            "_row_num": 132,
+            "__rowNum__": 131,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen125",
+            "_branch_label_enclosing_screen": "inc/_screen130",
             "promptIdx": 47
           },
           {
@@ -6096,11 +6360,11 @@
                 }
               }
             },
-            "_row_num": 128,
-            "__rowNum__": 127,
+            "_row_num": 133,
+            "__rowNum__": 132,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen125",
+            "_branch_label_enclosing_screen": "inc/_screen130",
             "promptIdx": 48
           },
           {
@@ -6115,11 +6379,11 @@
                 }
               }
             },
-            "_row_num": 131,
-            "__rowNum__": 130,
+            "_row_num": 136,
+            "__rowNum__": 135,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen130",
+            "_branch_label_enclosing_screen": "inc/_screen135",
             "promptIdx": 49
           },
           {
@@ -6133,11 +6397,11 @@
                 }
               }
             },
-            "_row_num": 132,
-            "__rowNum__": 131,
+            "_row_num": 137,
+            "__rowNum__": 136,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen130",
+            "_branch_label_enclosing_screen": "inc/_screen135",
             "promptIdx": 50
           },
           {
@@ -6152,11 +6416,11 @@
                 }
               }
             },
-            "_row_num": 135,
-            "__rowNum__": 134,
+            "_row_num": 140,
+            "__rowNum__": 139,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen134",
+            "_branch_label_enclosing_screen": "inc/_screen139",
             "promptIdx": 51
           },
           {
@@ -6171,11 +6435,11 @@
                 }
               }
             },
-            "_row_num": 137,
-            "__rowNum__": 136,
+            "_row_num": 142,
+            "__rowNum__": 141,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen134",
+            "_branch_label_enclosing_screen": "inc/_screen139",
             "promptIdx": 52
           },
           {
@@ -6189,11 +6453,11 @@
                 }
               }
             },
-            "_row_num": 139,
-            "__rowNum__": 138,
+            "_row_num": 144,
+            "__rowNum__": 143,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen134",
+            "_branch_label_enclosing_screen": "inc/_screen139",
             "promptIdx": 53
           },
           {
@@ -6208,11 +6472,11 @@
                 }
               }
             },
-            "_row_num": 144,
-            "__rowNum__": 143,
+            "_row_num": 149,
+            "__rowNum__": 148,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen143",
+            "_branch_label_enclosing_screen": "inc/_screen148",
             "promptIdx": 54
           },
           {
@@ -6227,11 +6491,11 @@
                 }
               }
             },
-            "_row_num": 146,
-            "__rowNum__": 145,
+            "_row_num": 151,
+            "__rowNum__": 150,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "inc/_screen143",
+            "_branch_label_enclosing_screen": "inc/_screen148",
             "promptIdx": 55
           },
           {
@@ -6245,11 +6509,11 @@
                 }
               }
             },
-            "_row_num": 148,
-            "__rowNum__": 147,
+            "_row_num": 153,
+            "__rowNum__": 152,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen143",
+            "_branch_label_enclosing_screen": "inc/_screen148",
             "promptIdx": 56
           },
           {
@@ -6263,11 +6527,11 @@
                 }
               }
             },
-            "_row_num": 153,
-            "__rowNum__": 152,
+            "_row_num": 158,
+            "__rowNum__": 157,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "inc/_screen152",
+            "_branch_label_enclosing_screen": "inc/_screen157",
             "promptIdx": 57
           },
           {
@@ -6289,11 +6553,11 @@
               }
             },
             "constraint": "data('PODEVAC') != null || data('CONSENT') == '2'",
-            "_row_num": 156,
-            "__rowNum__": 155,
+            "_row_num": 161,
+            "__rowNum__": 160,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen155",
+            "_branch_label_enclosing_screen": "inc/_screen160",
             "promptIdx": 58
           },
           {
@@ -6307,11 +6571,11 @@
                 }
               }
             },
-            "_row_num": 158,
-            "__rowNum__": 157,
+            "_row_num": 163,
+            "__rowNum__": 162,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen155",
+            "_branch_label_enclosing_screen": "inc/_screen160",
             "promptIdx": 59
           },
           {
@@ -6333,11 +6597,11 @@
               }
             },
             "constraint": "data('PODEINC') != null || data('CONSENT') == '2'",
-            "_row_num": 160,
-            "__rowNum__": 159,
+            "_row_num": 165,
+            "__rowNum__": 164,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen155",
+            "_branch_label_enclosing_screen": "inc/_screen160",
             "promptIdx": 60
           },
           {
@@ -6351,11 +6615,11 @@
                 }
               }
             },
-            "_row_num": 162,
-            "__rowNum__": 161,
+            "_row_num": 167,
+            "__rowNum__": 166,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "inc/_screen155",
+            "_branch_label_enclosing_screen": "inc/_screen160",
             "promptIdx": 61
           },
           {
@@ -6377,11 +6641,11 @@
               }
             },
             "constraint": "data('JAINC') != null || data('CONSENT') == '2'",
-            "_row_num": 164,
-            "__rowNum__": 163,
+            "_row_num": 169,
+            "__rowNum__": 168,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "inc/_screen155",
+            "_branch_label_enclosing_screen": "inc/_screen160",
             "promptIdx": 62
           },
           {
@@ -6394,11 +6658,11 @@
                 }
               }
             },
-            "_row_num": 169,
-            "__rowNum__": 168,
+            "_row_num": 174,
+            "__rowNum__": 173,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 63
           },
           {
@@ -6411,11 +6675,11 @@
                 }
               }
             },
-            "_row_num": 171,
-            "__rowNum__": 170,
+            "_row_num": 176,
+            "__rowNum__": 175,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 64
           },
           {
@@ -6428,11 +6692,11 @@
                 }
               }
             },
-            "_row_num": 174,
-            "__rowNum__": 173,
+            "_row_num": 179,
+            "__rowNum__": 178,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 65
           },
           {
@@ -6445,11 +6709,11 @@
                 }
               }
             },
-            "_row_num": 177,
-            "__rowNum__": 176,
+            "_row_num": 182,
+            "__rowNum__": 181,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 66
           },
           {
@@ -6462,11 +6726,11 @@
                 }
               }
             },
-            "_row_num": 180,
-            "__rowNum__": 179,
+            "_row_num": 185,
+            "__rowNum__": 184,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 67
           },
           {
@@ -6479,11 +6743,11 @@
                 }
               }
             },
-            "_row_num": 183,
-            "__rowNum__": 182,
+            "_row_num": 188,
+            "__rowNum__": 187,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 68
           },
           {
@@ -6496,11 +6760,11 @@
                 }
               }
             },
-            "_row_num": 186,
-            "__rowNum__": 185,
+            "_row_num": 191,
+            "__rowNum__": 190,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 69
           },
           {
@@ -6513,11 +6777,11 @@
                 }
               }
             },
-            "_row_num": 189,
-            "__rowNum__": 188,
+            "_row_num": 194,
+            "__rowNum__": 193,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen167",
+            "_branch_label_enclosing_screen": "inc/_screen172",
             "promptIdx": 70
           },
           {
@@ -6538,11 +6802,11 @@
               }
             },
             "constraint": "data('RANDOM2')<501 && data('RANDOM1')>0 || data('INC') == '2'",
-            "_row_num": 194,
-            "__rowNum__": 193,
+            "_row_num": 199,
+            "__rowNum__": 198,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen193",
+            "_branch_label_enclosing_screen": "inc/_screen198",
             "promptIdx": 71
           },
           {
@@ -6563,11 +6827,11 @@
               }
             },
             "constraint": "data('RANDOM2')<13 && data('RANDOM2')>0 || data('INC') == '2'",
-            "_row_num": 195,
-            "__rowNum__": 194,
+            "_row_num": 200,
+            "__rowNum__": 199,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen193",
+            "_branch_label_enclosing_screen": "inc/_screen198",
             "promptIdx": 72
           },
           {
@@ -6580,11 +6844,11 @@
                 }
               }
             },
-            "_row_num": 197,
-            "__rowNum__": 196,
+            "_row_num": 202,
+            "__rowNum__": 201,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen193",
+            "_branch_label_enclosing_screen": "inc/_screen198",
             "promptIdx": 73
           },
           {
@@ -6601,11 +6865,11 @@
                 "helperText": false
               }
             },
-            "_row_num": 202,
-            "__rowNum__": 201,
+            "_row_num": 207,
+            "__rowNum__": 206,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "inc/_screen200",
+            "_branch_label_enclosing_screen": "inc/_screen205",
             "promptIdx": 74
           },
           {
@@ -6626,11 +6890,11 @@
               }
             },
             "constraint": "data('HORVACVAS') != null || data('INC') == '2'",
-            "_row_num": 203,
-            "__rowNum__": 202,
+            "_row_num": 208,
+            "__rowNum__": 207,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "inc/_screen200",
+            "_branch_label_enclosing_screen": "inc/_screen205",
             "promptIdx": 75
           },
           {
@@ -6651,11 +6915,11 @@
               }
             },
             "constraint": "data('NUM')>0 || data('INC') == '2' || data('changeid') != null || data('changetabz') != null",
-            "_row_num": 205,
-            "__rowNum__": 204,
+            "_row_num": 210,
+            "__rowNum__": 209,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "inc/_screen200",
+            "_branch_label_enclosing_screen": "inc/_screen205",
             "promptIdx": 76
           },
           {
@@ -6668,11 +6932,11 @@
                 }
               }
             },
-            "_row_num": 207,
-            "__rowNum__": 206,
+            "_row_num": 212,
+            "__rowNum__": 211,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen200",
+            "_branch_label_enclosing_screen": "inc/_screen205",
             "promptIdx": 77
           },
           {
@@ -6687,11 +6951,11 @@
                 }
               }
             },
-            "_row_num": 211,
-            "__rowNum__": 210,
+            "_row_num": 216,
+            "__rowNum__": 215,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen210",
+            "_branch_label_enclosing_screen": "inc/_screen215",
             "promptIdx": 78
           },
           {
@@ -6706,11 +6970,11 @@
                 }
               }
             },
-            "_row_num": 213,
-            "__rowNum__": 212,
+            "_row_num": 218,
+            "__rowNum__": 217,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "inc/_screen210",
+            "_branch_label_enclosing_screen": "inc/_screen215",
             "promptIdx": 79
           },
           {
@@ -6723,19 +6987,19 @@
                 }
               }
             },
-            "_row_num": 218,
-            "__rowNum__": 217,
+            "_row_num": 223,
+            "__rowNum__": 222,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "inc/_screen217",
+            "_branch_label_enclosing_screen": "inc/_screen222",
             "promptIdx": 80
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 222,
-            "_branch_label_enclosing_screen": "inc/_screen222",
+            "_row_num": 227,
+            "_branch_label_enclosing_screen": "inc/_screen227",
             "promptIdx": 81
           }
         ],
@@ -6883,8 +7147,8 @@
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else216",
-            "_row_num": 216,
+            "_branch_label": "_else221",
+            "_row_num": 221,
             "operationIdx": 8
           },
           {
@@ -6979,26 +7243,12 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 124,
-              "__rowNum__": 123,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 17
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 125,
-            "__rowNum__": 124,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
               "_row_num": 129,
               "__rowNum__": 128,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 18
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\nif (data('MOTCONT')=='1') {\nassign('REGDATE', data(\"DATINC\"));\n}\nelse {\nassign('REGDATE', data(\"INTINICI\"));\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 17
           },
           {
             "clause": "begin screen",
@@ -7007,8 +7257,22 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 133,
-              "__rowNum__": 132,
+              "_row_num": 134,
+              "__rowNum__": 133,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 18
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 135,
+            "__rowNum__": 134,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 138,
+              "__rowNum__": 137,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\n\nreturn activePromptIndicies;\n}\n",
@@ -7016,13 +7280,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 134,
-            "__rowNum__": 133,
+            "_row_num": 139,
+            "__rowNum__": 138,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 142,
-              "__rowNum__": 141,
+              "_row_num": 147,
+              "__rowNum__": 146,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(51);\nif (data('TRATAMENT_A') =='1') {\nactivePromptIndicies.push(52);\nif (selected(data('TRATQUAL_A'),'77')) {\nactivePromptIndicies.push(53);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7030,13 +7294,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 143,
-            "__rowNum__": 142,
+            "_row_num": 148,
+            "__rowNum__": 147,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 151,
-              "__rowNum__": 150,
+              "_row_num": 156,
+              "__rowNum__": 155,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\nif (data('TRATAMENT_R') =='1') {\nactivePromptIndicies.push(55);\nif (selected(data('TRATQUAL_R'),'77')) {\nactivePromptIndicies.push(56);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7044,13 +7308,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 152,
-            "__rowNum__": 151,
+            "_row_num": 157,
+            "__rowNum__": 156,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 154,
-              "__rowNum__": 153,
+              "_row_num": 159,
+              "__rowNum__": 158,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(57);\n\nreturn activePromptIndicies;\n}\n",
@@ -7058,13 +7322,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 155,
-            "__rowNum__": 154,
+            "_row_num": 160,
+            "__rowNum__": 159,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 165,
-              "__rowNum__": 164,
+              "_row_num": 170,
+              "__rowNum__": 169,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(58);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(59);\n}\nactivePromptIndicies.push(60);\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(61);\n}\nactivePromptIndicies.push(62);\n\nreturn activePromptIndicies;\n}\n",
@@ -7073,28 +7337,28 @@
           {
             "clause": "if",
             "condition": "data('PODEVAC')=='2'|| data('PODEINC')=='2'  || data('JAINC') == '1' || data('BRACOCRI') <110 || data('TEMPERATURA')>37.9 || data('VENAOVAS') == '2' || data('SARVAC') == '1'",
-            "_row_num": 166,
-            "__rowNum__": 165,
+            "_row_num": 171,
+            "__rowNum__": 170,
             "_token_type": "goto_label",
-            "_branch_label": "_then166",
+            "_branch_label": "_then171",
             "operationIdx": 24
           },
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else192",
-            "_row_num": 192,
+            "_branch_label": "_else197",
+            "_row_num": 197,
             "operationIdx": 25
           },
           {
             "clause": "begin screen",
-            "_row_num": 167,
-            "__rowNum__": 166,
+            "_row_num": 172,
+            "__rowNum__": 171,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 191,
-              "__rowNum__": 190,
+              "_row_num": 196,
+              "__rowNum__": 195,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nassign('INC', 2);\nactivePromptIndicies.push(63);\nif (data('PODEVAC')=='2') {\nactivePromptIndicies.push(64);\n}\nif (data('PODEINC')=='2') {\nactivePromptIndicies.push(65);\n}\nif (data('JAINC') == '1') {\nactivePromptIndicies.push(66);\n}\nif (data('BRACOCRI') <110) {\nactivePromptIndicies.push(67);\n}\nif (data('TEMPERATURA')>38) {\nactivePromptIndicies.push(68);\n}\nif (data('VENAOVAS') == '2') {\nactivePromptIndicies.push(69);\n}\nif (data('SARVAC') == '1') {\nactivePromptIndicies.push(70);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7103,19 +7367,19 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif209",
-            "_row_num": 209,
+            "_branch_label": "_endif214",
+            "_row_num": 214,
             "operationIdx": 27
           },
           {
             "clause": "begin screen",
-            "_row_num": 193,
-            "__rowNum__": 192,
+            "_row_num": 198,
+            "__rowNum__": 197,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 199,
-              "__rowNum__": 198,
+              "_row_num": 204,
+              "__rowNum__": 203,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\nassign('RANDOM', freebase.randomLabel(data('SEX'),data('RANDOM1'),data('RANDOM2')));\nactivePromptIndicies.push(73);\nassign('INC', 1);\n\nreturn activePromptIndicies;\n}\n",
@@ -7123,13 +7387,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 200,
-            "__rowNum__": 199,
+            "_row_num": 205,
+            "__rowNum__": 204,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 208,
-              "__rowNum__": 207,
+              "_row_num": 213,
+              "__rowNum__": 212,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nassign('DATVACVAS', data('DATINC'));\nactivePromptIndicies.push(74);\nactivePromptIndicies.push(75);\nassign('HORVACVAS', adate.hoursMinutes(data('HORA')));\nactivePromptIndicies.push(76);\nassign('NUMEST', freebase.studyNumber(\"MAD\",4,data('NUM')));\nactivePromptIndicies.push(77);\n\nreturn activePromptIndicies;\n}\n",
@@ -7137,13 +7401,13 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 210,
-            "__rowNum__": 209,
+            "_row_num": 215,
+            "__rowNum__": 214,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 215,
-              "__rowNum__": 214,
+              "_row_num": 220,
+              "__rowNum__": 219,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(78);\nif (data('INC') == '1') {\nactivePromptIndicies.push(79);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -7152,19 +7416,19 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif221",
-            "_row_num": 221,
+            "_branch_label": "_endif226",
+            "_row_num": 226,
             "operationIdx": 31
           },
           {
             "clause": "begin screen",
-            "_row_num": 217,
-            "__rowNum__": 216,
+            "_row_num": 222,
+            "__rowNum__": 221,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 220,
-              "__rowNum__": 219,
+              "_row_num": 225,
+              "__rowNum__": 224,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(80);\nassign('INC', 2);\n\nreturn activePromptIndicies;\n}\n",
@@ -7173,11 +7437,11 @@
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 222,
+            "_row_num": 227,
             "operationIdx": 33
           },
           {
-            "_row_num": 222,
+            "_row_num": 227,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(81);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
@@ -7188,7 +7452,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 222,
+            "_row_num": 227,
             "operationIdx": 35
           }
         ],
@@ -7210,24 +7474,24 @@
           "_screen110": 15,
           "_screen114": 16,
           "_screen120": 17,
-          "_screen125": 18,
-          "_screen130": 19,
-          "_screen134": 20,
-          "_screen143": 21,
-          "_screen152": 22,
-          "_screen155": 23,
-          "_then166": 26,
-          "_screen167": 26,
-          "_else192": 28,
-          "_screen193": 28,
-          "_screen200": 29,
-          "_endif209": 30,
-          "_screen210": 30,
-          "_else216": 32,
-          "_screen217": 32,
-          "_endif221": 33,
+          "_screen130": 18,
+          "_screen135": 19,
+          "_screen139": 20,
+          "_screen148": 21,
+          "_screen157": 22,
+          "_screen160": 23,
+          "_then171": 26,
+          "_screen172": 26,
+          "_else197": 28,
+          "_screen198": 28,
+          "_screen205": 29,
+          "_endif214": 30,
+          "_screen215": 30,
+          "_else221": 32,
+          "_screen222": 32,
+          "_endif226": 33,
           "_contents": 34,
-          "_screen222": 34
+          "_screen227": 34
         }
       },
       "initial": {
@@ -7418,7 +7682,7 @@
         "valuesList": "ass",
         "_defn": [
           {
-            "_row_num": 213,
+            "_row_num": 218,
             "section_name": "inc"
           },
           {
@@ -7694,7 +7958,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 131,
+            "_row_num": 136,
             "section_name": "inc"
           },
           {
@@ -7740,7 +8004,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 202,
+            "_row_num": 207,
             "section_name": "inc"
           },
           {
@@ -7778,7 +8042,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 128,
+            "_row_num": 133,
             "section_name": "inc"
           },
           {
@@ -7851,7 +8115,7 @@
         "valuesList": "enf",
         "_defn": [
           {
-            "_row_num": 211,
+            "_row_num": 216,
             "section_name": "inc"
           },
           {
@@ -7889,7 +8153,7 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 203,
+            "_row_num": 208,
             "section_name": "inc"
           },
           {
@@ -8044,7 +8308,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 164,
+            "_row_num": 169,
             "section_name": "inc"
           },
           {
@@ -8081,7 +8345,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 162,
+            "_row_num": 167,
             "section_name": "inc"
           },
           {
@@ -8153,7 +8417,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 205,
+            "_row_num": 210,
             "section_name": "inc"
           },
           {
@@ -8185,7 +8449,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 163,
             "section_name": "inc"
           },
           {
@@ -8203,7 +8467,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 132,
+            "_row_num": 137,
             "section_name": "inc"
           },
           {
@@ -8240,7 +8504,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 160,
+            "_row_num": 165,
             "section_name": "inc"
           },
           {
@@ -8259,7 +8523,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 156,
+            "_row_num": 161,
             "section_name": "inc"
           },
           {
@@ -8291,7 +8555,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 194,
+            "_row_num": 199,
             "section_name": "inc"
           },
           {
@@ -8309,7 +8573,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 195,
+            "_row_num": 200,
             "section_name": "inc"
           },
           {
@@ -8426,7 +8690,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 126,
+            "_row_num": 131,
             "section_name": "inc"
           },
           {
@@ -8687,7 +8951,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 127,
+            "_row_num": 132,
             "section_name": "inc"
           },
           {
@@ -8720,7 +8984,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 135,
+            "_row_num": 140,
             "section_name": "inc"
           },
           {
@@ -8739,7 +9003,7 @@
         "valuesList": "sim/não/ns",
         "_defn": [
           {
-            "_row_num": 144,
+            "_row_num": 149,
             "section_name": "inc"
           },
           {
@@ -8777,7 +9041,7 @@
         },
         "_defn": [
           {
-            "_row_num": 153,
+            "_row_num": 158,
             "section_name": "inc"
           },
           {
@@ -8834,7 +9098,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 137,
+            "_row_num": 142,
             "section_name": "inc"
           },
           {
@@ -8864,7 +9128,7 @@
         "valuesList": "tratament",
         "_defn": [
           {
-            "_row_num": 146,
+            "_row_num": 151,
             "section_name": "inc"
           },
           {
@@ -8899,7 +9163,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 139,
+            "_row_num": 144,
             "section_name": "inc"
           },
           {
@@ -8917,7 +9181,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 148,
+            "_row_num": 153,
             "section_name": "inc"
           },
           {
@@ -8996,6 +9260,53 @@
         "elementName": "changetabz",
         "elementSet": "data",
         "elementPath": "changetabz"
+      },
+      "changeregno": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "changeregno",
+        "elementName": "changeregno",
+        "elementSet": "data",
+        "elementPath": "changeregno"
+      },
+      "changeregdate": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 82,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "changeregdate",
+        "elementName": "changeregdate",
+        "elementSet": "data",
+        "elementPath": "changeregdate"
+      },
+      "REGDATE": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 83,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDATE",
+        "elementName": "REGDATE",
+        "elementSet": "data",
+        "elementPath": "REGDATE"
       },
       "camons_items": {
         "type": "string",
@@ -9249,7 +9560,7 @@
         "_aspect": "CONSENTTIPO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"signature\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Signature\",\"default\":\"Assinatura\"}}},\"_row_num\":40},{\"choice_list_name\":\"signature\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fingerprint\",\"default\":\"Impressão digital\"}}},\"_row_num\":41}]"
+        "_value": "[{\"choice_list_name\":\"signature\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Signature\",\"default\":\"Assinatura\"}}},\"_row_num\":46},{\"choice_list_name\":\"signature\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fingerprint\",\"default\":\"Impressão digital\"}}},\"_row_num\":47}]"
       },
       {
         "_partition": "Column",
@@ -9326,7 +9637,7 @@
         "_aspect": "RESP",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"resp\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":42},{\"choice_list_name\":\"resp\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":43},{\"choice_list_name\":\"resp\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Sibling\",\"default\":\"Irmã(o)\"}}},\"_row_num\":44},{\"choice_list_name\":\"resp\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Mothers mother\",\"default\":\"Avó\"}}},\"_row_num\":45}]"
+        "_value": "[{\"choice_list_name\":\"resp\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":48},{\"choice_list_name\":\"resp\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":49},{\"choice_list_name\":\"resp\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Sibling\",\"default\":\"Irmã(o)\"}}},\"_row_num\":50},{\"choice_list_name\":\"resp\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Mothers mother\",\"default\":\"Avó\"}}},\"_row_num\":51}]"
       },
       {
         "_partition": "Column",
@@ -9347,28 +9658,28 @@
         "_aspect": "TELEINF1",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":33},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":34}]"
+        "_value": "[{\"choice_list_name\":\"telinf1\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":39},{\"choice_list_name\":\"telinf1\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":40}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":35},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":36},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":37}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":41},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":42},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":43}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TELEINF3",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":35},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":36},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":37}]"
+        "_value": "[{\"choice_list_name\":\"telinf2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Mother\",\"default\":\"Mãe\"}}},\"_row_num\":41},{\"choice_list_name\":\"telinf2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Father\",\"default\":\"Pai\"}}},\"_row_num\":42},{\"choice_list_name\":\"telinf2\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't have another phone number\",\"default\":\"Não tem outro número de telefone\"}}},\"_row_num\":43}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TESTEMUNHO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"sim\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":46}]"
+        "_value": "[{\"choice_list_name\":\"sim\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":52}]"
       },
       {
         "_partition": "Column",
@@ -9396,14 +9707,14 @@
         "_aspect": "TRATQUAL_A",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":20},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":21},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 7\",\"default\":\"Tratamento 7\"}}},\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 8\",\"default\":\"Tratamento 8\"}}},\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 9\",\"default\":\"Tratamento 9\"}}},\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 10\",\"default\":\"Tratamento 10\"}}},\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 11\",\"default\":\"Tratamento 11\"}}},\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 12\",\"default\":\"Tratamento 12\"}}},\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":32}]"
+        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":20},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":21},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro fisiologico\",\"default\":\"Soro fisiologico\"}}},\"Comment\":\"added 16-02-2022\",\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Vitamina C\",\"default\":\"Vitamina C\"}}},\"Comment\":\"added 16-02-2023\",\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"SRO\",\"default\":\"SRO\"}}},\"Comment\":\"added 16-02-2024\",\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Sulfate de Zinco\",\"default\":\"Sulfate de Zinco\"}}},\"Comment\":\"added 16-02-2025\",\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Azitomicina\",\"default\":\"Azitomicina\"}}},\"Comment\":\"added 16-02-2026\",\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Brufen\",\"default\":\"Brufen\"}}},\"Comment\":\"added 16-02-2027\",\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Albendazol\",\"default\":\"Albendazol\"}}},\"Comment\":\"added 16-02-2028\",\"_row_num\":32},{\"choice_list_name\":\"tratament\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Mebendazol\",\"default\":\"Mebendazol\"}}},\"Comment\":\"added 16-02-2029\",\"_row_num\":33},{\"choice_list_name\":\"tratament\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Metroniazol\",\"default\":\"Metroniazol\"}}},\"Comment\":\"added 16-02-2030\",\"_row_num\":34},{\"choice_list_name\":\"tratament\",\"data_value\":\"16\",\"display\":{\"title\":{\"text\":{\"english\":\"Nistatina\",\"default\":\"Nistatina\"}}},\"Comment\":\"added 16-02-2031\",\"_row_num\":35},{\"choice_list_name\":\"tratament\",\"data_value\":\"17\",\"display\":{\"title\":{\"text\":{\"english\":\"Augmentin\",\"default\":\"Augmentin\"}}},\"Comment\":\"added 16-02-2032\",\"_row_num\":36},{\"choice_list_name\":\"tratament\",\"data_value\":\"18\",\"display\":{\"title\":{\"text\":{\"english\":\"Erytromecina\",\"default\":\"Erytromecina\"}}},\"Comment\":\"added 16-02-2033\",\"_row_num\":37},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":38}]"
       },
       {
         "_partition": "Column",
         "_aspect": "TRATQUAL_R",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":20},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":21},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 7\",\"default\":\"Tratamento 7\"}}},\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 8\",\"default\":\"Tratamento 8\"}}},\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 9\",\"default\":\"Tratamento 9\"}}},\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 10\",\"default\":\"Tratamento 10\"}}},\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 11\",\"default\":\"Tratamento 11\"}}},\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Treatment 12\",\"default\":\"Tratamento 12\"}}},\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":32}]"
+        "_value": "[{\"choice_list_name\":\"tratament\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":20},{\"choice_list_name\":\"tratament\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Amoxicillina\",\"default\":\"Amoxicillina\"}}},\"_row_num\":21},{\"choice_list_name\":\"tratament\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Complexo B\",\"default\":\"Complexo B\"}}},\"_row_num\":22},{\"choice_list_name\":\"tratament\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Salbutamol\",\"default\":\"Salbutamol\"}}},\"_row_num\":23},{\"choice_list_name\":\"tratament\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Diazepam\",\"default\":\"Diazepam\"}}},\"_row_num\":24},{\"choice_list_name\":\"tratament\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Prometazina\",\"default\":\"Prometazina\"}}},\"_row_num\":25},{\"choice_list_name\":\"tratament\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro fisiologico\",\"default\":\"Soro fisiologico\"}}},\"Comment\":\"added 16-02-2022\",\"_row_num\":26},{\"choice_list_name\":\"tratament\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Vitamina C\",\"default\":\"Vitamina C\"}}},\"Comment\":\"added 16-02-2023\",\"_row_num\":27},{\"choice_list_name\":\"tratament\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"SRO\",\"default\":\"SRO\"}}},\"Comment\":\"added 16-02-2024\",\"_row_num\":28},{\"choice_list_name\":\"tratament\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"Sulfate de Zinco\",\"default\":\"Sulfate de Zinco\"}}},\"Comment\":\"added 16-02-2025\",\"_row_num\":29},{\"choice_list_name\":\"tratament\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"Azitomicina\",\"default\":\"Azitomicina\"}}},\"Comment\":\"added 16-02-2026\",\"_row_num\":30},{\"choice_list_name\":\"tratament\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"Brufen\",\"default\":\"Brufen\"}}},\"Comment\":\"added 16-02-2027\",\"_row_num\":31},{\"choice_list_name\":\"tratament\",\"data_value\":\"13\",\"display\":{\"title\":{\"text\":{\"english\":\"Albendazol\",\"default\":\"Albendazol\"}}},\"Comment\":\"added 16-02-2028\",\"_row_num\":32},{\"choice_list_name\":\"tratament\",\"data_value\":\"14\",\"display\":{\"title\":{\"text\":{\"english\":\"Mebendazol\",\"default\":\"Mebendazol\"}}},\"Comment\":\"added 16-02-2029\",\"_row_num\":33},{\"choice_list_name\":\"tratament\",\"data_value\":\"15\",\"display\":{\"title\":{\"text\":{\"english\":\"Metroniazol\",\"default\":\"Metroniazol\"}}},\"Comment\":\"added 16-02-2030\",\"_row_num\":34},{\"choice_list_name\":\"tratament\",\"data_value\":\"16\",\"display\":{\"title\":{\"text\":{\"english\":\"Nistatina\",\"default\":\"Nistatina\"}}},\"Comment\":\"added 16-02-2031\",\"_row_num\":35},{\"choice_list_name\":\"tratament\",\"data_value\":\"17\",\"display\":{\"title\":{\"text\":{\"english\":\"Augmentin\",\"default\":\"Augmentin\"}}},\"Comment\":\"added 16-02-2032\",\"_row_num\":36},{\"choice_list_name\":\"tratament\",\"data_value\":\"18\",\"display\":{\"title\":{\"text\":{\"english\":\"Erytromecina\",\"default\":\"Erytromecina\"}}},\"Comment\":\"added 16-02-2033\",\"_row_num\":37},{\"choice_list_name\":\"tratament\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outro\"}}},\"_row_num\":38}]"
       },
       {
         "_partition": "Column",

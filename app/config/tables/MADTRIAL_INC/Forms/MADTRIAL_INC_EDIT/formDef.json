@@ -160,12 +160,24 @@
         "display": {
           "prompt": {
             "text": {
+              "english": "Date of triage: <b>{{calculates.displayREGDATE}}</b>",
+              "default": "Data de triagem:  <b>{{calculates.displayREGDATE}}</b>"
+            }
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
               "english": "No. triage survey: <b>{{data.REGNO}}</b>",
               "default": "Nº ficha de triagem: <b>{{data.REGNO}}</b>"
             }
           }
         },
-        "_row_num": 14
+        "_row_num": 15
       },
       {
         "type": "note",
@@ -177,7 +189,7 @@
             }
           }
         },
-        "_row_num": 15
+        "_row_num": 16
       },
       {
         "type": "note",
@@ -189,12 +201,12 @@
             }
           }
         },
-        "_row_num": 16
+        "_row_num": 17
       },
       {
         "clause": "if",
         "condition": "data('CAMO') == '9999'",
-        "_row_num": 17
+        "_row_num": 18
       },
       {
         "type": "note",
@@ -206,11 +218,11 @@
             }
           }
         },
-        "_row_num": 18
+        "_row_num": 19
       },
       {
         "clause": "else",
-        "_row_num": 19
+        "_row_num": 20
       },
       {
         "type": "note",
@@ -222,11 +234,11 @@
             }
           }
         },
-        "_row_num": 20
+        "_row_num": 21
       },
       {
         "clause": "end if",
-        "_row_num": 21
+        "_row_num": 22
       },
       {
         "type": "select_one",
@@ -240,7 +252,7 @@
             }
           }
         },
-        "_row_num": 22
+        "_row_num": 23
       },
       {
         "type": "select_one",
@@ -254,20 +266,48 @@
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 24
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não",
+        "name": "changeregdate",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Change date of contact?",
+              "default": "Alterar data contacto HNSM?"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "type": "select_one",
+        "values_list": "sim/não",
+        "name": "changeregno",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Change regno?",
+              "default": "Alterar regno?"
+            }
+          }
+        },
+        "_row_num": 26
       },
       {
         "clause": "end screen",
-        "_row_num": 24
+        "_row_num": 27
       },
       {
         "clause": "if",
         "condition": "data('changeid') == '1'",
-        "_row_num": 25
+        "_row_num": 28
       },
       {
         "clause": "begin screen",
-        "_row_num": 26
+        "_row_num": 29
       },
       {
         "type": "integer",
@@ -287,45 +327,45 @@
           }
         },
         "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('changeid') != '1'",
-        "_row_num": 27
+        "_row_num": 30
       },
       {
         "type": "select_multiple",
         "values_list": "nsID",
         "name": "idns",
-        "_row_num": 28
+        "_row_num": 31
       },
       {
         "clause": "if",
         "condition": "data('idns') != null",
-        "_row_num": 29
+        "_row_num": 32
       },
       {
         "type": "assign",
         "name": "ID",
         "calculation": 9999999,
-        "_row_num": 30
+        "_row_num": 33
       },
       {
         "clause": "end if",
-        "_row_num": 31
+        "_row_num": 34
       },
       {
         "clause": "end screen",
-        "_row_num": 32
+        "_row_num": 35
       },
       {
         "clause": "end if",
-        "_row_num": 33
+        "_row_num": 36
       },
       {
         "clause": "if",
         "condition": "data('changetabz') =='1'",
-        "_row_num": 34
+        "_row_num": 37
       },
       {
         "clause": "begin screen",
-        "_row_num": 35
+        "_row_num": 38
       },
       {
         "type": "select_one_dropdown",
@@ -339,12 +379,12 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 39
       },
       {
         "clause": "if",
         "condition": "data('BAIRRO') == 77",
-        "_row_num": 37
+        "_row_num": 40
       },
       {
         "type": "select_one_dropdown",
@@ -359,12 +399,12 @@
           }
         },
         "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-        "_row_num": 38
+        "_row_num": 41
       },
       {
         "clause": "if",
         "condition": "data('TABZ') == 7777",
-        "_row_num": 39
+        "_row_num": 42
       },
       {
         "type": "text",
@@ -377,11 +417,11 @@
             }
           }
         },
-        "_row_num": 40
+        "_row_num": 43
       },
       {
         "clause": "else",
-        "_row_num": 41
+        "_row_num": 44
       },
       {
         "type": "text",
@@ -394,21 +434,21 @@
             }
           }
         },
-        "_row_num": 42
+        "_row_num": 45
       },
       {
         "clause": "end if",
-        "_row_num": 43
+        "_row_num": 46
       },
       {
         "type": "assign",
         "name": "CAMO",
         "calculation": 9999,
-        "_row_num": 44
+        "_row_num": 47
       },
       {
         "clause": "else",
-        "_row_num": 45
+        "_row_num": 48
       },
       {
         "type": "select_one_dropdown",
@@ -423,7 +463,7 @@
           }
         },
         "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-        "_row_num": 46
+        "_row_num": 49
       },
       {
         "type": "integer",
@@ -436,24 +476,24 @@
             }
           }
         },
-        "_row_num": 47
+        "_row_num": 50
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "camons",
-        "_row_num": 48
+        "_row_num": 51
       },
       {
         "clause": "if",
         "condition": "data('camons') !=null",
-        "_row_num": 49
+        "_row_num": 52
       },
       {
         "type": "assign",
         "name": "CAMO",
         "calculation": 9999,
-        "_row_num": 50
+        "_row_num": 53
       },
       {
         "type": "text",
@@ -466,11 +506,11 @@
             }
           }
         },
-        "_row_num": 51
+        "_row_num": 54
       },
       {
         "clause": "end if",
-        "_row_num": 52
+        "_row_num": 55
       },
       {
         "type": "text",
@@ -493,35 +533,23 @@
         "inputAttributes": {
           "type": "number"
         },
-        "_row_num": 53
+        "_row_num": 56
       },
       {
         "type": "select_multiple",
         "values_list": "ns",
         "name": "cnons",
-        "_row_num": 54
+        "_row_num": 57
       },
       {
         "clause": "if",
         "condition": "data('cnons') != null",
-        "_row_num": 55
+        "_row_num": 58
       },
       {
         "type": "assign",
         "name": "CNO",
         "calculation": 99999,
-        "_row_num": 56
-      },
-      {
-        "clause": "end if",
-        "_row_num": 57
-      },
-      {
-        "clause": "end if",
-        "_row_num": 58
-      },
-      {
-        "clause": "end screen",
         "_row_num": 59
       },
       {
@@ -529,13 +557,113 @@
         "_row_num": 60
       },
       {
-        "clause": "if",
-        "condition": "data('changeid') == '1' || data('changetabz') =='1'",
+        "clause": "end if",
         "_row_num": 61
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 62
+      },
+      {
+        "clause": "end if",
+        "_row_num": 63
+      },
+      {
+        "clause": "if",
+        "condition": "data('changeregdate') =='1'",
+        "_row_num": 64
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 65
+      },
+      {
+        "type": "adate",
+        "name": "REGDATE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Since day",
+              "default": "Desde dia"
+            }
+          },
+          "constraint_message": {
+            "text": {
+              "english": "The date cannot be in the future:",
+              "default": "A data não pode estar no futuro:"
+            }
+          }
+        },
+        "constraint": "adate.diffInDays(data('DATINC'), data('REGDATE'))<1 || adate.hasUncertainty(data('REGDATE'))",
+        "_row_num": 66
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 67
+      },
+      {
+        "clause": "end if",
+        "_row_num": 68
+      },
+      {
+        "clause": "if",
+        "condition": "data('changeregno') =='1'",
+        "_row_num": 69
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 70
+      },
+      {
+        "type": "integer",
+        "name": "REGNO",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Register number (triage survey)",
+              "default": "Número de registo (ficha de triagem)"
+            }
+          }
+        },
+        "_row_num": 71
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "ns",
+        "name": "regnons",
+        "_row_num": 72
+      },
+      {
+        "clause": "if",
+        "condition": "data('regnons') != null",
+        "_row_num": 73
+      },
+      {
+        "type": "assign",
+        "name": "REGNO",
+        "calculation": 999,
+        "_row_num": 74
+      },
+      {
+        "clause": "end if",
+        "_row_num": 75
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 76
+      },
+      {
+        "clause": "end if",
+        "_row_num": 77
+      },
+      {
+        "clause": "if",
+        "condition": "data('changeid') == '1' || data('changetabz') =='1' || data('changeregdate') =='1'|| data('changeregno') =='1'",
+        "_row_num": 78
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 79
       },
       {
         "type": "note",
@@ -547,12 +675,12 @@
             }
           }
         },
-        "_row_num": 63
+        "_row_num": 80
       },
       {
         "clause": "if",
         "condition": "data('SEX') =='1'",
-        "_row_num": 64
+        "_row_num": 81
       },
       {
         "type": "note",
@@ -564,11 +692,11 @@
             }
           }
         },
-        "_row_num": 65
+        "_row_num": 82
       },
       {
         "clause": "else",
-        "_row_num": 66
+        "_row_num": 83
       },
       {
         "type": "note",
@@ -580,16 +708,16 @@
             }
           }
         },
-        "_row_num": 67
+        "_row_num": 84
       },
       {
         "clause": "end if",
-        "_row_num": 68
+        "_row_num": 85
       },
       {
         "clause": "if",
         "condition": "data('DOB') == 'D:NS,M:NS,Y:NS'",
-        "_row_num": 69
+        "_row_num": 86
       },
       {
         "type": "note",
@@ -601,11 +729,11 @@
             }
           }
         },
-        "_row_num": 70
+        "_row_num": 87
       },
       {
         "clause": "else",
-        "_row_num": 71
+        "_row_num": 88
       },
       {
         "type": "note",
@@ -617,11 +745,11 @@
             }
           }
         },
-        "_row_num": 72
+        "_row_num": 89
       },
       {
         "clause": "end if",
-        "_row_num": 73
+        "_row_num": 90
       },
       {
         "type": "note",
@@ -633,7 +761,7 @@
             }
           }
         },
-        "_row_num": 74
+        "_row_num": 91
       },
       {
         "type": "note",
@@ -645,7 +773,7 @@
             }
           }
         },
-        "_row_num": 75
+        "_row_num": 92
       },
       {
         "type": "note",
@@ -657,12 +785,12 @@
             }
           }
         },
-        "_row_num": 76
+        "_row_num": 93
       },
       {
         "clause": "if",
         "condition": "data('CAMO') == '9999'",
-        "_row_num": 77
+        "_row_num": 94
       },
       {
         "type": "note",
@@ -674,11 +802,11 @@
             }
           }
         },
-        "_row_num": 78
+        "_row_num": 95
       },
       {
         "clause": "else",
-        "_row_num": 79
+        "_row_num": 96
       },
       {
         "type": "note",
@@ -690,19 +818,19 @@
             }
           }
         },
-        "_row_num": 80
+        "_row_num": 97
       },
       {
         "clause": "end if",
-        "_row_num": 81
+        "_row_num": 98
       },
       {
         "clause": "end screen",
-        "_row_num": 82
+        "_row_num": 99
       },
       {
         "clause": "end if",
-        "_row_num": 83
+        "_row_num": 100
       }
     ],
     "choices": [
@@ -1108,6 +1236,18 @@
           }
         },
         "_row_num": 32
+      }
+    ],
+    "calculates": [
+      {
+        "calculation_name": "displayDOB",
+        "calculation": "adate.display(data('DOB'))",
+        "_row_num": 2
+      },
+      {
+        "calculation_name": "displayREGDATE",
+        "calculation": "adate.display(data('REGDATE'))",
+        "_row_num": 3
       }
     ],
     "queries": [
@@ -1569,6 +1709,27 @@
         "type": "select_one",
         "isSessionVariable": true,
         "_row_num": 74
+      },
+      {
+        "name": "changeregno",
+        "type": "select_one",
+        "isSessionVariable": true,
+        "comments": "added 16-02-2022",
+        "_row_num": 75
+      },
+      {
+        "name": "changeregdate",
+        "type": "select_one",
+        "isSessionVariable": true,
+        "comments": "added 16-02-2022",
+        "_row_num": 76
+      },
+      {
+        "name": "REGDATE",
+        "type": "adate",
+        "isSessionVariable": false,
+        "comments": "added 16-02-2022",
+        "_row_num": 77
       }
     ]
   },
@@ -2154,7 +2315,18 @@
         "_row_num": 3
       }
     },
-    "calculates": {},
+    "calculates": {
+      "displayDOB": {
+        "calculation_name": "displayDOB",
+        "calculation": "adate.display(data('DOB'))",
+        "_row_num": 2
+      },
+      "displayREGDATE": {
+        "calculation_name": "displayREGDATE",
+        "calculation": "adate.display(data('REGDATE'))",
+        "_row_num": 3
+      }
+    },
     "model": {
       "ASSISTEN": {
         "type": "string",
@@ -2172,7 +2344,7 @@
         "valuesList": "bairro_csv",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 39,
             "section_name": "edit"
           },
           {
@@ -2198,7 +2370,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 50,
             "section_name": "edit"
           },
           {
@@ -2218,7 +2390,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 51,
             "section_name": "edit"
           },
           {
@@ -2233,11 +2405,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 45,
             "section_name": "edit"
           },
           {
-            "_row_num": 51,
+            "_row_num": 54,
             "section_name": "edit"
           },
           {
@@ -2288,7 +2460,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 56,
             "section_name": "edit"
           },
           {
@@ -2308,7 +2480,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 57,
             "section_name": "edit"
           },
           {
@@ -2486,7 +2658,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 30,
             "section_name": "edit"
           },
           {
@@ -2528,7 +2700,7 @@
         "valuesList": "nsID",
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 31,
             "section_name": "edit"
           },
           {
@@ -2680,7 +2852,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 40,
+            "_row_num": 43,
             "section_name": "edit"
           },
           {
@@ -2776,6 +2948,10 @@
         "type": "integer",
         "_defn": [
           {
+            "_row_num": 71,
+            "section_name": "edit"
+          },
+          {
             "_row_num": 49,
             "section_name": "model"
           }
@@ -2789,7 +2965,12 @@
           "type": "string",
           "elementKey": "regnons_items"
         },
+        "valuesList": "ns",
         "_defn": [
+          {
+            "_row_num": 72,
+            "section_name": "edit"
+          },
           {
             "_row_num": 50,
             "section_name": "model"
@@ -2858,11 +3039,11 @@
         "valuesList": "tabz_csv",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 41,
             "section_name": "edit"
           },
           {
-            "_row_num": 46,
+            "_row_num": 49,
             "section_name": "edit"
           },
           {
@@ -3061,7 +3242,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 23,
             "section_name": "edit"
           },
           {
@@ -3077,7 +3258,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 24,
             "section_name": "edit"
           },
           {
@@ -3087,6 +3268,58 @@
         ],
         "isSessionVariable": true,
         "elementKey": "changetabz"
+      },
+      "changeregno": {
+        "type": "string",
+        "valuesList": "sim/não",
+        "_defn": [
+          {
+            "_row_num": 26,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 75,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "changeregno"
+      },
+      "changeregdate": {
+        "type": "string",
+        "valuesList": "sim/não",
+        "_defn": [
+          {
+            "_row_num": 25,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 76,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "changeregdate"
+      },
+      "REGDATE": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 66,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 77,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDATE"
       }
     },
     "section_names": [
@@ -3265,8 +3498,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "No. triage survey: <b>{{data.REGNO}}</b>",
-                  "default": "Nº ficha de triagem: <b>{{data.REGNO}}</b>"
+                  "english": "Date of triage: <b>{{calculates.displayREGDATE}}</b>",
+                  "default": "Data de triagem:  <b>{{calculates.displayREGDATE}}</b>"
                 }
               }
             },
@@ -3282,8 +3515,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "ID: <b>{{data.ID}}</b>",
-                  "default": "ID: <b>{{data.ID}}</b>"
+                  "english": "No. triage survey: <b>{{data.REGNO}}</b>",
+                  "default": "Nº ficha de triagem: <b>{{data.REGNO}}</b>"
                 }
               }
             },
@@ -3299,8 +3532,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "TABZ: <b>{{data.TABZ}}</b>",
-                  "default": "TABZ: <b>{{data.TABZ}}</b>"
+                  "english": "ID: <b>{{data.ID}}</b>",
+                  "default": "ID: <b>{{data.ID}}</b>"
                 }
               }
             },
@@ -3316,17 +3549,34 @@
             "display": {
               "prompt": {
                 "text": {
+                  "english": "TABZ: <b>{{data.TABZ}}</b>",
+                  "default": "TABZ: <b>{{data.TABZ}}</b>"
+                }
+              }
+            },
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "edit/_screen2",
+            "promptIdx": 8
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
                   "english": "Camo: <b>{{data.CAMOONDE}}</b>",
                   "default": "Camo: <b>{{data.CAMOONDE}}</b>"
                 }
               }
             },
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 19,
+            "__rowNum__": 18,
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "edit/_screen2",
-            "promptIdx": 8
+            "promptIdx": 9
           },
           {
             "type": "note",
@@ -3338,12 +3588,12 @@
                 }
               }
             },
-            "_row_num": 20,
-            "__rowNum__": 19,
+            "_row_num": 21,
+            "__rowNum__": 20,
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "edit/_screen2",
-            "promptIdx": 9
+            "promptIdx": 10
           },
           {
             "type": "select_one",
@@ -3357,12 +3607,12 @@
                 }
               }
             },
-            "_row_num": 22,
-            "__rowNum__": 21,
+            "_row_num": 23,
+            "__rowNum__": 22,
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "edit/_screen2",
-            "promptIdx": 10
+            "promptIdx": 11
           },
           {
             "type": "select_one",
@@ -3376,12 +3626,50 @@
                 }
               }
             },
-            "_row_num": 23,
-            "__rowNum__": 22,
+            "_row_num": 24,
+            "__rowNum__": 23,
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "edit/_screen2",
-            "promptIdx": 11
+            "promptIdx": 12
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não",
+            "name": "changeregdate",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Change date of contact?",
+                  "default": "Alterar data contacto HNSM?"
+                }
+              }
+            },
+            "_row_num": 25,
+            "__rowNum__": 24,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "edit/_screen2",
+            "promptIdx": 13
+          },
+          {
+            "type": "select_one",
+            "values_list": "sim/não",
+            "name": "changeregno",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Change regno?",
+                  "default": "Alterar regno?"
+                }
+              }
+            },
+            "_row_num": 26,
+            "__rowNum__": 25,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "edit/_screen2",
+            "promptIdx": 14
           },
           {
             "type": "integer",
@@ -3401,23 +3689,23 @@
               }
             },
             "constraint": "(data('ID')>999999  && data('ID')<10000000) || data('changeid') != '1'",
-            "_row_num": 27,
-            "__rowNum__": 26,
+            "_row_num": 30,
+            "__rowNum__": 29,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "edit/_screen26",
-            "promptIdx": 12
+            "_branch_label_enclosing_screen": "edit/_screen29",
+            "promptIdx": 15
           },
           {
             "type": "select_multiple",
             "values_list": "nsID",
             "name": "idns",
-            "_row_num": 28,
-            "__rowNum__": 27,
+            "_row_num": 31,
+            "__rowNum__": 30,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "edit/_screen26",
-            "promptIdx": 13
+            "_branch_label_enclosing_screen": "edit/_screen29",
+            "promptIdx": 16
           },
           {
             "type": "select_one_dropdown",
@@ -3431,12 +3719,12 @@
                 }
               }
             },
-            "_row_num": 36,
-            "__rowNum__": 35,
+            "_row_num": 39,
+            "__rowNum__": 38,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 14
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 17
           },
           {
             "type": "select_one_dropdown",
@@ -3451,12 +3739,12 @@
               }
             },
             "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-            "_row_num": 38,
-            "__rowNum__": 37,
+            "_row_num": 41,
+            "__rowNum__": 40,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 15
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 18
           },
           {
             "type": "text",
@@ -3469,12 +3757,12 @@
                 }
               }
             },
-            "_row_num": 40,
-            "__rowNum__": 39,
+            "_row_num": 43,
+            "__rowNum__": 42,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 16
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 19
           },
           {
             "type": "text",
@@ -3487,12 +3775,12 @@
                 }
               }
             },
-            "_row_num": 42,
-            "__rowNum__": 41,
+            "_row_num": 45,
+            "__rowNum__": 44,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 17
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 20
           },
           {
             "type": "select_one_dropdown",
@@ -3507,12 +3795,12 @@
               }
             },
             "choice_filter": "choice_item.BAIRRONR === data('BAIRRO')",
-            "_row_num": 46,
-            "__rowNum__": 45,
+            "_row_num": 49,
+            "__rowNum__": 48,
             "_token_type": "prompt",
             "_type": "select_one_dropdown",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 18
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 21
           },
           {
             "type": "integer",
@@ -3525,23 +3813,23 @@
                 }
               }
             },
-            "_row_num": 47,
-            "__rowNum__": 46,
+            "_row_num": 50,
+            "__rowNum__": 49,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 19
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 22
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "camons",
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 51,
+            "__rowNum__": 50,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 20
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 23
           },
           {
             "type": "text",
@@ -3554,12 +3842,12 @@
                 }
               }
             },
-            "_row_num": 51,
-            "__rowNum__": 50,
+            "_row_num": 54,
+            "__rowNum__": 53,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 21
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 24
           },
           {
             "type": "text",
@@ -3582,23 +3870,77 @@
             "inputAttributes": {
               "type": "number"
             },
-            "_row_num": 53,
-            "__rowNum__": 52,
+            "_row_num": 56,
+            "__rowNum__": 55,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 25
           },
           {
             "type": "select_multiple",
             "values_list": "ns",
             "name": "cnons",
-            "_row_num": 54,
-            "__rowNum__": 53,
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "edit/_screen35",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "edit/_screen38",
+            "promptIdx": 26
+          },
+          {
+            "type": "adate",
+            "name": "REGDATE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Since day",
+                  "default": "Desde dia"
+                }
+              },
+              "constraint_message": {
+                "text": {
+                  "english": "The date cannot be in the future:",
+                  "default": "A data não pode estar no futuro:"
+                }
+              }
+            },
+            "constraint": "adate.diffInDays(data('DATINC'), data('REGDATE'))<1 || adate.hasUncertainty(data('REGDATE'))",
+            "_row_num": 66,
+            "__rowNum__": 65,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "edit/_screen65",
+            "promptIdx": 27
+          },
+          {
+            "type": "integer",
+            "name": "REGNO",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Register number (triage survey)",
+                  "default": "Número de registo (ficha de triagem)"
+                }
+              }
+            },
+            "_row_num": 71,
+            "__rowNum__": 70,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "edit/_screen70",
+            "promptIdx": 28
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "ns",
+            "name": "regnons",
+            "_row_num": 72,
+            "__rowNum__": 71,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "edit/_screen70",
+            "promptIdx": 29
           },
           {
             "type": "note",
@@ -3610,12 +3952,12 @@
                 }
               }
             },
-            "_row_num": 63,
-            "__rowNum__": 62,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 24
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 30
           },
           {
             "type": "note",
@@ -3627,12 +3969,12 @@
                 }
               }
             },
-            "_row_num": 65,
-            "__rowNum__": 64,
+            "_row_num": 82,
+            "__rowNum__": 81,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 31
           },
           {
             "type": "note",
@@ -3644,12 +3986,12 @@
                 }
               }
             },
-            "_row_num": 67,
-            "__rowNum__": 66,
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 32
           },
           {
             "type": "note",
@@ -3661,12 +4003,12 @@
                 }
               }
             },
-            "_row_num": 70,
-            "__rowNum__": 69,
+            "_row_num": 87,
+            "__rowNum__": 86,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 33
           },
           {
             "type": "note",
@@ -3678,12 +4020,12 @@
                 }
               }
             },
-            "_row_num": 72,
-            "__rowNum__": 71,
+            "_row_num": 89,
+            "__rowNum__": 88,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 34
           },
           {
             "type": "note",
@@ -3695,12 +4037,12 @@
                 }
               }
             },
-            "_row_num": 74,
-            "__rowNum__": 73,
+            "_row_num": 91,
+            "__rowNum__": 90,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 35
           },
           {
             "type": "note",
@@ -3712,12 +4054,12 @@
                 }
               }
             },
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "_row_num": 92,
+            "__rowNum__": 91,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 36
           },
           {
             "type": "note",
@@ -3729,12 +4071,12 @@
                 }
               }
             },
-            "_row_num": 76,
-            "__rowNum__": 75,
+            "_row_num": 93,
+            "__rowNum__": 92,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 31
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 37
           },
           {
             "type": "note",
@@ -3746,12 +4088,12 @@
                 }
               }
             },
-            "_row_num": 78,
-            "__rowNum__": 77,
+            "_row_num": 95,
+            "__rowNum__": 94,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 32
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 38
           },
           {
             "type": "note",
@@ -3763,26 +4105,27 @@
                 }
               }
             },
-            "_row_num": 80,
-            "__rowNum__": 79,
+            "_row_num": 97,
+            "__rowNum__": 96,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "edit/_screen62",
-            "promptIdx": 33
+            "_branch_label_enclosing_screen": "edit/_screen79",
+            "promptIdx": 39
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 84,
-            "_branch_label_enclosing_screen": "edit/_screen84",
-            "promptIdx": 34
+            "_row_num": 101,
+            "_branch_label_enclosing_screen": "edit/_screen101",
+            "promptIdx": 40
           }
         ],
         "validation_tag_map": {
           "finalize": [
-            12,
-            22
+            15,
+            25,
+            27
           ]
         },
         "operations": [
@@ -3793,162 +4136,244 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 24,
-              "__rowNum__": 23,
+              "_row_num": 27,
+              "__rowNum__": 26,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nif (data('SEX') =='1') {\nactivePromptIndicies.push(1);\n}\nelse {\nactivePromptIndicies.push(2);\n}\nif (data('DOB') == 'D:NS,M:NS,Y:NS') {\nactivePromptIndicies.push(3);\n}\nelse {\nactivePromptIndicies.push(4);\n}\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\nif (data('CAMO') == '9999') {\nactivePromptIndicies.push(8);\n}\nelse {\nactivePromptIndicies.push(9);\n}\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nif (data('SEX') =='1') {\nactivePromptIndicies.push(1);\n}\nelse {\nactivePromptIndicies.push(2);\n}\nif (data('DOB') == 'D:NS,M:NS,Y:NS') {\nactivePromptIndicies.push(3);\n}\nelse {\nactivePromptIndicies.push(4);\n}\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\nif (data('CAMO') == '9999') {\nactivePromptIndicies.push(9);\n}\nelse {\nactivePromptIndicies.push(10);\n}\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
             "clause": "if",
             "condition": "data('changeid') == '1'",
-            "_row_num": 25,
-            "__rowNum__": 24,
+            "_row_num": 28,
+            "__rowNum__": 27,
             "_token_type": "goto_label",
-            "_branch_label": "_then25",
+            "_branch_label": "_then28",
             "operationIdx": 1
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else33",
-            "_row_num": 33,
+            "_branch_label": "_else36",
+            "_row_num": 36,
             "operationIdx": 2
           },
           {
             "clause": "begin screen",
-            "_row_num": 26,
-            "__rowNum__": 25,
+            "_row_num": 29,
+            "__rowNum__": 28,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 32,
-              "__rowNum__": 31,
+              "_row_num": 35,
+              "__rowNum__": 34,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nif (data('idns') != null) {\nassign('ID', 9999999);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nif (data('idns') != null) {\nassign('ID', 9999999);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 3
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif33",
-            "_row_num": 33,
+            "_branch_label": "_endif36",
+            "_row_num": 36,
             "operationIdx": 4
           },
           {
             "clause": "if",
             "condition": "data('changetabz') =='1'",
-            "_row_num": 34,
-            "__rowNum__": 33,
+            "_row_num": 37,
+            "__rowNum__": 36,
             "_token_type": "goto_label",
-            "_branch_label": "_then34",
+            "_branch_label": "_then37",
             "operationIdx": 5
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else60",
-            "_row_num": 60,
+            "_branch_label": "_else63",
+            "_row_num": 63,
             "operationIdx": 6
           },
           {
             "clause": "begin screen",
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 38,
+            "__rowNum__": 37,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 59,
-              "__rowNum__": 58,
+              "_row_num": 62,
+              "__rowNum__": 61,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nif (data('BAIRRO') == 77) {\nactivePromptIndicies.push(15);\nif (data('TABZ') == 7777) {\nactivePromptIndicies.push(16);\n}\nelse {\nactivePromptIndicies.push(17);\n}\nassign('CAMO', 9999);\n}\nelse {\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nif (data('camons') !=null) {\nassign('CAMO', 9999);\nactivePromptIndicies.push(21);\n}\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nif (data('cnons') != null) {\nassign('CNO', 99999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(17);\nif (data('BAIRRO') == 77) {\nactivePromptIndicies.push(18);\nif (data('TABZ') == 7777) {\nactivePromptIndicies.push(19);\n}\nelse {\nactivePromptIndicies.push(20);\n}\nassign('CAMO', 9999);\n}\nelse {\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nif (data('camons') !=null) {\nassign('CAMO', 9999);\nactivePromptIndicies.push(24);\n}\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nif (data('cnons') != null) {\nassign('CNO', 99999);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif60",
-            "_row_num": 60,
+            "_branch_label": "_endif63",
+            "_row_num": 63,
             "operationIdx": 8
           },
           {
             "clause": "if",
-            "condition": "data('changeid') == '1' || data('changetabz') =='1'",
-            "_row_num": 61,
-            "__rowNum__": 60,
+            "condition": "data('changeregdate') =='1'",
+            "_row_num": 64,
+            "__rowNum__": 63,
             "_token_type": "goto_label",
-            "_branch_label": "_then61",
+            "_branch_label": "_then64",
             "operationIdx": 9
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else83",
-            "_row_num": 83,
+            "_branch_label": "_else68",
+            "_row_num": 68,
             "operationIdx": 10
           },
           {
             "clause": "begin screen",
-            "_row_num": 62,
-            "__rowNum__": 61,
+            "_row_num": 65,
+            "__rowNum__": 64,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 82,
-              "__rowNum__": 81,
+              "_row_num": 67,
+              "__rowNum__": 66,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nif (data('SEX') =='1') {\nactivePromptIndicies.push(25);\n}\nelse {\nactivePromptIndicies.push(26);\n}\nif (data('DOB') == 'D:NS,M:NS,Y:NS') {\nactivePromptIndicies.push(27);\n}\nelse {\nactivePromptIndicies.push(28);\n}\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nif (data('CAMO') == '9999') {\nactivePromptIndicies.push(32);\n}\nelse {\nactivePromptIndicies.push(33);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 11
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif83",
-            "_row_num": 83,
+            "_branch_label": "_endif68",
+            "_row_num": 68,
             "operationIdx": 12
+          },
+          {
+            "clause": "if",
+            "condition": "data('changeregno') =='1'",
+            "_row_num": 69,
+            "__rowNum__": 68,
+            "_token_type": "goto_label",
+            "_branch_label": "_then69",
+            "operationIdx": 13
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else77",
+            "_row_num": 77,
+            "operationIdx": 14
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 70,
+            "__rowNum__": 69,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 76,
+              "__rowNum__": 75,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nif (data('regnons') != null) {\nassign('REGNO', 999);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 15
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif77",
+            "_row_num": 77,
+            "operationIdx": 16
+          },
+          {
+            "clause": "if",
+            "condition": "data('changeid') == '1' || data('changetabz') =='1' || data('changeregdate') =='1'|| data('changeregno') =='1'",
+            "_row_num": 78,
+            "__rowNum__": 77,
+            "_token_type": "goto_label",
+            "_branch_label": "_then78",
+            "operationIdx": 17
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else100",
+            "_row_num": 100,
+            "operationIdx": 18
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 79,
+            "__rowNum__": 78,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 99,
+              "__rowNum__": 98,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nif (data('SEX') =='1') {\nactivePromptIndicies.push(31);\n}\nelse {\nactivePromptIndicies.push(32);\n}\nif (data('DOB') == 'D:NS,M:NS,Y:NS') {\nactivePromptIndicies.push(33);\n}\nelse {\nactivePromptIndicies.push(34);\n}\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\nactivePromptIndicies.push(37);\nif (data('CAMO') == '9999') {\nactivePromptIndicies.push(38);\n}\nelse {\nactivePromptIndicies.push(39);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif100",
+            "_row_num": 100,
+            "operationIdx": 20
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 84,
-            "operationIdx": 13
+            "_row_num": 101,
+            "operationIdx": 21
           },
           {
-            "_row_num": 84,
+            "_row_num": 101,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(40);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 14
+            "operationIdx": 22
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 84,
-            "operationIdx": 15
+            "_row_num": 101,
+            "operationIdx": 23
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_then25": 3,
-          "_screen26": 3,
-          "_else33": 5,
-          "_endif33": 5,
-          "_then34": 7,
-          "_screen35": 7,
-          "_else60": 9,
-          "_endif60": 9,
-          "_then61": 11,
-          "_screen62": 11,
-          "_else83": 13,
-          "_endif83": 13,
-          "_contents": 14,
-          "_screen84": 14
+          "_then28": 3,
+          "_screen29": 3,
+          "_else36": 5,
+          "_endif36": 5,
+          "_then37": 7,
+          "_screen38": 7,
+          "_else63": 9,
+          "_endif63": 9,
+          "_then64": 11,
+          "_screen65": 11,
+          "_else68": 13,
+          "_endif68": 13,
+          "_then69": 15,
+          "_screen70": 15,
+          "_else77": 17,
+          "_endif77": 17,
+          "_then78": 19,
+          "_screen79": 19,
+          "_else100": 21,
+          "_endif100": 21,
+          "_contents": 22,
+          "_screen101": 22
         }
       },
       "initial": {
@@ -4153,7 +4578,7 @@
         "valuesList": "bairro_csv",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 39,
             "section_name": "edit"
           },
           {
@@ -4185,7 +4610,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 50,
             "section_name": "edit"
           },
           {
@@ -4213,7 +4638,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 51,
             "section_name": "edit"
           },
           {
@@ -4234,11 +4659,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 45,
             "section_name": "edit"
           },
           {
-            "_row_num": 51,
+            "_row_num": 54,
             "section_name": "edit"
           },
           {
@@ -4309,7 +4734,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 56,
             "section_name": "edit"
           },
           {
@@ -4337,7 +4762,7 @@
         "valuesList": "ns",
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 57,
             "section_name": "edit"
           },
           {
@@ -4568,7 +4993,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 30,
             "section_name": "edit"
           },
           {
@@ -4624,7 +5049,7 @@
         "valuesList": "nsID",
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 31,
             "section_name": "edit"
           },
           {
@@ -4818,7 +5243,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 40,
+            "_row_num": 43,
             "section_name": "edit"
           },
           {
@@ -4946,6 +5371,10 @@
         "type": "integer",
         "_defn": [
           {
+            "_row_num": 71,
+            "section_name": "edit"
+          },
+          {
             "_row_num": 49,
             "section_name": "model"
           }
@@ -4967,7 +5396,12 @@
           "isSessionVariable": true,
           "notUnitOfRetention": true
         },
+        "valuesList": "ns",
         "_defn": [
+          {
+            "_row_num": 72,
+            "section_name": "edit"
+          },
           {
             "_row_num": 50,
             "section_name": "model"
@@ -5057,11 +5491,11 @@
         "valuesList": "tabz_csv",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 41,
             "section_name": "edit"
           },
           {
-            "_row_num": 46,
+            "_row_num": 49,
             "section_name": "edit"
           },
           {
@@ -5326,7 +5760,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 23,
             "section_name": "edit"
           },
           {
@@ -5345,7 +5779,7 @@
         "valuesList": "sim/não",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 24,
             "section_name": "edit"
           },
           {
@@ -5358,6 +5792,67 @@
         "elementName": "changetabz",
         "elementSet": "data",
         "elementPath": "changetabz"
+      },
+      "changeregno": {
+        "type": "string",
+        "valuesList": "sim/não",
+        "_defn": [
+          {
+            "_row_num": 26,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 75,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "changeregno",
+        "elementName": "changeregno",
+        "elementSet": "data",
+        "elementPath": "changeregno"
+      },
+      "changeregdate": {
+        "type": "string",
+        "valuesList": "sim/não",
+        "_defn": [
+          {
+            "_row_num": 25,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 76,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "changeregdate",
+        "elementName": "changeregdate",
+        "elementSet": "data",
+        "elementPath": "changeregdate"
+      },
+      "REGDATE": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 66,
+            "section_name": "edit"
+          },
+          {
+            "_row_num": 77,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDATE",
+        "elementName": "REGDATE",
+        "elementSet": "data",
+        "elementPath": "REGDATE"
       },
       "camons_items": {
         "type": "string",

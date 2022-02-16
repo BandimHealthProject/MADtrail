@@ -52,6 +52,9 @@ LASTFUSUC,LASTFUSUC,string,[]
 MEDICIN,MEDICIN,string,[]
 MEDICINDIA,MEDICINDIA,array,"[""MEDICINDIA_items""]"
 MEDICINDIA_items,items,string,[]
+MEDICINOU_Q,MEDICINOU_Q,string,[]
+MEDICIN_Q,MEDICIN_Q,array,"[""MEDICIN_Q_items""]"
+MEDICIN_Q_items,items,string,[]
 MEDQUAL,MEDQUAL,string,[]
 MUDOUONDE,MUDOUONDE,string,[]
 NOMECRI,NOMECRI,string,[]
