@@ -234,16 +234,16 @@ function populateView() {
         var displayText = setDisplayText(that);
 
         // list
-        if (this.TABZ > 10 & this.TABZ < 29 & FuDate <= today) {
+        if (((this.TABZ > 10 & this.TABZ < 29) | this.TABZ == 177 | this.TABZ == 277) & FuDate <= today) {
             ul1.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
         }
-        if (this.TABZ > 30 & this.TABZ < 36 & FuDate <= today) {
+        if (((this.TABZ > 30 & this.TABZ < 36) | this.TABZ == 377) & FuDate <= today) {
             ul2.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
         }
-        if (this.TABZ > 41 & this.TABZ < 45 & FuDate <= today) {
+        if (((this.TABZ > 41 & this.TABZ < 45) | this.TABZ == 477) & FuDate <= today) {
             ul3.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
          }
-        if (((this.TABZ > 70 & this.TABZ < 80) | (this.TABZ > 90 & this.TABZ < 95)) & FuDate <= today) {
+        if (((this.TABZ > 70 & this.TABZ < 80) | (this.TABZ > 90 & this.TABZ < 95) | this.TABZ == 777 | this.TABZ == 977) & FuDate <= today) {
             ul4.append($("<li />").append($("<button />").attr('id',this.rowId).attr('class', visited + ' btn ' + this.type + this.SEX + " FU" + this.FU).append(displayText)));
         }
         if (this.BAIRRO == 77 & FuDate <= today) {
